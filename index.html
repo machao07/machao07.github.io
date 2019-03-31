@@ -189,8 +189,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	商城保存记录密码的时候，可以使用cookie来存；</span></span><br><span class="line"><span class="comment">	cookie:</span></span><br><span class="line"><span class="comment">        必须安装环境；</span></span><br><span class="line"><span class="comment">        localhost或127.0.0 开头。</span></span><br><span class="line"><span class="comment">     演示：</span></span><br><span class="line"><span class="comment">     	控制台 -&gt; 应用池 -&gt; cookie -&gt; </span></span><br><span class="line"><span class="comment">     		如果点击登陆的时候，页面当中就会保存一些cookie。</span></span><br><span class="line"><span class="comment">     		cookie是可以被劫持的。</span></span><br><span class="line"><span class="comment">     	设置 -&gt; 高级 -&gt; 内容设置 -&gt; cookie -&gt; </span></span><br><span class="line"><span class="comment">        	有保存对应的数据。</span></span><br><span class="line"><span class="comment">     </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//每个浏览器储存的位置都不一样。</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="built_in">document</span>.cookie ) <span class="comment">// 当前浏览器所储存的cookie；</span></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">'name = abc'</span>;</span><br><span class="line"><span class="built_in">console</span>.log( <span class="built_in">document</span>.cookie ); </span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	在设置一个名称叫做name,值为abc;储在哪个域名下的:127.0.0；Path:路径； expires（过期时间）：如果没有设置时间的话，就是当前会话（打开一个窗口，就是打开一个会话。）</span></span><br><span class="line"><span class="comment">	默认储存时间：</span></span><br><span class="line"><span class="comment">		默认就是当前会话，存储在运行内存里。</span></span><br><span class="line"><span class="comment">		当时会话没有结束的时候，可以继续 访问别的页面。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h3 id="设置cookie时间"><a href="#设置cookie时间" class="headerlink" title="设置cookie时间:"></a>设置cookie时间:</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	设置cookie时间:</span></span><br><span class="line"><span class="comment">		date.toMGTString() 用一个世界时间进行保存；</span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> date( <span class="keyword">new</span> <span class="built_in">Date</span>().getTime() + <span class="number">30</span>*<span class="number">60</span>*<span class="number">1000</span> );<span class="comment">//30分钟过期后的时间</span></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">'name = abc'</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="删除cookie时间"><a href="#删除cookie时间" class="headerlink" title="删除cookie时间:"></a>删除cookie时间:</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.cookie = <span class="string">'name=;expires='</span>+<span class="keyword">new</span> <span class="built_in">Date</span>( <span class="keyword">new</span> <span class="built_in">Date</span>().getTime() - <span class="number">1</span> ).toGMTString();</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">document</span>.cookie)</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2019/03/04/cookie/#more">more >></a>
         
@@ -257,7 +255,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/01/ajax-fetch(三)/">ajax-fetch(一)</a>
+      <a class="article-title" href="/2019/03/01/ajax-fetch(三)/">ajax-fetch(三)</a>
     </h1>
   
 
@@ -283,31 +281,6 @@
 <li><code>mode</code>: 请求的模式，如 <code>cors</code>、 <code>no-cors</code> 或者 <code>same-origin</code>。</li>
 <li><code>credentials</code>: 请求的 <code>credentials</code>，如 <code>omit</code>、<code>same-origin</code> 或者 <code>include</code>。</li>
 <li><code>cache</code>: 请求的 <code>cache</code> 模式: <code>default</code>, <code>no-store</code>, <code>reload</code>, <code>no-cache</code>, <code>force-cache</code>, 或者 <code>only-if-cached</code>。</li>
-</ul>
-<h2 id="response"><a href="#response" class="headerlink" title="response"></a>response</h2><p>一个 <code>Promise</code>，<code>resolve</code> 时回传 <code>Response</code> 对象：</p>
-<ul>
-<li>属性：<ul>
-<li><code>status (number)</code> - HTTP请求结果参数，在100–599 范围</li>
-<li><code>statusText (String)</code> - 服务器返回的状态报告</li>
-<li><code>ok (boolean)</code> - 如果返回200表示请求成功则为true</li>
-<li><code>headers (Headers)</code> - 返回头部信息，下面详细介绍</li>
-<li><code>url (String)</code> - 请求的地址</li>
-</ul>
-</li>
-<li>方法：<ul>
-<li><code>text()</code> - 以<code>string</code>的形式生成请求text</li>
-<li><code>json()</code> - 生成<code>JSON.parse(responseText)</code>的结果</li>
-<li><code>blob()</code> - 生成一个<code>Blob</code></li>
-<li><code>arrayBuffer()</code> - 生成一个<code>ArrayBuffer</code></li>
-<li><code>formData()</code> - 生成格式化的数据，可用于其他的请求</li>
-</ul>
-</li>
-<li>其他方法：<ul>
-<li><code>clone()</code>  创建一个Response对象的克隆 </li>
-<li><code>Response.error()</code>   返回一个绑定了网络错误的新的Response对象 </li>
-<li><code>Response.redirect()</code> 用另一个URL创建一个新的 response. </li>
-</ul>
-</li>
 </ul>
         
           <a class="article-more-a" href="/2019/03/01/ajax-fetch(三)/#more">more >></a>
@@ -387,7 +360,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/ajax-fetch(二)/">ajax-fetch(一)</a>
+      <a class="article-title" href="/2019/02/27/ajax-fetch(二)/">ajax-fetch(二)</a>
     </h1>
   
 
@@ -406,10 +379,6 @@
 <p>Fetch 的出现就是为了解决 XHR 的问题。</p>
 <p>使用 XHR 发送一个 json 请求一般是这样：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">'GET'</span>, url);</span><br><span class="line">xhr.responseType = <span class="string">'json'</span>;</span><br><span class="line"></span><br><span class="line">xhr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(xhr.response);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">xhr.onerror = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Oops, error"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
-<p>使用 Fetch 后，顿时看起来好一点</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fetch(url)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> response.json();</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Oops, error"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>使用 ES6 的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="noopener">箭头函数</a> 后：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fetch(url)</span><br><span class="line">  .then(<span class="function"><span class="params">response</span> =&gt;</span> response.json())</span><br><span class="line">  .then(<span class="function"><span class="params">data</span> =&gt;</span> <span class="built_in">console</span>.log(data))</span><br><span class="line">  .catch(<span class="function"><span class="params">e</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"Oops, error"</span>, e))</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2019/02/27/ajax-fetch(二)/#more">more >></a>
         

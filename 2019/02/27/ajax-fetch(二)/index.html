@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ajax-fetch(一) | 马超的个人博客 | Blog</title>
+  <title>ajax-fetch(二) | 马超的个人博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Fetch传统 Ajax 指的是 XMLHttpRequest（XHR），现在和未来已被 Fetch 替代。  Fetch API 是基于 Promise 设计，旧浏览器不支持 Promise，需要使用 polyfill es6-promise 。  何为FetchXMLHttpRequest 是一个设计粗糙的 API，配置和调用方式非常混乱，而且基于事件的异步模型写起来也没有现代的 Promis">
 <meta name="keywords" content="ES6,ECMAScript,JavaScript,ajax,fetch">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ajax-fetch(一)">
+<meta property="og:title" content="ajax-fetch(二)">
 <meta property="og:url" content="http://yoursite.com/2019/02/27/ajax-fetch(二)/index.html">
 <meta property="og:site_name" content="马超的个人博客 | Blog">
 <meta property="og:description" content="Fetch传统 Ajax 指的是 XMLHttpRequest（XHR），现在和未来已被 Fetch 替代。  Fetch API 是基于 Promise 设计，旧浏览器不支持 Promise，需要使用 polyfill es6-promise 。  何为FetchXMLHttpRequest 是一个设计粗糙的 API，配置和调用方式非常混乱，而且基于事件的异步模型写起来也没有现代的 Promis">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-31T03:11:58.781Z">
+<meta property="og:updated_time" content="2019-03-31T03:17:07.447Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ajax-fetch(一)">
+<meta name="twitter:title" content="ajax-fetch(二)">
 <meta name="twitter:description" content="Fetch传统 Ajax 指的是 XMLHttpRequest（XHR），现在和未来已被 Fetch 替代。  Fetch API 是基于 Promise 设计，旧浏览器不支持 Promise，需要使用 polyfill es6-promise 。  何为FetchXMLHttpRequest 是一个设计粗糙的 API，配置和调用方式非常混乱，而且基于事件的异步模型写起来也没有现代的 Promis">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人博客 | Blog" type="application/atom+xml">
@@ -177,7 +177,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ajax-fetch(一)
+      ajax-fetch(二)
     </h1>
   
 
@@ -196,11 +196,11 @@
 <p>Fetch 的出现就是为了解决 XHR 的问题。</p>
 <p>使用 XHR 发送一个 json 请求一般是这样：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">'GET'</span>, url);</span><br><span class="line">xhr.responseType = <span class="string">'json'</span>;</span><br><span class="line"></span><br><span class="line">xhr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(xhr.response);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">xhr.onerror = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Oops, error"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>使用 Fetch 后，顿时看起来好一点</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fetch(url)</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> response.json();</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Oops, error"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>使用 ES6 的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="noopener">箭头函数</a> 后：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fetch(url)</span><br><span class="line">  .then(<span class="function"><span class="params">response</span> =&gt;</span> response.json())</span><br><span class="line">  .then(<span class="function"><span class="params">data</span> =&gt;</span> <span class="built_in">console</span>.log(data))</span><br><span class="line">  .catch(<span class="function"><span class="params">e</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"Oops, error"</span>, e))</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
 <p>使用 async/await 来做最终优化： </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> response = <span class="keyword">await</span> fetch(url);</span><br><span class="line">  <span class="keyword">let</span> data = <span class="keyword">await</span> response.json();</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Oops, error"</span>, e);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 注：这段代码如果想运行，外面需要包一个 async function</span></span><br></pre></td></tr></table></figure>
 <h1 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fetch(url, options).then(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// handle HTTP response</span></span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// handle network error</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
@@ -338,7 +338,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ajax-fetch(一)
+          ajax-fetch(三)
         
       </div>
     </a>
