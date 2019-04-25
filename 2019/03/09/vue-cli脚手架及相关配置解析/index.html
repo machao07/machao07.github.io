@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue-cli脚手架及相关配置解析 | 马超的个人博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="vue-cli脚手架会寻找项目中package.json文件1、package.json文件的解析1234567891011121314151617181920212223&quot;name&quot;: &quot;vue_ozone&quot;,&quot;version&quot;: &quot;1.0.0&quot;,&quot;description&quot;: &quot;A Vue.js project&quot;,&quot;author&quot;: &quot;machao07 &amp;lt;machao_07@163.com">
+  <meta name="description" content="vue-cli脚手架会寻找项目中package.json文件package.json文件的解析1234567891011121314151617181920212223&quot;name&quot;: &quot;vue_ozone&quot;,&quot;version&quot;: &quot;1.0.0&quot;,&quot;description&quot;: &quot;A Vue.js project&quot;,&quot;author&quot;: &quot;machao07 &amp;lt;machao_07@163.com&amp;g">
 <meta name="keywords" content="Vue,vue-cli,webpack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-cli脚手架及相关配置解析">
 <meta property="og:url" content="http://yoursite.com/2019/03/09/vue-cli脚手架及相关配置解析/index.html">
 <meta property="og:site_name" content="马超的个人博客 | Blog">
-<meta property="og:description" content="vue-cli脚手架会寻找项目中package.json文件1、package.json文件的解析1234567891011121314151617181920212223&quot;name&quot;: &quot;vue_ozone&quot;,&quot;version&quot;: &quot;1.0.0&quot;,&quot;description&quot;: &quot;A Vue.js project&quot;,&quot;author&quot;: &quot;machao07 &amp;lt;machao_07@163.com">
+<meta property="og:description" content="vue-cli脚手架会寻找项目中package.json文件package.json文件的解析1234567891011121314151617181920212223&quot;name&quot;: &quot;vue_ozone&quot;,&quot;version&quot;: &quot;1.0.0&quot;,&quot;description&quot;: &quot;A Vue.js project&quot;,&quot;author&quot;: &quot;machao07 &amp;lt;machao_07@163.com&amp;g">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-25T04:00:29.419Z">
+<meta property="og:updated_time" content="2019-04-25T04:03:45.243Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-cli脚手架及相关配置解析">
-<meta name="twitter:description" content="vue-cli脚手架会寻找项目中package.json文件1、package.json文件的解析1234567891011121314151617181920212223&quot;name&quot;: &quot;vue_ozone&quot;,&quot;version&quot;: &quot;1.0.0&quot;,&quot;description&quot;: &quot;A Vue.js project&quot;,&quot;author&quot;: &quot;machao07 &amp;lt;machao_07@163.com">
+<meta name="twitter:description" content="vue-cli脚手架会寻找项目中package.json文件package.json文件的解析1234567891011121314151617181920212223&quot;name&quot;: &quot;vue_ozone&quot;,&quot;version&quot;: &quot;1.0.0&quot;,&quot;description&quot;: &quot;A Vue.js project&quot;,&quot;author&quot;: &quot;machao07 &amp;lt;machao_07@163.com&amp;g">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人博客 | Blog" type="application/atom+xml">
   
@@ -190,7 +190,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="vue-cli脚手架会寻找项目中package-json文件"><a href="#vue-cli脚手架会寻找项目中package-json文件" class="headerlink" title="vue-cli脚手架会寻找项目中package.json文件"></a><strong>vue-cli脚手架会寻找项目中package.json文件</strong></h2><h3 id="1、package-json文件的解析"><a href="#1、package-json文件的解析" class="headerlink" title="1、package.json文件的解析"></a><strong>1、package.json文件的解析</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"name"</span>: <span class="string">"vue_ozone"</span>,</span><br><span class="line"><span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line"><span class="string">"description"</span>: <span class="string">"A Vue.js project"</span>,</span><br><span class="line"><span class="string">"author"</span>: <span class="string">"machao07 &lt;machao_07@163.com&gt;"</span>,</span><br><span class="line"><span class="string">"private"</span>: <span class="literal">true</span>,</span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line"><span class="string">"dev"</span>: <span class="string">"webpack-dev-server --inline --progress --config build/webpack.dev.conf.js"</span>,</span><br><span class="line"><span class="string">"start"</span>: <span class="string">"npm run dev"</span>,</span><br><span class="line"><span class="string">"e2e"</span>: <span class="string">"node test/e2e/runner.js"</span>,</span><br><span class="line"><span class="string">"test"</span>: <span class="string">"npm run unit &amp;&amp; npm run e2e"</span>,</span><br><span class="line"><span class="string">"build"</span>: <span class="string">"node build/build.js"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"dependencies"</span>: &#123;&#125;,</span><br><span class="line"><span class="string">"devDependencies"</span>:&#123;&#125;,</span><br><span class="line"><span class="string">"engines"</span>: &#123;</span><br><span class="line">    <span class="string">"node"</span>: <span class="string">"&gt;= 6.0.0"</span>,</span><br><span class="line">    <span class="string">"npm"</span>: <span class="string">"&gt;= 3.0.0"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"browserslist"</span>: [</span><br><span class="line">    <span class="string">"&gt; 1%"</span>,</span><br><span class="line">    <span class="string">"last 2 versions"</span>,</span><br><span class="line">    <span class="string">"not ie &lt;= 8"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+        <h2 id="vue-cli脚手架会寻找项目中package-json文件"><a href="#vue-cli脚手架会寻找项目中package-json文件" class="headerlink" title="vue-cli脚手架会寻找项目中package.json文件"></a>vue-cli脚手架会寻找项目中package.json文件</h2><h3 id="package-json文件的解析"><a href="#package-json文件的解析" class="headerlink" title="package.json文件的解析"></a><strong>package.json文件的解析</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"name"</span>: <span class="string">"vue_ozone"</span>,</span><br><span class="line"><span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line"><span class="string">"description"</span>: <span class="string">"A Vue.js project"</span>,</span><br><span class="line"><span class="string">"author"</span>: <span class="string">"machao07 &lt;machao_07@163.com&gt;"</span>,</span><br><span class="line"><span class="string">"private"</span>: <span class="literal">true</span>,</span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line"><span class="string">"dev"</span>: <span class="string">"webpack-dev-server --inline --progress --config build/webpack.dev.conf.js"</span>,</span><br><span class="line"><span class="string">"start"</span>: <span class="string">"npm run dev"</span>,</span><br><span class="line"><span class="string">"e2e"</span>: <span class="string">"node test/e2e/runner.js"</span>,</span><br><span class="line"><span class="string">"test"</span>: <span class="string">"npm run unit &amp;&amp; npm run e2e"</span>,</span><br><span class="line"><span class="string">"build"</span>: <span class="string">"node build/build.js"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"dependencies"</span>: &#123;&#125;,</span><br><span class="line"><span class="string">"devDependencies"</span>:&#123;&#125;,</span><br><span class="line"><span class="string">"engines"</span>: &#123;</span><br><span class="line">    <span class="string">"node"</span>: <span class="string">"&gt;= 6.0.0"</span>,</span><br><span class="line">    <span class="string">"npm"</span>: <span class="string">"&gt;= 3.0.0"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"browserslist"</span>: [</span><br><span class="line">    <span class="string">"&gt; 1%"</span>,</span><br><span class="line">    <span class="string">"last 2 versions"</span>,</span><br><span class="line">    <span class="string">"not ie &lt;= 8"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h4 id="1）基础信息："><a href="#1）基础信息：" class="headerlink" title="1）基础信息："></a><strong>1）基础信息：</strong></h4><p>name, version, description, author, private 这些都是项目的基础信息，分别对应 vue init webpack XXXX 所填写的信息。分别代表着，项目名称、版本定义、项目描述、作者和是否四私有项目（一般都是）。</p>
 <h4 id="2）脚本部分：scripts"><a href="#2）脚本部分：scripts" class="headerlink" title="2）脚本部分：scripts"></a><strong>2）脚本部分：scripts</strong></h4><p>这个就比较重要了。作用主要就是把 webpack 的原生命令代理一下（因为需要配置很多参数，可能会很长，不便于阅读），就像封装函数一样，变得简洁一点，提高可读性，也便于人的思维去理解。<br>脚手架里面配置的scripts是一个对象</p>
@@ -511,6 +511,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web前端</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
               </li>
             
@@ -520,18 +532,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网站性能</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -547,19 +547,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+                <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">web前端</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -575,6 +575,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">数据驱动视图</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
@@ -584,10 +588,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数据驱动视图</a>
               </li>
             
               <li class="article-tag-list-item">
