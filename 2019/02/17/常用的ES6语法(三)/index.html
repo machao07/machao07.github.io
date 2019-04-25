@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: ECMAScript | 马超的个人博客 | Blog</title>
+  <title>常用的ES6语法 | 马超的个人博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="前端开发,程序猿,互联网,技术栈,web前端,HTML5,css3,javascript,博客,个人博客,技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="马超的个人博客 | Blog">
-<meta property="og:url" content="http://yoursite.com/tags/ECMAScript/index.html">
+  <meta name="description" content="六、Map和SetMap和Set都叫做集合，但是他们也有所不同。Set常被用来检查对象中是否存在某个键名，Map集合常被用来获取已存的信息。 Set是有序列表，含有相互独立的非重复值。 Array和Set对比都是一个存储多值的容器，两者可以互相转换，但是在使用场景上有区别。如下:Array的indexOf方法比Set的has方法效率低下Set不含有重复值（可以利用这个特性实现对一个数组的去重）Se">
+<meta name="keywords" content="ES6,ECMAScript,JavaScript,ES5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用的ES6语法">
+<meta property="og:url" content="http://yoursite.com/2019/02/17/常用的ES6语法(三)/index.html">
 <meta property="og:site_name" content="马超的个人博客 | Blog">
+<meta property="og:description" content="六、Map和SetMap和Set都叫做集合，但是他们也有所不同。Set常被用来检查对象中是否存在某个键名，Map集合常被用来获取已存的信息。 Set是有序列表，含有相互独立的非重复值。 Array和Set对比都是一个存储多值的容器，两者可以互相转换，但是在使用场景上有区别。如下:Array的indexOf方法比Set的has方法效率低下Set不含有重复值（可以利用这个特性实现对一个数组的去重）Se">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-25T03:18:38.005Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="马超的个人博客 | Blog">
+<meta name="twitter:title" content="常用的ES6语法">
+<meta name="twitter:description" content="六、Map和SetMap和Set都叫做集合，但是他们也有所不同。Set常被用来检查对象中是否存在某个键名，Map集合常被用来获取已存的信息。 Set是有序列表，含有相互独立的非重复值。 Array和Set对比都是一个存储多值的容器，两者可以互相转换，但是在使用场景上有区别。如下:Array的indexOf方法比Set的has方法效率低下Set不含有重复值（可以利用这个特性实现对一个数组的去重）Se">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人博客 | Blog" type="application/atom+xml">
   
@@ -166,298 +170,83 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-常用的ES6语法(三)" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/01/ajax-fetch(三)/" class="archive-article-date">
-  	<time datetime="2019-03-01T02:01:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/01/ajax-fetch(三)/">ajax &amp; fetch(三)</a>
+    <h1 class="article-title" itemprop="name">
+      常用的ES6语法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ECMAScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ajax</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">fetch</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/ajax-fetch(二)/" class="archive-article-date">
-  	<time datetime="2019-02-27T11:01:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/ajax-fetch(二)/">ajax &amp; fetch(二)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ECMAScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ajax</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">fetch</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/25/ajax-fetch(一)/" class="archive-article-date">
-  	<time datetime="2019-02-25T12:10:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/25/ajax-fetch(一)/">ajax &amp; fetch(一)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ECMAScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ajax</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">fetch</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/22/Promise异步编程(二)/" class="archive-article-date">
-  	<time datetime="2019-02-22T03:16:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/22/Promise异步编程(二)/">Promise异步编程(二)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ECMAScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">异步编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/20/Promise异步编程(一)/" class="archive-article-date">
-  	<time datetime="2019-02-20T03:11:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/20/Promise异步编程(一)/">Promise异步编程(一)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ECMAScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">异步编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/17/常用的ES6语法(三)/" class="archive-article-date">
+        
+        <a href="/2019/02/17/常用的ES6语法(三)/" class="archive-article-date">
   	<time datetime="2019-02-17T03:28:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/17/常用的ES6语法(三)/">常用的ES6语法</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="六、Map和Set"><a href="#六、Map和Set" class="headerlink" title="六、Map和Set"></a><strong>六、Map和Set</strong></h3><p>Map和Set都叫做集合，但是他们也有所不同。Set常被用来检查对象中是否存在某个键名，Map集合常被用来获取已存的信息。</p>
+<p>Set是有序列表，含有相互独立的非重复值。</p>
+<h5 id="Array和Set对比"><a href="#Array和Set对比" class="headerlink" title="Array和Set对比"></a>Array和Set对比</h5><p>都是一个存储多值的容器，两者可以互相转换，但是在使用场景上有区别。如下:<br>Array的indexOf方法比Set的has方法效率低下<br>Set不含有重复值（可以利用这个特性实现对一个数组的去重）<br>Set通过delete方法删除某个值，而Array只能通过splice。两者的使用方便程度前者更优<br>Array的很多新方法map、filter、some、every等是Set没有的（但是通过两者可以互相转换来使用）</p>
+<h5 id="Object和Map对比"><a href="#Object和Map对比" class="headerlink" title="Object和Map对比"></a>Object和Map对比</h5><p>Object是字符串-值，Map是值-值<br>Object键为string类型,Map的键是任意类型<br>手动计算Object尺寸,Map.size可以获取尺寸<br>Map的排序是插入顺序<br>Object有原型，所以映射中有一些缺省的键。可以理解为Map=Object.create(null)</p>
+<a id="more"></a>
+<h4 id="Set操作集合"><a href="#Set操作集合" class="headerlink" title="Set操作集合"></a>Set操作集合</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="keyword">set</span> = new Set()</span><br><span class="line">// Set转化为数组</span><br><span class="line">let arr = Array.from(<span class="keyword">set</span>)</span><br><span class="line">let arr = [...<span class="keyword">set</span>]</span><br><span class="line">// 实例属性（继承自Set）</span><br><span class="line"><span class="keyword">set</span>.<span class="keyword">constructor</span> === Set</span><br><span class="line"><span class="keyword">set</span>.size</span><br><span class="line">// 操作方法</span><br><span class="line"><span class="keyword">set</span>.add(1) // 添加一个值</span><br><span class="line"><span class="keyword">set</span>.delete(1) //删除一个值</span><br><span class="line"><span class="keyword">set</span>.has(1) //判断是否有这个值（Array中的indexOf）</span><br><span class="line"><span class="keyword">set</span>.clear() //清除所有值</span><br><span class="line">// 获取用于遍历的成员方法(Set的遍历顺序就是插入顺序)</span><br><span class="line"><span class="keyword">set</span>.keys() // 返回键名的遍历器</span><br><span class="line"><span class="keyword">set</span>.values() // 返回键值得遍历器</span><br><span class="line"><span class="keyword">set</span>.entries() // 返回键值对的遍历器</span><br><span class="line"><span class="keyword">set</span>.forEach() // 循环遍历每个值(和Array的方法一致)</span><br><span class="line">for (let key of <span class="keyword">set</span>.keys())&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> val <span class="keyword">of</span> <span class="keyword">set</span>.values())&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> entry <span class="keyword">of</span> <span class="keyword">set</span>.entries())&#123;&#125;</span><br><span class="line"><span class="comment">// 使用数组方法来处理set值</span></span><br><span class="line"><span class="keyword">set</span> = new Set(arr)</span><br><span class="line"><span class="keyword">set</span> = new Set([...<span class="keyword">set</span>].map((x) =&gt; x = x * 2))</span><br><span class="line"><span class="keyword">set</span> = new Set([...<span class="keyword">set</span>].filter((x) =&gt; x &gt; 2))</span><br></pre></td></tr></table></figure>
+<h4 id="Map的方法集合"><a href="#Map的方法集合" class="headerlink" title="Map的方法集合"></a>Map的方法集合</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>()</span><br><span class="line"><span class="comment">// 实例属性(继承自Map)</span></span><br><span class="line">map.constructor === <span class="built_in">Map</span></span><br><span class="line">map.size</span><br><span class="line"><span class="comment">// 操作方法</span></span><br><span class="line">map.set(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">map.get(<span class="number">1</span>)</span><br><span class="line">map.delete(<span class="number">1</span>)</span><br><span class="line">map.has(<span class="number">1</span>)</span><br><span class="line">map.clear()</span><br><span class="line"><span class="comment">// 遍历方法</span></span><br><span class="line">map.keys()</span><br><span class="line">map.values()</span><br><span class="line">map.entries()</span><br><span class="line">map.forEach()</span><br><span class="line"><span class="comment">// Map和数组的转换</span></span><br><span class="line">map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">'key'</span>,<span class="string">'val'</span>],[<span class="number">2</span>,<span class="number">1</span>]]) <span class="comment">// 要求双成员数组</span></span><br><span class="line"><span class="keyword">let</span> arr = [...map]</span><br><span class="line"><span class="comment">// 值得注意的是Map的键是跟内存绑定的</span></span><br><span class="line">map.set([<span class="number">1</span>], <span class="string">'s'</span>)</span><br><span class="line">map.get([<span class="number">1</span>])</span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>]</span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>]</span><br><span class="line">map.set(arr, <span class="string">'s'</span>)</span><br><span class="line">map.get(arr)</span><br><span class="line">map.set(arr1, <span class="string">'s'</span>)</span><br><span class="line">map.get(arr1)</span><br></pre></td></tr></table></figure>
+<h3 id="七、迭代器（Iterator）"><a href="#七、迭代器（Iterator）" class="headerlink" title="七、迭代器（Iterator）"></a><strong>七、迭代器（Iterator）</strong></h3><p>1、entries() 返回迭代器：返回键值对<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.entries()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// [0, 'a'] [1, 'b'] [2, 'c']</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Set</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.entries()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ['a', 'a'] ['b', 'b'] ['c', 'c']</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Map</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">arr.set(<span class="string">'a'</span>, <span class="string">'a'</span>);</span><br><span class="line">arr.set(<span class="string">'b'</span>, <span class="string">'b'</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.entries()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ['a', 'a'] ['b', 'b']</span></span><br></pre></td></tr></table></figure></p>
+<p>2、values() 返回迭代器：返回键值对的value<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.values()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//'a' 'b' 'c'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Set</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.values()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 'a' 'b' 'c'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Map</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">arr.set(<span class="string">'a'</span>, <span class="string">'a'</span>);</span><br><span class="line">arr.set(<span class="string">'b'</span>, <span class="string">'b'</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.values()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 'a' 'b'</span></span><br></pre></td></tr></table></figure></p>
+<p>3、keys() 返回迭代器：返回键值对的key<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.keys()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 0 1 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Set</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.keys()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 'a' 'b' 'c'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Map</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">arr.set(<span class="string">'a'</span>, <span class="string">'a'</span>);</span><br><span class="line">arr.set(<span class="string">'b'</span>, <span class="string">'b'</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.keys()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 'a' 'b'</span></span><br></pre></td></tr></table></figure></p>
+<p>虽然上面列举了3种内建的迭代器方法，但是不同集合的类型还有自己默认的迭代器，在for of中，数组和Set的默认迭代器是values()，Map的默认迭代器是entries()。<br>for of循环解构</p>
+<p>对象本身不支持迭代，但是我们可以自己添加一个生成器，返回一个key，value的迭代器，然后使用for of循环解构key和value。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  b: <span class="number">2</span>,</span><br><span class="line">  *[<span class="built_in">Symbol</span>.iterator]() &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> obj) &#123;</span><br><span class="line">      <span class="keyword">yield</span> [i, obj[i]]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> [key, value] <span class="keyword">of</span> obj) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key, value)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 'a' 1, 'b' 2</span></span><br><span class="line"></span><br><span class="line">字符串迭代器</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">'abc'</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> str) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 'a' 'b' 'c'</span></span><br></pre></td></tr></table></figure></p>
+<p>ES6给数组添加了几个新方法：find()、findIndex()、fill()、copyWithin()</p>
+<p>1、find()：传入一个回调函数，找到数组中符合当前搜索规则的第一个元素，返回它，并且终止搜索。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="string">"2"</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="string">"2"</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr.find(<span class="function"><span class="params">n</span> =&gt;</span> <span class="keyword">typeof</span> n === <span class="string">"number"</span>)) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
+<p>2、findIndex()：传入一个回调函数，找到数组中符合当前搜索规则的第一个元素，返回它的下标，终止搜索。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="string">"2"</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="string">"2"</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr.findIndex(<span class="function"><span class="params">n</span> =&gt;</span> <span class="keyword">typeof</span> n === <span class="string">"number"</span>)) <span class="comment">// 0</span></span><br></pre></td></tr></table></figure></p>
+<p>3、fill()：用新元素替换掉数组内的元素，可以指定替换下标范围。</p>
+<p>arr.fill(value, start, end)</p>
+<p>4、copyWithin()：选择数组的某个下标，从该位置开始复制数组元素，默认从0开始复制。也可以指定要复制的元素范围。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">arr.copyWithin(target, start, end)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr.copyWithin(<span class="number">3</span>)) <span class="comment">// [1,2,3,1,2] 从下标为3的元素开始，复制数组，所以4, 5被替换成1, 2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr1.copyWithin(<span class="number">3</span>, <span class="number">1</span>)) <span class="comment">// [1,2,3,2,3] 从下标为3的元素开始，复制数组，指定复制的第一个元素下标为1，所以4, 5被替换成2, 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr2.copyWithin(<span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>)) <span class="comment">// [1,2,3,2,5] 从下标为3的元素开始，复制数组，指定复制的第一个元素下标为1，结束位置为2，所以4被替换成2</span></span><br></pre></td></tr></table></figure></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechatPay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -481,118 +270,130 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/17/常用的ES6语法(三)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/15/ES6字符串方法/" class="archive-article-date">
-  	<time datetime="2019-02-15T12:01:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-15</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/02/20/Promise异步编程(一)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Promise异步编程(一)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/02/15/ES6字符串方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ES6字符串方法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/15/ES6字符串方法/">ES6字符串方法</a>
-    </h1>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ECMAScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/15/常用的ES6语法(二)/" class="archive-article-date">
-  	<time datetime="2019-02-15T03:28:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/15/常用的ES6语法(二)/">常用的ES6语法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ECMAScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/ECMAScript/page/2/">2</a><a class="extend next" rel="next" href="/tags/ECMAScript/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2019/02/17/常用的ES6语法(三)/",
+  owner: 'machao07',
+  repo: 'https://machao07.github.io/',
+  oauth: {
+    client_id: 'b267507e6f1570c34364',
+    client_secret: 'c766b436c96a81b582e7ab6c0c5f1ba80765c936',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
@@ -623,9 +424,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
