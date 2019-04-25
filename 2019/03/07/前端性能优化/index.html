@@ -9,14 +9,14 @@
   <title>浅谈前端优化网站性能 | 马超的个人博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1、减少 HTTP 请求数量在浏览器与服务器进行通信时，主要是通过 HTTP 进行通信。浏览器与服务器需要经过三次握手，每次握手需要花费大量时间。而且不同浏览器对资源文件并发请求数量有限（不同浏览器允许并发数），一旦 HTTP 请求数量达到一定数量，资源请求就存在等待状态，这是很致命的，因此减少 HTTP 的请求数量可以很大程度上对网站性能进行优化。 CSS Sprites国内俗称CSS精灵，这是">
-<meta name="keywords" content="前端开发,程序猿,互联网,技术栈,web前端,HTML5,css3,javascript,博客,个人博客,技术博客">
+<meta name="keywords" content="性能优化,前端,Web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈前端优化网站性能">
 <meta property="og:url" content="http://yoursite.com/2019/03/07/前端性能优化/index.html">
 <meta property="og:site_name" content="马超的个人博客 | Blog">
 <meta property="og:description" content="1、减少 HTTP 请求数量在浏览器与服务器进行通信时，主要是通过 HTTP 进行通信。浏览器与服务器需要经过三次握手，每次握手需要花费大量时间。而且不同浏览器对资源文件并发请求数量有限（不同浏览器允许并发数），一旦 HTTP 请求数量达到一定数量，资源请求就存在等待状态，这是很致命的，因此减少 HTTP 的请求数量可以很大程度上对网站性能进行优化。 CSS Sprites国内俗称CSS精灵，这是">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-25T03:36:12.621Z">
+<meta property="og:updated_time" content="2019-04-25T03:44:18.415Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈前端优化网站性能">
 <meta name="twitter:description" content="1、减少 HTTP 请求数量在浏览器与服务器进行通信时，主要是通过 HTTP 进行通信。浏览器与服务器需要经过三次握手，每次握手需要花费大量时间。而且不同浏览器对资源文件并发请求数量有限（不同浏览器允许并发数），一旦 HTTP 请求数量达到一定数量，资源请求就存在等待状态，这是很致命的，因此减少 HTTP 的请求数量可以很大程度上对网站性能进行优化。 CSS Sprites国内俗称CSS精灵，这是">
@@ -193,8 +193,7 @@
         <h4 id="1、减少-HTTP-请求数量在浏览器与服务器进行通信时，主要是通过-HTTP-进行通信。"><a href="#1、减少-HTTP-请求数量在浏览器与服务器进行通信时，主要是通过-HTTP-进行通信。" class="headerlink" title="1、减少 HTTP 请求数量在浏览器与服务器进行通信时，主要是通过 HTTP 进行通信。"></a><strong>1、减少 HTTP 请求数量在浏览器与服务器进行通信时，主要是通过 HTTP 进行通信。</strong></h4><p>浏览器与服务器需要经过三次握手，每次握手需要花费大量时间。而且不同浏览器对资源文件并发请求数量有限（不同浏览器允许并发数），一旦 HTTP 请求数量达到一定数量，资源请求就存在等待状态，这是很致命的，因此减少 HTTP 的请求数量可以很大程度上对网站性能进行优化。</p>
 <h4 id="CSS-Sprites"><a href="#CSS-Sprites" class="headerlink" title="CSS Sprites"></a><strong>CSS Sprites</strong></h4><p>国内俗称CSS精灵，这是将多张图片合并成一张图片达到减少HTTP请求的一种解决方案，可以通过CSS的background属性来访问图片内容。这种方案同时还可以减少图片总字节数。</p>
 <h4 id="合并-CSS-和-JS-文件"><a href="#合并-CSS-和-JS-文件" class="headerlink" title="合并 CSS 和 JS 文件"></a><strong>合并 CSS 和 JS 文件</strong></h4><p>现在前端有很多工程化打包工具，如：grunt、gulp、webpack等。为了减少 HTTP 请求数量，可以通过这些工具再发布前将多个CSS或者多个JS合并成一个文件。</p>
-<h4 id="采用-lazyLoad"><a href="#采用-lazyLoad" class="headerlink" title="采用 lazyLoad"></a><strong>采用 lazyLoad</strong></h4><p>俗称懒加载，可以控制网页上的内容在一开始无需加载，不需要发请求，等到用户操作真正需要的时候立即加载出内容。这样就控制了网页资源一次性请求数量。</p>
-<a id="more"></a>
+<h4 id="采用-lazyLoad"><a href="#采用-lazyLoad" class="headerlink" title="采用 lazyLoad"></a><strong>采用 lazyLoad</strong></h4><p>俗称懒加载，可以控制网页上的内容在一开始无需加载，不需要发请求，等到用户操作真正需要的时候立即加载出内容。这样就控制了网页资源一次性请求数量。<br><a id="more"></a></p>
 <h3 id="2、控制资源文件加载优先级"><a href="#2、控制资源文件加载优先级" class="headerlink" title="2、控制资源文件加载优先级"></a><strong>2、控制资源文件加载优先级</strong></h3><p>浏览器在加载HTML内容时，是将HTML内容从上至下依次解析，解析到link或者script标签就会加载href或者src对应链接内容，为了第一时间展示页面给用户，就需要将CSS提前加载，不要受 JS 加载影响。</p>
 <p>一般情况下都是CSS在头部，JS在底部。（script标签添加了 async 或 defer 等属性，浏览器会异步的加载和执行 JS 代码）</p>
 <h3 id="3、利用浏览器缓存"><a href="#3、利用浏览器缓存" class="headerlink" title="3、利用浏览器缓存"></a><strong>3、利用浏览器缓存</strong></h3><p>浏览器缓存是将网络资源存储在本地，等待下次请求该资源时，如果资源已经存在就不需要到服务器重新请求该资源，直接在本地读取该资源。</p>
@@ -246,6 +245,25 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能优化</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -309,6 +327,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/03/09/vue-cli脚手架及相关配置解析/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          vue-cli脚手架及相关配置解析
+        
+      </div>
+    </a>
   
   
     <a href="/2019/03/04/cookie/" id="article-nav-older" class="article-nav-link-wrap">
@@ -502,6 +529,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
             
@@ -538,11 +577,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">this指针</a>
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color2">this指针</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -558,19 +597,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
               <li class="article-tag-list-item">

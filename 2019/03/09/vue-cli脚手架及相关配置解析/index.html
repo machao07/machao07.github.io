@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: MVC | 马超的个人博客 | Blog</title>
+  <title>vue-cli脚手架及相关配置解析 | 马超的个人博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="前端开发,程序猿,互联网,技术栈,web前端,HTML5,css3,javascript,博客,个人博客,技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="马超的个人博客 | Blog">
-<meta property="og:url" content="http://yoursite.com/tags/MVC/index.html">
+  <meta name="description" content="vue-cli脚手架会寻找项目中package.json文件1、package.json文件的解析1234567891011121314151617181920212223&quot;name&quot;: &quot;vue_ozone&quot;,&quot;version&quot;: &quot;1.0.0&quot;,&quot;description&quot;: &quot;A Vue.js project&quot;,&quot;author&quot;: &quot;machao07 &amp;lt;machao_07@163.com">
+<meta name="keywords" content="Vue,vue-cli,webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-cli脚手架及相关配置解析">
+<meta property="og:url" content="http://yoursite.com/2019/03/09/vue-cli脚手架及相关配置解析/index.html">
 <meta property="og:site_name" content="马超的个人博客 | Blog">
+<meta property="og:description" content="vue-cli脚手架会寻找项目中package.json文件1、package.json文件的解析1234567891011121314151617181920212223&quot;name&quot;: &quot;vue_ozone&quot;,&quot;version&quot;: &quot;1.0.0&quot;,&quot;description&quot;: &quot;A Vue.js project&quot;,&quot;author&quot;: &quot;machao07 &amp;lt;machao_07@163.com">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-25T03:57:50.555Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="马超的个人博客 | Blog">
+<meta name="twitter:title" content="vue-cli脚手架及相关配置解析">
+<meta name="twitter:description" content="vue-cli脚手架会寻找项目中package.json文件1、package.json文件的解析1234567891011121314151617181920212223&quot;name&quot;: &quot;vue_ozone&quot;,&quot;version&quot;: &quot;1.0.0&quot;,&quot;description&quot;: &quot;A Vue.js project&quot;,&quot;author&quot;: &quot;machao07 &amp;lt;machao_07@163.com">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人博客 | Blog" type="application/atom+xml">
   
@@ -166,68 +170,206 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vue-cli脚手架及相关配置解析" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/23/fouth-blog/" class="archive-article-date">
-  	<time datetime="2018-10-23T05:57:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/23/fouth-blog/">浅谈开发中常见的MVC模式</a>
+    <h1 class="article-title" itemprop="name">
+      vue-cli脚手架及相关配置解析
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/03/09/vue-cli脚手架及相关配置解析/" class="archive-article-date">
+  	<time datetime="2019-03-09T03:43:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="vue-cli脚手架会寻找项目中package-json文件"><a href="#vue-cli脚手架会寻找项目中package-json文件" class="headerlink" title="vue-cli脚手架会寻找项目中package.json文件"></a><strong>vue-cli脚手架会寻找项目中package.json文件</strong></h2><h3 id="1、package-json文件的解析"><a href="#1、package-json文件的解析" class="headerlink" title="1、package.json文件的解析"></a><strong>1、package.json文件的解析</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"name"</span>: <span class="string">"vue_ozone"</span>,</span><br><span class="line"><span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line"><span class="string">"description"</span>: <span class="string">"A Vue.js project"</span>,</span><br><span class="line"><span class="string">"author"</span>: <span class="string">"machao07 &lt;machao_07@163.com&gt;"</span>,</span><br><span class="line"><span class="string">"private"</span>: <span class="literal">true</span>,</span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line"><span class="string">"dev"</span>: <span class="string">"webpack-dev-server --inline --progress --config build/webpack.dev.conf.js"</span>,</span><br><span class="line"><span class="string">"start"</span>: <span class="string">"npm run dev"</span>,</span><br><span class="line"><span class="string">"e2e"</span>: <span class="string">"node test/e2e/runner.js"</span>,</span><br><span class="line"><span class="string">"test"</span>: <span class="string">"npm run unit &amp;&amp; npm run e2e"</span>,</span><br><span class="line"><span class="string">"build"</span>: <span class="string">"node build/build.js"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"dependencies"</span>: &#123;&#125;,</span><br><span class="line"><span class="string">"devDependencies"</span>:&#123;&#125;,</span><br><span class="line"><span class="string">"engines"</span>: &#123;</span><br><span class="line">    <span class="string">"node"</span>: <span class="string">"&gt;= 6.0.0"</span>,</span><br><span class="line">    <span class="string">"npm"</span>: <span class="string">"&gt;= 3.0.0"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"browserslist"</span>: [</span><br><span class="line">    <span class="string">"&gt; 1%"</span>,</span><br><span class="line">    <span class="string">"last 2 versions"</span>,</span><br><span class="line">    <span class="string">"not ie &lt;= 8"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h4 id="1）基础信息："><a href="#1）基础信息：" class="headerlink" title="1）基础信息："></a><strong>1）基础信息：</strong></h4><p>name, version, description, author, private 这些都是项目的基础信息，分别对应 vue init webpack XXXX 所填写的信息。分别代表着，项目名称、版本定义、项目描述、作者和是否四私有项目（一般都是）。<br><a id="more"></a></p>
+<h4 id="2）脚本部分：scripts"><a href="#2）脚本部分：scripts" class="headerlink" title="2）脚本部分：scripts"></a><strong>2）脚本部分：scripts</strong></h4><p>这个就比较重要了。作用主要就是把 webpack 的原生命令代理一下（因为需要配置很多参数，可能会很长，不便于阅读），就像封装函数一样，变得简洁一点，提高可读性，也便于人的思维去理解。<br>脚手架里面配置的scripts是一个对象</p>
+<h4 id="3）项目依赖：dependencies"><a href="#3）项目依赖：dependencies" class="headerlink" title="3）项目依赖：dependencies"></a><strong>3）项目依赖：dependencies</strong></h4><p>这里面主要保存很多在 npm run build 时候构建项目的包<br>“vue”: “^2.5.2”, 表示安装当前库的最新版，这个是脚手架默认的！</p>
+<h4 id="4）开发依赖：devDependencies"><a href="#4）开发依赖：devDependencies" class="headerlink" title="4）开发依赖：devDependencies"></a><strong>4）开发依赖：devDependencies</strong></h4><p>这个与上面的项目依赖对应，里面内容的形式也是差不多的，唯一的区别是：开发依赖里面的东西不会添加到生产环境中</p>
+<h4 id="5）其他："><a href="#5）其他：" class="headerlink" title="5）其他："></a><strong>5）其他：</strong></h4><p>engines、browserslist 最后的不是很重要，但是建议不要修改，除非你知道你在做什么。<br>engines 主要是规定开发时候的环境的node.js 和 npm 的版本不能太低；<br>browserslist 一个阈值。表示是否要去兼容某些浏览器，如果小于阈值的部分在ES6的转译时可能将会忽略。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechatPay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">MVC</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-cli</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端开发</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/09/vue-cli脚手架及相关配置解析/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/03/07/前端性能优化/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浅谈前端优化网站性能</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2019/03/09/vue-cli脚手架及相关配置解析/",
+  owner: 'machao07',
+  repo: 'https://machao07.github.io/',
+  oauth: {
+    client_id: 'b267507e6f1570c34364',
+    client_secret: 'c766b436c96a81b582e7ab6c0c5f1ba80765c936',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -257,9 +399,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
