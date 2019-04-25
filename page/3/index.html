@@ -168,6 +168,99 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-浅谈Vue框架(一)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/07/浅谈Vue框架(一)/">浅谈Vue框架(一)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/07/浅谈Vue框架(一)/" class="archive-article-date">
+  	<time datetime="2019-02-06T23:51:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一-谈谈你对MVVM开发模式的理解"><a href="#一-谈谈你对MVVM开发模式的理解" class="headerlink" title="一. 谈谈你对MVVM开发模式的理解"></a><strong>一. 谈谈你对MVVM开发模式的理解</strong></h3><p>MVVM分为Model、View、ViewModel三者。</p>
+<p>Model：代表数据模型，数据和业务逻辑都在Model层中定义；</p>
+<p>View：代表UI视图，负责数据的展示；</p>
+<p>ViewModel：负责监听Model中数据的改变并且控制视图的更新，处理用户交互操作；</p>
+<p>Model和View并无直接关联，而是通过ViewModel来进行联系的，Model和ViewModel之间有着双向数据绑定的联系。因此当Model中的数据改变时会触发View层的刷新，View中由于用户交互操作而改变的数据也会在Model中同步。</p>
+<p>这种模式实现了Model和View的数据自动同步，因此开发者只需要专注对数据的维护操作即可，而不需要自己操作dom。</p>
+        
+          <a class="article-more-a" href="/2019/02/07/浅谈Vue框架(一)/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">MVVM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jQuery</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">数据驱动视图</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/07/浅谈Vue框架(一)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-浏览器工作原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -616,98 +709,6 @@
 
 
   
-    <article id="post-second-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/11/second-blog/">字符串及字符串方法(二)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/11/second-blog/" class="archive-article-date">
-  	<time datetime="2018-10-11T04:02:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="es6字符串方法"><a href="#es6字符串方法" class="headerlink" title="es6字符串方法"></a><strong>es6字符串方法</strong></h4>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/startsWith   endsWith   includes 判断字符串项是否存在</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"hello world"</span></span><br><span class="line"><span class="built_in">console</span>.log(str.startsWith(<span class="string">"hello"</span>)) <span class="comment">//是否以hello开头 返回布尔值</span></span><br><span class="line"><span class="built_in">console</span>.log(str.endsWith(<span class="string">"d"</span>)) <span class="comment">//是否以d结尾 返回布尔值</span></span><br><span class="line"><span class="built_in">console</span>.log(str.includes(<span class="string">"o"</span>))  <span class="comment">//是否包含o    返回布尔值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"hello"</span></span><br><span class="line"><span class="built_in">console</span>.log(str.repeat(<span class="number">2</span>)) <span class="comment">//hellohello 原字符串重复2次 形成新字符串返回</span></span><br></pre></td></tr></table></figure>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/padStart padEnd  补全字符串</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"hello world"</span></span><br><span class="line"><span class="built_in">console</span>.log(str.padStart(<span class="number">10</span>,<span class="string">"s"</span>))<span class="comment">//ssssshello</span></span><br><span class="line">第一个参数 是补充字符串总共的长度 小于当前则不变 大于当前则用第二个参数的字符去补,第二个参数没有,就用空格去补 补满长度为止</span><br></pre></td></tr></table></figure>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/repeat()  方法返回一个新字符串，表示将原字符串重复n次。</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"朱雀"</span></span><br><span class="line"><span class="keyword">let</span> str1 = str.repeat(<span class="number">4</span>)</span><br><span class="line"><span class="built_in">console</span>.log(str1) <span class="comment">//将原来的字符串 复制4遍</span></span><br></pre></td></tr></table></figure>
-<h3 id="数组及数组-API"><a href="#数组及数组-API" class="headerlink" title="数组及数组 API"></a>数组及数组 API</h3><h4 id="es6数组方法"><a href="#es6数组方法" class="headerlink" title="es6数组方法"></a><strong>es6数组方法</strong></h4><h5 id="filter-过滤"><a href="#filter-过滤" class="headerlink" title="filter 过滤"></a><em>filter 过滤</em></h5><p>筛选符合要求的数组项,返回新数组  不改变原数组</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">9</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">0</span>]</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a &gt; <span class="number">3</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">// 返回的是能转化为true的就行 ,就代表把符合条件的 返回出来</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(arr1) <span class="comment">// [9, 5, 7, 8, 4]</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/10/11/second-blog/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/11/second-blog/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -829,15 +830,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ajax</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">fetch</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -877,15 +878,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
               </li>
             
               <li class="article-tag-list-item">

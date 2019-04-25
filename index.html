@@ -168,6 +168,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-前端性能优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/07/前端性能优化/">浅谈前端优化网站性能</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/07/前端性能优化/" class="archive-article-date">
+  	<time datetime="2019-03-07T03:26:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1、减少-HTTP-请求数量在浏览器与服务器进行通信时，主要是通过-HTTP-进行通信。"><a href="#1、减少-HTTP-请求数量在浏览器与服务器进行通信时，主要是通过-HTTP-进行通信。" class="headerlink" title="1、减少 HTTP 请求数量在浏览器与服务器进行通信时，主要是通过 HTTP 进行通信。"></a><strong>1、减少 HTTP 请求数量在浏览器与服务器进行通信时，主要是通过 HTTP 进行通信。</strong></h4><p>浏览器与服务器需要经过三次握手，每次握手需要花费大量时间。而且不同浏览器对资源文件并发请求数量有限（不同浏览器允许并发数），一旦 HTTP 请求数量达到一定数量，资源请求就存在等待状态，这是很致命的，因此减少 HTTP 的请求数量可以很大程度上对网站性能进行优化。</p>
+<h4 id="CSS-Sprites"><a href="#CSS-Sprites" class="headerlink" title="CSS Sprites"></a><strong>CSS Sprites</strong></h4><p>国内俗称CSS精灵，这是将多张图片合并成一张图片达到减少HTTP请求的一种解决方案，可以通过CSS的background属性来访问图片内容。这种方案同时还可以减少图片总字节数。</p>
+<h4 id="合并-CSS-和-JS-文件"><a href="#合并-CSS-和-JS-文件" class="headerlink" title="合并 CSS 和 JS 文件"></a><strong>合并 CSS 和 JS 文件</strong></h4><p>现在前端有很多工程化打包工具，如：grunt、gulp、webpack等。为了减少 HTTP 请求数量，可以通过这些工具再发布前将多个CSS或者多个JS合并成一个文件。</p>
+<h4 id="采用-lazyLoad"><a href="#采用-lazyLoad" class="headerlink" title="采用 lazyLoad"></a><strong>采用 lazyLoad</strong></h4><p>俗称懒加载，可以控制网页上的内容在一开始无需加载，不需要发请求，等到用户操作真正需要的时候立即加载出内容。这样就控制了网页资源一次性请求数量。</p>
+        
+          <a class="article-more-a" href="/2019/03/07/前端性能优化/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/07/前端性能优化/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-cookie" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -636,102 +704,6 @@
 
 
   
-    <article id="post-Promise异步编程(一)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/20/Promise异步编程(一)/">Promise异步编程(一)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/20/Promise异步编程(一)/" class="archive-article-date">
-  	<time datetime="2019-02-20T03:11:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>Promise 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理和更强大。</p>
-<p>所<code>Promise</code>，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
-<li>对象的状态不受外界影响。</li>
-<li>一旦状态改变，就不会再变，任何时候都可以得到这个结果。</li>
-</ol>
-<h3 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h3><p><code>Promise</code>对象代表一个异步操作，有三种状态：</p>
-<p><code>pending</code>（进行中）、<code>fulfilled</code>（已成功）和<code>rejected</code>（已失败）。</p>
-<p>只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。</p>
-        
-          <a class="article-more-a" href="/2019/02/20/Promise异步编程(一)/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ECMAScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">异步编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/20/Promise异步编程(一)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -853,15 +825,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ajax</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">fetch</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -901,15 +873,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
               </li>
             
               <li class="article-tag-list-item">
