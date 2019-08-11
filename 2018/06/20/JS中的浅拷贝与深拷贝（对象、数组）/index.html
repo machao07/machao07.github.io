@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue-cli脚手架及相关配置解析 | 马超的个人博客 | Blog</title>
+  <title>JS中的浅拷贝与生拷贝（对象、数组） | 马超的个人博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="vue-cli脚手架会寻找项目中package.json文件package.json文件的解析1234567891011121314151617181920212223&quot;name&quot;: &quot;vue_ozone&quot;,&quot;version&quot;: &quot;1.0.0&quot;,&quot;description&quot;: &quot;A Vue.js project&quot;,&quot;author&quot;: &quot;machao07 &amp;lt;machao_07@163.com&amp;g">
-<meta name="keywords" content="Vue,vue-cli,webpack">
+  <meta name="description" content="1. 什么是浅拷贝、深拷贝所谓的浅拷贝和深拷贝：浅拷贝是在在拷贝过程中，遍历时那部分为对象/数组类型指向原来的地址，而深拷贝，则是完全开辟新的内存地址。 在ES6中扩展运算符(…)与Object.assign()中复制是浅拷贝， 2. 浅拷贝浅拷贝: 只做一个最外层的拷贝. 如果拷贝的对象是引用型数据类型,则意味着交出了内存地址,因而在浅拷贝成功的对象身上对引用型数据进行修改时,就会影响到 原来的">
+<meta name="keywords" content="JavaScript,ES6,前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue-cli脚手架及相关配置解析">
-<meta property="og:url" content="http://yoursite.com/2019/03/09/vue-cli脚手架及相关配置解析/index.html">
+<meta property="og:title" content="JS中的浅拷贝与生拷贝（对象、数组）">
+<meta property="og:url" content="http://yoursite.com/2018/06/20/JS中的浅拷贝与深拷贝（对象、数组）/index.html">
 <meta property="og:site_name" content="马超的个人博客 | Blog">
-<meta property="og:description" content="vue-cli脚手架会寻找项目中package.json文件package.json文件的解析1234567891011121314151617181920212223&quot;name&quot;: &quot;vue_ozone&quot;,&quot;version&quot;: &quot;1.0.0&quot;,&quot;description&quot;: &quot;A Vue.js project&quot;,&quot;author&quot;: &quot;machao07 &amp;lt;machao_07@163.com&amp;g">
+<meta property="og:description" content="1. 什么是浅拷贝、深拷贝所谓的浅拷贝和深拷贝：浅拷贝是在在拷贝过程中，遍历时那部分为对象/数组类型指向原来的地址，而深拷贝，则是完全开辟新的内存地址。 在ES6中扩展运算符(…)与Object.assign()中复制是浅拷贝， 2. 浅拷贝浅拷贝: 只做一个最外层的拷贝. 如果拷贝的对象是引用型数据类型,则意味着交出了内存地址,因而在浅拷贝成功的对象身上对引用型数据进行修改时,就会影响到 原来的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-25T04:20:38.790Z">
+<meta property="og:updated_time" content="2019-08-11T15:01:12.323Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue-cli脚手架及相关配置解析">
-<meta name="twitter:description" content="vue-cli脚手架会寻找项目中package.json文件package.json文件的解析1234567891011121314151617181920212223&quot;name&quot;: &quot;vue_ozone&quot;,&quot;version&quot;: &quot;1.0.0&quot;,&quot;description&quot;: &quot;A Vue.js project&quot;,&quot;author&quot;: &quot;machao07 &amp;lt;machao_07@163.com&amp;g">
+<meta name="twitter:title" content="JS中的浅拷贝与生拷贝（对象、数组）">
+<meta name="twitter:description" content="1. 什么是浅拷贝、深拷贝所谓的浅拷贝和深拷贝：浅拷贝是在在拷贝过程中，遍历时那部分为对象/数组类型指向原来的地址，而深拷贝，则是完全开辟新的内存地址。 在ES6中扩展运算符(…)与Object.assign()中复制是浅拷贝， 2. 浅拷贝浅拷贝: 只做一个最外层的拷贝. 如果拷贝的对象是引用型数据类型,则意味着交出了内存地址,因而在浅拷贝成功的对象身上对引用型数据进行修改时,就会影响到 原来的">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人博客 | Blog" type="application/atom+xml">
   
@@ -170,33 +170,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue-cli脚手架及相关配置解析" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JS中的浅拷贝与深拷贝（对象、数组）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue-cli脚手架及相关配置解析
+      JS中的浅拷贝与生拷贝（对象、数组）
     </h1>
   
 
         
-        <a href="/2019/03/09/vue-cli脚手架及相关配置解析/" class="archive-article-date">
-  	<time datetime="2019-03-09T03:43:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-09</time>
+        <a href="/2018/06/20/JS中的浅拷贝与深拷贝（对象、数组）/" class="archive-article-date">
+  	<time datetime="2018-06-20T14:01:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="vue-cli脚手架会寻找项目中package-json文件"><a href="#vue-cli脚手架会寻找项目中package-json文件" class="headerlink" title="vue-cli脚手架会寻找项目中package.json文件"></a>vue-cli脚手架会寻找项目中package.json文件</h1><h3 id="package-json文件的解析"><a href="#package-json文件的解析" class="headerlink" title="package.json文件的解析"></a><strong>package.json文件的解析</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"name"</span>: <span class="string">"vue_ozone"</span>,</span><br><span class="line"><span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line"><span class="string">"description"</span>: <span class="string">"A Vue.js project"</span>,</span><br><span class="line"><span class="string">"author"</span>: <span class="string">"machao07 &lt;machao_07@163.com&gt;"</span>,</span><br><span class="line"><span class="string">"private"</span>: <span class="literal">true</span>,</span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line"><span class="string">"dev"</span>: <span class="string">"webpack-dev-server --inline --progress --config build/webpack.dev.conf.js"</span>,</span><br><span class="line"><span class="string">"start"</span>: <span class="string">"npm run dev"</span>,</span><br><span class="line"><span class="string">"e2e"</span>: <span class="string">"node test/e2e/runner.js"</span>,</span><br><span class="line"><span class="string">"test"</span>: <span class="string">"npm run unit &amp;&amp; npm run e2e"</span>,</span><br><span class="line"><span class="string">"build"</span>: <span class="string">"node build/build.js"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"dependencies"</span>: &#123;&#125;,</span><br><span class="line"><span class="string">"devDependencies"</span>:&#123;&#125;,</span><br><span class="line"><span class="string">"engines"</span>: &#123;</span><br><span class="line">    <span class="string">"node"</span>: <span class="string">"&gt;= 6.0.0"</span>,</span><br><span class="line">    <span class="string">"npm"</span>: <span class="string">"&gt;= 3.0.0"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"browserslist"</span>: [</span><br><span class="line">    <span class="string">"&gt; 1%"</span>,</span><br><span class="line">    <span class="string">"last 2 versions"</span>,</span><br><span class="line">    <span class="string">"not ie &lt;= 8"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h4 id="1）基础信息："><a href="#1）基础信息：" class="headerlink" title="1）基础信息："></a><strong>1）基础信息：</strong></h4><p>name, version, description, author, private 这些都是项目的基础信息，分别对应 vue init webpack XXXX 所填写的信息。分别代表着，项目名称、版本定义、项目描述、作者和是否四私有项目（一般都是）。</p>
-<h4 id="2）脚本部分：scripts"><a href="#2）脚本部分：scripts" class="headerlink" title="2）脚本部分：scripts"></a><strong>2）脚本部分：scripts</strong></h4><p>这个就比较重要了。作用主要就是把 webpack 的原生命令代理一下（因为需要配置很多参数，可能会很长，不便于阅读），就像封装函数一样，变得简洁一点，提高可读性，也便于人的思维去理解。<br>脚手架里面配置的scripts是一个对象</p>
-<h4 id="3）项目依赖：dependencies"><a href="#3）项目依赖：dependencies" class="headerlink" title="3）项目依赖：dependencies"></a><strong>3）项目依赖：dependencies</strong></h4><p>这里面主要保存很多在 npm run build 时候构建项目的包<br>“vue”: “^2.5.2”, 表示安装当前库的最新版，这个是脚手架默认的！</p>
-<h4 id="4）开发依赖：devDependencies"><a href="#4）开发依赖：devDependencies" class="headerlink" title="4）开发依赖：devDependencies"></a><strong>4）开发依赖：devDependencies</strong></h4><p>这个与上面的项目依赖对应，里面内容的形式也是差不多的，唯一的区别是：开发依赖里面的东西不会添加到生产环境中</p>
-<h4 id="5）其他："><a href="#5）其他：" class="headerlink" title="5）其他："></a><strong>5）其他：</strong></h4><p>engines、browserslist 最后的不是很重要，但是建议不要修改，除非你知道你在做什么。<br>engines 主要是规定开发时候的环境的node.js 和 npm 的版本不能太低；<br>browserslist 一个阈值。表示是否要去兼容某些浏览器，如果小于阈值的部分在ES6的转译时可能将会忽略。</p>
+        <h3 id="1-什么是浅拷贝、深拷贝"><a href="#1-什么是浅拷贝、深拷贝" class="headerlink" title="1. 什么是浅拷贝、深拷贝"></a>1. 什么是浅拷贝、深拷贝</h3><p>所谓的浅拷贝和深拷贝：浅拷贝是在在拷贝过程中，遍历时那部分为对象/数组类型指向原来的地址，而深拷贝，则是完全开辟新的内存地址。</p>
+<p>在ES6中扩展运算符(…)与Object.assign()中复制是浅拷贝，</p>
+<h3 id="2-浅拷贝"><a href="#2-浅拷贝" class="headerlink" title="2. 浅拷贝"></a>2. 浅拷贝</h3><p>浅拷贝: 只做一个最外层的拷贝. 如果拷贝的对象是引用型数据类型,则意味着交出了内存地址,因而在浅拷贝成功的对象身上对引用型数据进行修改时,就会影响到 原来的拓本</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: [<span class="number">1</span>, <span class="number">2</span>, &#123;<span class="attr">a</span>:<span class="number">3</span>&#125;],</span><br><span class="line">    c: &#123;<span class="attr">a</span>:<span class="number">3</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.c.a = <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">    a: obj.a,</span><br><span class="line">    b: obj.b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj1.b.push(<span class="number">1</span>) <span class="comment">// 切记不要 obj1.b = 123 这样是重新赋值 不是改变原地址的对象</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.b) <span class="comment">//将会被改变</span></span><br><span class="line"></span><br><span class="line">ES6方法：</span><br><span class="line"><span class="keyword">let</span> obj2 = <span class="built_in">Object</span>.assign(&#123;&#125;,obj)</span><br><span class="line"><span class="built_in">console</span>.log(obj2)  <span class="comment">//  &#123;a: 1,b: [1, 2, &#123;a:3&#125;],c:&#123;a:4&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj3 = &#123;...obj&#125;</span><br><span class="line">conosle.log(obj3) <span class="comment">//  &#123;a: 1,b: [1, 2, &#123;a:3&#125;],c:&#123;a:4&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-深拷贝"><a href="#3-深拷贝" class="headerlink" title="3.深拷贝"></a>3.深拷贝</h3><p>深拷贝: 里里外外全部拷贝,完全复制,保证引用型数据 依旧是引用型,但不拿地址,只模仿你的面,因此扩展上没有问题,不会冲突</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: [<span class="number">1</span>, <span class="number">2</span>, &#123;<span class="attr">a</span>:<span class="number">3</span>&#125;],</span><br><span class="line">    c: &#123;<span class="attr">a</span>:<span class="number">3</span>&#125;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">//完全复制 完美复制 但是一个一个去复制,太麻烦啦 我们来一个专门深浅复制的函数</span></span><br><span class="line">obj.c.a = <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj2 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj1))</span><br><span class="line"><span class="built_in">console</span>.log(obj2)  <span class="comment">//    &#123;a: 1,b: [1, 2, &#123;a:3&#125;],c:&#123;a:3&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="自制深复制函数"><a href="#自制深复制函数" class="headerlink" title="自制深复制函数"></a>自制深复制函数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>需求  参数<span class="number">1</span>传入拓本  输出拷贝品</span><br><span class="line"> <span class="keyword">let</span> obj = &#123; <span class="comment">//拓本</span></span><br><span class="line">     a: <span class="number">1</span>,</span><br><span class="line">     b: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,&#123;<span class="attr">a</span>: <span class="string">"我"</span>&#125;],</span><br><span class="line">     c: &#123;<span class="attr">d</span>: <span class="number">5</span>&#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">extend</span> (<span class="params">o1</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">var</span> obj1 = &#123;&#125;</span><br><span class="line">     <span class="keyword">if</span> (o1 <span class="keyword">instanceof</span> <span class="built_in">Array</span>) &#123; <span class="comment">//判断对象是否是数组</span></span><br><span class="line">         obj1 = []</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> o1)&#123;</span><br><span class="line">         <span class="keyword">var</span> value = o1[key] <span class="comment">// 拓本中的值 </span></span><br><span class="line">          <span class="comment">// value内还有引用型数据&amp;&amp; value不为 null 则 需要对value这个对象 再进来 深拷贝一份 返回出来深拷贝后的值 </span></span><br><span class="line">         <span class="comment">// obj1[key] = extend(value) </span></span><br><span class="line">         <span class="keyword">if</span>(<span class="keyword">typeof</span> value ===<span class="string">"object"</span> &amp;&amp; value !== <span class="literal">null</span>)&#123;</span><br><span class="line">             obj1[key] = extend(value) </span><br><span class="line">         &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">             obj1[key] = value</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> obj1</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj2 = extend(obj)  <span class="comment">// 深拷贝测试</span></span><br><span class="line">obj2.b.push(<span class="string">"最后"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(obj2)</span><br><span class="line"><span class="built_in">console</span>.log(obj) <span class="comment">// 深拷贝 不影响拓本  浅拷贝 拓本一起变</span></span><br></pre></td></tr></table></figure>
 
       
 
@@ -241,15 +241,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-cli</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		
 		</ul>
@@ -305,7 +305,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/09/vue-cli脚手架及相关配置解析/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/20/JS中的浅拷贝与深拷贝（对象、数组）/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -319,9 +319,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/09/22/my-first-blog/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          字符串及字符串方法(一)
+        
+      </div>
+    </a>
   
-    <a href="/2019/03/07/前端性能优化/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">浅谈前端优化网站性能</div>
+  
+    <a href="/2018/06/14/移动端适配/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动端适配</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -360,7 +369,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2019/03/09/vue-cli脚手架及相关配置解析/",
+  id: "http://yoursite.com/2018/06/20/JS中的浅拷贝与深拷贝（对象、数组）/",
   owner: 'machao07',
   repo: 'https://machao07.github.io/',
   oauth: {
