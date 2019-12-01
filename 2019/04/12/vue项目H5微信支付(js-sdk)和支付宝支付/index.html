@@ -9,7 +9,7 @@
   <title>vue项目H5微信支付(js-sdk)和支付宝支付 | 马超的个人博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1. 获取内置浏览器标识12345678微信：export function isWeixin() &amp;#123;    var ua = window.navigator.userAgent.toLowerCase();    if(ua.match(/MicroMessenger/i) == &apos;micromessenger&apos;)&amp;#123;        return true;    &amp;#125">
-<meta name="keywords" content="ES6,JavaScript,Vue,WeChatPay,AliPay,公众号">
+<meta name="keywords" content="JavaScript,ES6,Vue,WeChatPay,AliPay,公众号">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue项目H5微信支付(js-sdk)和支付宝支付">
 <meta property="og:url" content="http://yoursite.com/2019/04/12/vue项目H5微信支付(js-sdk)和支付宝支付/index.html">
@@ -46,66 +46,88 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
+    <div class="overlay" style="background: #4d4d4d"></div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
 			<img src class="js-avatar">
 		</a>
-		<hgroup>
-		  <h1 class="header-author"><a href="/">Ma Chao</a></h1>
-		</hgroup>
-		
-		<p class="header-subtitle">人生在于折腾，情非得已小猿猿</p>
-		
-
-		<nav class="header-menu">
-			<ul>
-			
-				<li><a href="/">主页</a></li>
-	        
-				<li><a href="/archives/index.html">归档</a></li>
-	        
-				<li><a href="/guestbook/index.html">留言板</a></li>
-	        
-			</ul>
-		</nav>
-		<nav class="header-smart-menu">
-    		
-    			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-    			
+            <hgroup>
+                <h1 class="header-author">
+                    <a href="/">
+                        Ma Chao
+                    </a>
+                </h1>
+            </hgroup>
             
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
-    			
-            
-		</nav>
-		<nav class="header-nav">
-			<div class="social">
-				
-					<a class="github" target="_blank" href="https://github.com/machao07" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="qq" target="_blank" href="/img/qq.jpg" title="qq"><i class="icon-qq"></i></a>
-		        
-					<a class="weixin" target="_blank" href="/img/wechat.jpg" title="weixin"><i class="icon-weixin"></i></a>
-		        
-					<a class="mail" target="_blank" href="mailto:machao_07@163.com" title="mail"><i class="icon-mail"></i></a>
-		        
-			</div>
-		</nav>
+                <p class="header-subtitle">
+                    人生在于折腾，情非得已小猿猿
+                </p>
+                
 
-		<div style="position:absolute;bottom:-300px;  left:-20px;">
-			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="270" height="86" src="//music.163.com/outchain/player?type=2&id=187408&auto=1&height=66"></iframe>
-		</div>
+                    <nav class="header-menu">
+                        <ul>
+                            
+                                <li>
+                                    <a href="/">
+                                        主页
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/archives/index.html">
+                                        归档
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/guestbook/index.html">
+                                        留言板
+                                    </a>
+                                </li>
+                                
+                        </ul>
+                    </nav>
+                    <nav class="header-smart-menu">
+                        
+                            
+                                <a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">
+                                    所有文章
+                                </a>
+                                
+                                    
+                            
+                                <a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">
+                                    友链
+                                </a>
+                                
+                                    
+                            
+                                <a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">
+                                    关于我
+                                </a>
+                                
+                                    
+                    </nav>
+                    <nav class="header-nav">
+                        <div class="social">
+                            
+                                <a class="github" target="_blank" href="https://github.com/machao07" title="github"><i class="icon-github"></i></a>
+                                
+                                <a class="qq" target="_blank" href="/img/qq.jpg" title="qq"><i class="icon-qq"></i></a>
+                                
+                                <a class="weixin" target="_blank" href="/img/wechat.jpg" title="weixin"><i class="icon-weixin"></i></a>
+                                
+                                <a class="mail" target="_blank" href="mailto:machao_07@163.com" title="mail"><i class="icon-mail"></i></a>
+                                
+                        </div>
+                    </nav>
 
-	</header>
-</div>
-
+                    <div style="position:absolute;bottom:-300px;  left:-20px;">
+                        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="270" height="86" src="//music.163.com/outchain/player?type=2&id=556821918&auto=1&height=66"></iframe>
+                    </div>
+        </header>
+    </div>
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
@@ -244,11 +266,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -495,7 +517,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -503,15 +533,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">异步编程</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -520,6 +542,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">fetch</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -532,6 +558,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网站性能</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -555,15 +593,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
+                <a href="javascript:void(0)" class="js-tag color5">WeChatPay</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
+                <a href="javascript:void(0)" class="js-tag color2">AliPay</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网站性能</a>
+                <a href="javascript:void(0)" class="js-tag color4">公众号</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -575,19 +613,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -607,30 +641,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">WeChatPay</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">AliPay</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">公众号</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">App</a>
               </li>
             
@@ -644,6 +654,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>
