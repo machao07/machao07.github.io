@@ -17,7 +17,7 @@
 <meta property="og:description" content="需求场景：– 只有扫码初始进入异业联盟活动页，0元券直接弹框领取成功（如图1） 抛出问题：– 进入优惠券包后到另一个页面（如图1）– 然后按手机返回会回到异业联盟活动页，始终弹出领取活动页面 解决方案：– 在优惠券包页面中监听手机返回事件，直接关闭页面退出到公众号 1、微信jssdk12345678910111213141516let sign_url = window.location.href">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com//machao07/image-store/blob/master/blog/2019122201.png?raw=true">
-<meta property="og:updated_time" content="2019-12-22T13:18:51.634Z">
+<meta property="og:updated_time" content="2019-12-22T13:37:30.056Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信公众号监听手机返回键事件">
 <meta name="twitter:description" content="需求场景：– 只有扫码初始进入异业联盟活动页，0元券直接弹框领取成功（如图1） 抛出问题：– 进入优惠券包后到另一个页面（如图1）– 然后按手机返回会回到异业联盟活动页，始终弹出领取活动页面 解决方案：– 在优惠券包页面中监听手机返回事件，直接关闭页面退出到公众号 1、微信jssdk12345678910111213141516let sign_url = window.location.href">
@@ -211,7 +211,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="需求场景："><a href="#需求场景：" class="headerlink" title="需求场景："></a>需求场景：</h4><p>– <strong>只有扫码</strong>初始进入异业联盟活动页，0元券直接弹框领取成功（如图1）</p>
+        <h4 id="需求场景："><a href="#需求场景：" class="headerlink" title="需求场景："></a>需求场景：</h4><p>– <strong><code>只有扫码初始进入</code></strong>异业联盟活动页，0元券直接<code>弹框领取成功</code>（如图1）</p>
 <h4 id="抛出问题："><a href="#抛出问题：" class="headerlink" title="抛出问题："></a>抛出问题：</h4><p>– 进入优惠券包后到另一个页面（如图1）<br>– 然后按手机返回会回到异业联盟活动页，始终弹出领取活动页面</p>
 <h4 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h4><p>– 在优惠券包页面中监听手机返回事件，直接关闭页面退出到公众号</p>
 <h3 id="1、微信jssdk"><a href="#1、微信jssdk" class="headerlink" title="1、微信jssdk"></a>1、微信jssdk</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sign_url = <span class="built_in">window</span>.location.href.split(<span class="string">'#'</span>)[<span class="number">0</span>];</span><br><span class="line">sign(sign_url).then(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> configData = &#123;</span><br><span class="line">        debug: <span class="literal">false</span>,</span><br><span class="line">        appId: res.data.appId,</span><br><span class="line">        timestamp: res.data.timestamp,</span><br><span class="line">        nonceStr: res.data.nonceStr,</span><br><span class="line">        signature: res.data.signature,</span><br><span class="line">        jsApiList: [<span class="string">'closeWindow'</span>]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(configData)</span><br><span class="line">    wx.config(configData)</span><br><span class="line">&#125;).catch(<span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
@@ -340,11 +340,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/12/vue项目H5微信支付(js-sdk)和支付宝支付/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/04/16/vue移动端H5实现复制内容到剪切板/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          vue项目H5微信支付(js-sdk)和支付宝支付
+          vue移动端H5实现复制内容到剪切板
         
       </div>
     </a>
@@ -501,19 +501,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -545,18 +545,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">web前端</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
               </li>
             
@@ -581,6 +569,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web前端</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">WeChatPay</a>
               </li>
             
@@ -590,6 +598,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">公众号</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -633,10 +645,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">App</a>
               </li>
             
@@ -650,6 +658,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>
