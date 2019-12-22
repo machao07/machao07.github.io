@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue移动端H5实现复制内容到剪切板 | 马超的个人博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="需求场景：– 微信公众号复制邀请码到剪切板在APP中打开获取内容登录注册 解决方案：– 利用clipboard插件实现功能 1、安装插件clipboard– npm i clipboard --save– yarn add clipboard 2、引入（需要实现的文件）import Clipboard from &amp;#39;clipboard&amp;#39; 3、view层1&amp;lt;van-button">
+  <meta name="description" content="需求场景：– 微信公众号复制邀请码到剪切板在APP中打开获取内容登录注册 解决方案：– 利用clipboard插件实现功能 1、安装插件clipboard– npm i clipboard --save– yarn add clipboard 2、引入（需要实现的文件）import Clipboard from &amp;#39;clipboard&amp;#39;">
 <meta name="keywords" content="Vue,H5,clipboard">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue移动端H5实现复制内容到剪切板">
 <meta property="og:url" content="http://yoursite.com/2019/04/16/vue移动端H5实现复制内容到剪切板/index.html">
 <meta property="og:site_name" content="马超的个人博客 | Blog">
-<meta property="og:description" content="需求场景：– 微信公众号复制邀请码到剪切板在APP中打开获取内容登录注册 解决方案：– 利用clipboard插件实现功能 1、安装插件clipboard– npm i clipboard --save– yarn add clipboard 2、引入（需要实现的文件）import Clipboard from &amp;#39;clipboard&amp;#39; 3、view层1&amp;lt;van-button">
+<meta property="og:description" content="需求场景：– 微信公众号复制邀请码到剪切板在APP中打开获取内容登录注册 解决方案：– 利用clipboard插件实现功能 1、安装插件clipboard– npm i clipboard --save– yarn add clipboard 2、引入（需要实现的文件）import Clipboard from &amp;#39;clipboard&amp;#39;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-22T13:39:00.602Z">
+<meta property="og:updated_time" content="2019-12-22T13:50:35.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue移动端H5实现复制内容到剪切板">
-<meta name="twitter:description" content="需求场景：– 微信公众号复制邀请码到剪切板在APP中打开获取内容登录注册 解决方案：– 利用clipboard插件实现功能 1、安装插件clipboard– npm i clipboard --save– yarn add clipboard 2、引入（需要实现的文件）import Clipboard from &amp;#39;clipboard&amp;#39; 3、view层1&amp;lt;van-button">
+<meta name="twitter:description" content="需求场景：– 微信公众号复制邀请码到剪切板在APP中打开获取内容登录注册 解决方案：– 利用clipboard插件实现功能 1、安装插件clipboard– npm i clipboard --save– yarn add clipboard 2、引入（需要实现的文件）import Clipboard from &amp;#39;clipboard&amp;#39;">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人博客 | Blog" type="application/atom+xml">
   
@@ -213,8 +213,8 @@
 <h4 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h4><p>– 利用<code>clipboard</code>插件实现功能</p>
 <h3 id="1、安装插件clipboard"><a href="#1、安装插件clipboard" class="headerlink" title="1、安装插件clipboard"></a>1、安装插件clipboard</h3><p>– <code>npm i clipboard --save</code><br>– <code>yarn add clipboard</code></p>
 <h3 id="2、引入（需要实现的文件）"><a href="#2、引入（需要实现的文件）" class="headerlink" title="2、引入（需要实现的文件）"></a>2、引入（需要实现的文件）</h3><p><code>import Clipboard from &#39;clipboard&#39;</code></p>
+<a id="more"></a> 
 <h3 id="3、view层"><a href="#3、view层" class="headerlink" title="3、view层"></a>3、view层</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">van-button</span> <span class="attr">class</span>=<span class="string">"discount"</span> <span class="attr">round</span> <span class="attr">type</span>=<span class="string">"warning"</span> @<span class="attr">click</span>=<span class="string">"openApp()"</span>&gt;</span>立即下载APP<span class="tag">&lt;/<span class="name">van-button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
 <h3 id="4、methods-数据处理"><a href="#4、methods-数据处理" class="headerlink" title="4、methods (数据处理)"></a>4、methods (数据处理)</h3><p><code>关键点：</code><br>– clipboard 需要触发事件实现<br>– 点击事件 openApp()打开<br>– new Clipboard（’xxx’,{}） 绑定需要触发的dom<br>– text() =&gt; {}   返回复制内容</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//复制粘贴板</span></span><br><span class="line">copyCode()&#123;</span><br><span class="line">    <span class="keyword">let</span> copy = <span class="keyword">this</span>.$route.params.sellerId + <span class="string">',sellerPayAndroid'</span>;</span><br><span class="line">    <span class="keyword">let</span> clipboard = <span class="keyword">new</span> Clipboard(<span class="string">'.discount'</span>, &#123;  <span class="comment">//绑定需要的触发的dom</span></span><br><span class="line">        text: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> copy;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    clipboard.on(<span class="string">'success'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// alert(copy)</span></span><br><span class="line">        <span class="comment">// Toast("邀请码已复制");</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">//调用复制粘贴去打开APP...</span></span><br><span class="line">openApp() &#123;</span><br><span class="line">    <span class="keyword">this</span>.copyCode();</span><br><span class="line">    <span class="keyword">let</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    <span class="keyword">let</span> t0 = d.getTime();</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">var</span> u = navigator.userAgent;</span><br><span class="line">    <span class="keyword">var</span> isIos = !!u.match(<span class="regexp">/\(i[^;]+;( U;)? CPU.+Mac OS X/</span>); <span class="comment">//ios终端</span></span><br><span class="line">    <span class="keyword">var</span> isAndroid= u.indexOf(<span class="string">'Android'</span>) &gt; <span class="number">-1</span> || u.indexOf(<span class="string">'Adr'</span>) &gt; <span class="number">-1</span>; <span class="comment">//android终端</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -512,6 +512,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">异步编程</a>
               </li>
             
@@ -521,6 +525,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">fetch</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MVC</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -540,22 +556,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网站性能</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
             
@@ -568,23 +568,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
+                <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MVC</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color5">网站性能</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -600,15 +592,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
+                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -624,6 +616,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MVVM</a>
               </li>
             
@@ -633,10 +629,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数据驱动视图</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -656,11 +648,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">数据驱动视图</a>
               </li>
             
             <div class="clearfix"></div>
