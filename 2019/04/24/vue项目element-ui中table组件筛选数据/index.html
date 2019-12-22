@@ -12,12 +12,12 @@
 <meta name="keywords" content="Vue,ElementUI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue项目element-ui中table组件筛选数据">
-<meta property="og:url" content="http://yoursite.com/2019/04/24/vue移动端H5实现复制内容到剪切板 copy/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/04/24/vue项目element-ui中table组件筛选数据/index.html">
 <meta property="og:site_name" content="马超的个人博客 | Blog">
 <meta property="og:description" content="1、view层123456789101112&amp;lt;el-table-column prop=&quot;tag&quot; label=&quot;券类型&quot;    width=&quot;100&quot;    align=&quot;center&quot;    :filters=&quot;[&amp;#123; text: &apos;现金券&apos;, value: &apos;cash&apos; &amp;#125;, &amp;#123; text: &apos;实物券&apos;, value: &apos;product&apos; &amp;#125;, &amp;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com//machao07/image-store/blob/master/blog/2019122202.png?raw=true">
-<meta property="og:updated_time" content="2019-12-22T13:42:48.116Z">
+<meta property="og:updated_time" content="2019-12-22T13:46:03.782Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue项目element-ui中table组件筛选数据">
 <meta name="twitter:description" content="1、view层123456789101112&amp;lt;el-table-column prop=&quot;tag&quot; label=&quot;券类型&quot;    width=&quot;100&quot;    align=&quot;center&quot;    :filters=&quot;[&amp;#123; text: &apos;现金券&apos;, value: &apos;cash&apos; &amp;#125;, &amp;#123; text: &apos;实物券&apos;, value: &apos;product&apos; &amp;#125;, &amp;">
@@ -191,7 +191,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue移动端H5实现复制内容到剪切板 copy" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-vue项目element-ui中table组件筛选数据" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -203,7 +203,7 @@
   
 
         
-        <a href="/2019/04/24/vue移动端H5实现复制内容到剪切板 copy/" class="archive-article-date">
+        <a href="/2019/04/24/vue项目element-ui中table组件筛选数据/" class="archive-article-date">
   	<time datetime="2019-04-24T01:21:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-24</time>
 </a>
         
@@ -212,6 +212,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="1、view层"><a href="#1、view层" class="headerlink" title="1、view层"></a>1、view层</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">"tag"</span> <span class="attr">label</span>=<span class="string">"券类型"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">width</span>=<span class="string">"100"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">align</span>=<span class="string">"center"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:filters</span>=<span class="string">"[&#123; text: '现金券', value: 'cash' &#125;, &#123; text: '实物券', value: 'product' &#125;, &#123;text: '复购券', value: 'multiple'&#125;]"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:filter-method</span>=<span class="string">"filterTag"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">filter-placement</span>=<span class="string">"bottom-end"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"scope"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-tag</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:type</span>=<span class="string">"scope.row.type === 'cash' ? 'primary' : scope.row.type === 'product' ? 'success':'warning'"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">disable-transitions</span>&gt;</span>&#123;&#123;getCouponTypeText(scope.row)&#125;&#125;<span class="tag">&lt;/<span class="name">el-tag</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="2、methods"><a href="#2、methods" class="headerlink" title="2、methods"></a>2、methods</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">filterTag(value, row) &#123;</span><br><span class="line">    <span class="keyword">return</span> row.type === value;</span><br><span class="line">&#125;,</span><br><span class="line">getCouponTypeText(row)&#123;</span><br><span class="line">    <span class="keyword">if</span>(row.type == <span class="string">'cash'</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'现金券'</span></span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(row.type == <span class="string">'product'</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'实物券'</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'复购券'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="3、效果图"><a href="#3、效果图" class="headerlink" title="3、效果图"></a>3、效果图</h3><p><img src="https://github.com//machao07/image-store/blob/master/blog/2019122202.png?raw=true"></p>
 
@@ -318,7 +319,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/24/vue移动端H5实现复制内容到剪切板 copy/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/24/vue项目element-ui中table组件筛选数据/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -382,7 +383,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2019/04/24/vue移动端H5实现复制内容到剪切板 copy/",
+  id: "http://yoursite.com/2019/04/24/vue项目element-ui中table组件筛选数据/",
   owner: 'machao07',
   repo: 'https://machao07.github.io/',
   oauth: {
@@ -505,10 +506,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">异步编程</a>
               </li>
             
@@ -525,19 +522,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MVC</a>
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
+                <a href="javascript:void(0)" class="js-tag color1">web前端</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -553,14 +554,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">H5</a>
               </li>
             
@@ -569,15 +562,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">web前端</a>
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MVC</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -593,15 +594,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">axios</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -609,7 +606,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">this指针</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -621,19 +626,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">数据驱动视图</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">this指针</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -653,7 +650,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
               </li>
             
             <div class="clearfix"></div>
