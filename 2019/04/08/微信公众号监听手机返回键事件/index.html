@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue项目H5微信支付(js-sdk)和支付宝支付 | 马超的个人博客 | Blog</title>
+  <title>微信公众号监听手机返回键事件 | 马超的个人博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 获取内置浏览器标识12345678微信：export function isWeixin() &amp;#123;    var ua = window.navigator.userAgent.toLowerCase();    if(ua.match(/MicroMessenger/i) == &apos;micromessenger&apos;)&amp;#123;        return true;    &amp;#125">
-<meta name="keywords" content="ES6,JavaScript,WeChatPay,AliPay,公众号,Vue">
+  <meta name="description" content="需求场景：– 只有扫码初始进入异业联盟活动页，0元券直接弹框领取成功（如图1） 抛出问题：– 进入优惠券包后到另一个页面（如图1）– 然后按手机返回会回到异业联盟活动页，始终弹出领取活动页面 解决方案：– 在优惠券包页面中监听手机返回事件，直接关闭页面退出到公众号 1、微信jssdk12345678910111213141516let sign_url = window.location.href">
+<meta name="keywords" content="JavaScript,Vue,公众号">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue项目H5微信支付(js-sdk)和支付宝支付">
-<meta property="og:url" content="http://yoursite.com/2019/04/12/vue项目H5微信支付(js-sdk)和支付宝支付/index.html">
+<meta property="og:title" content="微信公众号监听手机返回键事件">
+<meta property="og:url" content="http://yoursite.com/2019/04/08/微信公众号监听手机返回键事件/index.html">
 <meta property="og:site_name" content="马超的个人博客 | Blog">
-<meta property="og:description" content="1. 获取内置浏览器标识12345678微信：export function isWeixin() &amp;#123;    var ua = window.navigator.userAgent.toLowerCase();    if(ua.match(/MicroMessenger/i) == &apos;micromessenger&apos;)&amp;#123;        return true;    &amp;#125">
+<meta property="og:description" content="需求场景：– 只有扫码初始进入异业联盟活动页，0元券直接弹框领取成功（如图1） 抛出问题：– 进入优惠券包后到另一个页面（如图1）– 然后按手机返回会回到异业联盟活动页，始终弹出领取活动页面 解决方案：– 在优惠券包页面中监听手机返回事件，直接关闭页面退出到公众号 1、微信jssdk12345678910111213141516let sign_url = window.location.href">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://github.com//machao07/image-store/blob/master/blog/20190412.png?raw=true">
-<meta property="og:updated_time" content="2019-12-01T09:52:22.113Z">
+<meta property="og:image" content="https://github.com//machao07/image-store/blob/master/blog/20190122202.png?raw=true">
+<meta property="og:updated_time" content="2019-12-22T12:50:52.449Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue项目H5微信支付(js-sdk)和支付宝支付">
-<meta name="twitter:description" content="1. 获取内置浏览器标识12345678微信：export function isWeixin() &amp;#123;    var ua = window.navigator.userAgent.toLowerCase();    if(ua.match(/MicroMessenger/i) == &apos;micromessenger&apos;)&amp;#123;        return true;    &amp;#125">
-<meta name="twitter:image" content="https://github.com//machao07/image-store/blob/master/blog/20190412.png?raw=true">
+<meta name="twitter:title" content="微信公众号监听手机返回键事件">
+<meta name="twitter:description" content="需求场景：– 只有扫码初始进入异业联盟活动页，0元券直接弹框领取成功（如图1） 抛出问题：– 进入优惠券包后到另一个页面（如图1）– 然后按手机返回会回到异业联盟活动页，始终弹出领取活动页面 解决方案：– 在优惠券包页面中监听手机返回事件，直接关闭页面退出到公众号 1、微信jssdk12345678910111213141516let sign_url = window.location.href">
+<meta name="twitter:image" content="https://github.com//machao07/image-store/blob/master/blog/20190122202.png?raw=true">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人博客 | Blog" type="application/atom+xml">
   
@@ -191,34 +191,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue项目H5微信支付(js-sdk)和支付宝支付" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-微信公众号监听手机返回键事件" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue项目H5微信支付(js-sdk)和支付宝支付
+      微信公众号监听手机返回键事件
     </h1>
   
 
         
-        <a href="/2019/04/12/vue项目H5微信支付(js-sdk)和支付宝支付/" class="archive-article-date">
-  	<time datetime="2019-04-12T04:01:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-12</time>
+        <a href="/2019/04/08/微信公众号监听手机返回键事件/" class="archive-article-date">
+  	<time datetime="2019-04-08T06:21:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-获取内置浏览器标识"><a href="#1-获取内置浏览器标识" class="headerlink" title="1. 获取内置浏览器标识"></a>1. 获取内置浏览器标识</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">微信：</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">isWeixin</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ua = <span class="built_in">window</span>.navigator.userAgent.toLowerCase();</span><br><span class="line">    <span class="keyword">if</span>(ua.match(<span class="regexp">/MicroMessenger/i</span>) == <span class="string">'micromessenger'</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">支付宝：</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">isAlipay</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ua = <span class="built_in">window</span>.navigator.userAgent.toLowerCase();</span><br><span class="line">    <span class="keyword">if</span>(ua.match(<span class="regexp">/Alipay/i</span>) == <span class="string">"alipay"</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h3><p>WeixinJSBridge.invoke 微信支付</p>
-<p>AlipayJSBridge.call 支付宝支付<br>参考文档：<a href="http://myjsapi.alipay.com/jsapi/native/trade-pay.html" title="支付宝H5开发文档" target="_blank" rel="noopener">支付宝H5支付Api文档</a></p>
-<p>order 自己的支付接口(返回微信必传参数)<br> – appId timeStamp package signType paySign</p>
-<a id="more"></a>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(isWeixin()) &#123;</span><br><span class="line">    <span class="keyword">let</span> postData = &#123;</span><br><span class="line">        sellerId: <span class="keyword">this</span>.sellerId,</span><br><span class="line">        payType: <span class="keyword">this</span>.payType,</span><br><span class="line">        payTool: <span class="number">2</span>,</span><br><span class="line">        os: <span class="number">2</span>,</span><br><span class="line">        payMoney: <span class="keyword">this</span>.payMoney</span><br><span class="line">    &#125;;</span><br><span class="line">    order(postData).then(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> response = res.data;</span><br><span class="line">        <span class="keyword">let</span> code = response.code;</span><br><span class="line"></span><br><span class="line">        WeixinJSBridge.invoke(</span><br><span class="line">            <span class="string">'getBrandWCPayRequest'</span>, &#123;</span><br><span class="line">                <span class="string">'appId'</span>: response.appId,</span><br><span class="line">                <span class="string">'timeStamp'</span>:response.timeStamp,</span><br><span class="line">                <span class="string">'nonceStr'</span>: response.nonceStr,</span><br><span class="line">                <span class="string">'package'</span>: response.package,</span><br><span class="line">                <span class="string">'signType'</span>: response.signType,</span><br><span class="line">                <span class="string">'paySign'</span>: response.paySign</span><br><span class="line">            &#125;,</span><br><span class="line">            (res2)=&gt;&#123;</span><br><span class="line">                <span class="keyword">if</span> (res2.err_msg === <span class="string">'get_brand_wcpay_request:ok'</span>) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.toSuccess(code, sellerName, payMoney, <span class="number">0</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (res2.err_msg === <span class="string">'get_brand_wcpay_request:cancel'</span>) &#123;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (res2.err_msg === <span class="string">'get_brand_wcpay_request:fail'</span>) &#123;</span><br><span class="line">                    MessageBox(<span class="string">'错误提示'</span>, <span class="string">"支付失败"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        );</span><br><span class="line">    &#125;).catch(<span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">        MessageBox(<span class="string">'错误提示'</span>, <span class="string">"支付失败"</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125; <span class="keyword">else</span> (isAlipay()) &#123;</span><br><span class="line">    <span class="keyword">let</span> postData = &#123;</span><br><span class="line">        sellerId: <span class="keyword">this</span>.sellerId,</span><br><span class="line">        payType: <span class="keyword">this</span>.payType,</span><br><span class="line">        payTool: <span class="number">3</span>,</span><br><span class="line">        os: <span class="number">2</span>,</span><br><span class="line">        payMoney: <span class="keyword">this</span>.payMoney,</span><br><span class="line">        openId: getAlipayToken()</span><br><span class="line">    &#125;;</span><br><span class="line">    alipay_order(postData).then(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> response = res.data;</span><br><span class="line">        <span class="keyword">let</span> code = response.code;</span><br><span class="line"></span><br><span class="line">        AlipayJSBridge.call(<span class="string">"tradePay"</span>, &#123;</span><br><span class="line">            orderStr: response.ali</span><br><span class="line">        &#125;, (result)=&gt;&#123;</span><br><span class="line">            <span class="keyword">let</span> resultCode = result.resultCode;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(resultCode == <span class="string">"9000"</span> || resultCode == <span class="string">"8000"</span> || resultCode == <span class="string">"6004"</span>)&#123;</span><br><span class="line">                <span class="keyword">let</span> post = &#123;</span><br><span class="line">                    orderCode: code,</span><br><span class="line">                    payTool: <span class="number">3</span>,</span><br><span class="line">                    os: <span class="number">2</span>,</span><br><span class="line">                &#125;</span><br><span class="line">                myAlipay(post).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">let</span> payStatus = res.data.payStatus</span><br><span class="line">                    <span class="keyword">if</span>(payStatus == <span class="string">"1"</span>) &#123;</span><br><span class="line">                        <span class="comment">//付款成功</span></span><br><span class="line">                        <span class="keyword">this</span>.toSuccess(code, sellerName, payMoney, <span class="number">1</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;).catch(<span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">        MessageBox(<span class="string">'错误提示'</span>, <span class="string">"支付失败"</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="Order接口返回"><a href="#Order接口返回" class="headerlink" title="Order接口返回"></a>Order接口返回</h4><p><img src="https://github.com//machao07/image-store/blob/master/blog/20190412.png?raw=true"></p>
+        <h4 id="需求场景："><a href="#需求场景：" class="headerlink" title="需求场景："></a>需求场景：</h4><p>– <strong>只有扫码</strong>初始进入异业联盟活动页，0元券直接弹框领取成功（如图1）</p>
+<h4 id="抛出问题："><a href="#抛出问题：" class="headerlink" title="抛出问题："></a>抛出问题：</h4><p>– 进入优惠券包后到另一个页面（如图1）<br>– 然后按手机返回会回到异业联盟活动页，始终弹出领取活动页面</p>
+<h4 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h4><p>– 在优惠券包页面中监听手机返回事件，直接关闭页面退出到公众号</p>
+<h3 id="1、微信jssdk"><a href="#1、微信jssdk" class="headerlink" title="1、微信jssdk"></a>1、微信jssdk</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sign_url = <span class="built_in">window</span>.location.href.split(<span class="string">'#'</span>)[<span class="number">0</span>];</span><br><span class="line">sign(sign_url).then(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> configData = &#123;</span><br><span class="line">        debug: <span class="literal">false</span>,</span><br><span class="line">        appId: res.data.appId,</span><br><span class="line">        timestamp: res.data.timestamp,</span><br><span class="line">        nonceStr: res.data.nonceStr,</span><br><span class="line">        signature: res.data.signature,</span><br><span class="line">        jsApiList: [<span class="string">'closeWindow'</span>]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(configData)</span><br><span class="line">    wx.config(configData)</span><br><span class="line">&#125;).catch(<span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="2、通过监听popstate事件，来判断是否点击返回按钮，调用wx-closeWindow方法"><a href="#2、通过监听popstate事件，来判断是否点击返回按钮，调用wx-closeWindow方法" class="headerlink" title="2、通过监听popstate事件，来判断是否点击返回按钮，调用wx.closeWindow方法"></a>2、通过监听popstate事件，来判断是否点击返回按钮，调用wx.closeWindow方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"popstate"</span>, (e) =&gt; &#123;</span><br><span class="line">    wx.closeWindow();</span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="场景图"><a href="#场景图" class="headerlink" title="场景图"></a>场景图</h4><p><img src="https://github.com//machao07/image-store/blob/master/blog/20190122202.png?raw=true"></p>
 
       
 
@@ -263,27 +261,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">WeChatPay</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AliPay</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">公众号</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
         		</li>
       		
 		</ul>
@@ -339,7 +325,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/12/vue项目H5微信支付(js-sdk)和支付宝支付/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/08/微信公众号监听手机返回键事件/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -353,11 +339,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/04/24/vue项目中axios拦截器配置/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/10/12/vue项目H5微信支付(js-sdk)和支付宝支付/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          vue项目中axios拦截器配置和使用
+          vue项目H5微信支付(js-sdk)和支付宝支付
         
       </div>
     </a>
@@ -403,7 +389,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2019/04/12/vue项目H5微信支付(js-sdk)和支付宝支付/",
+  id: "http://yoursite.com/2019/04/08/微信公众号监听手机返回键事件/",
   owner: 'machao07',
   repo: 'https://machao07.github.io/',
   oauth: {
@@ -538,23 +524,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MVC</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -570,7 +540,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -594,7 +580,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">MVC</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -603,26 +605,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">this指针</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -642,6 +624,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">this指针</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">App</a>
               </li>
             
@@ -655,14 +649,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兼容</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
               </li>
             
             <div class="clearfix"></div>
