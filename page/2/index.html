@@ -187,120 +187,32 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-微信公众号监听手机返回键事件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-vue项目H5微信支付(js-sdk)和支付宝支付" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/08/微信公众号监听手机返回键事件/">微信公众号监听手机返回键事件</a>
+      <a class="article-title" href="/2019/10/12/vue项目H5微信支付(js-sdk)和支付宝支付/">vue项目H5微信支付(js-sdk)和支付宝支付</a>
     </h1>
   
 
         
-        <a href="/2019/04/08/微信公众号监听手机返回键事件/" class="archive-article-date">
-  	<time datetime="2019-04-08T06:21:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-08</time>
+        <a href="/2019/10/12/vue项目H5微信支付(js-sdk)和支付宝支付/" class="archive-article-date">
+  	<time datetime="2019-10-12T04:01:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="需求场景："><a href="#需求场景：" class="headerlink" title="需求场景："></a>需求场景：</h4><p>– <strong><code>只有扫码初始进入</code></strong>异业联盟活动页，0元券直接<code>弹框领取成功</code>（如图1）</p>
-<h4 id="抛出问题："><a href="#抛出问题：" class="headerlink" title="抛出问题："></a>抛出问题：</h4><p>– 进入优惠券包后到另一个页面（如图1）<br>– 然后按手机返回会回到异业联盟活动页，始终弹出领取活动页面</p>
-<h4 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h4><p>– 在优惠券包页面中监听手机返回事件，直接关闭页面退出到公众号</p>
-<h3 id="1、微信jssdk"><a href="#1、微信jssdk" class="headerlink" title="1、微信jssdk"></a>1、微信jssdk</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sign_url = <span class="built_in">window</span>.location.href.split(<span class="string">'#'</span>)[<span class="number">0</span>];</span><br><span class="line">sign(sign_url).then(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> configData = &#123;</span><br><span class="line">        debug: <span class="literal">false</span>,</span><br><span class="line">        appId: res.data.appId,</span><br><span class="line">        timestamp: res.data.timestamp,</span><br><span class="line">        nonceStr: res.data.nonceStr,</span><br><span class="line">        signature: res.data.signature,</span><br><span class="line">        jsApiList: [<span class="string">'closeWindow'</span>]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(configData)</span><br><span class="line">    wx.config(configData)</span><br><span class="line">&#125;).catch(<span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+        <h3 id="1-获取内置浏览器标识"><a href="#1-获取内置浏览器标识" class="headerlink" title="1. 获取内置浏览器标识"></a>1. 获取内置浏览器标识</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">微信：</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">isWeixin</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ua = <span class="built_in">window</span>.navigator.userAgent.toLowerCase();</span><br><span class="line">    <span class="keyword">if</span>(ua.match(<span class="regexp">/MicroMessenger/i</span>) == <span class="string">'micromessenger'</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">支付宝：</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">isAlipay</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ua = <span class="built_in">window</span>.navigator.userAgent.toLowerCase();</span><br><span class="line">    <span class="keyword">if</span>(ua.match(<span class="regexp">/Alipay/i</span>) == <span class="string">"alipay"</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h3><p>– WeixinJSBridge.invoke    微信支付<br>– AlipayJSBridge.call      支付宝支付</p>
+<p>参考文档：<a href="http://myjsapi.alipay.com/jsapi/native/trade-pay.html" title="支付宝H5开发文档" target="_blank" rel="noopener">支付宝H5支付Api文档</a></p>
         
-          <a class="article-more-a" href="/2019/04/08/微信公众号监听手机返回键事件/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">公众号</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/08/微信公众号监听手机返回键事件/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS中的浅拷贝与深拷贝（对象、数组）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/20/JS中的浅拷贝与深拷贝（对象、数组）/">JS中的浅拷贝与深拷贝（对象、数组）</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/20/JS中的浅拷贝与深拷贝（对象、数组）/" class="archive-article-date">
-  	<time datetime="2019-03-20T14:01:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-什么是浅拷贝、深拷贝"><a href="#1-什么是浅拷贝、深拷贝" class="headerlink" title="1. 什么是浅拷贝、深拷贝"></a>1. 什么是浅拷贝、深拷贝</h3><p>在ES6中扩展运算符(…)与Object.assign()中复制是浅拷贝，所谓的浅拷贝和深拷贝：</p>
-<p>浅拷贝，是在拷贝过程中，遍历时那部分为对象/数组类型指向原来的地址。即修改其中任意的值，另一个值都会随之变化</p>
-<p>深拷贝，则是完全开辟新的内存地址。即将对象及值复制过来，两个对象修改其中任意的值另一个值不会改变</p>
-<h3 id="2-浅拷贝"><a href="#2-浅拷贝" class="headerlink" title="2. 浅拷贝"></a>2. 浅拷贝</h3><p>浅拷贝: 只做一个最外层的拷贝. 如果拷贝的对象是引用型数据类型,则意味着交出了内存地址,因而在浅拷贝成功的对象身上对引用型数据进行修改时,就会影响到 原来的拓本</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: [<span class="number">1</span>, <span class="number">2</span>, &#123;<span class="attr">a</span>:<span class="number">3</span>&#125;],</span><br><span class="line">    c: &#123;<span class="attr">a</span>:<span class="number">3</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.c.a = <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">    a: obj.a,</span><br><span class="line">    b: obj.b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj1.b.push(<span class="number">1</span>) <span class="comment">// 切记不要 obj1.b = 123 这样是重新赋值 不是改变原地址的对象</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.b) <span class="comment">//将会被改变</span></span><br><span class="line"></span><br><span class="line">ES6方法：</span><br><span class="line"><span class="keyword">let</span> obj2 = <span class="built_in">Object</span>.assign(&#123;&#125;,obj)</span><br><span class="line"><span class="built_in">console</span>.log(obj2)  <span class="comment">//  &#123;a: 1,b: [1, 2, &#123;a:3&#125;],c:&#123;a:4&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj3 = &#123;...obj&#125;</span><br><span class="line">conosle.log(obj3) <span class="comment">//  &#123;a: 1,b: [1, 2, &#123;a:3&#125;],c:&#123;a:4&#125;</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/03/20/JS中的浅拷贝与深拷贝（对象、数组）/#more">more >></a>
+          <a class="article-more-a" href="/2019/10/12/vue项目H5微信支付(js-sdk)和支付宝支付/#more">more >></a>
         
       
 
@@ -322,7 +234,19 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">WeChatPay</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">AliPay</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">公众号</a>
         		</li>
       		
 		</ul>
@@ -332,7 +256,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/20/JS中的浅拷贝与深拷贝（对象、数组）/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/10/12/vue项目H5微信支付(js-sdk)和支付宝支付/">展开全文 >></a>
         </p>
       
 
@@ -362,29 +286,138 @@
 
 
   
-    <article id="post-vue-cli脚手架及相关配置解析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-RESTful风格接口和特性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/09/vue-cli脚手架及相关配置解析/">vue-cli脚手架及相关配置解析</a>
+      <a class="article-title" href="/2019/05/11/RESTful风格接口和特性/">RESTful风格接口和特性</a>
     </h1>
   
 
         
-        <a href="/2019/03/09/vue-cli脚手架及相关配置解析/" class="archive-article-date">
-  	<time datetime="2019-03-09T03:43:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-09</time>
+        <a href="/2019/05/11/RESTful风格接口和特性/" class="archive-article-date">
+  	<time datetime="2019-05-11T13:21:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="vue-cli脚手架会寻找项目中package-json文件"><a href="#vue-cli脚手架会寻找项目中package-json文件" class="headerlink" title="vue-cli脚手架会寻找项目中package.json文件"></a>vue-cli脚手架会寻找项目中package.json文件</h1><h3 id="package-json文件的解析"><a href="#package-json文件的解析" class="headerlink" title="package.json文件的解析"></a><strong>package.json文件的解析</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"name"</span>: <span class="string">"vue_ozone"</span>,</span><br><span class="line"><span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line"><span class="string">"description"</span>: <span class="string">"A Vue.js project"</span>,</span><br><span class="line"><span class="string">"author"</span>: <span class="string">"machao07 &lt;machao_07@163.com&gt;"</span>,</span><br><span class="line"><span class="string">"private"</span>: <span class="literal">true</span>,</span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line"><span class="string">"dev"</span>: <span class="string">"webpack-dev-server --inline --progress --config build/webpack.dev.conf.js"</span>,</span><br><span class="line"><span class="string">"start"</span>: <span class="string">"npm run dev"</span>,</span><br><span class="line"><span class="string">"e2e"</span>: <span class="string">"node test/e2e/runner.js"</span>,</span><br><span class="line"><span class="string">"test"</span>: <span class="string">"npm run unit &amp;&amp; npm run e2e"</span>,</span><br><span class="line"><span class="string">"build"</span>: <span class="string">"node build/build.js"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"dependencies"</span>: &#123;&#125;,</span><br><span class="line"><span class="string">"devDependencies"</span>:&#123;&#125;,</span><br><span class="line"><span class="string">"engines"</span>: &#123;</span><br><span class="line">    <span class="string">"node"</span>: <span class="string">"&gt;= 6.0.0"</span>,</span><br><span class="line">    <span class="string">"npm"</span>: <span class="string">"&gt;= 3.0.0"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"browserslist"</span>: [</span><br><span class="line">    <span class="string">"&gt; 1%"</span>,</span><br><span class="line">    <span class="string">"last 2 versions"</span>,</span><br><span class="line">    <span class="string">"not ie &lt;= 8"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+        <h3 id="1、RESTful的特性"><a href="#1、RESTful的特性" class="headerlink" title="1、RESTful的特性"></a>1、RESTful的特性</h3><p><strong><code>资源：</code></strong> 可以用一个URI（统一资源定位符）指向它，每种资源对应一个特性的URI。</p>
+<p><strong><code>表现层：</code></strong> 把资源具体呈现出来的形式。</p>
+<blockquote>
+<p>比如，文本可以用txt格式表现，也可以用HTML格式、XML格式、JSON格式表现，甚至可以采用二进制格式。</p>
+</blockquote>
+<p><strong><code>状态转换：</code></strong> 每发出一个请求，就代表了客户端和服务器的一次交互过程，是服务器端发生“状态转换”。</p>
+<blockquote>
+<p>HTTP协议里面，四个表示操作方式的动词：<strong><code>GET（获取资源）</code></strong>、<strong><code>POST（新建资源）</code></strong>、<strong><code>PUT（更新资源）</code></strong>、<strong><code>DELETE（删除资源）</code></strong>。</p>
+</blockquote>
+<h3 id="2、资源的URL设计"><a href="#2、资源的URL设计" class="headerlink" title="2、资源的URL设计"></a>2、资源的URL设计</h3><ul>
+<li><p><strong><code>通过URL来表示资源</code></strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">主资源：/api/coupon/&#123;id&#125;</span><br><span class="line">子资源：/api/coupon/&#123;id&#125;/pictures（图片集合）</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong><code>单数 &amp; 复数</code></strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/api/users/1</span><br><span class="line">/api/user/1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong><code>相对路径 &amp; 请求参数</code></strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 参数放在路径中</span><br><span class="line">/api/coupon/searchCouponDetail/1745486430339072 </span><br><span class="line"></span><br><span class="line">// 拼接的方式</span><br><span class="line">/api/coupon/searchCouponDetail?couponId=1745486430339072&amp;type=product</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p><strong>？后拼接参数的方式：这种方式一般作为过滤资源</strong></p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">restful</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">api</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">接口设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/11/RESTful风格接口和特性/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
         
-          <a class="article-more-a" href="/2019/03/09/vue-cli脚手架及相关配置解析/#more">more >></a>
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vue中父组件向子组件传值（props）组件通信以及Watch运用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/03/vue中父组件向子组件传值（props）组件通信以及Watch运用/">vue中父组件向子组件传值（props）组件通信以及Watch运用</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/03/vue中父组件向子组件传值（props）组件通信以及Watch运用/" class="archive-article-date">
+  	<time datetime="2019-05-03T01:21:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、views层"><a href="#1、views层" class="headerlink" title="1、views层"></a>1、views层</h3><blockquote>
+<p><strong><code>父组件：</code></strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-dialog</span> <span class="attr">title</span>=<span class="string">"编辑活动"</span> <span class="attr">:visible.sync</span>=<span class="string">"dialogCreateVisible"</span> <span class="attr">:close-on-click-modal</span>=<span class="string">"false"</span> <span class="attr">width</span>=<span class="string">"70%"</span> <span class="attr">:append-to-body</span>=<span class="string">"true"</span> @<span class="attr">dialogClose</span>=<span class="string">"dialogClose"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">activies-create</span> <span class="attr">:formData.sync</span>=<span class="string">"createForm"</span> @<span class="attr">cancelCreate</span>=<span class="string">"cancel"</span> @<span class="attr">okCreate</span>=<span class="string">"ok"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-dialog</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="2、methods（数据处理）"><a href="#2、methods（数据处理）" class="headerlink" title="2、methods（数据处理）"></a>2、methods（数据处理）</h3><blockquote>
+<p><strong><code>父组件：（初始声明）</code></strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Object(对象--多个参数)</span></span><br><span class="line">createForm:&#123;</span><br><span class="line">    sellerId: <span class="number">0</span>,</span><br><span class="line">    activityid: <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//String（一个参数）</span></span><br><span class="line">currentSellerId: <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2019/05/03/vue中父组件向子组件传值（props）组件通信以及Watch运用/#more">more >></a>
         
       
 
@@ -402,11 +435,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-cli</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">props</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">watch</a>
         		</li>
       		
 		</ul>
@@ -416,7 +449,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/09/vue-cli脚手架及相关配置解析/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/05/03/vue中父组件向子组件传值（props）组件通信以及Watch运用/">展开全文 >></a>
         </p>
       
 
@@ -446,36 +479,34 @@
 
 
   
-    <article id="post-前端性能优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-vue项目element-ui中table组件筛选数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/07/前端性能优化/">浅谈前端优化网站性能</a>
+      <a class="article-title" href="/2019/04/24/vue项目element-ui中table组件筛选数据/">vue项目element-ui中table组件筛选数据</a>
     </h1>
   
 
         
-        <a href="/2019/03/07/前端性能优化/" class="archive-article-date">
-  	<time datetime="2019-03-07T03:26:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-07</time>
+        <a href="/2019/04/24/vue项目element-ui中table组件筛选数据/" class="archive-article-date">
+  	<time datetime="2019-04-24T01:21:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1、减少-HTTP-请求数量在浏览器与服务器进行通信时，主要是通过-HTTP-进行通信。"><a href="#1、减少-HTTP-请求数量在浏览器与服务器进行通信时，主要是通过-HTTP-进行通信。" class="headerlink" title="1、减少 HTTP 请求数量在浏览器与服务器进行通信时，主要是通过 HTTP 进行通信。"></a><strong>1、减少 HTTP 请求数量在浏览器与服务器进行通信时，主要是通过 HTTP 进行通信。</strong></h4><p>浏览器与服务器需要经过三次握手，每次握手需要花费大量时间。而且不同浏览器对资源文件并发请求数量有限（不同浏览器允许并发数），一旦 HTTP 请求数量达到一定数量，资源请求就存在等待状态，这是很致命的，因此减少 HTTP 的请求数量可以很大程度上对网站性能进行优化。</p>
-<h4 id="CSS-Sprites"><a href="#CSS-Sprites" class="headerlink" title="CSS Sprites"></a><strong>CSS Sprites</strong></h4><p>国内俗称CSS精灵，这是将多张图片合并成一张图片达到减少HTTP请求的一种解决方案，可以通过CSS的background属性来访问图片内容。这种方案同时还可以减少图片总字节数。</p>
-<h4 id="合并-CSS-和-JS-文件"><a href="#合并-CSS-和-JS-文件" class="headerlink" title="合并 CSS 和 JS 文件"></a><strong>合并 CSS 和 JS 文件</strong></h4><p>现在前端有很多工程化打包工具，如：grunt、gulp、webpack等。为了减少 HTTP 请求数量，可以通过这些工具再发布前将多个CSS或者多个JS合并成一个文件。<br>
+        <h3 id="1、view层"><a href="#1、view层" class="headerlink" title="1、view层"></a>1、view层</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">"tag"</span> <span class="attr">label</span>=<span class="string">"券类型"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">width</span>=<span class="string">"100"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">align</span>=<span class="string">"center"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:filters</span>=<span class="string">"[&#123; text: '现金券', value: 'cash' &#125;, &#123; text: '实物券', value: 'product' &#125;, &#123;text: '复购券', value: 'multiple'&#125;]"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:filter-method</span>=<span class="string">"filterTag"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">filter-placement</span>=<span class="string">"bottom-end"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"scope"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-tag</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:type</span>=<span class="string">"scope.row.type === 'cash' ? 'primary' : scope.row.type === 'product' ? 'success':'warning'"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">disable-transitions</span>&gt;</span>&#123;&#123;getCouponTypeText(scope.row)&#125;&#125;<span class="tag">&lt;/<span class="name">el-tag</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2019/03/07/前端性能优化/#more">more >></a>
+          <a class="article-more-a" href="/2019/04/24/vue项目element-ui中table组件筛选数据/#more">more >></a>
         
       
 
       
-    </p></div>
+    </div>
     <div class="article-info article-info-index">
       
       
@@ -484,15 +515,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能优化</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ElementUI</a>
         		</li>
       		
 		</ul>
@@ -502,7 +529,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/07/前端性能优化/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/24/vue项目element-ui中table组件筛选数据/">展开全文 >></a>
         </p>
       
 
@@ -534,7 +561,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -637,6 +664,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">restful</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">接口设计</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
@@ -649,11 +688,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">异步编程</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">异步编程</a>
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -665,7 +708,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -693,18 +744,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网站性能</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
             
@@ -717,11 +756,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+                <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网站性能</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spread</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -741,11 +796,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
+                <a href="javascript:void(0)" class="js-tag color5">回调地狱</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -753,11 +808,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES5</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">this指针</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -773,15 +836,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
+                <a href="javascript:void(0)" class="js-tag color2">this指针</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -798,6 +853,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
               </li>
             
             <div class="clearfix"></div>

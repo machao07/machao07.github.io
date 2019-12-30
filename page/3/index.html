@@ -187,29 +187,32 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-cookie" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-vue移动端H5实现复制内容到剪切板" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/04/cookie/">Cookie</a>
+      <a class="article-title" href="/2019/04/16/vue移动端H5实现复制内容到剪切板/">vue移动端H5实现复制内容到剪切板</a>
     </h1>
   
 
         
-        <a href="/2019/03/04/cookie/" class="archive-article-date">
-  	<time datetime="2019-03-04T03:01:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-04</time>
+        <a href="/2019/04/16/vue移动端H5实现复制内容到剪切板/" class="archive-article-date">
+  	<time datetime="2019-04-16T10:21:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	商城保存记录密码的时候，可以使用cookie来存；</span></span><br><span class="line"><span class="comment">	cookie:</span></span><br><span class="line"><span class="comment">        必须安装环境；</span></span><br><span class="line"><span class="comment">        localhost或127.0.0 开头。</span></span><br><span class="line"><span class="comment">     演示：</span></span><br><span class="line"><span class="comment">     	控制台 -&gt; 应用池 -&gt; cookie -&gt; </span></span><br><span class="line"><span class="comment">     		如果点击登陆的时候，页面当中就会保存一些cookie。</span></span><br><span class="line"><span class="comment">     		cookie是可以被劫持的。</span></span><br><span class="line"><span class="comment">     	设置 -&gt; 高级 -&gt; 内容设置 -&gt; cookie -&gt; </span></span><br><span class="line"><span class="comment">        	有保存对应的数据。</span></span><br><span class="line"><span class="comment">     </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//每个浏览器储存的位置都不一样。</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="built_in">document</span>.cookie ) <span class="comment">// 当前浏览器所储存的cookie；</span></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">'name = abc'</span>;</span><br><span class="line"><span class="built_in">console</span>.log( <span class="built_in">document</span>.cookie ); </span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	在设置一个名称叫做name,值为abc;储在哪个域名下的:127.0.0；Path:路径； expires（过期时间）：如果没有设置时间的话，就是当前会话（打开一个窗口，就是打开一个会话。）</span></span><br><span class="line"><span class="comment">	默认储存时间：</span></span><br><span class="line"><span class="comment">		默认就是当前会话，存储在运行内存里。</span></span><br><span class="line"><span class="comment">		当时会话没有结束的时候，可以继续 访问别的页面。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+        <h4 id="需求场景："><a href="#需求场景：" class="headerlink" title="需求场景："></a>需求场景：</h4><p>– 微信公众号复制邀请码到剪切板在APP中打开获取内容登录注册</p>
+<h4 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h4><p>– 利用<code>clipboard</code>插件实现功能</p>
+<h3 id="1、安装插件clipboard"><a href="#1、安装插件clipboard" class="headerlink" title="1、安装插件clipboard"></a>1、安装插件clipboard</h3><p>– <code>npm i clipboard --save</code><br>– <code>yarn add clipboard</code></p>
+<h3 id="2、引入（需要实现的文件）"><a href="#2、引入（需要实现的文件）" class="headerlink" title="2、引入（需要实现的文件）"></a>2、引入（需要实现的文件）</h3><p><code>import Clipboard from &#39;clipboard&#39;</code></p>
         
-          <a class="article-more-a" href="/2019/03/04/cookie/#more">more >></a>
+          <a class="article-more-a" href="/2019/04/16/vue移动端H5实现复制内容到剪切板/#more">more >></a>
         
       
 
@@ -223,11 +226,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cookie</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">H5</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">clipboard</a>
         		</li>
       		
 		</ul>
@@ -237,7 +244,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/04/cookie/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/16/vue移动端H5实现复制内容到剪切板/">展开全文 >></a>
         </p>
       
 
@@ -267,42 +274,32 @@
 
 
   
-    <article id="post-ajax-fetch(三)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-微信公众号监听手机返回键事件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/01/ajax-fetch(三)/">ajax &amp; fetch(三)</a>
+      <a class="article-title" href="/2019/04/08/微信公众号监听手机返回键事件/">微信公众号监听手机返回键事件</a>
     </h1>
   
 
         
-        <a href="/2019/03/01/ajax-fetch(三)/" class="archive-article-date">
-  	<time datetime="2019-03-01T02:01:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-01</time>
+        <a href="/2019/04/08/微信公众号监听手机返回键事件/" class="archive-article-date">
+  	<time datetime="2019-04-08T06:21:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="url"><a href="#url" class="headerlink" title="url"></a>url</h2><p>定义要获取的资源。这可能是：</p>
-<ul>
-<li>一个 <code>USVString</code> 字符串，包含要获取资源的 <code>URL</code>。</li>
-<li>一个 <code>Request</code> 对象。</li>
-</ul>
-<h2 id="options（可选）"><a href="#options（可选）" class="headerlink" title="options（可选）"></a>options（可选）</h2><p>一个配置项对象，包括所有对请求的设置。可选的参数有：</p>
-<ul>
-<li><code>method</code>: 请求使用的方法，如 <code>GET</code>、<code>POST</code>。</li>
-<li><code>headers</code>: 请求的头信息，形式为 <code>Headers</code> 对象或 <code>ByteString</code>。</li>
-<li><code>body</code>: 请求的 <code>body</code> 信息：可能是一个 <code>Blob</code>、<code>BufferSource</code>、<code>FormData</code>、<code>URLSearchParams</code> 或者 <code>USVString</code> 对象。注意 <code>GET</code> 或 <code>HEAD</code> 方法的请求不能包含 <code>body</code> 信息。</li>
-<li><code>mode</code>: 请求的模式，如 <code>cors</code>、 <code>no-cors</code> 或者 <code>same-origin</code>。</li>
-<li><code>credentials</code>: 请求的 <code>credentials</code>，如 <code>omit</code>、<code>same-origin</code> 或者 <code>include</code>。</li>
-<li><code>cache</code>: 请求的 <code>cache</code> 模式: <code>default</code>, <code>no-store</code>, <code>reload</code>, <code>no-cache</code>, <code>force-cache</code>, 或者 <code>only-if-cached</code>。</li>
-</ul>
+        <h4 id="需求场景："><a href="#需求场景：" class="headerlink" title="需求场景："></a>需求场景：</h4><p>– <strong><code>只有扫码初始进入</code></strong>异业联盟活动页，0元券直接<code>弹框领取成功</code>（如图1）</p>
+<h4 id="抛出问题："><a href="#抛出问题：" class="headerlink" title="抛出问题："></a>抛出问题：</h4><p>– 进入优惠券包后到另一个页面（如图1）<br>– 然后按手机返回会回到异业联盟活动页，始终弹出领取活动页面</p>
+<h4 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h4><p>– 在优惠券包页面中监听手机返回事件，直接关闭页面退出到公众号</p>
+<h3 id="1、微信jssdk"><a href="#1、微信jssdk" class="headerlink" title="1、微信jssdk"></a>1、微信jssdk</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sign_url = <span class="built_in">window</span>.location.href.split(<span class="string">'#'</span>)[<span class="number">0</span>];</span><br><span class="line">sign(sign_url).then(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> configData = &#123;</span><br><span class="line">        debug: <span class="literal">false</span>,</span><br><span class="line">        appId: res.data.appId,</span><br><span class="line">        timestamp: res.data.timestamp,</span><br><span class="line">        nonceStr: res.data.nonceStr,</span><br><span class="line">        signature: res.data.signature,</span><br><span class="line">        jsApiList: [<span class="string">'closeWindow'</span>]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(configData)</span><br><span class="line">    wx.config(configData)</span><br><span class="line">&#125;).catch(<span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2019/03/01/ajax-fetch(三)/#more">more >></a>
+          <a class="article-more-a" href="/2019/04/08/微信公众号监听手机返回键事件/#more">more >></a>
         
       
 
@@ -316,23 +313,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ECMAScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ajax</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">fetch</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">公众号</a>
         		</li>
       		
 		</ul>
@@ -342,7 +331,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/01/ajax-fetch(三)/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/04/08/微信公众号监听手机返回键事件/">展开全文 >></a>
         </p>
       
 
@@ -372,34 +361,33 @@
 
 
   
-    <article id="post-ajax-fetch(二)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-JS中的浅拷贝与深拷贝（对象、数组）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/ajax-fetch(二)/">ajax &amp; fetch(二)</a>
+      <a class="article-title" href="/2019/03/20/JS中的浅拷贝与深拷贝（对象、数组）/">JS中的浅拷贝与深拷贝（对象、数组）</a>
     </h1>
   
 
         
-        <a href="/2019/02/27/ajax-fetch(二)/" class="archive-article-date">
-  	<time datetime="2019-02-27T11:01:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
+        <a href="/2019/03/20/JS中的浅拷贝与深拷贝（对象、数组）/" class="archive-article-date">
+  	<time datetime="2019-03-20T14:01:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h1><p>传统 Ajax 指的是 XMLHttpRequest（XHR），现在和未来已被 <a href="https://fetch.spec.whatwg.org/" target="_blank" rel="noopener">Fetch</a> 替代。 </p>
-<p>Fetch API 是基于 Promise 设计，旧浏览器不支持 Promise，需要使用 polyfill <a href="https://github.com/jakearchibald/es6-promise" target="_blank" rel="noopener">es6-promise</a> 。 </p>
-<h1 id="何为Fetch"><a href="#何为Fetch" class="headerlink" title="何为Fetch"></a>何为Fetch</h1><p>XMLHttpRequest 是一个设计粗糙的 API，配置和调用方式非常混乱，而且基于事件的异步模型写起来也没有现代的 Promise，generator/yield，async/await 友好。 </p>
-<p>Fetch 的出现就是为了解决 XHR 的问题。</p>
-<p>使用 XHR 发送一个 json 请求一般是这样：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">'GET'</span>, url);</span><br><span class="line">xhr.responseType = <span class="string">'json'</span>;</span><br><span class="line"></span><br><span class="line">xhr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(xhr.response);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">xhr.onerror = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Oops, error"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
+        <h3 id="1-什么是浅拷贝、深拷贝"><a href="#1-什么是浅拷贝、深拷贝" class="headerlink" title="1. 什么是浅拷贝、深拷贝"></a>1. 什么是浅拷贝、深拷贝</h3><p>在ES6中扩展运算符(…)与Object.assign()中复制是浅拷贝，所谓的浅拷贝和深拷贝：</p>
+<p>浅拷贝，是在拷贝过程中，遍历时那部分为对象/数组类型指向原来的地址。即修改其中任意的值，另一个值都会随之变化</p>
+<p>深拷贝，则是完全开辟新的内存地址。即将对象及值复制过来，两个对象修改其中任意的值另一个值不会改变</p>
+<h3 id="2-浅拷贝"><a href="#2-浅拷贝" class="headerlink" title="2. 浅拷贝"></a>2. 浅拷贝</h3><p>浅拷贝: 只做一个最外层的拷贝. 如果拷贝的对象是引用型数据类型,则意味着交出了内存地址,因而在浅拷贝成功的对象身上对引用型数据进行修改时,就会影响到 原来的拓本</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: [<span class="number">1</span>, <span class="number">2</span>, &#123;<span class="attr">a</span>:<span class="number">3</span>&#125;],</span><br><span class="line">    c: &#123;<span class="attr">a</span>:<span class="number">3</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.c.a = <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">    a: obj.a,</span><br><span class="line">    b: obj.b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj1.b.push(<span class="number">1</span>) <span class="comment">// 切记不要 obj1.b = 123 这样是重新赋值 不是改变原地址的对象</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.b) <span class="comment">//将会被改变</span></span><br><span class="line"></span><br><span class="line">ES6方法：</span><br><span class="line"><span class="keyword">let</span> obj2 = <span class="built_in">Object</span>.assign(&#123;&#125;,obj)</span><br><span class="line"><span class="built_in">console</span>.log(obj2)  <span class="comment">//  &#123;a: 1,b: [1, 2, &#123;a:3&#125;],c:&#123;a:4&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj3 = &#123;...obj&#125;</span><br><span class="line">conosle.log(obj3) <span class="comment">//  &#123;a: 1,b: [1, 2, &#123;a:3&#125;],c:&#123;a:4&#125;</span></span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2019/02/27/ajax-fetch(二)/#more">more >></a>
+          <a class="article-more-a" href="/2019/03/20/JS中的浅拷贝与深拷贝（对象、数组）/#more">more >></a>
         
       
 
@@ -417,19 +405,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ECMAScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ajax</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">fetch</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		
 		</ul>
@@ -439,7 +419,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/27/ajax-fetch(二)/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/20/JS中的浅拷贝与深拷贝（对象、数组）/">展开全文 >></a>
         </p>
       
 
@@ -469,33 +449,29 @@
 
 
   
-    <article id="post-ajax-fetch(一)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-vue-cli脚手架及相关配置解析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/25/ajax-fetch(一)/">ajax &amp; fetch(一)</a>
+      <a class="article-title" href="/2019/03/09/vue-cli脚手架及相关配置解析/">vue-cli脚手架及相关配置解析</a>
     </h1>
   
 
         
-        <a href="/2019/02/25/ajax-fetch(一)/" class="archive-article-date">
-  	<time datetime="2019-02-25T12:10:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-25</time>
+        <a href="/2019/03/09/vue-cli脚手架及相关配置解析/" class="archive-article-date">
+  	<time datetime="2019-03-09T03:43:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h1><p><strong>1</strong>,页面除了跟用户一些交互以外,还存在一些数据交互,现在本来就是数据时代,我们页面和后台进行交互的就是数据交互,<strong>2</strong>.早期的数据交互是 form表单 action里面填的地址  当数据填好之后,触发form表单 会刷新界面 和后台交互的时候 刷新页面会造成不需要改动的部分 重复请求数据 页面出现闪动 增加后台压力 .</p>
-<h5 id="ajax-Asynchronous-JavaScript-and-XML（异步的-JavaScript-和-XML）"><a href="#ajax-Asynchronous-JavaScript-and-XML（异步的-JavaScript-和-XML）" class="headerlink" title="ajax  Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）"></a><strong>ajax</strong>  Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）</h5><p><em>[eɪˈsɪŋkrənəs]</em></p>
-<p>XML和HTML长得一样,一样是标签,但是没有预定义标签,因此我们可以自定义标签 xml可以说是html的一个补充,但是html是用于展示 而xml是用于传输数据.当我们传输数据时,我们得对数据进行区分账号是账号,密码是密码,不能混淆,我们这个XML自定义的这些标签内名就可以作为识别.  ==&gt; 但现在发送数据形式 都是JSON 数据可读性强 结构清晰 操作容易 比XML要清楚简单多了</p>
-<p>ajax 是一种创建交互式网页应用的一门网页开发技术, 它可以让我们在不刷新页面的情况下，实现与后台的数据交互. ajax不指向某个具体的东西,也不是编程语言,他是一门技术. </p>
-<p>ajax技术中,需要使用方法等,需要挂载在一个对象身上,最终规划后的对象为 <strong>XMLHttpRequest</strong></p>
+        <h1 id="vue-cli脚手架会寻找项目中package-json文件"><a href="#vue-cli脚手架会寻找项目中package-json文件" class="headerlink" title="vue-cli脚手架会寻找项目中package.json文件"></a>vue-cli脚手架会寻找项目中package.json文件</h1><h3 id="package-json文件的解析"><a href="#package-json文件的解析" class="headerlink" title="package.json文件的解析"></a><strong>package.json文件的解析</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"name"</span>: <span class="string">"vue_ozone"</span>,</span><br><span class="line"><span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line"><span class="string">"description"</span>: <span class="string">"A Vue.js project"</span>,</span><br><span class="line"><span class="string">"author"</span>: <span class="string">"machao07 &lt;machao_07@163.com&gt;"</span>,</span><br><span class="line"><span class="string">"private"</span>: <span class="literal">true</span>,</span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line"><span class="string">"dev"</span>: <span class="string">"webpack-dev-server --inline --progress --config build/webpack.dev.conf.js"</span>,</span><br><span class="line"><span class="string">"start"</span>: <span class="string">"npm run dev"</span>,</span><br><span class="line"><span class="string">"e2e"</span>: <span class="string">"node test/e2e/runner.js"</span>,</span><br><span class="line"><span class="string">"test"</span>: <span class="string">"npm run unit &amp;&amp; npm run e2e"</span>,</span><br><span class="line"><span class="string">"build"</span>: <span class="string">"node build/build.js"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"dependencies"</span>: &#123;&#125;,</span><br><span class="line"><span class="string">"devDependencies"</span>:&#123;&#125;,</span><br><span class="line"><span class="string">"engines"</span>: &#123;</span><br><span class="line">    <span class="string">"node"</span>: <span class="string">"&gt;= 6.0.0"</span>,</span><br><span class="line">    <span class="string">"npm"</span>: <span class="string">"&gt;= 3.0.0"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"browserslist"</span>: [</span><br><span class="line">    <span class="string">"&gt; 1%"</span>,</span><br><span class="line">    <span class="string">"last 2 versions"</span>,</span><br><span class="line">    <span class="string">"not ie &lt;= 8"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2019/02/25/ajax-fetch(一)/#more">more >></a>
+          <a class="article-more-a" href="/2019/03/09/vue-cli脚手架及相关配置解析/#more">more >></a>
         
       
 
@@ -509,23 +485,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ECMAScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-cli</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ajax</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">fetch</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
         		</li>
       		
 		</ul>
@@ -535,7 +503,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/25/ajax-fetch(一)/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/09/vue-cli脚手架及相关配置解析/">展开全文 >></a>
         </p>
       
 
@@ -567,7 +535,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -670,6 +638,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">restful</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">接口设计</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
@@ -682,11 +662,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">异步编程</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">异步编程</a>
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -698,7 +682,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -726,18 +718,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网站性能</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
             
@@ -750,11 +730,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+                <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网站性能</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spread</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -774,11 +770,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
+                <a href="javascript:void(0)" class="js-tag color5">回调地狱</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -786,11 +782,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES5</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">this指针</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -806,15 +810,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
+                <a href="javascript:void(0)" class="js-tag color2">this指针</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -831,6 +827,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
               </li>
             
             <div class="clearfix"></div>

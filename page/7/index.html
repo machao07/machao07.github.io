@@ -187,33 +187,34 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-third-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-浅谈Vue框架(一)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/17/third-blog/">前端网站性能优化</a>
+      <a class="article-title" href="/2019/02/07/浅谈Vue框架(一)/">浅谈Vue框架(一)</a>
     </h1>
   
 
         
-        <a href="/2018/10/17/third-blog/" class="archive-article-date">
-  	<time datetime="2018-10-17T02:16:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-17</time>
+        <a href="/2019/02/07/浅谈Vue框架(一)/" class="archive-article-date">
+  	<time datetime="2019-02-06T23:51:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1、减少 HTTP 请求数量在浏览器与服务器进行通信时，主要是通过 HTTP 进行通信。浏览器与服务器需要经过三次握手，每次握手需要花费大量时间。而且不同浏览器对资源文件并发请求数量有限（不同浏览器允许并发数），一旦 HTTP 请求数量达到一定数量，资源请求就存在等待状态，这是很致命的，因此减少 HTTP 的请求数量可以很大程度上对网站性能进行优化。</p>
-<h4 id="CSS-Sprites"><a href="#CSS-Sprites" class="headerlink" title="CSS Sprites"></a><strong>CSS Sprites</strong></h4><p>国内俗称CSS精灵，这是将多张图片合并成一张图片达到减少HTTP请求的一种解决方案，可以通过CSS的background属性来访问图片内容。这种方案同时还可以减少图片总字节数。</p>
-<h4 id="合并-CSS-和-JS-文件"><a href="#合并-CSS-和-JS-文件" class="headerlink" title="合并 CSS 和 JS 文件"></a><strong>合并 CSS 和 JS 文件</strong></h4><p>现在前端有很多工程化打包工具，如：grunt、gulp、webpack等。为了减少 HTTP 请求数量，可以通过这些工具再发布前将多个CSS或者多个JS合并成一个文件。</p>
-<h4 id="采用-lazyLoad"><a href="#采用-lazyLoad" class="headerlink" title="采用 lazyLoad"></a><strong>采用 lazyLoad</strong></h4><p>俗称懒加载，可以控制网页上的内容在一开始无需加载，不需要发请求，等到用户操作真正需要的时候立即加载出内容。这样就控制了网页资源一次性请求数量。</p>
-<p>(1) 减少 http 请求次数:CSS Sprites, JS、CSS 源码压缩、图片大小控制合适;网页Gzip，CDN 托管，data 缓存 ，图片服务器。</p>
+        <h3 id="一-谈谈你对MVVM开发模式的理解"><a href="#一-谈谈你对MVVM开发模式的理解" class="headerlink" title="一. 谈谈你对MVVM开发模式的理解"></a><strong>一. 谈谈你对MVVM开发模式的理解</strong></h3><p>MVVM分为Model、View、ViewModel三者。</p>
+<p>Model：代表数据模型，数据和业务逻辑都在Model层中定义；</p>
+<p>View：代表UI视图，负责数据的展示；</p>
+<p>ViewModel：负责监听Model中数据的改变并且控制视图的更新，处理用户交互操作；</p>
+<p>Model和View并无直接关联，而是通过ViewModel来进行联系的，Model和ViewModel之间有着双向数据绑定的联系。因此当Model中的数据改变时会触发View层的刷新，View中由于用户交互操作而改变的数据也会在Model中同步。</p>
+<p>这种模式实现了Model和View的数据自动同步，因此开发者只需要专注对数据的维护操作即可，而不需要自己操作dom。</p>
         
-          <a class="article-more-a" href="/2018/10/17/third-blog/#more">more >></a>
+          <a class="article-more-a" href="/2019/02/07/浅谈Vue框架(一)/#more">more >></a>
         
       
 
@@ -227,19 +228,19 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端开发</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能优化</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">MVVM</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jQuery</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网站性能</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">数据驱动视图</a>
         		</li>
       		
 		</ul>
@@ -249,7 +250,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/17/third-blog/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/02/07/浅谈Vue框架(一)/">展开全文 >></a>
         </p>
       
 
@@ -279,33 +280,120 @@
 
 
   
-    <article id="post-second-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-浏览器工作原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/11/second-blog/">字符串及字符串方法(二)</a>
+      <a class="article-title" href="/2019/02/02/浏览器工作原理/">浏览器工作原理</a>
     </h1>
   
 
         
-        <a href="/2018/10/11/second-blog/" class="archive-article-date">
-  	<time datetime="2018-10-11T04:02:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-11</time>
+        <a href="/2019/02/02/浏览器工作原理/" class="archive-article-date">
+  	<time datetime="2019-02-02T02:49:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="es6字符串方法"><a href="#es6字符串方法" class="headerlink" title="es6字符串方法"></a><strong>es6字符串方法</strong></h4>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/startsWith   endsWith   includes 判断字符串项是否存在</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"hello world"</span></span><br><span class="line"><span class="built_in">console</span>.log(str.startsWith(<span class="string">"hello"</span>)) <span class="comment">//是否以hello开头 返回布尔值</span></span><br><span class="line"><span class="built_in">console</span>.log(str.endsWith(<span class="string">"d"</span>)) <span class="comment">//是否以d结尾 返回布尔值</span></span><br><span class="line"><span class="built_in">console</span>.log(str.includes(<span class="string">"o"</span>))  <span class="comment">//是否包含o    返回布尔值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"hello"</span></span><br><span class="line"><span class="built_in">console</span>.log(str.repeat(<span class="number">2</span>)) <span class="comment">//hellohello 原字符串重复2次 形成新字符串返回</span></span><br></pre></td></tr></table></figure>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/padStart padEnd  补全字符串</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"hello world"</span></span><br><span class="line"><span class="built_in">console</span>.log(str.padStart(<span class="number">10</span>,<span class="string">"s"</span>))<span class="comment">//ssssshello</span></span><br><span class="line">第一个参数 是补充字符串总共的长度 小于当前则不变 大于当前则用第二个参数的字符去补,第二个参数没有,就用空格去补 补满长度为止</span><br></pre></td></tr></table></figure>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/repeat()  方法返回一个新字符串，表示将原字符串重复n次。</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"朱雀"</span></span><br><span class="line"><span class="keyword">let</span> str1 = str.repeat(<span class="number">4</span>)</span><br><span class="line"><span class="built_in">console</span>.log(str1) <span class="comment">//将原来的字符串 复制4遍</span></span><br></pre></td></tr></table></figure>
-<h3 id="数组及数组-API"><a href="#数组及数组-API" class="headerlink" title="数组及数组 API"></a>数组及数组 API</h3><h4 id="es6数组方法"><a href="#es6数组方法" class="headerlink" title="es6数组方法"></a><strong>es6数组方法</strong></h4><h5 id="filter-过滤"><a href="#filter-过滤" class="headerlink" title="filter 过滤"></a><em>filter 过滤</em></h5><p>筛选符合要求的数组项,返回新数组  不改变原数组</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">9</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">0</span>]</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a &gt; <span class="number">3</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">// 返回的是能转化为true的就行 ,就代表把符合条件的 返回出来</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(arr1) <span class="comment">// [9, 5, 7, 8, 4]</span></span><br></pre></td></tr></table></figure>
+        <h3 id="渲染进程"><a href="#渲染进程" class="headerlink" title="渲染进程"></a><strong>渲染进程</strong></h3><p>构建 DOM（解析HTML）    ==&gt;    加载次级的资源（图片、css、js等资源）    ==&gt;    JS 的下载与执行（停止解析HTML——先加载执行js）    ==&gt;    样式计算（解析CSS）    ==&gt;    获取布局（样式、位置）    ==&gt;    绘制各元素    ==&gt;    合成帧（compositor 线程合成器线程）</p>
+<h4 id="1、Browser-Process（浏览器进程）："><a href="#1、Browser-Process（浏览器进程）：" class="headerlink" title="1、Browser Process（浏览器进程）："></a><strong>1、Browser Process（浏览器进程）：</strong></h4><p>负责包括地址栏，书签栏，前进后退按钮等部分的工作；</p>
+<p>负责处理浏览器的一些不可见的底层操作，比如网络请求和文件访问；</p>
+<h4 id="2、Renderer-Process（渲染器进程）："><a href="#2、Renderer-Process（渲染器进程）：" class="headerlink" title="2、Renderer Process（渲染器进程）："></a><strong>2、Renderer Process（渲染器进程）：</strong></h4><p>负责一个 tab 内关于网页呈现的所有事情</p>
+<h4 id="3、Plugin-Process（插件器进程）："><a href="#3、Plugin-Process（插件器进程）：" class="headerlink" title="3、Plugin Process（插件器进程）："></a><strong>3、Plugin Process（插件器进程）：</strong></h4><p>负责控制一个网页用到的所有插件，如 flashGPU Process</p>
+<p>负责处理 GPU 相关的任务</p>
         
-          <a class="article-more-a" href="/2018/10/11/second-blog/#more">more >></a>
+          <a class="article-more-a" href="/2019/02/02/浏览器工作原理/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">浏览器</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">DOM渲染</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/02/浏览器工作原理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-事件冒泡与阻止" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/06/事件冒泡与阻止/">事件冒泡与阻止</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/06/事件冒泡与阻止/" class="archive-article-date">
+  	<time datetime="2019-01-06T11:29:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是JS事件冒泡？："><a href="#什么是JS事件冒泡？：" class="headerlink" title="什么是JS事件冒泡？："></a><strong>什么是JS事件冒泡？：</strong></h3><p>在一个对象上触发某类事件（比如单击onclick事件），如果此对象定义了此事件的处理程序，那么此事件就会调用这个处理程序，如果没有定义此事件处理程序或者事件返回true，那么这个事件会向这个对象的父级对象传播，从里到外，直至它被处理（父级对象所有同类事件都将被激活），或者它到达了对象层次的最顶层，即document对象（有些浏览器是window）。</p>
+<h3 id="如何阻止事件冒泡"><a href="#如何阻止事件冒泡" class="headerlink" title="如何阻止事件冒泡"></a><strong>如何阻止事件冒泡</strong></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"#hr_three"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">        e = e||<span class="built_in">window</span>.event;</span><br><span class="line">        e.stopPropagation();  <span class="comment">//普通浏览器</span></span><br><span class="line">        e.cancelBubble = <span class="literal">true</span>; <span class="comment">//兼容IE</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//合在一起写法</span></span><br><span class="line">        e.stopPropagation ? e.stopPropagation() : e.cancelBubble = <span class="literal">true</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="1-event-stopPropagation"><a href="#1-event-stopPropagation" class="headerlink" title="1.event.stopPropagation()"></a><strong>1.event.stopPropagation()</strong></h4><p>   事件处理过程中，阻止了事件冒泡，但不会阻击默认行为（它就执行了超链接的跳转）</p>
+        
+          <a class="article-more-a" href="/2019/01/06/事件冒泡与阻止/#more">more >></a>
         
       
 
@@ -322,210 +410,12 @@
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/11/second-blog/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-my-first-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/22/my-first-blog/">字符串及字符串方法(一)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/22/my-first-blog/" class="archive-article-date">
-  	<time datetime="2018-09-22T08:36:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="length-返回字符个数-下标-取值"><a href="#length-返回字符个数-下标-取值" class="headerlink" title="length 返回字符个数   下标 取值"></a><em>length</em> 返回字符个数   <em>下标</em> 取值</h5><p>字符串 length 不可修改字符串.字符串基本只读,不可修改</p>
-<h4 id="es5字符串方法"><a href="#es5字符串方法" class="headerlink" title="es5字符串方法"></a><strong>es5字符串方法</strong></h4><h5 id="charAt"><a href="#charAt" class="headerlink" title="charAt"></a><em>charAt</em></h5><p>获取字符串项 (参数 : 索引)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">"hello"</span></span><br><span class="line"><span class="built_in">console</span>.log(str.charAt(str.length<span class="number">-1</span>)) <span class="comment">// o</span></span><br></pre></td></tr></table></figure>
-<h5 id="charCodeAt"><a href="#charCodeAt" class="headerlink" title="charCodeAt"></a><em>charCodeAt</em></h5><p>返回指定位置字符串项的unicode编码 (参数 索引)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(str.charCodeAt(str.length<span class="number">-1</span>)) <span class="comment">// 111</span></span><br></pre></td></tr></table></figure>
-<h5 id="String-fromCharCode"><a href="#String-fromCharCode" class="headerlink" title="String.fromCharCode"></a><em>String.fromCharCode</em></h5><p>( 参数 unicode编码 ) 通过编码返回对应字符</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>.fromCharCode(<span class="number">111</span>))<span class="comment">// o字母</span></span><br></pre></td></tr></table></figure>
-<h5 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a><em>indexOf</em></h5><p>( 参数 字符串内容 ) 通过字符串项 返回当前找到的第一个的 索引</p>
-<p>如果有两个参数 第一个参数是检索的字符串项,第二个参数是从哪个位置开始检索的索引值   (找不到就返回-1)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="string">"l"</span>)) <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="string">"l"</span>,<span class="number">1</span>)) <span class="comment">// 从下标1开始检索</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/09/22/my-first-blog/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/22/my-first-blog/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-移动端适配" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/14/移动端适配/">移动端适配</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/14/移动端适配/" class="archive-article-date">
-  	<time datetime="2018-06-14T14:01:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-什么是前端适配"><a href="#1-什么是前端适配" class="headerlink" title="1. 什么是前端适配"></a><strong>1. 什么是前端适配</strong></h3><p>从UI展现层面上：</p>
-<p>我们期望不同尺寸的设备，页面可以自适应的展示或者进行等比缩放，从而在不同的尺寸的设备下看起来协调或者差不多。</p>
-<p>从代码实现层面上：</p>
-<p>我们希望前端适配可以用用尽可能简洁的代码来实现。最好一套代码实现兼容所有设备，而不是对每个或每种设备都写一套方案，不是次次都选用最无奈的方案（Android和iOS分开编写）。</p>
-<h3 id="2-关键字"><a href="#2-关键字" class="headerlink" title="2. 关键字"></a><strong>2. 关键字</strong></h3><p>如果你了解这些关键字，那么这段大可以跳过，如果后面遇到了问题，感觉有些疑惑，也可以再回来查阅。</p>
-<h4 id="2-1-Viewport-视口"><a href="#2-1-Viewport-视口" class="headerlink" title="2.1 Viewport/视口"></a>2.1 Viewport/视口</h4><p>通俗的讲，移动设备上的viewport就是设备的屏幕上能用来显示我们的网页的那一块区域[1]，但不一定是我们可见的区域。具体来说，分为以下三种。</p>
-        
-          <a class="article-more-a" href="/2018/06/14/移动端适配/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">App</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">跨终端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">适配</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">兼容</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">冒泡</a>
         		</li>
       		
 		</ul>
@@ -535,7 +425,98 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/14/移动端适配/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/01/06/事件冒泡与阻止/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-改变this指向" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/03/改变this指向/">改变this指向</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/03/改变this指向/" class="archive-article-date">
+  	<time datetime="2018-11-03T10:40:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p><strong>小案例 1  obj.a ( ) 输出this 与 f ( ) 输出this</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    a:fn <span class="comment">//函数的地址</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> f = obj.a;<span class="comment">//函数的地址赋值给f f保存的是函数的地址 和object没有关系了</span></span><br><span class="line">obj.a();<span class="comment">// 输出obj3 先找obj3的地址 再找a属性 再执行</span></span><br><span class="line">f()<span class="comment">// 输出window</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//一个是在obj下面 借东西 (还是依赖于obj 所有权还是obj得)  一个是在obj下面买东西(买掉所有权 和obj无关了)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>小案例2 面试题 关于argument的指向</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    a:fn <span class="comment">//函数的地址</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    e()<span class="comment">//指向window 等同于e = obj3.a //类似于上面的f = obj</span></span><br><span class="line">    <span class="built_in">arguments</span>[<span class="number">0</span>]()<span class="comment">//指向arguments 只能使用[]  类似于arg = [0:fn地址]</span></span><br><span class="line"> &#125;</span><br><span class="line"> fn1(obj3.a) <span class="comment">// window  arguments</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/2018/11/03/改变this指向/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端开发</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">this指针</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/03/改变this指向/">展开全文 >></a>
         </p>
       
 
@@ -567,7 +548,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
     </nav>
   
 
@@ -670,6 +651,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">restful</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">接口设计</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
@@ -682,11 +675,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">异步编程</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">异步编程</a>
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -698,7 +695,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -726,18 +731,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网站性能</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
             
@@ -750,11 +743,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+                <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网站性能</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spread</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -774,11 +783,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
+                <a href="javascript:void(0)" class="js-tag color5">回调地狱</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -786,11 +795,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES5</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">this指针</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -806,15 +823,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
+                <a href="javascript:void(0)" class="js-tag color2">this指针</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -831,6 +840,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
               </li>
             
             <div class="clearfix"></div>
