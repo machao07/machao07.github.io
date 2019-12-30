@@ -9,7 +9,7 @@
   <title>vue项目中promise解决回调地狱和并发请求 | 马超的个人博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="场景需求： 需要同时请求5个接口 都请求成功后执行下一步操作  解决方法： 定义一个变量i=5，请求成功一个接口，让i–，直到i=0时执行下一个操作，否则不执行 axios.all 并发请求，.then(axios.spread(function(callback1, callback2)){}) promise.all 并发请求，.then(function([callback1, callba">
-<meta name="keywords" content="axios,vue,promise,回调地狱">
+<meta name="keywords" content="vue,axios,promise,回调地狱">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue项目中promise解决回调地狱和并发请求">
 <meta property="og:url" content="http://yoursite.com/2019/11/10/vue项目中promise解决回调地狱和并发请求/index.html">
@@ -17,7 +17,7 @@
 <meta property="og:description" content="场景需求： 需要同时请求5个接口 都请求成功后执行下一步操作  解决方法： 定义一个变量i=5，请求成功一个接口，让i–，直到i=0时执行下一个操作，否则不执行 axios.all 并发请求，.then(axios.spread(function(callback1, callback2)){}) promise.all 并发请求，.then(function([callback1, callba">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com//machao07/image-store/blob/master/blog/2019123002.png?raw=true">
-<meta property="og:updated_time" content="2019-12-30T13:46:48.935Z">
+<meta property="og:updated_time" content="2019-12-30T13:50:45.202Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue项目中promise解决回调地狱和并发请求">
 <meta name="twitter:description" content="场景需求： 需要同时请求5个接口 都请求成功后执行下一步操作  解决方法： 定义一个变量i=5，请求成功一个接口，让i–，直到i=0时执行下一个操作，否则不执行 axios.all 并发请求，.then(axios.spread(function(callback1, callback2)){}) promise.all 并发请求，.then(function([callback1, callba">
@@ -230,15 +230,11 @@
 </ul>
 <ul>
 <li>数据处理<blockquote>
-<p>**1. 创建一个Promise实例，获取数据</p>
-<ol start="2">
-<li>并把数据传递给处理函数resolve和reject</li>
-<li>promise在声明时就执行了**<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">created()&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.$route.query.type)&#123;</span><br><span class="line">        <span class="keyword">this</span>.type = <span class="keyword">this</span>.$route.query.type;</span><br><span class="line">        <span class="keyword">this</span>.sellerId = <span class="keyword">this</span>.$route.query.targetId;</span><br><span class="line">        <span class="keyword">this</span>.initApi()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">    initApi()&#123;</span><br><span class="line">        <span class="string">`// 商户信息`</span></span><br><span class="line">        <span class="keyword">let</span> SellerDetailApi = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            getSellerDetail(<span class="keyword">this</span>.sellerId).then( <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">                resolve(res)   <span class="comment">// resolve(res.data)</span></span><br><span class="line">            &#125;).catch( <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">                reject(res)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="string">`// 会员卡信息`</span></span><br><span class="line">        <span class="keyword">let</span> MemberCardInfoApi = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            getMemberCardInfo(<span class="keyword">this</span>.sellerId, <span class="keyword">this</span>.payMoney).then( <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">                resolve(res)  <span class="comment">// resolve(res.data)</span></span><br><span class="line">            &#125;).catch( <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">                reject(res)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="string">`// Promise的all方法，等数组中的所有promise对象都完成执行`</span></span><br><span class="line">        <span class="built_in">Promise</span>.all([SellerDetailApi, MemberCardInfoApi]).then( <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.loading = <span class="literal">false</span>;</span><br><span class="line">            <span class="comment">// 商户信息</span></span><br><span class="line">            <span class="keyword">this</span>.detail = res[<span class="number">0</span>].data.detail;</span><br><span class="line">            <span class="keyword">this</span>.sellerPic = <span class="keyword">this</span>.detail.picture;</span><br><span class="line">            <span class="keyword">this</span>.sellerName = <span class="keyword">this</span>.detail.name;</span><br><span class="line">            <span class="keyword">this</span>.discount = <span class="keyword">this</span>.detail.discount;</span><br><span class="line">            <span class="comment">// 会员卡信息</span></span><br><span class="line">            <span class="keyword">this</span>.cardDetail = res[<span class="number">1</span>].data;</span><br><span class="line">            <span class="keyword">this</span>.balance = <span class="keyword">this</span>.cardDetail.balance;  <span class="comment">//余额</span></span><br><span class="line">            <span class="keyword">this</span>.rechargeTip = <span class="keyword">this</span>.cardDetail.rechargeTip;  <span class="comment">// 付款金额提示充值</span></span><br><span class="line">        &#125;).catch( <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(err)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<p><strong>1. 创建一个Promise实例，获取数据</strong><br><strong>2. 并把数据传递给处理函数resolve和reject</strong><br><strong>3. promise在声明时就执行了</strong></p>
 </blockquote>
 </li>
 </ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">created()&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.$route.query.type)&#123;</span><br><span class="line">        <span class="keyword">this</span>.type = <span class="keyword">this</span>.$route.query.type;</span><br><span class="line">        <span class="keyword">this</span>.sellerId = <span class="keyword">this</span>.$route.query.targetId;</span><br><span class="line">        <span class="keyword">this</span>.initApi()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">    initApi()&#123;</span><br><span class="line">        <span class="string">`// 商户信息`</span></span><br><span class="line">        <span class="keyword">let</span> SellerDetailApi = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            getSellerDetail(<span class="keyword">this</span>.sellerId).then( <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">                resolve(res)   <span class="comment">// resolve(res.data)</span></span><br><span class="line">            &#125;).catch( <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">                reject(res)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="string">`// 会员卡信息`</span></span><br><span class="line">        <span class="keyword">let</span> MemberCardInfoApi = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            getMemberCardInfo(<span class="keyword">this</span>.sellerId, <span class="keyword">this</span>.payMoney).then( <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">                resolve(res)  <span class="comment">// resolve(res.data)</span></span><br><span class="line">            &#125;).catch( <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">                reject(res)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="string">`// Promise的all方法，等数组中的所有promise对象都完成执行`</span></span><br><span class="line">        <span class="built_in">Promise</span>.all([SellerDetailApi, MemberCardInfoApi]).then( <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.loading = <span class="literal">false</span>;</span><br><span class="line">            <span class="comment">// 商户信息</span></span><br><span class="line">            <span class="keyword">this</span>.detail = res[<span class="number">0</span>].data.detail;</span><br><span class="line">            <span class="keyword">this</span>.sellerPic = <span class="keyword">this</span>.detail.picture;</span><br><span class="line">            <span class="keyword">this</span>.sellerName = <span class="keyword">this</span>.detail.name;</span><br><span class="line">            <span class="keyword">this</span>.discount = <span class="keyword">this</span>.detail.discount;</span><br><span class="line">            <span class="comment">// 会员卡信息</span></span><br><span class="line">            <span class="keyword">this</span>.cardDetail = res[<span class="number">1</span>].data;</span><br><span class="line">            <span class="keyword">this</span>.balance = <span class="keyword">this</span>.cardDetail.balance;  <span class="comment">//余额</span></span><br><span class="line">            <span class="keyword">this</span>.rechargeTip = <span class="keyword">this</span>.cardDetail.rechargeTip;  <span class="comment">// 付款金额提示充值</span></span><br><span class="line">        &#125;).catch( <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(err)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="3、接口返回："><a href="#3、接口返回：" class="headerlink" title="3、接口返回："></a>3、接口返回：</h2><p><code>promise.all中console.log(res) 返回的是数组</code><br><img src="https://github.com//machao07/image-store/blob/master/blog/2019123002.png?raw=true" alt="接口返回"></p>
 
       
@@ -284,11 +280,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">axios</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">axios</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -562,18 +558,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MVC</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
             
@@ -598,18 +582,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网站性能</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
             
@@ -622,11 +594,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
+                <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
+                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网站性能</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -650,11 +630,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">axios</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -670,11 +654,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MVC</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -682,35 +678,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">this指针</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">MVVM</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数据驱动视图</a>
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -727,6 +699,30 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">MVVM</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">数据驱动视图</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>
