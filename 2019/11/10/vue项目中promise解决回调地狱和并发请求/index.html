@@ -17,7 +17,7 @@
 <meta property="og:description" content="场景需求： 需要同时请求5个接口 都请求成功后执行下一步操作  解决方法： 定义一个变量i=5，请求成功一个接口，让i–，直到i=0时执行下一个操作，否则不执行 axios.all 并发请求，.then(axios.spread(function(callback1, callback2)){}) promise.all 并发请求，.then(function([callback1, callba">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com//machao07/image-store/blob/master/blog/2019123002.png?raw=true">
-<meta property="og:updated_time" content="2019-12-30T13:50:45.202Z">
+<meta property="og:updated_time" content="2019-12-30T13:50:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue项目中promise解决回调地狱和并发请求">
 <meta name="twitter:description" content="场景需求： 需要同时请求5个接口 都请求成功后执行下一步操作  解决方法： 定义一个变量i=5，请求成功一个接口，让i–，直到i=0时执行下一个操作，否则不执行 axios.all 并发请求，.then(axios.spread(function(callback1, callback2)){}) promise.all 并发请求，.then(function([callback1, callba">
@@ -370,6 +370,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/11/17/vue中Diff算法、key的作用原理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          vue中Diff算法、key的作用原理
+        
+      </div>
+    </a>
+  
   
     <a href="/2019/11/06/js运行机制——单线程、任务队列以及事件循环（event loop）/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">js运行机制——单线程、任务队列以及事件循环（event loop）</div>
@@ -522,19 +531,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -566,6 +575,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MVC</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
             
@@ -591,10 +612,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -646,11 +663,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color1">nickTick()</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JS运行机制</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">事件循环</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Diff算法</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">key作用原理</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -659,6 +692,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spread</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -678,14 +719,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">this指针</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MVVM</a>
               </li>
             
@@ -695,6 +728,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">数据驱动视图</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">this指针</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -723,14 +760,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兼容</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MVC</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
             
             <div class="clearfix"></div>
