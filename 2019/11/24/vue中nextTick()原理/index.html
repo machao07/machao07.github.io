@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="马超的个人博客 | Blog">
 <meta property="og:description" content="1. 用nextTick()的原因：JS运行机制（Event Loop）JS执行是单线程的，它是基于事件循环的  所有同步任务都在主线程上执行，形成一个执行栈。 主线程之外，会存在一个任务队列，只要异步任务有了结果，就在任务队列中放置一个事件。 当执行栈中的所有同步任务执行完后，就会读取任务队列。那些对应的异步任务，会结束等待状态，进入执行栈。 主线程不断重复第三步。    这里主线程的执行过程就">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-06-05T13:47:10.605Z">
+<meta property="og:updated_time" content="2020-06-05T13:51:31.716Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue中Diff算法、key的作用原理">
 <meta name="twitter:description" content="1. 用nextTick()的原因：JS运行机制（Event Loop）JS执行是单线程的，它是基于事件循环的  所有同步任务都在主线程上执行，形成一个执行栈。 主线程之外，会存在一个任务队列，只要异步任务有了结果，就在任务队列中放置一个事件。 当执行栈中的所有同步任务执行完后，就会读取任务队列。那些对应的异步任务，会结束等待状态，进入执行栈。 主线程不断重复第三步。    这里主线程的执行过程就">
@@ -230,6 +230,7 @@
 <li><code>Event Loop</code>分为宏任务和微任务，无论是执行宏任务还是微任务，完成后都会进入到一下<code>tick</code>，并在两个tick之间进行UI渲染。</li>
 </ul>
 </blockquote>
+<a id="more"></a>
 <h5 id="Vue异步更新队列（数据驱动视图）"><a href="#Vue异步更新队列（数据驱动视图）" class="headerlink" title="Vue异步更新队列（数据驱动视图）"></a>Vue异步更新队列（数据驱动视图）</h5><blockquote>
 <ul>
 <li>由于Vue DOM更新是<code>异步执行</code>的，即修改数据时，视图不会立即更新，</li>
@@ -540,10 +541,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">restful</a>
               </li>
             
@@ -556,7 +553,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -565,6 +562,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">fetch</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web前端</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -620,26 +633,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Diff算法</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">key作用原理</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">web前端</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nickTick()</a>
               </li>
             
@@ -649,6 +642,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">事件循环</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Diff算法</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">key作用原理</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -688,10 +689,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spread</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">promise</a>
               </li>
             
@@ -700,7 +697,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+                <a href="javascript:void(0)" class="js-tag color2">spread</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -728,7 +725,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -737,6 +734,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
               <li class="article-tag-list-item">

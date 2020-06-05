@@ -228,23 +228,9 @@
 <li><code>Event Loop</code>分为宏任务和微任务，无论是执行宏任务还是微任务，完成后都会进入到一下<code>tick</code>，并在两个tick之间进行UI渲染。</li>
 </ul>
 </blockquote>
-<h5 id="Vue异步更新队列（数据驱动视图）"><a href="#Vue异步更新队列（数据驱动视图）" class="headerlink" title="Vue异步更新队列（数据驱动视图）"></a>Vue异步更新队列（数据驱动视图）</h5><blockquote>
-<ul>
-<li>由于Vue DOM更新是<code>异步执行</code>的，即修改数据时，视图不会立即更新，</li>
-<li>只要<code>监听数据变化</code>，Vue 将开启一个队列，并<code>缓冲在同一事件循环中</code>发生的所有数据变更，在缓冲时会去除重复数据，从而避免不必要的计算和DOM操作。</li>
-<li>然后，在下一个的事件循环“tick”中，Vue 刷新队列并执行实际 (已去重的) 工作。</li>
-<li>等同一数据循环中的所有数据变化完成之后，再统一进行视图更新。</li>
-<li>为了确保得到更新后的DOM，所以设置了 <code>Vue.nextTick()</code>方法。</li>
-</ul>
-</blockquote>
-<h4 id="2、什么是nextTick"><a href="#2、什么是nextTick" class="headerlink" title="2、什么是nextTick()"></a>2、什么是nextTick()</h4><p><strong>在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。</strong></p>
-<blockquote>
-<p>Vue 在内部对异步队列尝试使用原生的 <code>Promise.then</code>、<code>MutationObserver</code> 和 <code>setImmediate</code>，如果执行环境不支持，则会采用 <code>setTimeout(fn, 0)</code>代替。</p>
-</blockquote>
-<h4 id="3、nextTick-用法"><a href="#3、nextTick-用法" class="headerlink" title="3、nextTick()用法"></a>3、nextTick()用法</h4><p><strong>全局中：</strong> <code>Vue.nextTick</code><br><strong>组件中：</strong> <code>this.$nextTick</code></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        message: <span class="string">'未更新'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">    updateMessage: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.message = <span class="string">'已更新'</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el.textContent)  <span class="comment">// =&gt; '未更新'</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el.textContent)  <span class="comment">// =&gt; '已更新'</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        
+          <a class="article-more-a" href="/2019/11/24/vue中nextTick()原理/#more">more >></a>
+        
       
 
       
@@ -337,17 +323,9 @@
 <blockquote>
 <p><strong><code>Diff 算法：</code> 仅在同级的vnode间做diff，递归地进行同级vnode的diff，最终实现整个DOM树的更新</strong></p>
 </blockquote>
-<h4 id="2、key的作用原理："><a href="#2、key的作用原理：" class="headerlink" title="2、key的作用原理："></a>2、key的作用原理：</h4><ul>
-<li>唯一标识，为了高效的更新虚拟DOM</li>
-<li>transition过渡时，使用key属性，可以区分它们是否变化，否则vue只会替换其内部属性而不会触发过渡效果</li>
-</ul>
-<p><strong><code>添加key唯一标识后Diff算法就可以正确的识别此节点，找到正确的位置区插入新的节点。</code></strong><br><br></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">transition</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">:key</span>=<span class="string">"text"</span>&gt;</span>&#123;&#123; text &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>text发生变化时，span会被replaced，而不会patched，因此transition会被触发</strong></p>
-</blockquote>
-<p>列表节点时：在B和C之间加一个F<br><img src="https://img-blog.csdnimg.cn/20200521163622258.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>Diff算法默认执行把C更新成F，D更新成C，E更新成D，最后再插入E<br><img src="https://img-blog.csdnimg.cn/20200521163725105.png" alt="在这里插入图片描述"></p>
-
+        
+          <a class="article-more-a" href="/2019/11/17/vue中Diff算法、key的作用原理/#more">more >></a>
+        
       
 
       
@@ -711,10 +689,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">restful</a>
               </li>
             
@@ -727,7 +701,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -736,6 +710,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">fetch</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web前端</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -791,26 +781,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Diff算法</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">key作用原理</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">web前端</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nickTick()</a>
               </li>
             
@@ -820,6 +790,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">事件循环</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Diff算法</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">key作用原理</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -859,10 +837,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spread</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">promise</a>
               </li>
             
@@ -871,7 +845,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+                <a href="javascript:void(0)" class="js-tag color2">spread</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -899,7 +873,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -908,6 +882,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
               <li class="article-tag-list-item">
