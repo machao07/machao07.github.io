@@ -195,6 +195,110 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-RESTful风格接口和特性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/11/RESTful风格接口和特性/">RESTful风格接口和特性</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/11/RESTful风格接口和特性/" class="archive-article-date">
+  	<time datetime="2019-05-11T13:21:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、RESTful的特性"><a href="#1、RESTful的特性" class="headerlink" title="1、RESTful的特性"></a>1、RESTful的特性</h3><p><strong><code>资源：</code></strong> 可以用一个URI（统一资源定位符）指向它，每种资源对应一个特性的URI。</p>
+<p><strong><code>表现层：</code></strong> 把资源具体呈现出来的形式。</p>
+<blockquote>
+<p>比如，文本可以用txt格式表现，也可以用HTML格式、XML格式、JSON格式表现，甚至可以采用二进制格式。</p>
+</blockquote>
+<p><strong><code>状态转换：</code></strong> 每发出一个请求，就代表了客户端和服务器的一次交互过程，是服务器端发生“状态转换”。</p>
+<blockquote>
+<p>HTTP协议里面，四个表示操作方式的动词：<strong><code>GET（获取资源）</code></strong>、<strong><code>POST（新建资源）</code></strong>、<strong><code>PUT（更新资源）</code></strong>、<strong><code>DELETE（删除资源）</code></strong>。</p>
+</blockquote>
+<h3 id="2、资源的URL设计"><a href="#2、资源的URL设计" class="headerlink" title="2、资源的URL设计"></a>2、资源的URL设计</h3><ul>
+<li><p><strong><code>通过URL来表示资源</code></strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">主资源：/api/coupon/&#123;id&#125;</span><br><span class="line">子资源：/api/coupon/&#123;id&#125;/pictures（图片集合）</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong><code>单数 &amp; 复数</code></strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/api/users/1</span><br><span class="line">/api/user/1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong><code>相对路径 &amp; 请求参数</code></strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 参数放在路径中</span><br><span class="line">/api/coupon/searchCouponDetail/1745486430339072 </span><br><span class="line"></span><br><span class="line">// 拼接的方式</span><br><span class="line">/api/coupon/searchCouponDetail?couponId=1745486430339072&amp;type=product</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p><strong>？后拼接参数的方式：这种方式一般作为过滤资源</strong></p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">restful</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">api</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">接口设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/11/RESTful风格接口和特性/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue中父组件向子组件传值（props）组件通信以及Watch运用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -451,96 +555,9 @@
 
 
   
-    <article id="post-微信公众号监听手机返回键事件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/08/微信公众号监听手机返回键事件/">微信公众号监听手机返回键事件</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/08/微信公众号监听手机返回键事件/" class="archive-article-date">
-  	<time datetime="2019-04-08T06:21:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="需求场景："><a href="#需求场景：" class="headerlink" title="需求场景："></a>需求场景：</h4><p>– <strong><code>只有扫码初始进入</code></strong>异业联盟活动页，0元券直接<code>弹框领取成功</code>（如图1）</p>
-<h4 id="抛出问题："><a href="#抛出问题：" class="headerlink" title="抛出问题："></a>抛出问题：</h4><p>– 进入优惠券包后到另一个页面（如图1）<br>– 然后按手机返回会回到异业联盟活动页，始终弹出领取活动页面</p>
-<h4 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h4><p>– 在优惠券包页面中监听手机返回事件，直接关闭页面退出到公众号</p>
-<h3 id="1、微信jssdk"><a href="#1、微信jssdk" class="headerlink" title="1、微信jssdk"></a>1、微信jssdk</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sign_url = <span class="built_in">window</span>.location.href.split(<span class="string">'#'</span>)[<span class="number">0</span>];</span><br><span class="line">sign(sign_url).then(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> configData = &#123;</span><br><span class="line">        debug: <span class="literal">false</span>,</span><br><span class="line">        appId: res.data.appId,</span><br><span class="line">        timestamp: res.data.timestamp,</span><br><span class="line">        nonceStr: res.data.nonceStr,</span><br><span class="line">        signature: res.data.signature,</span><br><span class="line">        jsApiList: [<span class="string">'closeWindow'</span>]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(configData)</span><br><span class="line">    wx.config(configData)</span><br><span class="line">&#125;).catch(<span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/04/08/微信公众号监听手机返回键事件/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">公众号</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/08/微信公众号监听手机返回键事件/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -872,6 +889,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">虚拟DOM</a>
               </li>
             
             <div class="clearfix"></div>

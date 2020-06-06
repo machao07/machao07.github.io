@@ -195,6 +195,96 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Promise异步编程(二)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/22/Promise异步编程(二)/">Promise异步编程(二)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/22/Promise异步编程(二)/" class="archive-article-date">
+  	<time datetime="2019-02-22T03:16:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>reject的用法</strong></p>
+<p>前面的例子都是只有“执行成功”的回调，还没有“失败”的情况，reject的作用就是把Promise的状态置为rejected，这样我们在then中就能捕捉到，然后执行“失败”情况的回调。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> p1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (num &lt;= <span class="number">5</span>) &#123;</span><br><span class="line">        resolve(<span class="string">"&lt;=5，走resolce"</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'resolce不能结束Promise'</span>)</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        reject(<span class="string">"&gt;5，走reject"</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'reject不能结束Promise'</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p1()</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">  &#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">  &#125;)</span><br><span class="line"><span class="comment">//reject不能结束Promise</span></span><br><span class="line"><span class="comment">//&gt;5，走reject</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/02/22/Promise异步编程(二)/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ECMAScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">异步编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/22/Promise异步编程(二)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Promise异步编程(一)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -468,104 +558,9 @@
 
 
   
-    <article id="post-常用的ES6语法(二)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/15/常用的ES6语法(二)/">常用的ES6语法(二)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/15/常用的ES6语法(二)/" class="archive-article-date">
-  	<time datetime="2019-02-15T03:28:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="三、函数"><a href="#三、函数" class="headerlink" title="三、函数"></a><strong>三、函数</strong></h3><h4 id="函数的默认参数"><a href="#函数的默认参数" class="headerlink" title="函数的默认参数"></a>函数的默认参数</h4><p>在ES5中，我们给函数传参数，然后在函数体内设置默认值，如下面这种方式。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">num, callback</span>) </span>&#123;</span><br><span class="line">  num = num || <span class="number">6</span></span><br><span class="line">  callback = callback || <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;<span class="built_in">console</span>.log(<span class="string">'ES5: '</span>, data)&#125;</span><br><span class="line">  callback(num * num)</span><br><span class="line">&#125;</span><br><span class="line">a() <span class="comment">//ES5: 36，不传参输出默认值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//你还可以这样使用callback</span></span><br><span class="line">a(<span class="number">10</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data * <span class="number">10</span>) <span class="comment">// 1000， 传参输出新数值</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>在ES6中，我们使用新的默认值写法</p>
-<p>function a(num = 6, callback = function (data) {console.log(‘ES6: ‘, data)}) {<br>  callback(num * num)<br>}</p>
-<p>a() //ES6: 36， 不传参输出默认值</p>
-<p>a(10, function(data) {<br>  console.log(data * 10) // 1000，传参输出新数值<br>})</p>
-<h3 id="四、箭头函数（-gt-）"><a href="#四、箭头函数（-gt-）" class="headerlink" title="四、箭头函数（=&gt;）"></a><strong>四、箭头函数（=&gt;）</strong></h3><p>（箭头函数比较重要，现在简单提一下，迟一点有空专门写一篇箭头函数的文章。）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">5</span>, <span class="number">10</span>]</span><br><span class="line"><span class="keyword">const</span> s = arr.reduce(<span class="function">(<span class="params">sum, item</span>) =&gt;</span> sum + item)</span><br><span class="line"><span class="built_in">console</span>.log(s) <span class="comment">// 15</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/02/15/常用的ES6语法(二)/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ECMAScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/15/常用的ES6语法(二)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
     </nav>
   
 
@@ -897,6 +892,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">虚拟DOM</a>
               </li>
             
             <div class="clearfix"></div>

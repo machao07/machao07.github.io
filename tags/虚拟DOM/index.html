@@ -6,20 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue中nextTick()原理 | 马超的个人博客 | Blog</title>
+  <title>Tag: 虚拟DOM | 马超的个人博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 用nextTick()的原因：JS运行机制（Event Loop）JS执行是单线程的，它是基于事件循环的  所有同步任务都在主线程上执行，形成一个执行栈。 主线程之外，会存在一个任务队列，只要异步任务有了结果，就在任务队列中放置一个事件。 当执行栈中的所有同步任务执行完后，就会读取任务队列。那些对应的异步任务，会结束等待状态，进入执行栈。 主线程不断重复第三步。    这里主线程的执行过程就">
-<meta name="keywords" content="vue,nickTick(),JS运行机制,事件循环">
-<meta property="og:type" content="article">
-<meta property="og:title" content="vue中nextTick()原理">
-<meta property="og:url" content="http://yoursite.com/2019/11/24/vue中nextTick()原理/index.html">
+  <meta name="keywords" content="前端开发,程序猿,互联网,技术栈,web前端,HTML5,css3,javascript,博客,个人博客,技术博客,公众号,vue,ES6,ES7,vant">
+<meta property="og:type" content="website">
+<meta property="og:title" content="马超的个人博客 | Blog">
+<meta property="og:url" content="http://yoursite.com/tags/虚拟DOM/index.html">
 <meta property="og:site_name" content="马超的个人博客 | Blog">
-<meta property="og:description" content="1. 用nextTick()的原因：JS运行机制（Event Loop）JS执行是单线程的，它是基于事件循环的  所有同步任务都在主线程上执行，形成一个执行栈。 主线程之外，会存在一个任务队列，只要异步任务有了结果，就在任务队列中放置一个事件。 当执行栈中的所有同步任务执行完后，就会读取任务队列。那些对应的异步任务，会结束等待状态，进入执行栈。 主线程不断重复第三步。    这里主线程的执行过程就">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-06-06T01:50:41.554Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue中nextTick()原理">
-<meta name="twitter:description" content="1. 用nextTick()的原因：JS运行机制（Event Loop）JS执行是单线程的，它是基于事件循环的  所有同步任务都在主线程上执行，形成一个执行栈。 主线程之外，会存在一个任务队列，只要异步任务有了结果，就在任务队列中放置一个事件。 当执行栈中的所有同步任务执行完后，就会读取任务队列。那些对应的异步任务，会结束等待状态，进入执行栈。 主线程不断重复第三步。    这里主线程的执行过程就">
+<meta name="twitter:title" content="马超的个人博客 | Blog">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人博客 | Blog" type="application/atom+xml">
   
@@ -197,95 +193,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue中nextTick()原理" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      vue中nextTick()原理
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/11/24/vue中的虚拟DOM/" class="archive-article-date">
+  	<time datetime="2019-11-24T12:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-24</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/11/24/vue中的虚拟DOM/">vue中的虚拟DOM</a>
     </h1>
   
 
-        
-        <a href="/2019/11/24/vue中nextTick()原理/" class="archive-article-date">
-  	<time datetime="2019-11-24T12:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-用nextTick-的原因："><a href="#1-用nextTick-的原因：" class="headerlink" title="1. 用nextTick()的原因："></a>1. 用nextTick()的原因：</h4><h5 id="JS运行机制（Event-Loop）"><a href="#JS运行机制（Event-Loop）" class="headerlink" title="JS运行机制（Event Loop）"></a><a href="https://blog.csdn.net/weixin_43924228/article/details/103706973" title="JS运行机制案例博客" target="_blank" rel="noopener">JS运行机制</a>（Event Loop）</h5><p><strong>JS执行是单线程的，它是基于事件循环的</strong></p>
-<ol>
-<li>所有同步任务都在主线程上执行，形成一个执行栈。</li>
-<li>主线程之外，会存在一个任务队列，只要异步任务有了结果，就在任务队列中放置一个事件。</li>
-<li>当执行栈中的所有同步任务执行完后，就会读取任务队列。那些对应的异步任务，会结束等待状态，进入执行栈。</li>
-<li>主线程不断重复第三步。</li>
-</ol>
-<blockquote>
-<ul>
-<li>这里主线程的执行过程就是一个<code>tick</code>，而所有的异步结果都是通过任务队列来调度。</li>
-<li><code>Event Loop</code>分为宏任务和微任务，无论是执行宏任务还是微任务，完成后都会进入到一下<code>tick</code>，并在两个tick之间进行UI渲染。</li>
-</ul>
-</blockquote>
-<a id="more"></a>
-<h5 id="Vue异步更新队列（数据驱动视图）"><a href="#Vue异步更新队列（数据驱动视图）" class="headerlink" title="Vue异步更新队列（数据驱动视图）"></a>Vue异步更新队列（数据驱动视图）</h5><blockquote>
-<ul>
-<li>由于Vue DOM更新是<code>异步执行</code>的，即修改数据时，视图不会立即更新，</li>
-<li>只要<code>监听数据变化</code>，Vue 将开启一个队列，并<code>缓冲在同一事件循环中</code>发生的所有数据变更，在缓冲时会去除重复数据，从而避免不必要的计算和DOM操作。</li>
-<li>然后，在下一个的事件循环“tick”中，Vue 刷新队列并执行实际 (已去重的) 工作。</li>
-<li>等同一数据循环中的所有数据变化完成之后，再统一进行视图更新。</li>
-<li>为了确保得到更新后的DOM，所以设置了 <code>Vue.nextTick()</code>方法。</li>
-</ul>
-</blockquote>
-<h4 id="2、什么是nextTick"><a href="#2、什么是nextTick" class="headerlink" title="2、什么是nextTick()"></a>2、什么是nextTick()</h4><p><strong>在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。</strong></p>
-<blockquote>
-<p>Vue 在内部对异步队列尝试使用原生的 <code>Promise.then</code>、<code>MutationObserver</code> 和 <code>setImmediate</code>，如果执行环境不支持，则会采用 <code>setTimeout(fn, 0)</code>代替。</p>
-</blockquote>
-<h4 id="3、nextTick-用法"><a href="#3、nextTick-用法" class="headerlink" title="3、nextTick()用法"></a>3、nextTick()用法</h4><p><strong>全局中：</strong> <code>Vue.nextTick</code><br><strong>组件中：</strong> <code>this.$nextTick</code></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        message: <span class="string">'未更新'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">    updateMessage: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.message = <span class="string">'已更新'</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el.textContent)  <span class="comment">// =&gt; '未更新'</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$el.textContent)  <span class="comment">// =&gt; '已更新'</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/wechatPay.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -295,136 +232,25 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nickTick()</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JS运行机制</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">事件循环</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">虚拟DOM</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/24/vue中nextTick()原理/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
   
   
-    <a href="/2019/11/17/vue中Diff算法、key的作用原理/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vue中Diff算法、key的作用原理</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+    </div></section>
   
 
-  
-
-  
-
-  
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "http://yoursite.com/2019/11/24/vue中nextTick()原理/",
-  owner: 'machao07',
-  repo: 'https://machao07.github.io/',
-  oauth: {
-    client_id: 'b267507e6f1570c34364',
-    client_secret: 'c766b436c96a81b582e7ab6c0c5f1ba80765c936',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
-  
+    
 
 
           </div>
@@ -454,9 +280,9 @@ gitment.render('gitment-ctn')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -754,6 +580,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">虚拟DOM</a>
               </li>
             
             <div class="clearfix"></div>

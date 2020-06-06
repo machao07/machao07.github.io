@@ -6,23 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue中Diff算法、key的作用原理 | 马超的个人博客 | Blog</title>
+  <title>Archives: 2019/12 | 马超的个人博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、Diff算法步骤： 用js对象结构（虚拟DOM）表示 DOM 树的结构；然后用这个树构建一个真正的 DOM 树，插到文档当中 当状态变更的时候，重新构造一棵新的对象树。然后用新的树和旧的树进行比较，记录两棵树差异 把所记录的差异应用到所构建的真正的DOM树上，视图就更新了   Diff 算法： 仅在同级的vnode间做diff，递归地进行同级vnode的diff，最终实现整个DOM树的更新">
-<meta name="keywords" content="vue,Diff算法,key作用原理">
-<meta property="og:type" content="article">
-<meta property="og:title" content="vue中Diff算法、key的作用原理">
-<meta property="og:url" content="http://yoursite.com/2019/11/17/vue中Diff算法、key的作用原理/index.html">
+  <meta name="keywords" content="前端开发,程序猿,互联网,技术栈,web前端,HTML5,css3,javascript,博客,个人博客,技术博客,公众号,vue,ES6,ES7,vant">
+<meta property="og:type" content="website">
+<meta property="og:title" content="马超的个人博客 | Blog">
+<meta property="og:url" content="http://yoursite.com/archives/2019/12/index.html">
 <meta property="og:site_name" content="马超的个人博客 | Blog">
-<meta property="og:description" content="1、Diff算法步骤： 用js对象结构（虚拟DOM）表示 DOM 树的结构；然后用这个树构建一个真正的 DOM 树，插到文档当中 当状态变更的时候，重新构造一棵新的对象树。然后用新的树和旧的树进行比较，记录两棵树差异 把所记录的差异应用到所构建的真正的DOM树上，视图就更新了   Diff 算法： 仅在同级的vnode间做diff，递归地进行同级vnode的diff，最终实现整个DOM树的更新">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200521163622258.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200521163725105.png">
-<meta property="og:updated_time" content="2020-06-05T13:54:50.393Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue中Diff算法、key的作用原理">
-<meta name="twitter:description" content="1、Diff算法步骤： 用js对象结构（虚拟DOM）表示 DOM 树的结构；然后用这个树构建一个真正的 DOM 树，插到文档当中 当状态变更的时候，重新构造一棵新的对象树。然后用新的树和旧的树进行比较，记录两棵树差异 把所记录的差异应用到所构建的真正的DOM树上，视图就更新了   Diff 算法： 仅在同级的vnode间做diff，递归地进行同级vnode的diff，最终实现整个DOM树的更新">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200521163622258.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70">
+<meta name="twitter:title" content="马超的个人博客 | Blog">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人博客 | Blog" type="application/atom+xml">
   
@@ -200,84 +193,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue中Diff算法、key的作用原理" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      vue中Diff算法、key的作用原理
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/12/11/vue中nextTick()原理/" class="archive-article-date">
+  	<time datetime="2019-12-11T12:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-11</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/12/11/vue中nextTick()原理/">vue中nextTick()原理</a>
     </h1>
   
 
-        
-        <a href="/2019/11/17/vue中Diff算法、key的作用原理/" class="archive-article-date">
-  	<time datetime="2019-11-17T12:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1、Diff算法步骤："><a href="#1、Diff算法步骤：" class="headerlink" title="1、Diff算法步骤："></a>1、Diff算法步骤：</h4><ul>
-<li>用js对象结构（<code>虚拟DOM</code>）表示 DOM 树的结构；然后用这个树构建一个真正的 DOM 树，插到文档当中</li>
-<li>当状态变更的时候，重新构造一棵新的对象树。然后用新的树和旧的树进行比较，记录两棵树差异</li>
-<li>把所记录的差异应用到所构建的真正的DOM树上，视图就更新了</li>
-</ul>
-<blockquote>
-<p><strong><code>Diff 算法：</code> 仅在同级的vnode间做diff，递归地进行同级vnode的diff，最终实现整个DOM树的更新</strong></p>
-</blockquote>
-<a id="more"></a>
-<h4 id="2、key的作用原理："><a href="#2、key的作用原理：" class="headerlink" title="2、key的作用原理："></a>2、key的作用原理：</h4><ul>
-<li>唯一标识，为了高效的更新虚拟DOM</li>
-<li>transition过渡时，使用key属性，可以区分它们是否变化，否则vue只会替换其内部属性而不会触发过渡效果</li>
-</ul>
-<p><strong><code>添加key唯一标识后Diff算法就可以正确的识别此节点，找到正确的位置区插入新的节点。</code></strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">transition</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">:key</span>=<span class="string">"text"</span>&gt;</span>&#123;&#123; text &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>text发生变化时，span会被replaced，而不会patched，因此transition会被触发</strong></p>
-</blockquote>
-<p>列表节点时：在B和C之间加一个F<br><img src="https://img-blog.csdnimg.cn/20200521163622258.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>Diff算法默认执行把C更新成F，D更新成C，E更新成D，最后再插入E<br><img src="https://img-blog.csdnimg.cn/20200521163725105.png" alt="在这里插入图片描述"></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/wechatPay.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -287,141 +232,33 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Diff算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nickTick()</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">key作用原理</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JS运行机制</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">事件循环</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/17/vue中Diff算法、key的作用原理/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/11/24/vue中nextTick()原理/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vue中nextTick()原理
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/11/10/vue项目中promise解决回调地狱和并发请求/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vue项目中promise解决回调地狱和并发请求</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+    </div></section>
   
 
-  
-
-  
-
-  
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "http://yoursite.com/2019/11/17/vue中Diff算法、key的作用原理/",
-  owner: 'machao07',
-  repo: 'https://machao07.github.io/',
-  oauth: {
-    client_id: 'b267507e6f1570c34364',
-    client_secret: 'c766b436c96a81b582e7ab6c0c5f1ba80765c936',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
-  
+    
 
 
           </div>
@@ -451,8 +288,8 @@ gitment.render('gitment-ctn')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -751,6 +588,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">虚拟DOM</a>
               </li>
             
             <div class="clearfix"></div>

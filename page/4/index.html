@@ -195,6 +195,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-微信公众号监听手机返回键事件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/08/微信公众号监听手机返回键事件/">微信公众号监听手机返回键事件</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/08/微信公众号监听手机返回键事件/" class="archive-article-date">
+  	<time datetime="2019-04-08T06:21:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="需求场景："><a href="#需求场景：" class="headerlink" title="需求场景："></a>需求场景：</h4><p>– <strong><code>只有扫码初始进入</code></strong>异业联盟活动页，0元券直接<code>弹框领取成功</code>（如图1）</p>
+<h4 id="抛出问题："><a href="#抛出问题：" class="headerlink" title="抛出问题："></a>抛出问题：</h4><p>– 进入优惠券包后到另一个页面（如图1）<br>– 然后按手机返回会回到异业联盟活动页，始终弹出领取活动页面</p>
+<h4 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h4><p>– 在优惠券包页面中监听手机返回事件，直接关闭页面退出到公众号</p>
+<h3 id="1、微信jssdk"><a href="#1、微信jssdk" class="headerlink" title="1、微信jssdk"></a>1、微信jssdk</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sign_url = <span class="built_in">window</span>.location.href.split(<span class="string">'#'</span>)[<span class="number">0</span>];</span><br><span class="line">sign(sign_url).then(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> configData = &#123;</span><br><span class="line">        debug: <span class="literal">false</span>,</span><br><span class="line">        appId: res.data.appId,</span><br><span class="line">        timestamp: res.data.timestamp,</span><br><span class="line">        nonceStr: res.data.nonceStr,</span><br><span class="line">        signature: res.data.signature,</span><br><span class="line">        jsApiList: [<span class="string">'closeWindow'</span>]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(configData)</span><br><span class="line">    wx.config(configData)</span><br><span class="line">&#125;).catch(<span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/04/08/微信公众号监听手机返回键事件/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">公众号</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/08/微信公众号监听手机返回键事件/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JS中的浅拷贝与深拷贝（对象、数组）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -453,89 +540,9 @@
 
 
   
-    <article id="post-cookie" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/04/cookie/">Cookie</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/04/cookie/" class="archive-article-date">
-  	<time datetime="2019-03-04T03:01:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	商城保存记录密码的时候，可以使用cookie来存；</span></span><br><span class="line"><span class="comment">	cookie:</span></span><br><span class="line"><span class="comment">        必须安装环境；</span></span><br><span class="line"><span class="comment">        localhost或127.0.0 开头。</span></span><br><span class="line"><span class="comment">     演示：</span></span><br><span class="line"><span class="comment">     	控制台 -&gt; 应用池 -&gt; cookie -&gt; </span></span><br><span class="line"><span class="comment">     		如果点击登陆的时候，页面当中就会保存一些cookie。</span></span><br><span class="line"><span class="comment">     		cookie是可以被劫持的。</span></span><br><span class="line"><span class="comment">     	设置 -&gt; 高级 -&gt; 内容设置 -&gt; cookie -&gt; </span></span><br><span class="line"><span class="comment">        	有保存对应的数据。</span></span><br><span class="line"><span class="comment">     </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//每个浏览器储存的位置都不一样。</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="built_in">document</span>.cookie ) <span class="comment">// 当前浏览器所储存的cookie；</span></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">'name = abc'</span>;</span><br><span class="line"><span class="built_in">console</span>.log( <span class="built_in">document</span>.cookie ); </span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	在设置一个名称叫做name,值为abc;储在哪个域名下的:127.0.0；Path:路径； expires（过期时间）：如果没有设置时间的话，就是当前会话（打开一个窗口，就是打开一个会话。）</span></span><br><span class="line"><span class="comment">	默认储存时间：</span></span><br><span class="line"><span class="comment">		默认就是当前会话，存储在运行内存里。</span></span><br><span class="line"><span class="comment">		当时会话没有结束的时候，可以继续 访问别的页面。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/03/04/cookie/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cookie</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/04/cookie/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
   
 
@@ -867,6 +874,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">虚拟DOM</a>
               </li>
             
             <div class="clearfix"></div>
