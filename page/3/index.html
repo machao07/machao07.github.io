@@ -228,11 +228,6 @@
 <h4 id="2、flex-wrap属性（如果一条轴线排不下，如何换行）"><a href="#2、flex-wrap属性（如果一条轴线排不下，如何换行）" class="headerlink" title="2、flex-wrap属性（如果一条轴线排不下，如何换行）"></a>2、flex-wrap属性（如果一条轴线排不下，如何换行）</h4><blockquote>
 <p><strong>flex-wrap: <code>nowrap</code> | <code>wrap</code> | <code>wrap-reverse</code></strong></p>
 </blockquote>
-<ol>
-<li>nowrap（默认）：不换行</li>
-<li>wrap：换行，第一行在上方</li>
-<li>wrap-reverse：换行，第一行在下方</li>
-</ol>
         
           <a class="article-more-a" href="/2019/06/03/flex布局及常用属性/#more">more >></a>
         
@@ -321,21 +316,9 @@
 <blockquote>
 <p>HTTP协议里面，四个表示操作方式的动词：<strong><code>GET（获取资源）</code></strong>、<strong><code>POST（新建资源）</code></strong>、<strong><code>PUT（更新资源）</code></strong>、<strong><code>DELETE（删除资源）</code></strong>。</p>
 </blockquote>
-<h3 id="2、资源的URL设计"><a href="#2、资源的URL设计" class="headerlink" title="2、资源的URL设计"></a>2、资源的URL设计</h3><ul>
-<li><p><strong><code>通过URL来表示资源</code></strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">主资源：/api/coupon/&#123;id&#125;</span><br><span class="line">子资源：/api/coupon/&#123;id&#125;/pictures（图片集合）</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong><code>单数 &amp; 复数</code></strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/api/users/1</span><br><span class="line">/api/user/1</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong><code>相对路径 &amp; 请求参数</code></strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 参数放在路径中</span><br><span class="line">/api/coupon/searchCouponDetail/1745486430339072 </span><br><span class="line"></span><br><span class="line">// 拼接的方式</span><br><span class="line">/api/coupon/searchCouponDetail?couponId=1745486430339072&amp;type=product</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p><strong>？后拼接参数的方式：这种方式一般作为过滤资源</strong></p>
-</blockquote>
-
+        
+          <a class="article-more-a" href="/2019/05/11/RESTful风格接口和特性/#more">more >></a>
+        
       
 
       
