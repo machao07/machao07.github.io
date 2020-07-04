@@ -195,6 +195,103 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-fouth-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/23/fouth-blog/">浅谈开发中常见的MVC模式</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/23/fouth-blog/" class="archive-article-date">
+  	<time datetime="2018-10-23T05:57:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>MVC模式</code>正是将前端项目作为一项工程进行分析、拆分，从而达到项目结构清晰、分工明确、团队配合默契、提高开发效率的目的</p>
+<p>之前博客中提到过前端工程化、模块化等模式浅析的文章，有想了解的可以浏览博主之前的文章：<a href="https://blog.csdn.net/weixin_43924228/article/details/86506907" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43924228/article/details/86506907</a></p>
+<blockquote>
+<p>MVC是三个单词的首字母缩写，它们是Model（模型）、View（视图）和Controller（控制）。</p>
+</blockquote>
+<p>这个模式所表达的意思就是，程序不论简单或复杂，从结构上看，都可以分成三层。</p>
+<ol>
+<li><p>最上面的一层，是直接面向最终用户的”视图层”（<code>View</code>）。它是提供给用户的操作界面，是程序的外壳。</p>
+</li>
+<li><p>最底下的一层，是核心的”数据层”（<code>Model</code>），也就是程序需要操作的数据或信息。</p>
+</li>
+<li><p>中间的一层，就是”控制层”（<code>Controller</code>），它负责根据用户从”视图层”输入的指令，选取”数据层”中的数据，然后对其进行相应的操作，产生最终结果。</p>
+</li>
+</ol>
+        
+          <a class="article-more-a" href="/2018/10/23/fouth-blog/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">MVC</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端开发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/23/fouth-blog/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-third-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -307,10 +404,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="es6字符串方法"><a href="#es6字符串方法" class="headerlink" title="es6字符串方法"></a><strong>es6字符串方法</strong></h4>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/startsWith   endsWith   includes 判断字符串项是否存在</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"hello world"</span></span><br><span class="line"><span class="built_in">console</span>.log(str.startsWith(<span class="string">"hello"</span>)) <span class="comment">//是否以hello开头 返回布尔值</span></span><br><span class="line"><span class="built_in">console</span>.log(str.endsWith(<span class="string">"d"</span>)) <span class="comment">//是否以d结尾 返回布尔值</span></span><br><span class="line"><span class="built_in">console</span>.log(str.includes(<span class="string">"o"</span>))  <span class="comment">//是否包含o    返回布尔值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"hello"</span></span><br><span class="line"><span class="built_in">console</span>.log(str.repeat(<span class="number">2</span>)) <span class="comment">//hellohello 原字符串重复2次 形成新字符串返回</span></span><br></pre></td></tr></table></figure>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/padStart padEnd  补全字符串</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"hello world"</span></span><br><span class="line"><span class="built_in">console</span>.log(str.padStart(<span class="number">10</span>,<span class="string">"s"</span>))<span class="comment">//ssssshello</span></span><br><span class="line">第一个参数 是补充字符串总共的长度 小于当前则不变 大于当前则用第二个参数的字符去补,第二个参数没有,就用空格去补 补满长度为止</span><br></pre></td></tr></table></figure>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/repeat()  方法返回一个新字符串，表示将原字符串重复n次。</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"朱雀"</span></span><br><span class="line"><span class="keyword">let</span> str1 = str.repeat(<span class="number">4</span>)</span><br><span class="line"><span class="built_in">console</span>.log(str1) <span class="comment">//将原来的字符串 复制4遍</span></span><br></pre></td></tr></table></figure>
-<h3 id="数组及数组-API"><a href="#数组及数组-API" class="headerlink" title="数组及数组 API"></a>数组及数组 API</h3><h4 id="es6数组方法"><a href="#es6数组方法" class="headerlink" title="es6数组方法"></a><strong>es6数组方法</strong></h4><h5 id="filter-过滤"><a href="#filter-过滤" class="headerlink" title="filter 过滤"></a><em>filter 过滤</em></h5><p>筛选符合要求的数组项,返回新数组  不改变原数组</p>
+        <h4 id="es6字符串方法"><a href="#es6字符串方法" class="headerlink" title="es6字符串方法"></a><strong>es6字符串方法</strong></h4><p><code>startsWith   endsWith   includes 判断字符串项是否存在</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">"hello world"</span></span><br><span class="line"><span class="built_in">console</span>.log(str.startsWith(<span class="string">"hello"</span>)) <span class="comment">//是否以hello开头 返回布尔值</span></span><br><span class="line"><span class="built_in">console</span>.log(str.endsWith(<span class="string">"d"</span>)) <span class="comment">//是否以d结尾 返回布尔值</span></span><br><span class="line"><span class="built_in">console</span>.log(str.includes(<span class="string">"o"</span>))  <span class="comment">//是否包含o    返回布尔值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"hello"</span></span><br><span class="line"><span class="built_in">console</span>.log(str.repeat(<span class="number">2</span>)) <span class="comment">//hellohello 原字符串重复2次 形成新字符串返回</span></span><br></pre></td></tr></table></figure>
+<p><code>padStart padEnd  补全字符串</code></p>
+<blockquote>
+<p>第一个参数 是补充字符串总共的长度 小于当前则不变 大于当前则用第二个参数的字符去补,第二个参数没有,就用空格去补 补满长度为止</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">"hello world"</span></span><br><span class="line"><span class="built_in">console</span>.log(str.padStart(<span class="number">10</span>,<span class="string">"s"</span>)) <span class="comment">//ssssshello</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/repeat()  方法返回一个新字符串，表示将原字符串重复n次。</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"朱雀"</span></span><br><span class="line"><span class="keyword">let</span> str1 = str.repeat(<span class="number">4</span>)</span><br><span class="line"><span class="built_in">console</span>.log(str1) <span class="comment">//将原来的字符串 复制4遍</span></span><br></pre></td></tr></table></figure>
+<h3 id="数组及数组-API"><a href="#数组及数组-API" class="headerlink" title="数组及数组 API"></a>数组及数组 API</h3><h4 id="es6数组方法"><a href="#es6数组方法" class="headerlink" title="es6数组方法"></a><strong>es6数组方法</strong></h4><h5 id="filter-过滤"><a href="#filter-过滤" class="headerlink" title="filter 过滤"></a><em>filter 过滤</em></h5><p><code>筛选符合要求的数组项,返回新数组  不改变原数组</code></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">9</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">0</span>]</span><br><span class="line"><span class="keyword">let</span> arr1 = arr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a &gt; <span class="number">3</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">// 返回的是能转化为true的就行 ,就代表把符合条件的 返回出来</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(arr1) <span class="comment">// [9, 5, 7, 8, 4]</span></span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2018/10/11/second-blog/#more">more >></a>
@@ -447,103 +549,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/09/22/my-first-blog/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-移动端适配" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/14/移动端适配/">移动端适配</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/14/移动端适配/" class="archive-article-date">
-  	<time datetime="2018-06-14T14:01:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-什么是前端适配"><a href="#1-什么是前端适配" class="headerlink" title="1. 什么是前端适配"></a><strong>1. 什么是前端适配</strong></h3><p>从UI展现层面上：</p>
-<p>我们期望不同尺寸的设备，页面可以自适应的展示或者进行等比缩放，从而在不同的尺寸的设备下看起来协调或者差不多。</p>
-<p>从代码实现层面上：</p>
-<p>我们希望前端适配可以用用尽可能简洁的代码来实现。最好一套代码实现兼容所有设备，而不是对每个或每种设备都写一套方案，不是次次都选用最无奈的方案（Android和iOS分开编写）。</p>
-<h3 id="2-关键字"><a href="#2-关键字" class="headerlink" title="2. 关键字"></a><strong>2. 关键字</strong></h3><p>如果你了解这些关键字，那么这段大可以跳过，如果后面遇到了问题，感觉有些疑惑，也可以再回来查阅。</p>
-<h4 id="2-1-Viewport-视口"><a href="#2-1-Viewport-视口" class="headerlink" title="2.1 Viewport/视口"></a>2.1 Viewport/视口</h4><p>通俗的讲，移动设备上的viewport就是设备的屏幕上能用来显示我们的网页的那一块区域[1]，但不一定是我们可见的区域。具体来说，分为以下三种。</p>
-        
-          <a class="article-more-a" href="/2018/06/14/移动端适配/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">App</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">跨终端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">适配</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">兼容</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/14/移动端适配/">展开全文 >></a>
         </p>
       
 
@@ -911,6 +916,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">虚拟DOM</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">flex</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
               </li>
             
             <div class="clearfix"></div>

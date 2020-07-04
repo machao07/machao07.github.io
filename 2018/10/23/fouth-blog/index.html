@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>浅谈开发中常见的MVC模式 | 马超的个人博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MVC模式正是将前端项目作为一项工程进行分析、拆分，从而达到项目结构清晰、分工明确、团队配合默契、提高开发效率的目的 之前博客中提到过前端工程化、模块化等模式浅析的文章，有想了解的可以浏览博主之前的文章：https://blog.csdn.net/weixin_43924228/article/details/86506907 MVC是三个单词的首字母缩写，它们是Model（模型）、View（视图">
+  <meta name="description" content="MVC模式正是将前端项目作为一项工程进行分析、拆分，从而达到项目结构清晰、分工明确、团队配合默契、提高开发效率的目的 之前博客中提到过前端工程化、模块化等模式浅析的文章，有想了解的可以浏览博主之前的文章：https://blog.csdn.net/weixin_43924228/article/details/86506907  MVC是三个单词的首字母缩写，它们是Model（模型）、View（视">
 <meta name="keywords" content="MVC,设计模式,前端开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈开发中常见的MVC模式">
 <meta property="og:url" content="http://yoursite.com/2018/10/23/fouth-blog/index.html">
 <meta property="og:site_name" content="马超的个人博客 | Blog">
-<meta property="og:description" content="MVC模式正是将前端项目作为一项工程进行分析、拆分，从而达到项目结构清晰、分工明确、团队配合默契、提高开发效率的目的 之前博客中提到过前端工程化、模块化等模式浅析的文章，有想了解的可以浏览博主之前的文章：https://blog.csdn.net/weixin_43924228/article/details/86506907 MVC是三个单词的首字母缩写，它们是Model（模型）、View（视图">
+<meta property="og:description" content="MVC模式正是将前端项目作为一项工程进行分析、拆分，从而达到项目结构清晰、分工明确、团队配合默契、提高开发效率的目的 之前博客中提到过前端工程化、模块化等模式浅析的文章，有想了解的可以浏览博主之前的文章：https://blog.csdn.net/weixin_43924228/article/details/86506907  MVC是三个单词的首字母缩写，它们是Model（模型）、View（视">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-02T14:15:10.000Z">
+<meta property="og:updated_time" content="2020-07-04T03:08:48.847Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈开发中常见的MVC模式">
-<meta name="twitter:description" content="MVC模式正是将前端项目作为一项工程进行分析、拆分，从而达到项目结构清晰、分工明确、团队配合默契、提高开发效率的目的 之前博客中提到过前端工程化、模块化等模式浅析的文章，有想了解的可以浏览博主之前的文章：https://blog.csdn.net/weixin_43924228/article/details/86506907 MVC是三个单词的首字母缩写，它们是Model（模型）、View（视图">
+<meta name="twitter:description" content="MVC模式正是将前端项目作为一项工程进行分析、拆分，从而达到项目结构清晰、分工明确、团队配合默契、提高开发效率的目的 之前博客中提到过前端工程化、模块化等模式浅析的文章，有想了解的可以浏览博主之前的文章：https://blog.csdn.net/weixin_43924228/article/details/86506907  MVC是三个单词的首字母缩写，它们是Model（模型）、View（视">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人博客 | Blog" type="application/atom+xml">
   
@@ -217,16 +217,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>MVC模式正是将前端项目作为一项工程进行分析、拆分，从而达到项目结构清晰、分工明确、团队配合默契、提高开发效率的目的</p>
+        <p><code>MVC模式</code>正是将前端项目作为一项工程进行分析、拆分，从而达到项目结构清晰、分工明确、团队配合默契、提高开发效率的目的</p>
 <p>之前博客中提到过前端工程化、模块化等模式浅析的文章，有想了解的可以浏览博主之前的文章：<a href="https://blog.csdn.net/weixin_43924228/article/details/86506907" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43924228/article/details/86506907</a></p>
+<blockquote>
 <p>MVC是三个单词的首字母缩写，它们是Model（模型）、View（视图）和Controller（控制）。</p>
+</blockquote>
 <p>这个模式所表达的意思就是，程序不论简单或复杂，从结构上看，都可以分成三层。</p>
-<p>1）最上面的一层，是直接面向最终用户的”视图层”（View）。它是提供给用户的操作界面，是程序的外壳。</p>
-<p>2）最底下的一层，是核心的”数据层”（Model），也就是程序需要操作的数据或信息。</p>
-<p>3）中间的一层，就是”控制层”（Controller），它负责根据用户从”视图层”输入的指令，选取”数据层”中的数据，然后对其进行相应的操作，产生最终结果。</p>
+<ol>
+<li><p>最上面的一层，是直接面向最终用户的”视图层”（<code>View</code>）。它是提供给用户的操作界面，是程序的外壳。</p>
+</li>
+<li><p>最底下的一层，是核心的”数据层”（<code>Model</code>），也就是程序需要操作的数据或信息。</p>
+</li>
+<li><p>中间的一层，就是”控制层”（<code>Controller</code>），它负责根据用户从”视图层”输入的指令，选取”数据层”中的数据，然后对其进行相应的操作，产生最终结果。</p>
+</li>
+</ol>
 <a id="more"></a>
 <p>之前看过一个例子：计算器小程序为例，解释一下MVC模式，虽然它不一定使用这个模式编写。</p>
+<blockquote>
 <p>在这个计算器程序中，外部的那些按钮和最上面的显示条，就是”视图层”，那些需要运算的数字就是”数据层”，执行加减乘除的那些内部运算步骤就是”控制层”。每一层执行不同的功能，整个程序的结构非常清楚。</p>
+</blockquote>
 
       
 
@@ -743,6 +752,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">虚拟DOM</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">flex</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
               </li>
             
             <div class="clearfix"></div>
