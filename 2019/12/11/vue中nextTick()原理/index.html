@@ -6,14 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue中nextTick()原理 | 马超的个人博客 | Blog</title>
+  <title>vue中nextTick()原理 | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1. 用nextTick()的原因：JS运行机制（Event Loop）JS执行是单线程的，它是基于事件循环的  所有同步任务都在主线程上执行，形成一个执行栈。 主线程之外，会存在一个任务队列，只要异步任务有了结果，就在任务队列中放置一个事件。 当执行栈中的所有同步任务执行完后，就会读取任务队列。那些对应的异步任务，会结束等待状态，进入执行栈。 主线程不断重复第三步。    这里主线程的执行过程就">
 <meta name="keywords" content="vue,nickTick(),JS运行机制,事件循环">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue中nextTick()原理">
 <meta property="og:url" content="http://yoursite.com/2019/12/11/vue中nextTick()原理/index.html">
-<meta property="og:site_name" content="马超的个人博客 | Blog">
+<meta property="og:site_name" content="马超的个人技术博客 | Blog">
 <meta property="og:description" content="1. 用nextTick()的原因：JS运行机制（Event Loop）JS执行是单线程的，它是基于事件循环的  所有同步任务都在主线程上执行，形成一个执行栈。 主线程之外，会存在一个任务队列，只要异步任务有了结果，就在任务队列中放置一个事件。 当执行栈中的所有同步任务执行完后，就会读取任务队列。那些对应的异步任务，会结束等待状态，进入执行栈。 主线程不断重复第三步。    这里主线程的执行过程就">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2020-06-06T06:12:08.659Z">
@@ -21,7 +21,7 @@
 <meta name="twitter:title" content="vue中nextTick()原理">
 <meta name="twitter:description" content="1. 用nextTick()的原因：JS运行机制（Event Loop）JS执行是单线程的，它是基于事件循环的  所有同步任务都在主线程上执行，形成一个执行栈。 主线程之外，会存在一个任务队列，只要异步任务有了结果，就在任务队列中放置一个事件。 当执行栈中的所有同步任务执行完后，就会读取任务队列。那些对应的异步任务，会结束等待状态，进入执行栈。 主线程不断重复第三步。    这里主线程的执行过程就">
   
-    <link rel="alternative" href="/atom.xml" title="马超的个人博客 | Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.png">

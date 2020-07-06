@@ -6,14 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue中Diff算法、key的作用原理 | 马超的个人博客 | Blog</title>
+  <title>vue中Diff算法、key的作用原理 | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1、Diff算法步骤： 用js对象结构（虚拟DOM）表示 DOM 树的结构；然后用这个树构建一个真正的 DOM 树，插到文档当中 当状态变更的时候，重新构造一棵新的对象树。然后用新的树和旧的树进行比较，记录两棵树差异 把所记录的差异应用到所构建的真正的DOM树上，视图就更新了   Diff 算法： 仅在同级的vnode间做diff，递归地进行同级vnode的diff，最终实现整个DOM树的更新">
 <meta name="keywords" content="vue,Diff算法,key作用原理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue中Diff算法、key的作用原理">
 <meta property="og:url" content="http://yoursite.com/2019/11/19/vue中Diff算法、key的作用原理/index.html">
-<meta property="og:site_name" content="马超的个人博客 | Blog">
+<meta property="og:site_name" content="马超的个人技术博客 | Blog">
 <meta property="og:description" content="1、Diff算法步骤： 用js对象结构（虚拟DOM）表示 DOM 树的结构；然后用这个树构建一个真正的 DOM 树，插到文档当中 当状态变更的时候，重新构造一棵新的对象树。然后用新的树和旧的树进行比较，记录两棵树差异 把所记录的差异应用到所构建的真正的DOM树上，视图就更新了   Diff 算法： 仅在同级的vnode间做diff，递归地进行同级vnode的diff，最终实现整个DOM树的更新">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200521163622258.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70">
@@ -24,7 +24,7 @@
 <meta name="twitter:description" content="1、Diff算法步骤： 用js对象结构（虚拟DOM）表示 DOM 树的结构；然后用这个树构建一个真正的 DOM 树，插到文档当中 当状态变更的时候，重新构造一棵新的对象树。然后用新的树和旧的树进行比较，记录两棵树差异 把所记录的差异应用到所构建的真正的DOM树上，视图就更新了   Diff 算法： 仅在同级的vnode间做diff，递归地进行同级vnode的diff，最终实现整个DOM树的更新">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200521163622258.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70">
   
-    <link rel="alternative" href="/atom.xml" title="马超的个人博客 | Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.png">
