@@ -222,32 +222,9 @@
 <p>只能是定义的类型，否则ts会提醒报错<br>any 可以追加其他类型</p>
 </blockquote>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myname: <span class="built_in">string</span> = <span class="string">"achao"</span></span><br><span class="line"><span class="keyword">let</span> age: <span class="built_in">number</span> = <span class="number">13</span></span><br><span class="line"><span class="keyword">let</span> alias: <span class="built_in">any</span> = <span class="string">"yaoyao"</span></span><br><span class="line"><span class="keyword">let</span> man: <span class="built_in">boolean</span> = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h4 id="2、给方法、参数定义类型"><a href="#2、给方法、参数定义类型" class="headerlink" title="2、给方法、参数定义类型"></a>2、给方法、参数定义类型</h4><blockquote>
-<ul>
-<li>方法后面定义的类型时<code>必须return</code>且<code>返回对应类型</code></li>
-<li>void 表示没有返回值</li>
-</ul>
-</blockquote>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不需要返回值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params"></span>):<span class="title">void</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span> <span class="comment">// 提醒报错</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/2020102316100689.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 给参数定义string类型</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params">name: <span class="built_in">string</span></span>):<span class="title">string</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"success"</span></span><br><span class="line">&#125;</span><br><span class="line">test(<span class="number">123</span>) <span class="comment">// 提醒报错，参数只能是string</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20201023161041790.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70#pic_center" alt="控制台打印"></p>
-<h4 id="3、自定义类型"><a href="#3、自定义类型" class="headerlink" title="3、自定义类型"></a>3、自定义类型</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person &#123;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> achao:Person = <span class="keyword">new</span> Person()</span><br><span class="line">achao.name = <span class="number">123</span> <span class="comment">// 提醒报错，只能是string</span></span><br></pre></td></tr></table></figure>
-<h4 id="4、函数参数默认值"><a href="#4、函数参数默认值" class="headerlink" title="4、函数参数默认值"></a>4、函数参数默认值</h4><blockquote>
-<ul>
-<li>默认参数必须<code>放置最后</code>，否则报错</li>
-<li>有默认参数值时，调用可不传参数</li>
-</ul>
-</blockquote>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a:<span class="built_in">string</span>, b:<span class="built_in">string</span>, c:<span class="built_in">string</span> = 'mo'</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a)</span><br><span class="line">  <span class="built_in">console</span>.log(b)</span><br><span class="line">  <span class="built_in">console</span>.log(c)</span><br><span class="line">&#125;</span><br><span class="line">fn(<span class="string">"x"</span>, <span class="string">"y"</span>, <span class="string">"z"</span>)  <span class="comment">// x y z</span></span><br><span class="line">fn(<span class="string">"x"</span>, <span class="string">"y"</span>,) <span class="comment">// x y mo</span></span><br></pre></td></tr></table></figure>
-<h4 id="5、函数可选参数"><a href="#5、函数可选参数" class="headerlink" title="5、函数可选参数"></a>5、函数可选参数</h4><blockquote>
-<ul>
-<li>可选参数必须在<code>必选参数后面</code>，否则报错</li>
-<li>可以在默认参数的后面</li>
-</ul>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">a:string, b?:string, c:string = <span class="string">'mo'</span></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a)</span><br><span class="line">  <span class="built_in">console</span>.log(b)</span><br><span class="line">  <span class="built_in">console</span>.log(c)</span><br><span class="line">&#125;</span><br><span class="line">fn1(<span class="string">"aaaa"</span>)  <span class="comment">// aaaa undefined mo</span></span><br></pre></td></tr></table></figure>
-
+        
+          <a class="article-more-a" href="/2020/03/18/Typescript基础类型/#more">more >></a>
+        
       
 
       
@@ -332,48 +309,9 @@
 <li>必须是ES6语法</li>
 </ul>
 </blockquote>
-<p><strong>tree shaking原理：依赖于ES6 moudel特性</strong></p>
-<ol>
-<li>只能作为模块顶层的语句出现</li>
-<li>import的模块名只能是字符串常量</li>
-<li>import binding 是immutablede</li>
-</ol>
-<h6 id="tree-shaking副作用"><a href="#tree-shaking副作用" class="headerlink" title="tree shaking副作用"></a><code>tree shaking副作用</code></h6><blockquote>
-<ul>
-<li>虽然生产模式下默认开启，但是由于经过 babel 编译全部模块被封装成 IIFE（立即执行函数）</li>
-<li>IIFE 存在副作用无法被 tree-shaking 掉</li>
-<li>需要配置 { module: false }和 sideEffects: false</li>
-<li>rollup 和 webpack 的 shaking 程度不同，以一个 Class 为例子</li>
-</ul>
-</blockquote>
-<h4 id="1、擦除无用的js"><a href="#1、擦除无用的js" class="headerlink" title="1、擦除无用的js"></a>1、擦除无用的js</h4><ul>
-<li><p>没有设置前，只引入不调用，mode: ‘none’时<br><img src="https://img-blog.csdnimg.cn/20200916094717980.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-</li>
-<li><p>只调用a，打包只打包对应的方法，mode: ‘production’<br><img src="https://img-blog.csdnimg.cn/20200916094741558.png#pic_center" alt="在这里插入图片描述"></p>
-</li>
-</ul>
-<h4 id="2、擦除无用的css"><a href="#2、擦除无用的css" class="headerlink" title="2、擦除无用的css"></a>2、擦除无用的css</h4><blockquote>
-<ul>
-<li><code>npm i purgecss-webpack-plugin -D</code></li>
-<li>需要和 <code>MiniCssExtractPlugin</code>配合使用，将css提取为单独的文件</li>
-</ul>
-</blockquote>
-<p>webpack.prod.js文件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> PATH = &#123;</span><br><span class="line">  src: path.join(__dirname, <span class="string">'./src'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">new</span> PurgecssPlugin(&#123;</span><br><span class="line">    paths: glob.sync(<span class="string">`<span class="subst">$&#123;PATH.src&#125;</span>/**/*`</span>, &#123;<span class="attr">nodir</span>: <span class="literal">true</span>&#125;)</span><br><span class="line">  &#125;),</span><br></pre></td></tr></table></figure></p>
-<h2 id="二、scope-Hoisting-（作用域提升）"><a href="#二、scope-Hoisting-（作用域提升）" class="headerlink" title="二、scope Hoisting （作用域提升）"></a>二、scope Hoisting （作用域提升）</h2><blockquote>
-<p><code>production mode</code>默认开启 scope Hoisting<br><code>new webpack.optimize.ModuleConcatenationPlugin()</code>插件</p>
-</blockquote>
-<ul>
-<li>构建后的代码存在大量闭包代码</li>
-<li>导致打包bundle体积变大，内存开销变大</li>
-</ul>
-<p><strong>原理：</strong></p>
-<blockquote>
-<ol>
-<li>将所有的模块的代码按照引用顺序放在一个函数作用域里，然后适当的重命名一些变量以防止变量名冲突</li>
-<li>可以减少函数声明代码和内存开销</li>
-</ol>
-</blockquote>
-
+        
+          <a class="article-more-a" href="/2020/01/11/webpack构建中tree shaking、scope Hoisting/#more">more >></a>
+        
       
 
       
@@ -728,7 +666,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -736,11 +682,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color5">异步编程</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">fetch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -756,11 +710,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">异步编程</a>
+                <a href="javascript:void(0)" class="js-tag color4">MVC</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -769,6 +731,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -785,42 +759,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">flex面试题</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">fetch</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MVC</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -868,18 +806,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Diff算法</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">key作用原理</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
@@ -888,11 +814,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">H5</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -908,7 +830,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">虚拟DOM</a>
+                <a href="javascript:void(0)" class="js-tag color2">Diff算法</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">key作用原理</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -928,19 +866,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">promise</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调地狱</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spread</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">虚拟DOM</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -953,6 +883,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">优化</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调地狱</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -1000,6 +938,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">App</a>
               </li>
             
@@ -1013,14 +959,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兼容</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
               </li>
             
             <div class="clearfix"></div>
