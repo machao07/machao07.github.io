@@ -198,6 +198,108 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Typescript基础类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/18/Typescript基础类型/">Typescript基础类型</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/18/Typescript基础类型/" class="archive-article-date">
+  	<time datetime="2020-01-18T03:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1、给变量后面定义类型"><a href="#1、给变量后面定义类型" class="headerlink" title="1、给变量后面定义类型"></a>1、给变量后面定义类型</h4><blockquote>
+<p>只能是定义的类型，否则ts会提醒报错<br>any 可以追加其他类型</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myname: <span class="built_in">string</span> = <span class="string">"achao"</span></span><br><span class="line"><span class="keyword">let</span> age: <span class="built_in">number</span> = <span class="number">13</span></span><br><span class="line"><span class="keyword">let</span> alias: <span class="built_in">any</span> = <span class="string">"yaoyao"</span></span><br><span class="line"><span class="keyword">let</span> man: <span class="built_in">boolean</span> = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h4 id="2、给方法、参数定义类型"><a href="#2、给方法、参数定义类型" class="headerlink" title="2、给方法、参数定义类型"></a>2、给方法、参数定义类型</h4><blockquote>
+<ul>
+<li>方法后面定义的类型时<code>必须return</code>且<code>返回对应类型</code></li>
+<li>void 表示没有返回值</li>
+</ul>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不需要返回值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params"></span>):<span class="title">void</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span> <span class="comment">// 提醒报错</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/2020102316100689.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 给参数定义string类型</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params">name: <span class="built_in">string</span></span>):<span class="title">string</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"success"</span></span><br><span class="line">&#125;</span><br><span class="line">test(<span class="number">123</span>) <span class="comment">// 提醒报错，参数只能是string</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20201023161041790.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70#pic_center" alt="控制台打印"></p>
+<h4 id="3、自定义类型"><a href="#3、自定义类型" class="headerlink" title="3、自定义类型"></a>3、自定义类型</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person &#123;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">    age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> achao:Person = <span class="keyword">new</span> Person()</span><br><span class="line">achao.name = <span class="number">123</span> <span class="comment">// 提醒报错，只能是string</span></span><br></pre></td></tr></table></figure>
+<h4 id="4、函数参数默认值"><a href="#4、函数参数默认值" class="headerlink" title="4、函数参数默认值"></a>4、函数参数默认值</h4><blockquote>
+<ul>
+<li>默认参数必须<code>放置最后</code>，否则报错</li>
+<li>有默认参数值时，调用可不传参数</li>
+</ul>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a:<span class="built_in">string</span>, b:<span class="built_in">string</span>, c:<span class="built_in">string</span> = 'mo'</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a)</span><br><span class="line">  <span class="built_in">console</span>.log(b)</span><br><span class="line">  <span class="built_in">console</span>.log(c)</span><br><span class="line">&#125;</span><br><span class="line">fn(<span class="string">"x"</span>, <span class="string">"y"</span>, <span class="string">"z"</span>)  <span class="comment">// x y z</span></span><br><span class="line">fn(<span class="string">"x"</span>, <span class="string">"y"</span>,) <span class="comment">// x y mo</span></span><br></pre></td></tr></table></figure>
+<h4 id="5、函数可选参数"><a href="#5、函数可选参数" class="headerlink" title="5、函数可选参数"></a>5、函数可选参数</h4><blockquote>
+<ul>
+<li>可选参数必须在<code>必选参数后面</code>，否则报错</li>
+<li>可以在默认参数的后面</li>
+</ul>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">a:string, b?:string, c:string = <span class="string">'mo'</span></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a)</span><br><span class="line">  <span class="built_in">console</span>.log(b)</span><br><span class="line">  <span class="built_in">console</span>.log(c)</span><br><span class="line">&#125;</span><br><span class="line">fn1(<span class="string">"aaaa"</span>)  <span class="comment">// aaaa undefined mo</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Typescript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/18/Typescript基础类型/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-webpack热更新及其原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -483,97 +585,9 @@
 
 
   
-    <article id="post-vue中的虚拟DOM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/24/vue中的虚拟DOM/">vue中的虚拟DOM</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/24/vue中的虚拟DOM/" class="archive-article-date">
-  	<time datetime="2019-11-24T12:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1、定义："><a href="#1、定义：" class="headerlink" title="1、定义："></a>1、定义：</h4><p>虚拟DOM其实就是一棵以 <code>JavaScript 对象</code>( VNode 节点)作为基础的树，用对象属性来描述节点， 实际上它只是一层对真实 DOM 的抽象。最终可以通过一系列操作使这棵树映射到真实环境上。</p>
-<p>相当于在js与DOM之间做了一个缓存，利用patch（<code>diff算法</code>）对比新旧虚拟DOM记录到一个对象中按需更新， 最后创建真实的DOM</p>
-<h4 id="2、虚拟dom原理流程"><a href="#2、虚拟dom原理流程" class="headerlink" title="2、虚拟dom原理流程"></a>2、虚拟dom原理流程</h4><p><code>模板 ==&gt; 渲染函数 ==&gt; 虚拟DOM树 ==&gt; 真实DOM</code></p>
-<ul>
-<li><p>vuejs通过编译将模板（template）转成渲染函数（render），执行渲染函数可以得到一个虚拟节点树</p>
-</li>
-<li><p>在对 Model 进行操作的时候，会触发对应 Dep 中的 Watcher 对象。Watcher 对象会调用对应的 update 来修改视图。</p>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/2019/11/24/vue中的虚拟DOM/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">虚拟DOM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/24/vue中的虚拟DOM/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -953,6 +967,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
             <div class="clearfix"></div>

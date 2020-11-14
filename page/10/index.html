@@ -198,6 +198,103 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-fouth-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/23/fouth-blog/">浅谈开发中常见的MVC模式</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/23/fouth-blog/" class="archive-article-date">
+  	<time datetime="2018-10-23T05:57:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>MVC模式</code>正是将前端项目作为一项工程进行分析、拆分，从而达到项目结构清晰、分工明确、团队配合默契、提高开发效率的目的</p>
+<p>之前博客中提到过前端工程化、模块化等模式浅析的文章，有想了解的可以浏览博主之前的文章：<a href="https://blog.csdn.net/weixin_43924228/article/details/86506907" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43924228/article/details/86506907</a></p>
+<blockquote>
+<p>MVC是三个单词的首字母缩写，它们是Model（模型）、View（视图）和Controller（控制）。</p>
+</blockquote>
+<p>这个模式所表达的意思就是，程序不论简单或复杂，从结构上看，都可以分成三层。</p>
+<ol>
+<li><p>最上面的一层，是直接面向最终用户的”视图层”（<code>View</code>）。它是提供给用户的操作界面，是程序的外壳。</p>
+</li>
+<li><p>最底下的一层，是核心的”数据层”（<code>Model</code>），也就是程序需要操作的数据或信息。</p>
+</li>
+<li><p>中间的一层，就是”控制层”（<code>Controller</code>），它负责根据用户从”视图层”输入的指令，选取”数据层”中的数据，然后对其进行相应的操作，产生最终结果。</p>
+</li>
+</ol>
+        
+          <a class="article-more-a" href="/2018/10/23/fouth-blog/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">MVC</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端开发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/23/fouth-blog/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-third-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -484,106 +581,9 @@
 
 
   
-    <article id="post-移动端适配" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/14/移动端适配/">移动端适配</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/14/移动端适配/" class="archive-article-date">
-  	<time datetime="2018-06-14T14:01:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-什么是前端适配"><a href="#1-什么是前端适配" class="headerlink" title="1. 什么是前端适配"></a><strong>1. 什么是前端适配</strong></h3><p>从UI展现层面上：</p>
-<p>我们期望不同尺寸的设备，页面可以自适应的展示或者进行等比缩放，从而在不同的尺寸的设备下看起来协调或者差不多。</p>
-<p>从代码实现层面上：</p>
-<p>我们希望前端适配可以用用尽可能简洁的代码来实现。最好一套代码实现兼容所有设备，而不是对每个或每种设备都写一套方案，不是次次都选用最无奈的方案（Android和iOS分开编写）。</p>
-<h3 id="2-关键字"><a href="#2-关键字" class="headerlink" title="2. 关键字"></a><strong>2. 关键字</strong></h3><p>如果你了解这些关键字，那么这段大可以跳过，如果后面遇到了问题，感觉有些疑惑，也可以再回来查阅。</p>
-<h4 id="2-1-Viewport-视口"><a href="#2-1-Viewport-视口" class="headerlink" title="2.1 Viewport/视口"></a>2.1 Viewport/视口</h4><p>通俗的讲，移动设备上的viewport就是设备的屏幕上能用来显示我们的网页的那一块区域[1]，但不一定是我们可见的区域。具体来说，分为以下三种。</p>
-        
-          <a class="article-more-a" href="/2018/06/14/移动端适配/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">App</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">跨终端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">适配</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">兼容</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/14/移动端适配/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span>
+      <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
     </nav>
   
 
@@ -963,6 +963,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兼容</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
             <div class="clearfix"></div>
