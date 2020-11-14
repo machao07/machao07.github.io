@@ -205,13 +205,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/18/Typescript基础类型/">Typescript基础类型</a>
+      <a class="article-title" href="/2020/03/18/Typescript基础类型/">Typescript基础类型</a>
     </h1>
   
 
         
-        <a href="/2020/01/18/Typescript基础类型/" class="archive-article-date">
-  	<time datetime="2020-01-18T03:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
+        <a href="/2020/03/18/Typescript基础类型/" class="archive-article-date">
+  	<time datetime="2020-03-18T03:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-18</time>
 </a>
         
       </header>
@@ -270,7 +270,145 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/18/Typescript基础类型/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/03/18/Typescript基础类型/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-webpack构建中tree shaking、scope Hoisting" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/11/webpack构建中tree shaking、scope Hoisting/">webpack构建中tree shaking、scope Hoisting（面试题）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/11/webpack构建中tree shaking、scope Hoisting/" class="archive-article-date">
+  	<time datetime="2020-01-11T03:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、tree-shaking-（摇树优化）"><a href="#一、tree-shaking-（摇树优化）" class="headerlink" title="一、tree shaking （摇树优化）"></a>一、tree shaking （摇树优化）</h2><p><strong>tree shaking概念：</strong></p>
+<ul>
+<li>1个模块可能有多个方法，只要其中某个方法使用了，整个文件会被打到bundle中</li>
+<li>tree shaking <code>只将用到的方法</code>打到bundle中，<code>没用的在uglify阶段被擦除</code></li>
+</ul>
+<blockquote>
+<ul>
+<li>webpack默认支持，在.babelrc文件中设置 modules: false即可</li>
+<li><code>production mode</code> 下默认开启 tree shaking</li>
+<li>必须是ES6语法</li>
+</ul>
+</blockquote>
+<p><strong>tree shaking原理：依赖于ES6 moudel特性</strong></p>
+<ol>
+<li>只能作为模块顶层的语句出现</li>
+<li>import的模块名只能是字符串常量</li>
+<li>import binding 是immutablede</li>
+</ol>
+<h6 id="tree-shaking副作用"><a href="#tree-shaking副作用" class="headerlink" title="tree shaking副作用"></a><code>tree shaking副作用</code></h6><blockquote>
+<ul>
+<li>虽然生产模式下默认开启，但是由于经过 babel 编译全部模块被封装成 IIFE（立即执行函数）</li>
+<li>IIFE 存在副作用无法被 tree-shaking 掉</li>
+<li>需要配置 { module: false }和 sideEffects: false</li>
+<li>rollup 和 webpack 的 shaking 程度不同，以一个 Class 为例子</li>
+</ul>
+</blockquote>
+<h4 id="1、擦除无用的js"><a href="#1、擦除无用的js" class="headerlink" title="1、擦除无用的js"></a>1、擦除无用的js</h4><ul>
+<li><p>没有设置前，只引入不调用，mode: ‘none’时<br><img src="https://img-blog.csdnimg.cn/20200916094717980.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+</li>
+<li><p>只调用a，打包只打包对应的方法，mode: ‘production’<br><img src="https://img-blog.csdnimg.cn/20200916094741558.png#pic_center" alt="在这里插入图片描述"></p>
+</li>
+</ul>
+<h4 id="2、擦除无用的css"><a href="#2、擦除无用的css" class="headerlink" title="2、擦除无用的css"></a>2、擦除无用的css</h4><blockquote>
+<ul>
+<li><code>npm i purgecss-webpack-plugin -D</code></li>
+<li>需要和 <code>MiniCssExtractPlugin</code>配合使用，将css提取为单独的文件</li>
+</ul>
+</blockquote>
+<p>webpack.prod.js文件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> PATH = &#123;</span><br><span class="line">  src: path.join(__dirname, <span class="string">'./src'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">new</span> PurgecssPlugin(&#123;</span><br><span class="line">    paths: glob.sync(<span class="string">`<span class="subst">$&#123;PATH.src&#125;</span>/**/*`</span>, &#123;<span class="attr">nodir</span>: <span class="literal">true</span>&#125;)</span><br><span class="line">  &#125;),</span><br></pre></td></tr></table></figure></p>
+<h2 id="二、scope-Hoisting-（作用域提升）"><a href="#二、scope-Hoisting-（作用域提升）" class="headerlink" title="二、scope Hoisting （作用域提升）"></a>二、scope Hoisting （作用域提升）</h2><blockquote>
+<p><code>production mode</code>默认开启 scope Hoisting<br><code>new webpack.optimize.ModuleConcatenationPlugin()</code>插件</p>
+</blockquote>
+<ul>
+<li>构建后的代码存在大量闭包代码</li>
+<li>导致打包bundle体积变大，内存开销变大</li>
+</ul>
+<p><strong>原理：</strong></p>
+<blockquote>
+<ol>
+<li>将所有的模块的代码按照引用顺序放在一个函数作用域里，然后适当的重命名一些变量以防止变量名冲突</li>
+<li>可以减少函数声明代码和内存开销</li>
+</ol>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">tree shaking</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">scope Hoisting</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">优化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/11/webpack构建中tree shaking、scope Hoisting/">展开全文 >></a>
         </p>
       
 
@@ -485,106 +623,6 @@
 
 
   
-    <article id="post-vue中nextTick()原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/11/vue中nextTick()原理/">vue中nextTick()原理</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/11/vue中nextTick()原理/" class="archive-article-date">
-  	<time datetime="2019-12-11T12:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-用nextTick-的原因："><a href="#1-用nextTick-的原因：" class="headerlink" title="1. 用nextTick()的原因："></a>1. 用nextTick()的原因：</h4><h5 id="JS运行机制（Event-Loop）"><a href="#JS运行机制（Event-Loop）" class="headerlink" title="JS运行机制（Event Loop）"></a><a href="https://blog.csdn.net/weixin_43924228/article/details/103706973" title="JS运行机制案例博客" target="_blank" rel="noopener">JS运行机制</a>（Event Loop）</h5><p><strong>JS执行是单线程的，它是基于事件循环的</strong></p>
-<ol>
-<li>所有同步任务都在主线程上执行，形成一个执行栈。</li>
-<li>主线程之外，会存在一个任务队列，只要异步任务有了结果，就在任务队列中放置一个事件。</li>
-<li>当执行栈中的所有同步任务执行完后，就会读取任务队列。那些对应的异步任务，会结束等待状态，进入执行栈。</li>
-<li>主线程不断重复第三步。</li>
-</ol>
-<blockquote>
-<ul>
-<li>这里主线程的执行过程就是一个<code>tick</code>，而所有的异步结果都是通过任务队列来调度。</li>
-<li><code>Event Loop</code>分为宏任务和微任务，无论是执行宏任务还是微任务，完成后都会进入到一下<code>tick</code>，并在两个tick之间进行UI渲染。</li>
-</ul>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/12/11/vue中nextTick()原理/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nickTick()</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JS运行机制</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">事件循环</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/11/vue中nextTick()原理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -702,7 +740,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">异步编程</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -718,15 +756,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">fetch</a>
+                <a href="javascript:void(0)" class="js-tag color5">异步编程</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -754,7 +788,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">fetch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -770,6 +808,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
             
@@ -779,26 +821,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">web前端</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -814,6 +836,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web前端</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
             
@@ -823,6 +857,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -838,6 +880,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">H5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nickTick()</a>
               </li>
             
@@ -850,23 +908,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">虚拟DOM</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">H5</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -882,15 +924,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">axios</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spread</a>
+                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -899,6 +937,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">回调地狱</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spread</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">tree shaking</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">scope Hoisting</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">优化</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -914,15 +968,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -938,19 +992,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">数据驱动视图</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -970,7 +1016,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
               </li>
             
             <div class="clearfix"></div>
