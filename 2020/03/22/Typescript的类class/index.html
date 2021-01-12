@@ -17,7 +17,7 @@
 <meta property="og:description" content="1、类的声明 public 默认private 私有的，类的内部访问,外部不能使用protected 类的内部和子类能访问到  12345678910class Person &amp;#123;  private name: string;  eat() &amp;#123;    console.log(this.name)  &amp;#125;&amp;#125;let p1 = new Person();p1.name">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20201027175059172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="og:updated_time" content="2021-01-12T14:22:11.088Z">
+<meta property="og:updated_time" content="2021-01-12T16:03:36.714Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TypeScrip的类class">
 <meta name="twitter:description" content="1、类的声明 public 默认private 私有的，类的内部访问,外部不能使用protected 类的内部和子类能访问到  12345678910class Person &amp;#123;  private name: string;  eat() &amp;#123;    console.log(this.name)  &amp;#125;&amp;#125;let p1 = new Person();p1.name">
@@ -223,8 +223,8 @@
 <p><code>public</code> 默认<br><code>private</code> 私有的，类的内部访问,外部不能使用<br><code>protected</code> 类的内部和子类能访问到</p>
 </blockquote>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person &#123;</span><br><span class="line">  <span class="keyword">private</span> name: <span class="built_in">string</span>;</span><br><span class="line">  eat() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> Person();</span><br><span class="line">p1.name = <span class="string">'achao'</span></span><br><span class="line">p1.eat(); <span class="comment">// achao  js文件依然可以编译</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20201027175059172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 <a id="more"></a>
+<p><img src="https://img-blog.csdnimg.cn/20201027175059172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 <h4 id="2、类的构造函数constructor"><a href="#2、类的构造函数constructor" class="headerlink" title="2、类的构造函数constructor"></a>2、类的构造函数constructor</h4><blockquote>
 <p>在类 new 实例化的时候被调用，且只调用一次</p>
 </blockquote>
@@ -506,15 +506,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -522,7 +518,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">异步编程</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -538,19 +538,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">异步编程</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ajax</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">fetch</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -578,15 +574,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MVC</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -614,11 +602,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
+                <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -631,6 +623,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网站性能</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -650,14 +650,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Diff算法</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">key作用原理</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nickTick()</a>
               </li>
             
@@ -667,6 +659,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">事件循环</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Diff算法</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">key作用原理</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -702,15 +702,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">axios</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spread</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -746,11 +746,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+                <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
             
               <li class="article-tag-list-item">
