@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>浅谈前端优化网站性能 | 马超的个人技术博客 | Blog</title>
+  <title>vue/react 项目中使用echarts | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、减少 HTTP 请求数量在浏览器与服务器进行通信时，主要是通过 HTTP 进行通信。浏览器与服务器需要经过三次握手，每次握手需要花费大量时间。而且不同浏览器对资源文件并发请求数量有限（不同浏览器允许并发数），一旦 HTTP 请求数量达到一定数量，资源请求就存在等待状态，这是很致命的，因此减少 HTTP 的请求数量可以很大程度上对网站性能进行优化。 CSS Sprites国内俗称CSS精灵，这是">
-<meta name="keywords" content="前端,性能优化,Web">
+  <meta name="description" content="vue 项目 yarn add echartsyard add vue-echart  123import ECharts from &quot;vue-echarts&quot;;import &quot;echarts/lib/component/title&quot;;import &quot;echarts/lib/chart/line&quot;; 123components: &amp;#123;  &apos;v-chart&apos;: ECharts&amp;#125; 1">
+<meta name="keywords" content="react,vue,echarts">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅谈前端优化网站性能">
-<meta property="og:url" content="http://yoursite.com/2019/03/07/前端性能优化/index.html">
+<meta property="og:title" content="vue&#x2F;react 项目中使用echarts">
+<meta property="og:url" content="http://yoursite.com/2020/03/26/vue | react 项目中使用echarts/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
-<meta property="og:description" content="1、减少 HTTP 请求数量在浏览器与服务器进行通信时，主要是通过 HTTP 进行通信。浏览器与服务器需要经过三次握手，每次握手需要花费大量时间。而且不同浏览器对资源文件并发请求数量有限（不同浏览器允许并发数），一旦 HTTP 请求数量达到一定数量，资源请求就存在等待状态，这是很致命的，因此减少 HTTP 的请求数量可以很大程度上对网站性能进行优化。 CSS Sprites国内俗称CSS精灵，这是">
+<meta property="og:description" content="vue 项目 yarn add echartsyard add vue-echart  123import ECharts from &quot;vue-echarts&quot;;import &quot;echarts/lib/component/title&quot;;import &quot;echarts/lib/chart/line&quot;; 123components: &amp;#123;  &apos;v-chart&apos;: ECharts&amp;#125; 1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-06-05T13:20:21.027Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/202101191439314.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2021-01-19T16:31:22.970Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅谈前端优化网站性能">
-<meta name="twitter:description" content="1、减少 HTTP 请求数量在浏览器与服务器进行通信时，主要是通过 HTTP 进行通信。浏览器与服务器需要经过三次握手，每次握手需要花费大量时间。而且不同浏览器对资源文件并发请求数量有限（不同浏览器允许并发数），一旦 HTTP 请求数量达到一定数量，资源请求就存在等待状态，这是很致命的，因此减少 HTTP 的请求数量可以很大程度上对网站性能进行优化。 CSS Sprites国内俗称CSS精灵，这是">
+<meta name="twitter:title" content="vue&#x2F;react 项目中使用echarts">
+<meta name="twitter:description" content="vue 项目 yarn add echartsyard add vue-echart  123import ECharts from &quot;vue-echarts&quot;;import &quot;echarts/lib/component/title&quot;;import &quot;echarts/lib/chart/line&quot;; 123components: &amp;#123;  &apos;v-chart&apos;: ECharts&amp;#125; 1">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/202101191439314.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
   
@@ -197,47 +199,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-前端性能优化" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-vue | react 项目中使用echarts" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      浅谈前端优化网站性能
+      vue/react 项目中使用echarts
     </h1>
   
 
         
-        <a href="/2019/03/07/前端性能优化/" class="archive-article-date">
-  	<time datetime="2019-03-07T03:26:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-07</time>
+        <a href="/2020/03/26/vue | react 项目中使用echarts/" class="archive-article-date">
+  	<time datetime="2020-03-26T07:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1、减少-HTTP-请求数量在浏览器与服务器进行通信时，主要是通过-HTTP-进行通信。"><a href="#1、减少-HTTP-请求数量在浏览器与服务器进行通信时，主要是通过-HTTP-进行通信。" class="headerlink" title="1、减少 HTTP 请求数量在浏览器与服务器进行通信时，主要是通过 HTTP 进行通信。"></a>1、减少 HTTP 请求数量在浏览器与服务器进行通信时，主要是通过 HTTP 进行通信。</h4><p>浏览器与服务器需要经过<code>三次握手</code>，每次握手需要花费大量时间。而且不同浏览器对资源文件并发请求数量有限（不同浏览器允许并发数），一旦 HTTP 请求数量达到一定数量，资源请求就存在等待状态，这是很致命的，因此减少 HTTP 的请求数量可以很大程度上对网站性能进行优化。</p>
-<h4 id="CSS-Sprites"><a href="#CSS-Sprites" class="headerlink" title="CSS Sprites"></a>CSS Sprites</h4><p>国内俗称CSS精灵，这是将多张图片合并成一张图片达到减少HTTP请求的一种解决方案，可以通过CSS的background属性来访问图片内容。这种方案同时还可以减少图片总字节数。</p>
-<h4 id="合并-CSS-和-JS-文件"><a href="#合并-CSS-和-JS-文件" class="headerlink" title="合并 CSS 和 JS 文件"></a><strong>合并 CSS 和 JS 文件</strong></h4><p>现在前端有很多<code>工程化打包工具</code>，如：grunt、gulp、webpack等。为了减少 HTTP 请求数量，可以通过这些工具再发布前将多个CSS或者多个JS合并成一个文件。<br><a id="more"></a></p>
-<h4 id="采用-lazyLoad"><a href="#采用-lazyLoad" class="headerlink" title="采用 lazyLoad"></a><strong>采用 lazyLoad</strong></h4><p>俗称懒加载，可以控制网页上的内容在一开始无需加载，不需要发请求，等到用户操作真正需要的时候立即加载出内容。这样就控制了网页资源一次性请求数量。</p>
-<h3 id="2、控制资源文件加载优先级"><a href="#2、控制资源文件加载优先级" class="headerlink" title="2、控制资源文件加载优先级"></a><strong>2、控制资源文件加载优先级</strong></h3><p>浏览器在加载HTML内容时，是将HTML内容从上至下依次解析，解析到link或者script标签就会加载href或者src对应链接内容，为了第一时间展示页面给用户，就需要将CSS提前加载，不要受 JS 加载影响。</p>
-<blockquote>
-<p>一般情况下都是CSS在头部，JS在底部。（script标签添加了 async 或 defer 等属性，浏览器会异步的加载和执行 JS 代码）</p>
+        <h3 id="vue-项目"><a href="#vue-项目" class="headerlink" title="vue 项目"></a>vue 项目</h3><blockquote>
+<p>yarn add echarts<br>yard add vue-echart</p>
 </blockquote>
-<h3 id="3、利用浏览器缓存"><a href="#3、利用浏览器缓存" class="headerlink" title="3、利用浏览器缓存"></a><strong>3、利用浏览器缓存</strong></h3><p>浏览器缓存是将网络资源存储在本地，等待下次请求该资源时，如果资源已经存在就不需要到服务器重新请求该资源，直接在本地读取该资源。</p>
-<h3 id="4、减少重排（Reflow）"><a href="#4、减少重排（Reflow）" class="headerlink" title="4、减少重排（Reflow）"></a><strong>4、减少重排（Reflow）</strong></h3><blockquote>
-<p>基本原理：重排是DOM的变化影响到了元素的几何属性（宽和高），浏览器会重新计算元素的几何属性，会使渲染树中受到影响的部分失效，浏览器会验证 DOM 树上的所有其它结点的visibility属性，这也是Reflow低效的原因。如果Reflow的过于频繁，CPU使用率就会急剧上升。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ECharts <span class="keyword">from</span> <span class="string">"vue-echarts"</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">"echarts/lib/component/title"</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">"echarts/lib/chart/line"</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components: &#123;</span><br><span class="line">  <span class="string">'v-chart'</span>: ECharts</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">v-chart</span> <span class="attr">:auto-resize</span>=<span class="string">"true"</span> <span class="attr">:options</span>=<span class="string">"transaction_report"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="react-项目"><a href="#react-项目" class="headerlink" title="react 项目"></a>react 项目</h3><blockquote>
+<p>yarn add <a href="mailto:echarts@4.9.0" target="_blank" rel="noopener">echarts@4.9.0</a><br>yarn add echarts-for-react（不支持最新版的echarts）</p>
 </blockquote>
-<p>减少Reflow，如果需要在DOM操作时添加样式，尽量使用 增加class属性，而不是通过style操作样式。</p>
-<h3 id="5、减少-DOM-操作6、图标使用-IconFont-替换"><a href="#5、减少-DOM-操作6、图标使用-IconFont-替换" class="headerlink" title="5、减少 DOM 操作6、图标使用 IconFont 替换"></a><strong>5、减少 DOM 操作6、图标使用 IconFont 替换</strong></h3><h3 id="Total"><a href="#Total" class="headerlink" title="Total"></a><strong>Total</strong></h3><p>(1) 减少 http 请求次数:CSS Sprites, JS、CSS 源码压缩、图片大小控制合适;网页Gzip，CDN 托管，data 缓存 ，图片服务器。</p>
-<p>(2) 前端模板 JS+数据，减少由于 HTML 标签导致的带宽浪费，前端用变量保存 AJAX请求结果，每次操作本地变量，不用请求，减少请求次数</p>
-<p>(3) 用 innerHTML 代替 DOM 操作，减少 DOM 操作次数，优化 javascript 性能。</p>
-<p>(4) 当需要设置的样式很多时设置 className 而不是直接操作 style。</p>
-<p>(5) 少用全局变量、缓存 DOM 节点查找的结果。减少 IO 读取操作。</p>
-<p>(6) 避免使用 CSS Expression(css 表达式)又称 Dynamic properties(动态属性)。</p>
-<p>(7) 图片预加载，将样式表放在顶部，将脚本放在底部 加上时间戳。</p>
-<p>(8)避免在页面的主体布局中使用 table，table 要等其中的内容完全下载之后才会显示出来，显示比 div+css 布局慢。</p>
+<h4 id="1、引入依赖"><a href="#1、引入依赖" class="headerlink" title="1、引入依赖"></a>1、引入依赖</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ReactEcharts <span class="keyword">from</span> <span class="string">'echarts-for-react'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'echarts/lib/chart/line'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明 option</span></span><br><span class="line"><span class="keyword">this</span>.state = &#123;</span><br><span class="line">    option: &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2、调接口赋值更新option"><a href="#2、调接口赋值更新option" class="headerlink" title="2、调接口赋值更新option"></a>2、调接口赋值更新option</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// componentDidMount()&#123;&#125; </span></span><br><span class="line"><span class="keyword">const</span> option =  &#123;</span><br><span class="line">    title: &#123;</span><br><span class="line">        text: <span class="string">''</span></span><br><span class="line">    &#125;,</span><br><span class="line">    tooltip: &#123; <span class="comment">// 鼠标文字提示</span></span><br><span class="line">        trigger: <span class="string">'axis'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    legend: &#123; <span class="comment">// 头部注释</span></span><br><span class="line">        data: [<span class="string">'会员'</span>, <span class="string">'交易'</span>, <span class="string">'佣金'</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    grid: &#123;  <span class="comment">// 视图展示大小</span></span><br><span class="line">        left: <span class="string">'2%'</span>,</span><br><span class="line">        right: <span class="string">'4%'</span>,</span><br><span class="line">        bottom: <span class="string">'2%'</span>,</span><br><span class="line">        containLabel: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    xAxis: &#123;</span><br><span class="line">        type: <span class="string">'category'</span>,</span><br><span class="line">        boundaryGap: <span class="literal">false</span>, <span class="comment">// x轴从0开始</span></span><br><span class="line">        data: date</span><br><span class="line">    &#125;,</span><br><span class="line">    yAxis: &#123;</span><br><span class="line">        type: <span class="string">'value'</span></span><br><span class="line">        &#125;,</span><br><span class="line">    series: [ <span class="comment">// 多少项</span></span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">'会员'</span>,</span><br><span class="line">            type: <span class="string">'line'</span>,</span><br><span class="line">            data:  memberData</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">'交易'</span>,</span><br><span class="line">            type: <span class="string">'line'</span>,</span><br><span class="line">            data:  orderData</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">'佣金'</span>,</span><br><span class="line">            type: <span class="string">'line'</span>,</span><br><span class="line">            data:  feeData</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">this</span>.setState(&#123;</span><br><span class="line">    option: option</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="3、render-return"><a href="#3、render-return" class="headerlink" title="3、render(){return()}"></a>3、render(){return()}</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Card title=<span class="string">"数据统计"</span>&gt;</span><br><span class="line">  &lt;ReactEcharts option=&#123;<span class="keyword">this</span>.state.option&#125;/&gt;</span><br><span class="line">&lt;<span class="regexp">/Card&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="4、视图"><a href="#4、视图" class="headerlink" title="4、视图"></a>4、视图</h4><p><img src="https://img-blog.csdnimg.cn/202101191439314.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
       
 
@@ -282,15 +278,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能优化</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">echarts</a>
         		</li>
       		
 		</ul>
@@ -346,7 +342,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/07/前端性能优化/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/26/vue | react 项目中使用echarts/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -360,18 +356,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/09/vue-cli脚手架及相关配置解析/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vue-cli脚手架及相关配置解析
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/03/04/cookie/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Cookie</div>
+    <a href="/2020/03/24/vue+ts项目mockjs模拟数据/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue+ts项目mockjs模拟数据</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -410,7 +397,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2019/03/07/前端性能优化/",
+  id: "http://yoursite.com/2020/03/26/vue | react 项目中使用echarts/",
   owner: 'machao07',
   repo: 'https://machao07.github.io/',
   oauth: {
