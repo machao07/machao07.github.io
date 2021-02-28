@@ -197,6 +197,103 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-my-first-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/22/my-first-blog/">字符串及字符串方法(一)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/22/my-first-blog/" class="archive-article-date">
+  	<time datetime="2018-09-22T08:36:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="length-返回字符个数-下标-取值"><a href="#length-返回字符个数-下标-取值" class="headerlink" title="length 返回字符个数   下标 取值"></a><em>length</em> 返回字符个数   <em>下标</em> 取值</h5><p>字符串 length 不可修改字符串.字符串基本只读,不可修改</p>
+<h4 id="es5字符串方法"><a href="#es5字符串方法" class="headerlink" title="es5字符串方法"></a><strong>es5字符串方法</strong></h4><h5 id="charAt"><a href="#charAt" class="headerlink" title="charAt"></a><em>charAt</em></h5><p>获取字符串项 (参数 : 索引)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">"hello"</span></span><br><span class="line"><span class="built_in">console</span>.log(str.charAt(str.length<span class="number">-1</span>)) <span class="comment">// o</span></span><br></pre></td></tr></table></figure>
+<h5 id="charCodeAt"><a href="#charCodeAt" class="headerlink" title="charCodeAt"></a><em>charCodeAt</em></h5><p>返回指定位置字符串项的unicode编码 (参数 索引)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(str.charCodeAt(str.length<span class="number">-1</span>)) <span class="comment">// 111</span></span><br></pre></td></tr></table></figure>
+<h5 id="String-fromCharCode"><a href="#String-fromCharCode" class="headerlink" title="String.fromCharCode"></a><em>String.fromCharCode</em></h5><p>( 参数 unicode编码 ) 通过编码返回对应字符</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>.fromCharCode(<span class="number">111</span>))<span class="comment">// o字母</span></span><br></pre></td></tr></table></figure>
+<h5 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a><em>indexOf</em></h5><p>( 参数 字符串内容 ) 通过字符串项 返回当前找到的第一个的 索引</p>
+<p>如果有两个参数 第一个参数是检索的字符串项,第二个参数是从哪个位置开始检索的索引值   (找不到就返回-1)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="string">"l"</span>)) <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="string">"l"</span>,<span class="number">1</span>)) <span class="comment">// 从下标1开始检索</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/09/22/my-first-blog/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/22/my-first-blog/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-移动端适配" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

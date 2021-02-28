@@ -197,6 +197,106 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue中nextTick()原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/11/vue中nextTick()原理/">vue中nextTick()原理</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/11/vue中nextTick()原理/" class="archive-article-date">
+  	<time datetime="2019-12-11T12:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-用nextTick-的原因："><a href="#1-用nextTick-的原因：" class="headerlink" title="1. 用nextTick()的原因："></a>1. 用nextTick()的原因：</h4><h5 id="JS运行机制（Event-Loop）"><a href="#JS运行机制（Event-Loop）" class="headerlink" title="JS运行机制（Event Loop）"></a><a href="https://blog.csdn.net/weixin_43924228/article/details/103706973" title="JS运行机制案例博客" target="_blank" rel="noopener">JS运行机制</a>（Event Loop）</h5><p><strong>JS执行是单线程的，它是基于事件循环的</strong></p>
+<ol>
+<li>所有同步任务都在主线程上执行，形成一个执行栈。</li>
+<li>主线程之外，会存在一个任务队列，只要异步任务有了结果，就在任务队列中放置一个事件。</li>
+<li>当执行栈中的所有同步任务执行完后，就会读取任务队列。那些对应的异步任务，会结束等待状态，进入执行栈。</li>
+<li>主线程不断重复第三步。</li>
+</ol>
+<blockquote>
+<ul>
+<li>这里主线程的执行过程就是一个<code>tick</code>，而所有的异步结果都是通过任务队列来调度。</li>
+<li><code>Event Loop</code>分为宏任务和微任务，无论是执行宏任务还是微任务，完成后都会进入到一下<code>tick</code>，并在两个tick之间进行UI渲染。</li>
+</ul>
+</blockquote>
+        
+          <a class="article-more-a" href="/2019/12/11/vue中nextTick()原理/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nickTick()</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JS运行机制</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">事件循环</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/11/vue中nextTick()原理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue中的虚拟DOM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -443,88 +543,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/11/10/vue项目中promise解决回调地狱和并发请求/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js运行机制——单线程、任务队列以及事件循环（event loop）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/06/js运行机制——单线程、任务队列以及事件循环（event loop）/">js运行机制——单线程、任务队列以及事件循环（event loop）</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/06/js运行机制——单线程、任务队列以及事件循环（event loop）/" class="archive-article-date">
-  	<time datetime="2019-11-06T10:21:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、面试案例"><a href="#1、面试案例" class="headerlink" title="1、面试案例"></a>1、面试案例</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(abc);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ********打印结果******</span></span><br><span class="line">abc</span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
-<h3 id="2、相关知识点"><a href="#2、相关知识点" class="headerlink" title="2、相关知识点"></a>2、相关知识点</h3><p><strong><code>-- 单线程</code></strong>：js特点，同一个时间只能做一件事</p>
-<p><strong><code>-- 任务队列</code></strong>：前一个任务结束，才会执行后一个任务</p>
-        
-          <a class="article-more-a" href="/2019/11/06/js运行机制——单线程、任务队列以及事件循环（event loop）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Javascript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ECMAscript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/06/js运行机制——单线程、任务队列以及事件循环（event loop）/">展开全文 >></a>
         </p>
       
 
