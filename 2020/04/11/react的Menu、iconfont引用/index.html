@@ -17,7 +17,7 @@
 <meta property="og:description" content="1、操作步骤 阿里矢量图标网站 加入购物车 添加至项目 Symbol方式引入，复制代码">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210227172106739.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2021-02-28T09:48:59.328Z">
+<meta property="og:updated_time" content="2021-02-28T09:51:22.393Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react的Menu、iconfont引用">
 <meta name="twitter:description" content="1、操作步骤 阿里矢量图标网站 加入购物车 添加至项目 Symbol方式引入，复制代码">
@@ -222,9 +222,10 @@
 <li><a href="https://www.iconfont.cn/" target="_blank" rel="noopener">阿里矢量图标网站</a></li>
 <li>加入购物车</li>
 <li>添加至项目</li>
-<li><code>Symbol</code>方式引入，复制代码<br><img src="https://img-blog.csdnimg.cn/20210227172106739.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li><code>Symbol</code>方式引入，复制代码</li>
 </ul>
 <a id="more"></a>
+<p><img src="https://img-blog.csdnimg.cn/20210227172106739.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h4 id="2、react-引用-iconFont"><a href="#2、react-引用-iconFont" class="headerlink" title="2、react 引用 iconFont"></a>2、react 引用 iconFont</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createFromIconfontCN &#125; <span class="keyword">from</span> <span class="string">'@ant-design/icons'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> IconFont = createFromIconfontCN(&#123;</span><br><span class="line">  scriptUrl: [</span><br><span class="line"> <span class="string">'//at.alicdn.com/t/font_2196242_dq7mz11miut.js'</span>, <span class="comment">// icon-home  icon-gouwucheman</span></span><br><span class="line">  ],</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;IconFont type=<span class="string">"icon-home"</span> /&gt;</span><br><span class="line">&lt;IconFont type=&#123;item.icon&#125; /&gt;</span><br></pre></td></tr></table></figure>
 <h4 id="3、引用-Menu"><a href="#3、引用-Menu" class="headerlink" title="3、引用 Menu"></a>3、引用 Menu</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Menu &#125; <span class="keyword">from</span> <span class="string">'antd'</span>;</span><br><span class="line"><span class="keyword">import</span> menuList <span class="keyword">from</span> <span class="string">'./menu'</span></span><br><span class="line"><span class="keyword">const</span> &#123; SubMenu &#125; = Menu;</span><br></pre></td></tr></table></figure>
