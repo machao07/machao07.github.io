@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: DOM渲染 | 马超的个人技术博客 | Blog</title>
+  <title>react项目父子组件传参/调用方法 | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端开发技术栈、知识点、面试题、项目难点坑点分享">
-<meta name="keywords" content="前端开发,程序猿,互联网,技术栈,web前端,HTML5,css3,javascript,ECMAScript,博客,个人博客,技术博客,公众号,vue,ES6,ES7,ES8,ES9,ES10,vantUI,ElementUI,css,css3">
-<meta property="og:type" content="website">
-<meta property="og:title" content="马超的个人技术博客 | Blog">
-<meta property="og:url" content="http://yoursite.com/tags/DOM渲染/index.html">
+  <meta name="description" content="1、父组件场景需求：   添加成功后，更新接口 关闭模态框 modalStatus,  bankId,  currentData（对象）, onDataChange（function）, onOk(function)   解决方法：   传入函数子组件调用 onDataChange={() =&amp;gt; this.getData()} onOk={() =&amp;gt; cancel()}">
+<meta name="keywords" content="React,Typescript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react项目父子组件传参&#x2F;调用方法">
+<meta property="og:url" content="http://yoursite.com/2020/04/18/react项目父子组件传参 & 调用方法/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
-<meta property="og:description" content="前端开发技术栈、知识点、面试题、项目难点坑点分享">
+<meta property="og:description" content="1、父组件场景需求：   添加成功后，更新接口 关闭模态框 modalStatus,  bankId,  currentData（对象）, onDataChange（function）, onOk(function)   解决方法：   传入函数子组件调用 onDataChange={() =&amp;gt; this.getData()} onOk={() =&amp;gt; cancel()}">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-03-09T15:46:54.926Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="马超的个人技术博客 | Blog">
-<meta name="twitter:description" content="前端开发技术栈、知识点、面试题、项目难点坑点分享">
+<meta name="twitter:title" content="react项目父子组件传参&#x2F;调用方法">
+<meta name="twitter:description" content="1、父组件场景需求：   添加成功后，更新接口 关闭模态框 modalStatus,  bankId,  currentData（对象）, onDataChange（function）, onOk(function)   解决方法：   传入函数子组件调用 onDataChange={() =&amp;gt; this.getData()} onOk={() =&amp;gt; cancel()}">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
   
@@ -195,68 +196,225 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-react项目父子组件传参 &amp; 调用方法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/02/浏览器工作原理/" class="archive-article-date">
-  	<time datetime="2019-02-02T02:49:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/02/浏览器工作原理/">浏览器工作原理</a>
+    <h1 class="article-title" itemprop="name">
+      react项目父子组件传参/调用方法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/04/18/react项目父子组件传参 & 调用方法/" class="archive-article-date">
+  	<time datetime="2020-04-18T07:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、父组件"><a href="#1、父组件" class="headerlink" title="1、父组件"></a>1、父组件</h3><p>场景需求：</p>
+<blockquote>
+<ul>
+<li>添加成功后，更新接口</li>
+<li>关闭模态框</li>
+<li>modalStatus,  bankId,  <code>currentData（对象）</code>, <code>onDataChange（function）</code>, onOk(function)</li>
+</ul>
+</blockquote>
+<p>解决方法：</p>
+<blockquote>
+<ul>
+<li>传入函数子组件调用</li>
+<li><code>onDataChange={() =&gt; this.getData()}</code></li>
+<li><code>onOk={() =&gt; cancel()}</code></li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount()&#123;</span><br><span class="line">    <span class="keyword">this</span>.getData()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 更新新接口</span></span><br><span class="line">getData()&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.state.currentId)&#123;</span><br><span class="line">        api.bankApproveQueryAllDetail(<span class="keyword">this</span>.state.currentId).then(<span class="function">(<span class="params">data: any</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                list: data.data || []</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong><code>render(){}</code></strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cancel = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">        isModalVisible: <span class="literal">false</span>  </span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h6 id="回显场景"><a href="#回显场景" class="headerlink" title="回显场景"></a>回显场景</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;TabPane tab=&#123;item.isDefault?<span class="string">'默认模板'</span>:item.templateName&#125; key=&#123;item.approveId&#125;&gt;</span><br><span class="line">    &lt;AddTemplate modalStatus=&#123;<span class="string">'update'</span>&#125; bankId=&#123;<span class="keyword">this</span>.state.currentId&#125; currentData=&#123;item&#125; onDataChange=&#123;() =&gt; <span class="keyword">this</span>.getData()&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">AddTemplate</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/TabPane&gt;</span></span><br></pre></td></tr></table></figure>
+<h6 id="添加场景"><a href="#添加场景" class="headerlink" title="添加场景"></a>添加场景</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Modal title=<span class="string">"添加模板"</span> width=&#123;<span class="string">'830px'</span>&#125; footer=&#123;<span class="literal">null</span>&#125; visible=&#123;isModalVisible&#125; onCancel=&#123;cancel&#125;&gt;</span><br><span class="line">    &lt;AddTemplate modalStatus=&#123;<span class="string">'create'</span>&#125; bankId=&#123;<span class="keyword">this</span>.state.currentId&#125; onDataChange=&#123;() =&gt; <span class="keyword">this</span>.getData()&#125; onOk=&#123;() =&gt; cancel()&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">AddTemplate</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/Modal&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2、子组件"><a href="#2、子组件" class="headerlink" title="2、子组件"></a>2、子组件</h3><blockquote>
+<ul>
+<li>&lt;{ key: type}, &gt;</li>
+<li><code>currentData</code> 作为可选传参数用 <code>?:</code>表示</li>
+<li>onDataChange:() =&gt; void <code>更新接口函数</code></li>
+<li>onOk?: () =&gt; void <code>改变模态框函数</code></li>
+</ul>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">interface Props &#123;</span><br><span class="line">    currentData?: BankApproveDetailVo, </span><br><span class="line">    modalStatus: string, </span><br><span class="line">    bankId: number, </span><br><span class="line">    onDataChange: <span class="function"><span class="params">()</span>=&gt;</span><span class="keyword">void</span>, </span><br><span class="line">    onOk?: <span class="function"><span class="params">()</span>=&gt;</span><span class="keyword">void</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface States &#123;</span><br><span class="line">    fields: any[],</span><br><span class="line">    approveId: number,</span><br><span class="line">    bankId: number</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AddTemplate</span> <span class="keyword">extends</span> <span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">States</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props: Props)&#123;</span><br><span class="line">        <span class="keyword">super</span>(props)</span><br><span class="line">        <span class="keyword">this</span>.state = &#123;</span><br><span class="line">            fields: [],</span><br><span class="line">            approveId: <span class="keyword">this</span>.props.currentData?.approveId || <span class="number">0</span>,</span><br><span class="line">            bankId: <span class="keyword">this</span>.props.bankId</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    handleDefault = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; approveId, bankId &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">        api.bankApproveIsDefault( approveId, bankId ).then(<span class="function">(<span class="params">data: any</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(data.code === <span class="number">200</span>)&#123;</span><br><span class="line">                message.success(<span class="string">'设置默认模板成功'</span>)</span><br><span class="line">                <span class="keyword">this</span>.props.onDataChange()</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                message.error(<span class="string">'设置默认模板失败'</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechatPay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Web</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">浏览器</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">DOM渲染</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Typescript</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/18/react项目父子组件传参 & 调用方法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/04/15/react项目页面跳转 & 传值/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">react项目页面跳转/传值</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2020/04/18/react项目父子组件传参 &amp; 调用方法/",
+  owner: 'machao07',
+  repo: 'https://machao07.github.io/',
+  oauth: {
+    client_id: 'b267507e6f1570c34364',
+    client_secret: 'c766b436c96a81b582e7ab6c0c5f1ba80765c936',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -286,9 +444,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
