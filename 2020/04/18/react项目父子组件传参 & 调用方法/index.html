@@ -9,7 +9,7 @@
   <title>react项目父子组件传参/调用方法 | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1、父组件场景需求：   添加成功后，更新接口 关闭模态框 modalStatus,  bankId,  currentData（对象）, onDataChange（function）, onOk(function)   解决方法：   传入函数子组件调用 onDataChange={() =&amp;gt; this.getData()} onOk={() =&amp;gt; cancel()}">
-<meta name="keywords" content="Typescript,React">
+<meta name="keywords" content="React,Typescript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react项目父子组件传参&#x2F;调用方法">
 <meta property="og:url" content="http://yoursite.com/2020/04/18/react项目父子组件传参 & 调用方法/index.html">
@@ -235,8 +235,8 @@
 <a id="more"></a>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount()&#123;</span><br><span class="line">    <span class="keyword">this</span>.getData()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 更新新接口</span></span><br><span class="line">getData()&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.state.currentId)&#123;</span><br><span class="line">        api.bankApproveQueryAllDetail(<span class="keyword">this</span>.state.currentId).then(<span class="function">(<span class="params">data: any</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                list: data.data || []</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong><code>render(){}</code></strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cancel = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">        isModalVisible: <span class="literal">false</span>  </span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h6 id="回显场景"><a href="#回显场景" class="headerlink" title="回显场景"></a>回显场景</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;TabPane tab=&#123;item.isDefault?<span class="string">'默认模板'</span>:item.templateName&#125; key=&#123;item.approveId&#125;&gt;</span><br><span class="line">    &lt;AddTemplate modalStatus=&#123;<span class="string">'update'</span>&#125; bankId=&#123;<span class="keyword">this</span>.state.currentId&#125; currentData=&#123;item&#125; onDataChange=&#123;() =&gt; <span class="keyword">this</span>.getData()&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">AddTemplate</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/TabPane&gt;</span></span><br></pre></td></tr></table></figure>
-<h6 id="添加场景"><a href="#添加场景" class="headerlink" title="添加场景"></a>添加场景</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Modal title=<span class="string">"添加模板"</span> width=&#123;<span class="string">'830px'</span>&#125; footer=&#123;<span class="literal">null</span>&#125; visible=&#123;isModalVisible&#125; onCancel=&#123;cancel&#125;&gt;</span><br><span class="line">    &lt;AddTemplate modalStatus=&#123;<span class="string">'create'</span>&#125; bankId=&#123;<span class="keyword">this</span>.state.currentId&#125; onDataChange=&#123;() =&gt; <span class="keyword">this</span>.getData()&#125; onOk=&#123;() =&gt; cancel()&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">AddTemplate</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/Modal&gt;</span></span><br></pre></td></tr></table></figure>
+<h6 id="回显场景"><a href="#回显场景" class="headerlink" title="回显场景"></a>回显场景</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;TabPane tab=&#123;item.isDefault?<span class="string">'默认模板'</span>:item.templateName&#125; key=&#123;item.approveId&#125;&gt;</span><br><span class="line">    &lt;AddTemplate modalStatus=&#123;<span class="string">'update'</span>&#125; bankId=&#123;<span class="keyword">this</span>.state.currentId&#125; currentData=&#123;item&#125; onDataChange=&#123;() =&gt; <span class="keyword">this</span>.getData()&#125;&gt;&lt;/AddTemplate&gt;</span><br><span class="line">&lt;<span class="regexp">/TabPane&gt;</span></span><br></pre></td></tr></table></figure>
+<h6 id="添加场景"><a href="#添加场景" class="headerlink" title="添加场景"></a>添加场景</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Modal title=<span class="string">"添加模板"</span> width=&#123;<span class="string">'830px'</span>&#125; footer=&#123;<span class="literal">null</span>&#125; visible=&#123;isModalVisible&#125; onCancel=&#123;cancel&#125;&gt;</span><br><span class="line">    &lt;AddTemplate modalStatus=&#123;<span class="string">'create'</span>&#125; bankId=&#123;<span class="keyword">this</span>.state.currentId&#125; onDataChange=&#123;() =&gt; <span class="keyword">this</span>.getData()&#125; onOk=&#123;() =&gt; cancel()&#125;&gt;&lt;/AddTemplate&gt;</span><br><span class="line">&lt;<span class="regexp">/Modal&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="2、子组件"><a href="#2、子组件" class="headerlink" title="2、子组件"></a>2、子组件</h3><blockquote>
 <ul>
 <li>&lt;{ key: type}, &gt;</li>
@@ -289,11 +289,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Typescript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Typescript</a>
         		</li>
       		
 		</ul>
@@ -362,6 +362,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/04/18/React Native项目包管理package.json文件/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          React Native项目包管理package.json文件
+        
+      </div>
+    </a>
   
   
     <a href="/2020/04/15/react项目页面跳转 & 传值/" id="article-nav-older" class="article-nav-link-wrap">
@@ -527,7 +536,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">fetch</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -547,43 +572,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">fetch</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">cookie</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">flex</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">css3</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">flex-grow</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">flex-shrink</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flex-basis</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">flex面试题</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -619,15 +612,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">flex</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -639,31 +636,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
+                <a href="javascript:void(0)" class="js-tag color5">flex-grow</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
+                <a href="javascript:void(0)" class="js-tag color2">flex-shrink</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网站性能</a>
+                <a href="javascript:void(0)" class="js-tag color1">flex-basis</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color3">flex面试题</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -671,19 +656,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
+                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">虚拟DOM</a>
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -715,11 +704,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+                <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spread</a>
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网站性能</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">虚拟DOM</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -735,19 +740,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">tree shaking</a>
+                <a href="javascript:void(0)" class="js-tag color1">axios</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">scope Hoisting</a>
+                <a href="javascript:void(0)" class="js-tag color2">spread</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">优化</a>
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调地狱</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -763,27 +776,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">promise</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调地狱</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -791,7 +784,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">this指针</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -803,19 +808,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">数据驱动视图</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -835,7 +828,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+                <a href="javascript:void(0)" class="js-tag color3">tree shaking</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">scope Hoisting</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">优化</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
             <div class="clearfix"></div>
