@@ -12,11 +12,11 @@
 <meta name="keywords" content="yarn,node,js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="项目自动化部署服务&#x2F;生成压缩包工具开发">
-<meta property="og:url" content="http://yoursite.com/2020/11/14/项目自动化|部署服务&生成压缩包工具开发/index.html">
+<meta property="og:url" content="http://yoursite.com/2021/06/14/项目自动化|部署服务&生成压缩包工具开发/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
 <meta property="og:description" content="场景需求:  每次打包完 需要手动上传至服务器测试、准生产、生产环境 利用ftp、Xshell等连接服务器，找到本地文件再上传很繁琐   解决问题:  根据不同环境脚本命令执行  自动上传至服务器文件中  生成.zip压缩包   nodejs、yarn 相关知识">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-12-24T16:37:44.451Z">
+<meta property="og:updated_time" content="2021-12-24T16:43:27.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目自动化部署服务&#x2F;生成压缩包工具开发">
 <meta name="twitter:description" content="场景需求:  每次打包完 需要手动上传至服务器测试、准生产、生产环境 利用ftp、Xshell等连接服务器，找到本地文件再上传很繁琐   解决问题:  根据不同环境脚本命令执行  自动上传至服务器文件中  生成.zip压缩包   nodejs、yarn 相关知识">
@@ -208,8 +208,8 @@
   
 
         
-        <a href="/2020/11/14/项目自动化|部署服务&生成压缩包工具开发/" class="archive-article-date">
-  	<time datetime="2020-11-14T11:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-14</time>
+        <a href="/2021/06/14/项目自动化|部署服务&生成压缩包工具开发/" class="archive-article-date">
+  	<time datetime="2021-06-14T11:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-14</time>
 </a>
         
       </header>
@@ -255,7 +255,7 @@
 <li>提交至gitlub（获取安装此工具地址）</li>
 </ul>
 </blockquote>
-<h3 id="3、项目中使用此工具"><a href="#3、项目中使用此工具" class="headerlink" title="3、项目中使用此工具"></a>3、项目中使用此工具</h3><h5 id="1-、根目录新建local-index-js"><a href="#1-、根目录新建local-index-js" class="headerlink" title="1)、根目录新建local/index.js"></a>1)、根目录新建local/index.js</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">* @host 域名 </span></span><br><span class="line"><span class="comment">* @username 用户名 </span></span><br><span class="line"><span class="comment">* @password 密码 </span></span><br><span class="line"><span class="comment">* @port 端口号 </span></span><br><span class="line"><span class="comment">* @dst 文件绝对路径</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        test: &#123;</span><br><span class="line">            host: <span class="string">'58.33.119.173'</span>,</span><br><span class="line">            username: <span class="string">'yanfa'</span>,</span><br><span class="line">            password: <span class="string">"Jmyf83546998!"</span>,</span><br><span class="line">            port: <span class="string">'2228'</span>,</span><br><span class="line">            dst: <span class="string">"/Dev/h5/opc"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        pre: &#123;</span><br><span class="line">            host: <span class="string">'58.33.119.173'</span>,</span><br><span class="line">            username: <span class="string">'yanfa'</span>,</span><br><span class="line">            password: <span class="string">"Jmyf83546998!"</span>,</span><br><span class="line">            port: <span class="string">'2228'</span>,</span><br><span class="line">            dst: <span class="string">"/PreProd/h5/opc"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3、项目中使用此工具"><a href="#3、项目中使用此工具" class="headerlink" title="3、项目中使用此工具"></a>3、项目中使用此工具</h3><h5 id="1-、根目录新建local-index-js"><a href="#1-、根目录新建local-index-js" class="headerlink" title="1)、根目录新建local/index.js"></a>1)、根目录新建local/index.js</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">* @host 域名 </span></span><br><span class="line"><span class="comment">* @username 用户名 </span></span><br><span class="line"><span class="comment">* @password 密码 </span></span><br><span class="line"><span class="comment">* @port 端口号 </span></span><br><span class="line"><span class="comment">* @dst 文件绝对路径</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        test: &#123;</span><br><span class="line">            host: <span class="string">'xxx'</span>,</span><br><span class="line">            username: <span class="string">'xxx'</span>,</span><br><span class="line">            password: <span class="string">"xxx"</span>,</span><br><span class="line">            port: <span class="string">'xxx'</span>,</span><br><span class="line">            dst: <span class="string">"/Dev/h5/opc"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        pre: &#123;</span><br><span class="line">            host: <span class="string">'xxx'</span>,</span><br><span class="line">            username: <span class="string">'xxx'</span>,</span><br><span class="line">            password: <span class="string">"xxx"</span>,</span><br><span class="line">            port: <span class="string">'xxx'</span>,</span><br><span class="line">            dst: <span class="string">"/PreProd/h5/opc"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="2-、根目录新建scripts-build-sh"><a href="#2-、根目录新建scripts-build-sh" class="headerlink" title="2)、根目录新建scripts/build.sh"></a>2)、根目录新建scripts/build.sh</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># !/bin/bash</span><br><span class="line"><span class="keyword">set</span> -e</span><br><span class="line"># rm -rf web-build</span><br><span class="line">MODE=$1</span><br><span class="line">yarn umi build</span><br><span class="line">yarn cross-env AppEnv=$MODE ftp-dist-gen</span><br></pre></td></tr></table></figure>
 <h5 id="3）、package-json添加"><a href="#3）、package-json添加" class="headerlink" title="3）、package.json添加"></a>3）、package.json添加</h5><blockquote>
 <ul>
@@ -263,7 +263,7 @@
 <li>获取<code>ftp-dist-gen</code>工具地址，yarn安装依赖</li>
 </ul>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"dist:test"</span>: <span class="string">"./scripts/build.sh test"</span>,</span><br><span class="line">    <span class="string">"dist:pre"</span>: <span class="string">"./scripts/build.sh pre"</span>,</span><br><span class="line">    <span class="string">"dist:release"</span>: <span class="string">"./scripts/build.sh release"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="string">"ftp-dist-gen"</span>: <span class="string">"git+http://ebill.allinpalm.cn:8090/jst/h5/ftp-dist-gen.git#6e414ef22fd75ba213d71db54853dd2d30637ffb"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"dist:test"</span>: <span class="string">"./scripts/build.sh test"</span>,</span><br><span class="line">    <span class="string">"dist:pre"</span>: <span class="string">"./scripts/build.sh pre"</span>,</span><br><span class="line">    <span class="string">"dist:release"</span>: <span class="string">"./scripts/build.sh release"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="string">"ftp-dist-gen"</span>: <span class="string">"git+http://xxx/jst/h5/ftp-dist-gen.git#6e414ef22fd75ba213d71db54853dd2d30637ffb"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="4-、根目录新建ftpdist-config-js"><a href="#4-、根目录新建ftpdist-config-js" class="headerlink" title="4)、根目录新建ftpdist.config.js"></a>4)、根目录新建ftpdist.config.js</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">* @type 值：ftp\zip  区分：上传\压缩</span></span><br><span class="line"><span class="comment">* @src 项目打包后生成的文件夹路径  dist/build等</span></span><br><span class="line"><span class="comment">* @ftp 连接服务器需要的属性 &#123;host username password port dst&#125;</span></span><br><span class="line"><span class="comment">* @zip outFile 压缩的输出名</span></span><br><span class="line"><span class="comment">* @filter 过滤 .DS.Store 文件</span></span><br><span class="line"><span class="comment">* @successMsg 成功msg</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> appEnv = process.env.AppEnv;</span><br><span class="line">    <span class="keyword">const</span> ftpMap = <span class="built_in">require</span>(<span class="string">"./local/index"</span>)();</span><br><span class="line">    <span class="keyword">const</span> ftp = ftpMap[appEnv];</span><br><span class="line">    <span class="keyword">const</span> src = path.join(__dirname, <span class="string">'dist'</span>);</span><br><span class="line">    <span class="keyword">const</span> type = appEnv === <span class="string">'release'</span> ? <span class="string">'zip'</span> : <span class="string">'ftp'</span>;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        type: type,</span><br><span class="line">        src: src,</span><br><span class="line">        ftp: ftp,</span><br><span class="line">        zip: &#123;</span><br><span class="line">            outFile: path.resolve(__dirname, <span class="string">'op'</span> + <span class="string">'.zip'</span>)</span><br><span class="line">        &#125;,</span><br><span class="line">        filter: <span class="function">(<span class="params">filePath</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="regexp">/^\.DS.Store$/</span>.test(filePath))&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">"skip dist file:"</span>, filePath)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        successMsg: <span class="string">'🎉🎉🎉 '</span> + appEnv + <span class="string">' 成功啦!!!'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="5）、根据环境需要执行命令"><a href="#5）、根据环境需要执行命令" class="headerlink" title="5）、根据环境需要执行命令"></a>5）、根据环境需要执行命令</h5><blockquote>
 <ul>
@@ -386,7 +386,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/11/14/项目自动化|部署服务&生成压缩包工具开发/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/06/14/项目自动化|部署服务&生成压缩包工具开发/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -441,7 +441,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2020/11/14/项目自动化|部署服务&amp;生成压缩包工具开发/",
+  id: "http://yoursite.com/2021/06/14/项目自动化|部署服务&amp;生成压缩包工具开发/",
   owner: 'machao07',
   repo: 'https://machao07.github.io/',
   oauth: {
@@ -552,18 +552,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
@@ -576,11 +564,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">异步编程</a>
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -593,6 +585,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">接口设计</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">异步编程</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -700,7 +700,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -708,11 +708,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -760,27 +760,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">虚拟DOM</a>
+                <a href="javascript:void(0)" class="js-tag color5">WeChatPay</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+                <a href="javascript:void(0)" class="js-tag color2">AliPay</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spread</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">promise</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">回调地狱</a>
+                <a href="javascript:void(0)" class="js-tag color4">公众号</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -792,15 +780,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">WeChatPay</a>
+                <a href="javascript:void(0)" class="js-tag color5">ElementUI</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">AliPay</a>
+                <a href="javascript:void(0)" class="js-tag color1">虚拟DOM</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">公众号</a>
+                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spread</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -816,6 +808,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">回调地狱</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Web</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">热更新</a>
               </li>
             
@@ -825,18 +837,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Web</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -856,11 +856,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">数据驱动视图</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -877,18 +889,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">兼容</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">DOM渲染</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
             
             <div class="clearfix"></div>
