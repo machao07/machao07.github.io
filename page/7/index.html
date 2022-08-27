@@ -197,6 +197,94 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue中的虚拟DOM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/24/vue中的虚拟DOM/">vue中的虚拟DOM</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/24/vue中的虚拟DOM/" class="archive-article-date">
+  	<time datetime="2019-11-24T12:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1、定义："><a href="#1、定义：" class="headerlink" title="1、定义："></a>1、定义：</h4><p>虚拟DOM其实就是一棵以 <code>JavaScript 对象</code>( VNode 节点)作为基础的树，用对象属性来描述节点， 实际上它只是一层对真实 DOM 的抽象。最终可以通过一系列操作使这棵树映射到真实环境上。</p>
+<p>相当于在js与DOM之间做了一个缓存，利用patch（<code>diff算法</code>）对比新旧虚拟DOM记录到一个对象中按需更新， 最后创建真实的DOM</p>
+<h4 id="2、虚拟dom原理流程"><a href="#2、虚拟dom原理流程" class="headerlink" title="2、虚拟dom原理流程"></a>2、虚拟dom原理流程</h4><p><code>模板 ==&gt; 渲染函数 ==&gt; 虚拟DOM树 ==&gt; 真实DOM</code></p>
+<ul>
+<li><p>vuejs通过编译将模板（template）转成渲染函数（render），执行渲染函数可以得到一个虚拟节点树</p>
+</li>
+<li><p>在对 Model 进行操作的时候，会触发对应 Dep 中的 Watcher 对象。Watcher 对象会调用对应的 update 来修改视图。</p>
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/2019/11/24/vue中的虚拟DOM/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">虚拟DOM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/24/vue中的虚拟DOM/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue中Diff算法、key的作用原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -470,101 +558,9 @@
 
 
   
-    <article id="post-vue项目中axios并发请求（axios.all &amp; axoios.spread）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/02/vue项目中axios并发请求（axios.all & axoios.spread）/">vue项目中axios并发请求（axios.all &amp; axoios.spread）</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/02/vue项目中axios并发请求（axios.all & axoios.spread）/" class="archive-article-date">
-  	<time datetime="2019-11-02T11:11:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="场景需求："><a href="#场景需求：" class="headerlink" title="场景需求："></a>场景需求：</h4><ol>
-<li>一个接口的参数会需要使用另一个接口获取</li>
-<li>两个接口同时请求完数据加载页面</li>
-</ol>
-<h4 id="解决方案：（axios处理并发请求的助手函数）"><a href="#解决方案：（axios处理并发请求的助手函数）" class="headerlink" title="解决方案：（axios处理并发请求的助手函数）"></a>解决方案：（axios处理并发请求的助手函数）</h4><ol>
-<li><code>axios.all</code>(接口1， 接口2)</li>
-<li><code>axios.spread</code>(callback1, callback2)</li>
-</ol>
-<h3 id="1、引入接口"><a href="#1、引入接口" class="headerlink" title="1、引入接口"></a>1、引入接口</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">"axios"</span></span><br><span class="line"><span class="keyword">import</span> &#123;getSellerDetail&#125; <span class="keyword">from</span> <span class="string">'../../api/seller'</span></span><br><span class="line"><span class="keyword">import</span> &#123;getMemberCardInfo&#125; <span class="keyword">from</span> <span class="string">'../../api/pay_online/index'</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/11/02/vue项目中axios并发请求（axios.all & axoios.spread）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">axios</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spread</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/02/vue项目中axios并发请求（axios.all & axoios.spread）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
     </nav>
   
 
@@ -1028,6 +1024,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">数据驱动视图</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Taro</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Taro-UI</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ECharts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
             
             <div class="clearfix"></div>
