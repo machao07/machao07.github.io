@@ -12,7 +12,7 @@
 <meta name="keywords" content="React,Typescript,Taro,Taro-UI,ECharts,Markdown">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Taro + React + TS + Taro-UI + ECharts + Markdown 开发微信小程序">
-<meta property="og:url" content="http://yoursite.com/2022/05/14/Taro + React + TS + Taro-UI + ECharts + Markdown 开发微信小程序/index.html">
+<meta property="og:url" content="http://yoursite.com/2023/03/14/Taro + React + TS + Taro-UI + ECharts + Markdown 开发微信小程序/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
 <meta property="og:description" content="1、安装 Taro 脚手架工具 npm install -g @tarojs/cliyarn global add @tarojs/cli  2、taro 初始化项目 taro init taro-app">
 <meta property="og:locale" content="zh-CN">
@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/14fa04abd79f4136a7696b17955cccf1.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/ceb034ca70c041faae1cb6f227553331.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/d27db4c35edc4c39a5d41dcac39a6b5c.png">
-<meta property="og:updated_time" content="2022-08-27T14:40:36.174Z">
+<meta property="og:updated_time" content="2023-02-25T19:54:53.317Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Taro + React + TS + Taro-UI + ECharts + Markdown 开发微信小程序">
 <meta name="twitter:description" content="1、安装 Taro 脚手架工具 npm install -g @tarojs/cliyarn global add @tarojs/cli  2、taro 初始化项目 taro init taro-app">
@@ -217,8 +217,8 @@
   
 
         
-        <a href="/2022/05/14/Taro + React + TS + Taro-UI + ECharts + Markdown 开发微信小程序/" class="archive-article-date">
-  	<time datetime="2022-05-14T04:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-14</time>
+        <a href="/2023/03/14/Taro + React + TS + Taro-UI + ECharts + Markdown 开发微信小程序/" class="archive-article-date">
+  	<time datetime="2023-03-14T04:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-14</time>
 </a>
         
       </header>
@@ -311,7 +311,7 @@
 <blockquote>
 <p>index.ts 使用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPieChart</span>(<span class="params">canvas, width, height, dpr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> chart = echarts.init(canvas, <span class="literal">null</span>, &#123;</span><br><span class="line">        width: width,</span><br><span class="line">        height: height,</span><br><span class="line">        devicePixelRatio: dpr <span class="comment">// 像素</span></span><br><span class="line">    &#125;);</span><br><span class="line">    canvas.setChart(chart);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> option = &#123;</span><br><span class="line">        tooltip: &#123;</span><br><span class="line">            show: <span class="literal">true</span></span><br><span class="line">        &#125;,</span><br><span class="line">        legend: &#123;</span><br><span class="line">            top: <span class="string">'bottom'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        series: [</span><br><span class="line">            &#123;</span><br><span class="line">                name: <span class="string">'Nightingale Chart'</span>,</span><br><span class="line">                type: <span class="string">'pie'</span>,</span><br><span class="line">                radius: [<span class="number">35</span>, <span class="number">110</span>],</span><br><span class="line">                center: [<span class="string">'50%'</span>, <span class="string">'50%'</span>],</span><br><span class="line">                roseType: <span class="string">'area'</span>,</span><br><span class="line">                itemStyle: &#123;</span><br><span class="line">                    borderRadius: <span class="number">8</span></span><br><span class="line">                &#125;,</span><br><span class="line">                data: [</span><br><span class="line">                    &#123; <span class="attr">value</span>: <span class="number">56.7</span>, <span class="attr">name</span>: <span class="string">'Vue'</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">value</span>: <span class="number">36.4</span>, <span class="attr">name</span>: <span class="string">'Angular'</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">value</span>: <span class="number">72.5</span>, <span class="attr">name</span>: <span class="string">'React'</span> &#125;</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">    chart.setOption(option);</span><br><span class="line">    <span class="keyword">return</span> chart;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">this</span>.state = &#123;</span><br><span class="line">    ecPie: &#123;</span><br><span class="line">        onInit: getPieChart</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">&lt;View className=<span class="string">"canvas pie"</span>&gt;</span><br><span class="line">    &lt;ec-canvas id=<span class="string">"mychart-dom-pie"</span> canvas-id=<span class="string">"mychart-pie"</span> ec=&#123;ecPie&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">ec-canvas</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">this</span>.state = &#123;</span><br><span class="line">    ecPie: &#123;</span><br><span class="line">        onInit: getPieChart</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">&lt;View className=<span class="string">"canvas pie"</span>&gt;</span><br><span class="line">    &lt;ec-canvas id=<span class="string">"mychart-dom-pie"</span> canvas-id=<span class="string">"mychart-pie"</span> ec=&#123;ecPie&#125;&gt;&lt;/ec-canvas&gt;</span><br><span class="line">&lt;/View&gt;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>在 global.d.ts 中添加以下内容<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">declare namespace JSX &#123;</span><br><span class="line">    interface IntrinsicElements &#123;</span><br><span class="line">        <span class="string">'ec-canvas'</span>: any,</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
@@ -477,7 +477,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2022/05/14/Taro + React + TS + Taro-UI + ECharts + Markdown 开发微信小程序/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2023/03/14/Taro + React + TS + Taro-UI + ECharts + Markdown 开发微信小程序/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -491,18 +491,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/08/27/前端技术栈相关面试知识点总览/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          前端技术栈相关面试知识点总览
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/02/14/create-react-app&UmiJS创建React项目/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">create-react-app / UmiJS创建React项目</div>
+    <a href="/2022/12/14/如何使用AES加解密提高项目安全性/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何使用AES加解密提高项目安全性</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -541,7 +532,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2022/05/14/Taro + React + TS + Taro-UI + ECharts + Markdown 开发微信小程序/",
+  id: "http://yoursite.com/2023/03/14/Taro + React + TS + Taro-UI + ECharts + Markdown 开发微信小程序/",
   owner: 'machao07',
   repo: 'https://machao07.github.io/',
   oauth: {
