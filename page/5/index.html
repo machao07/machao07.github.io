@@ -219,9 +219,10 @@
       
         <h4 id="1、js-cookie"><a href="#1、js-cookie" class="headerlink" title="1、js-cookie"></a>1、js-cookie</h4><p>引入的 <code>Cookie</code> 找不到 <code>module</code> 问题</p>
 <blockquote>
-<p>yarn add @type/js-cookie<br>yarn add js-cookie</p>
+<p>yarn add @type&#x2F;js-cookie<br>yarn add js-cookie</p>
 </blockquote>
-<h4 id="2、使用Ele-UI库的方法"><a href="#2、使用Ele-UI库的方法" class="headerlink" title="2、使用Ele-UI库的方法"></a>2、使用Ele-UI库的方法</h4><p>ts 类型报错 any<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$refs.form.resetFields()</span><br><span class="line"><span class="keyword">this</span>.$refs.form.validate()</span><br></pre></td></tr></table></figure></p>
+<h4 id="2、使用Ele-UI库的方法"><a href="#2、使用Ele-UI库的方法" class="headerlink" title="2、使用Ele-UI库的方法"></a>2、使用Ele-UI库的方法</h4><p>ts 类型报错 any</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">$refs</span>.<span class="property">form</span>.<span class="title function_">resetFields</span>()</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$refs</span>.<span class="property">form</span>.<span class="title function_">validate</span>()</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2020/04/03/vue项目添加ts后问题/#more">more >></a>
         
@@ -304,12 +305,13 @@
         <h4 id="1、声明函数"><a href="#1、声明函数" class="headerlink" title="1、声明函数"></a>1、声明函数</h4><blockquote>
 <p>private、public、protected</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private formStatus: string = <span class="string">'create'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private <span class="attr">formStatus</span>: string = <span class="string">&#x27;create&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
 <h4 id="2、-装饰器（替换钩子函数）"><a href="#2、-装饰器（替换钩子函数）" class="headerlink" title="2、@ 装饰器（替换钩子函数）"></a>2、@ 装饰器（替换钩子函数）</h4><blockquote>
 <ul>
 <li>从vue-property-decorator引入相应的装饰器（Component, Prop, Watch…）</li>
 <li><code>!:</code> 表示强制解析, 告诉ts编辑器一定有值</li>
-<li><a href="https://github.com/kaorun343/vue-property-decorator" target="_blank" rel="noopener">相关装饰器的用法</a></li>
+<li><a href="https://github.com/kaorun343/vue-property-decorator">相关装饰器的用法</a></li>
 </ul>
 </blockquote>
         
@@ -371,19 +373,19 @@
 
 
   
-    <article id="post-vue | react 项目中使用echarts" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-vue _ react 项目中使用echarts" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/26/vue | react 项目中使用echarts/">vue/react 项目中使用echarts</a>
+      <a class="article-title" href="/2020/03/26/vue _ react 项目中使用echarts/">vue/react 项目中使用echarts</a>
     </h1>
   
 
         
-        <a href="/2020/03/26/vue | react 项目中使用echarts/" class="archive-article-date">
+        <a href="/2020/03/26/vue _ react 项目中使用echarts/" class="archive-article-date">
   	<time datetime="2020-03-26T07:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
 </a>
         
@@ -394,11 +396,13 @@
         <h3 id="vue-项目"><a href="#vue-项目" class="headerlink" title="vue 项目"></a>vue 项目</h3><blockquote>
 <p>yarn add echarts<br>yard add vue-echart</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ECharts <span class="keyword">from</span> <span class="string">"vue-echarts"</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">"echarts/lib/component/title"</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">"echarts/lib/chart/line"</span>;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components: &#123;</span><br><span class="line">  <span class="string">'v-chart'</span>: ECharts</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">v-chart</span> <span class="attr">:auto-resize</span>=<span class="string">"true"</span> <span class="attr">:options</span>=<span class="string">"transaction_report"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">ECharts</span> <span class="keyword">from</span> <span class="string">&quot;vue-echarts&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;echarts/lib/component/title&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;echarts/lib/chart/line&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">components</span>: &#123;</span><br><span class="line">  <span class="string">&#x27;v-chart&#x27;</span>: <span class="title class_">ECharts</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">v-chart</span> <span class="attr">:auto-resize</span>=<span class="string">&quot;true&quot;</span> <span class="attr">:options</span>=<span class="string">&quot;transaction_report&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2020/03/26/vue | react 项目中使用echarts/#more">more >></a>
+          <a class="article-more-a" href="/2020/03/26/vue _ react 项目中使用echarts/#more">more >></a>
         
       
 
@@ -412,11 +416,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -430,7 +434,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/26/vue | react 项目中使用echarts/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/03/26/vue _ react 项目中使用echarts/">展开全文 >></a>
         </p>
       
 
@@ -481,9 +485,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="1、ts中安装mock"><a href="#1、ts中安装mock" class="headerlink" title="1、ts中安装mock"></a>1、ts中安装mock</h4><blockquote>
-<p>yarn add @types/mockjs -D</p>
+<p>yarn add @types&#x2F;mockjs -D</p>
 </blockquote>
-<h4 id="2、新建mock文件"><a href="#2、新建mock文件" class="headerlink" title="2、新建mock文件"></a>2、新建mock文件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mock</span><br><span class="line">├─index.ts</span><br><span class="line">├─data</span><br><span class="line">|  └institution.ts</span><br></pre></td></tr></table></figure>
+<h4 id="2、新建mock文件"><a href="#2、新建mock文件" class="headerlink" title="2、新建mock文件"></a>2、新建mock文件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mock</span><br><span class="line">├─index.<span class="property">ts</span></span><br><span class="line">├─data</span><br><span class="line">|  └institution.<span class="property">ts</span></span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2020/03/24/vue+ts项目mockjs模拟数据/#more">more >></a>
         
@@ -503,11 +507,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">mockjs</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">mockjs</a>
         		</li>
       		
 		</ul>
@@ -562,7 +566,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -652,11 +656,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -664,7 +672,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -684,15 +700,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -708,11 +720,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -752,30 +768,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -788,7 +780,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -812,27 +824,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -848,11 +852,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -888,11 +904,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -905,14 +921,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -960,6 +968,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -968,7 +988,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -1012,6 +1032,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -1037,26 +1061,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

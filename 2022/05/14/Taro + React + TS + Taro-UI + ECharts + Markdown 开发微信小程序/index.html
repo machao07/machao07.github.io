@@ -9,7 +9,7 @@
   <title>Taro + React + TS + Taro-UI + ECharts + Markdown 开发微信小程序 | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1、安装 Taro 脚手架工具 npm install -g @tarojs/cliyarn global add @tarojs/cli  2、taro 初始化项目 taro init taro-app">
-<meta name="keywords" content="Taro,React,Typescript,Taro-UI,ECharts,Markdown">
+<meta name="keywords" content="React,Typescript,Taro,Taro-UI,ECharts,Markdown">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Taro + React + TS + Taro-UI + ECharts + Markdown 开发微信小程序">
 <meta property="og:url" content="http://yoursite.com/2022/05/14/Taro + React + TS + Taro-UI + ECharts + Markdown 开发微信小程序/index.html">
@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/14fa04abd79f4136a7696b17955cccf1.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/ceb034ca70c041faae1cb6f227553331.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/d27db4c35edc4c39a5d41dcac39a6b5c.png">
-<meta property="og:updated_time" content="2023-02-25T19:57:22.534Z">
+<meta property="og:updated_time" content="2023-02-25T19:57:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Taro + React + TS + Taro-UI + ECharts + Markdown 开发微信小程序">
 <meta name="twitter:description" content="1、安装 Taro 脚手架工具 npm install -g @tarojs/cliyarn global add @tarojs/cli  2、taro 初始化项目 taro init taro-app">
@@ -232,7 +232,8 @@
 <p><code>taro init taro-app</code></p>
 </blockquote>
 <p><img src="https://img-blog.csdnimg.cn/fe105fccd8cd4b96aa498bc74966f8b5.png" alt="在这里插入图片描述"></p>
-<a id="more"></a>
+<span id="more"></span>
+
 <blockquote>
 <p>安装 taro-ui</p>
 <ul>
@@ -243,40 +244,46 @@
 <blockquote>
 <p>全局引入taro-ui样式</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &apos;taro-ui/dist/style/index.scss&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;taro-ui/dist/style/index.scss&#x27;</span><br></pre></td></tr></table></figure>
+
 <h4 id="3、项目路由路径"><a href="#3、项目路由路径" class="headerlink" title="3、项目路由路径"></a>3、项目路由路径</h4><ul>
 <li><code>page</code> 对应项目路径</li>
 <li><code>lazyCodeLoading</code> 组件按需注入</li>
-<li><code>Taro.navigateTo({url: xxx})</code> 小程序内部跳转</li>
+<li><code>Taro.navigateTo(&#123;url: xxx&#125;)</code> 小程序内部跳转</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="string">"lazyCodeLoading"</span>: <span class="string">"requiredComponents"</span>,</span><br><span class="line">    pages: [</span><br><span class="line">        <span class="string">'pages/index/index'</span>,</span><br><span class="line">        <span class="string">'pages/statistics/index'</span>,</span><br><span class="line">        <span class="string">'pages/my/index'</span>,</span><br><span class="line">        <span class="string">'pages/about/index'</span>,</span><br><span class="line">        <span class="string">'pages/contact/index'</span>,</span><br><span class="line">        <span class="string">'pages/webview/index'</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="string">&quot;lazyCodeLoading&quot;</span>: <span class="string">&quot;requiredComponents&quot;</span>,</span><br><span class="line">    <span class="attr">pages</span>: [</span><br><span class="line">        <span class="string">&#x27;pages/index/index&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;pages/statistics/index&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;pages/my/index&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;pages/about/index&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;pages/contact/index&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;pages/webview/index&#x27;</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="4、全局添加分享功能"><a href="#4、全局添加分享功能" class="headerlink" title="4、全局添加分享功能"></a>4、全局添加分享功能</h4><blockquote>
 <p><code>src/app.ts</code>中添加 <code>Taro.showShareMenu</code></p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        Taro.showShareMenu(&#123;</span><br><span class="line">            withShareTicket: <span class="literal">true</span>,</span><br><span class="line">            <span class="comment">// @ts-ignore</span></span><br><span class="line">            menus: [<span class="string">'shareAppMessage'</span>, <span class="string">'shareTimeline'</span>],</span><br><span class="line">            showShareItems: [<span class="string">'shareAppMessage'</span>, <span class="string">'shareTimeline'</span>],</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// this.props.children 是将要会渲染的页面</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.props.children</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">App</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">    <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="title class_">Taro</span>.<span class="title function_">showShareMenu</span>(&#123;</span><br><span class="line">            <span class="attr">withShareTicket</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="comment">// @ts-ignore</span></span><br><span class="line">            <span class="attr">menus</span>: [<span class="string">&#x27;shareAppMessage&#x27;</span>, <span class="string">&#x27;shareTimeline&#x27;</span>],</span><br><span class="line">            <span class="attr">showShareItems</span>: [<span class="string">&#x27;shareAppMessage&#x27;</span>, <span class="string">&#x27;shareTimeline&#x27;</span>],</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// this.props.children 是将要会渲染的页面</span></span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">props</span>.<span class="property">children</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="5、引导关注公众号"><a href="#5、引导关注公众号" class="headerlink" title="5、引导关注公众号"></a>5、引导关注公众号</h4><ul>
 <li><code>OfficialAccount</code></li>
-<li>关注/查看</li>
+<li>关注&#x2F;查看</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; OfficialAccount &#125; <span class="keyword">from</span> <span class="string">'@tarojs/components'</span></span><br><span class="line">&lt;OfficialAccount /&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">OfficialAccount</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@tarojs/components&#x27;</span></span><br><span class="line">&lt;<span class="title class_">OfficialAccount</span> /&gt;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>视图</p>
 </blockquote>
 <p><img src="https://img-blog.csdnimg.cn/c1e8e886f1b24b7ea7c5896ef58c3d36.png" alt="在这里插入图片描述"></p>
-<h4 id="6、获取用户头像-昵称"><a href="#6、获取用户头像-昵称" class="headerlink" title="6、获取用户头像/昵称"></a>6、获取用户头像/昵称</h4><ul>
+<h4 id="6、获取用户头像-昵称"><a href="#6、获取用户头像-昵称" class="headerlink" title="6、获取用户头像&#x2F;昵称"></a>6、获取用户头像&#x2F;昵称</h4><ul>
 <li><code>Taro.getUserProfile</code> 获取用户的头像昵称</li>
 <li><code>Taro.setStorageSync</code> 存储信息 相当于 <code>localStorage.setItem</code></li>
 <li><code>Taro.getStorageSync</code> 获取信息 相当于 <code>localStorage.getItem</code></li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">getUserProfile() &#123;</span><br><span class="line">    Taro.getUserProfile(&#123;</span><br><span class="line">        desc: <span class="string">'获取用户昵称、头像'</span>,</span><br><span class="line">        success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">            Taro.setStorageSync(<span class="string">'userInfo'</span>, res.userInfo)</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123; <span class="attr">userInfo</span>: res.userInfo &#125;)</span><br><span class="line">        &#125;,</span><br><span class="line">        fail: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.error(<span class="string">"您拒绝了请求"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">getUserProfile</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title class_">Taro</span>.<span class="title function_">getUserProfile</span>(&#123;</span><br><span class="line">        <span class="attr">desc</span>: <span class="string">&#x27;获取用户昵称、头像&#x27;</span>,</span><br><span class="line">        <span class="attr">success</span>: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="title class_">Taro</span>.<span class="title function_">setStorageSync</span>(<span class="string">&#x27;userInfo&#x27;</span>, res.<span class="property">userInfo</span>)</span><br><span class="line">            <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123; <span class="attr">userInfo</span>: res.<span class="property">userInfo</span> &#125;)</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">fail</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;您拒绝了请求&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>打印 getUserProfile success(res)</p>
 </blockquote>
 <p><img src="https://img-blog.csdnimg.cn/7d63d45183a041e4889ec650e8ba835e.png" alt="在这里插入图片描述"></p>
 <h4 id="7、-封装-WebView-实现跳转公众号内页"><a href="#7、-封装-WebView-实现跳转公众号内页" class="headerlink" title="7、 封装 WebView 实现跳转公众号内页"></a>7、 封装 WebView 实现跳转公众号内页</h4><h6 id="封装的webview组件"><a href="#封装的webview组件" class="headerlink" title="封装的webview组件"></a>封装的webview组件</h6><ul>
-<li><code>getCurrentInstance</code> 获取地址栏/router</li>
+<li><code>getCurrentInstance</code> 获取地址栏&#x2F;router</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; FC, useEffect, useState &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; View, WebView &#125; <span class="keyword">from</span> <span class="string">'@tarojs/components'</span></span><br><span class="line"><span class="keyword">import</span> &#123; getCurrentInstance &#125; <span class="keyword">from</span> <span class="string">'@tarojs/taro'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> MyWebView: FC = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> [hrefURL, setHrefURL] = useState&lt;string&gt;(<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">    useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; params &#125; = getCurrentInstance().router ?? &#123;&#125;</span><br><span class="line">        setHrefURL(<span class="built_in">decodeURIComponent</span>(params?.webUrl ?? <span class="string">''</span>))</span><br><span class="line">    &#125;, [])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;View className=<span class="string">'webview'</span> &gt;</span><br><span class="line">            &lt;WebView src=&#123;hrefURL&#125; /&gt;</span><br><span class="line">        &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">export default MyWebView</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="variable constant_">FC</span>, useEffect, useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">View</span>, <span class="title class_">WebView</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@tarojs/components&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; getCurrentInstance &#125; <span class="keyword">from</span> <span class="string">&#x27;@tarojs/taro&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">MyWebView</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> [hrefURL, setHrefURL] = useState&lt;string&gt;(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; params &#125; = <span class="title function_">getCurrentInstance</span>().<span class="property">router</span> ?? &#123;&#125;</span><br><span class="line">        <span class="title function_">setHrefURL</span>(<span class="built_in">decodeURIComponent</span>(params?.<span class="property">webUrl</span> ?? <span class="string">&#x27;&#x27;</span>))</span><br><span class="line">    &#125;, [])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">View</span> <span class="attr">className</span>=<span class="string">&#x27;webview&#x27;</span> &gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">WebView</span> <span class="attr">src</span>=<span class="string">&#123;hrefURL&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">MyWebView</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>打印 getCurrentInstance()</p>
 </blockquote>
@@ -284,7 +291,8 @@
 <h5 id="相关页面使用时"><a href="#相关页面使用时" class="headerlink" title="相关页面使用时"></a>相关页面使用时</h5><blockquote>
 <p>跳转的公众号需要是企业认证的，才能配置业务域名，个人公众号暂不支持<code>WebView</code></p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">handleGridClick(item: itemDTO) &#123;</span><br><span class="line">    Taro.navigateTo(&#123; <span class="attr">url</span>: <span class="string">`/pages/webview/index?webUrl=<span class="subst">$&#123;<span class="built_in">encodeURIComponent</span>(item.url)&#125;</span>`</span> &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">handleGridClick</span>(<span class="params">item: itemDTO</span>) &#123;</span><br><span class="line">    <span class="title class_">Taro</span>.<span class="title function_">navigateTo</span>(&#123; <span class="attr">url</span>: <span class="string">`/pages/webview/index?webUrl=<span class="subst">$&#123;<span class="built_in">encodeURIComponent</span>(item.url)&#125;</span>`</span> &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>跳转</p>
 </blockquote>
@@ -292,8 +300,7 @@
 <h4 id="8、ScrollView视图容器组件"><a href="#8、ScrollView视图容器组件" class="headerlink" title="8、ScrollView视图容器组件"></a>8、ScrollView视图容器组件</h4><ul>
 <li><code>Taro.getSystemInfoSync()</code> 获取设备屏幕高度</li>
 <li>设置 <code>scrollY</code>、<code>height</code></li>
-<li><a href="https://developers.weixin.qq.com/miniprogram/dev/component/scroll-view.html" target="_blank" rel="noopener">scroll-view视图容器组件各属性含义</a><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; windowHeight &#125; = Taro.getSystemInfoSync()</span><br><span class="line"><span class="keyword">const</span> scrollHeight = (windowHeight * windowHeight / <span class="number">750</span> - <span class="number">140</span>)</span><br><span class="line"><span class="keyword">const</span> scrollStyle = &#123;</span><br><span class="line">    height: scrollHeight + <span class="string">'px'</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;ScrollView</span><br><span class="line">    scrollY</span><br><span class="line">    enhanced=&#123;<span class="literal">true</span>&#125;</span><br><span class="line">    show-scrollbar=&#123;<span class="literal">false</span>&#125;</span><br><span class="line">    scrollWithAnimation=&#123;<span class="literal">true</span>&#125;</span><br><span class="line">    enable-back-to-top=&#123;<span class="literal">true</span>&#125;</span><br><span class="line">    style=&#123;scrollStyle&#125;</span><br><span class="line">&gt;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&lt;<span class="regexp">/ScrollView&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/component/scroll-view.html">scroll-view视图容器组件各属性含义</a><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; windowHeight &#125; = <span class="title class_">Taro</span>.<span class="title function_">getSystemInfoSync</span>()</span><br><span class="line"><span class="keyword">const</span> scrollHeight = (windowHeight * windowHeight / <span class="number">750</span> - <span class="number">140</span>)</span><br><span class="line"><span class="keyword">const</span> scrollStyle = &#123;</span><br><span class="line">    <span class="attr">height</span>: scrollHeight + <span class="string">&#x27;px&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;<span class="title class_">ScrollView</span></span><br><span class="line">    scrollY</span><br><span class="line">    enhanced=&#123;<span class="literal">true</span>&#125;</span><br><span class="line">    show-scrollbar=&#123;<span class="literal">false</span>&#125;</span><br><span class="line">    scrollWithAnimation=&#123;<span class="literal">true</span>&#125;</span><br><span class="line">    enable-back-to-top=&#123;<span class="literal">true</span>&#125;</span><br><span class="line">    style=&#123;scrollStyle&#125;</span><br><span class="line">&gt;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&lt;/<span class="title class_">ScrollView</span>&gt;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <blockquote>
 <p>打印 getSystemInfoSync()</p>
@@ -307,56 +314,66 @@
 <blockquote>
 <p>需要在 <code>index.config.ts</code>声明<code>ec-canvas</code>组件</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    navigationBarTitleText: <span class="string">'前端进阶技术栈'</span>,</span><br><span class="line">    usingComponents: &#123;</span><br><span class="line">        <span class="string">"ec-canvas"</span>: <span class="string">"../../ec-canvas/ec-canvas"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="attr">navigationBarTitleText</span>: <span class="string">&#x27;前端进阶技术栈&#x27;</span>,</span><br><span class="line">    <span class="attr">usingComponents</span>: &#123;</span><br><span class="line">        <span class="string">&quot;ec-canvas&quot;</span>: <span class="string">&quot;../../ec-canvas/ec-canvas&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>index.ts 使用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPieChart</span>(<span class="params">canvas, width, height, dpr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> chart = echarts.init(canvas, <span class="literal">null</span>, &#123;</span><br><span class="line">        width: width,</span><br><span class="line">        height: height,</span><br><span class="line">        devicePixelRatio: dpr <span class="comment">// 像素</span></span><br><span class="line">    &#125;);</span><br><span class="line">    canvas.setChart(chart);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> option = &#123;</span><br><span class="line">        tooltip: &#123;</span><br><span class="line">            show: <span class="literal">true</span></span><br><span class="line">        &#125;,</span><br><span class="line">        legend: &#123;</span><br><span class="line">            top: <span class="string">'bottom'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        series: [</span><br><span class="line">            &#123;</span><br><span class="line">                name: <span class="string">'Nightingale Chart'</span>,</span><br><span class="line">                type: <span class="string">'pie'</span>,</span><br><span class="line">                radius: [<span class="number">35</span>, <span class="number">110</span>],</span><br><span class="line">                center: [<span class="string">'50%'</span>, <span class="string">'50%'</span>],</span><br><span class="line">                roseType: <span class="string">'area'</span>,</span><br><span class="line">                itemStyle: &#123;</span><br><span class="line">                    borderRadius: <span class="number">8</span></span><br><span class="line">                &#125;,</span><br><span class="line">                data: [</span><br><span class="line">                    &#123; <span class="attr">value</span>: <span class="number">56.7</span>, <span class="attr">name</span>: <span class="string">'Vue'</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">value</span>: <span class="number">36.4</span>, <span class="attr">name</span>: <span class="string">'Angular'</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">value</span>: <span class="number">72.5</span>, <span class="attr">name</span>: <span class="string">'React'</span> &#125;</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">    chart.setOption(option);</span><br><span class="line">    <span class="keyword">return</span> chart;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>index.ts 使用</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">this</span>.state = &#123;</span><br><span class="line">    ecPie: &#123;</span><br><span class="line">        onInit: getPieChart</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">&lt;View className=<span class="string">"canvas pie"</span>&gt;</span><br><span class="line">    &lt;ec-canvas id=<span class="string">"mychart-dom-pie"</span> canvas-id=<span class="string">"mychart-pie"</span> ec=&#123;ecPie&#125;&gt;&lt;/ec-canvas&gt;</span><br><span class="line">&lt;/View&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getPieChart</span>(<span class="params">canvas, width, height, dpr</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> chart = echarts.<span class="title function_">init</span>(canvas, <span class="literal">null</span>, &#123;</span><br><span class="line">        <span class="attr">width</span>: width,</span><br><span class="line">        <span class="attr">height</span>: height,</span><br><span class="line">        <span class="attr">devicePixelRatio</span>: dpr <span class="comment">// 像素</span></span><br><span class="line">    &#125;);</span><br><span class="line">    canvas.<span class="title function_">setChart</span>(chart);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> option = &#123;</span><br><span class="line">        <span class="attr">tooltip</span>: &#123;</span><br><span class="line">            <span class="attr">show</span>: <span class="literal">true</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">legend</span>: &#123;</span><br><span class="line">            <span class="attr">top</span>: <span class="string">&#x27;bottom&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">series</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">name</span>: <span class="string">&#x27;Nightingale Chart&#x27;</span>,</span><br><span class="line">                <span class="attr">type</span>: <span class="string">&#x27;pie&#x27;</span>,</span><br><span class="line">                <span class="attr">radius</span>: [<span class="number">35</span>, <span class="number">110</span>],</span><br><span class="line">                <span class="attr">center</span>: [<span class="string">&#x27;50%&#x27;</span>, <span class="string">&#x27;50%&#x27;</span>],</span><br><span class="line">                <span class="attr">roseType</span>: <span class="string">&#x27;area&#x27;</span>,</span><br><span class="line">                <span class="attr">itemStyle</span>: &#123;</span><br><span class="line">                    <span class="attr">borderRadius</span>: <span class="number">8</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="attr">data</span>: [</span><br><span class="line">                    &#123; <span class="attr">value</span>: <span class="number">56.7</span>, <span class="attr">name</span>: <span class="string">&#x27;Vue&#x27;</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">value</span>: <span class="number">36.4</span>, <span class="attr">name</span>: <span class="string">&#x27;Angular&#x27;</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">value</span>: <span class="number">72.5</span>, <span class="attr">name</span>: <span class="string">&#x27;React&#x27;</span> &#125;</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">    chart.<span class="title function_">setOption</span>(option);</span><br><span class="line">    <span class="keyword">return</span> chart;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">    <span class="attr">ecPie</span>: &#123;</span><br><span class="line">        <span class="attr">onInit</span>: getPieChart</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">&lt;<span class="title class_">View</span> className=<span class="string">&quot;canvas pie&quot;</span>&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">ec-canvas</span> <span class="attr">id</span>=<span class="string">&quot;mychart-dom-pie&quot;</span> <span class="attr">canvas-id</span>=<span class="string">&quot;mychart-pie&quot;</span> <span class="attr">ec</span>=<span class="string">&#123;ecPie&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">ec-canvas</span>&gt;</span></span></span><br><span class="line">&lt;/<span class="title class_">View</span>&gt;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>在 global.d.ts 中添加以下内容<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">declare namespace JSX &#123;</span><br><span class="line">    interface IntrinsicElements &#123;</span><br><span class="line">        <span class="string">'ec-canvas'</span>: any,</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在 global.d.ts 中添加以下内容</p>
 </blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">declare namespace <span class="variable constant_">JSX</span> &#123;</span><br><span class="line">    interface <span class="title class_">IntrinsicElements</span> &#123;</span><br><span class="line">        <span class="string">&#x27;ec-canvas&#x27;</span>: any,</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>视图</p>
 </blockquote>
 <p><img src="https://img-blog.csdnimg.cn/ceb034ca70c041faae1cb6f227553331.png" alt="在这里插入图片描述"></p>
 <blockquote>
 <p>EChart 相关文档</p>
-<ul>
-<li><a href="https://github.com/ecomfe/echarts-for-weixin" target="_blank" rel="noopener">echarts-for-weixin</a></li>
-<li><a href="https://echarts.apache.org/examples/zh/index.html" target="_blank" rel="noopener">EChart相关示例</a></li>
-<li><a href="https://echarts.apache.org/zh/option.html#legend" target="_blank" rel="noopener">EChart中options各属性用法示例</a></li>
-<li><a href="https://echarts.apache.org/zh/builder.html" target="_blank" rel="noopener">定制需要的图表类型</a></li>
-</ul>
 </blockquote>
+<ul>
+<li><a href="https://github.com/ecomfe/echarts-for-weixin">echarts-for-weixin</a></li>
+<li><a href="https://echarts.apache.org/examples/zh/index.html">EChart相关示例</a></li>
+<li><a href="https://echarts.apache.org/zh/option.html#legend">EChart中options各属性用法示例</a></li>
+<li><a href="https://echarts.apache.org/zh/builder.html">定制需要的图表类型</a></li>
+</ul>
 <h4 id="10、集成Markdown"><a href="#10、集成Markdown" class="headerlink" title="10、集成Markdown"></a>10、集成Markdown</h4><ul>
 <li>git clone <code>wemark</code></li>
 <li>将 <code>wemark</code> 文件拷贝到自己的项目的src目录下</li>
 </ul>
 <h5 id="使用前配置"><a href="#使用前配置" class="headerlink" title="使用前配置"></a>使用前配置</h5><blockquote>
-<p>设置编译时复制wemark目录，修改<code>config/index.js</code>，在copy设置项中增加wemark，<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">copy: &#123;</span><br><span class="line">  patterns: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">from</span>: <span class="string">'src/wemark'</span>,</span><br><span class="line">      to: <span class="string">'dist/wemark'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  ],</span><br><span class="line">  options: &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<p>设置编译时复制wemark目录，修改<code>config/index.js</code>，在copy设置项中增加wemark，</p>
 </blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">copy</span>: &#123;</span><br><span class="line">  <span class="attr">patterns</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">from</span>: <span class="string">&#x27;src/wemark&#x27;</span>,</span><br><span class="line">      <span class="attr">to</span>: <span class="string">&#x27;dist/wemark&#x27;</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">options</span>: &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>设置taro编译时忽略 <code>remarkable.js</code>，继续修改<code>config/index.js</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">weapp: &#123;</span><br><span class="line">  compile: &#123;</span><br><span class="line">    exclude: [</span><br><span class="line">      <span class="string">'src/wemark/remarkable.js'</span>,</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>设置taro编译时忽略 <code>remarkable.js</code>，继续修改<code>config/index.js</code></p>
 </blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">weapp</span>: &#123;</span><br><span class="line">  <span class="attr">compile</span>: &#123;</span><br><span class="line">    <span class="attr">exclude</span>: [</span><br><span class="line">      <span class="string">&#x27;src/wemark/remarkable.js&#x27;</span>,</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>在 global.d.ts 中添加以下内容</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">declare namespace JSX &#123;</span><br><span class="line">    interface IntrinsicElements &#123;</span><br><span class="line">        <span class="string">'wemark'</span>: any</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="封装Markdown文章详情"><a href="#封装Markdown文章详情" class="headerlink" title="封装Markdown文章详情"></a>封装Markdown文章详情</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; FC, useEffect, useState &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; View &#125; <span class="keyword">from</span> <span class="string">'@tarojs/components'</span></span><br><span class="line"><span class="keyword">import</span> &#123; getCurrentInstance &#125; <span class="keyword">from</span> <span class="string">'@tarojs/taro'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'./index.scss'</span></span><br><span class="line"><span class="keyword">import</span> Taro <span class="keyword">from</span> <span class="string">'@tarojs/taro'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Article: FC = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> [markdown, setMarkdown] = useState&lt;string&gt;(<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">    useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; md, title &#125; = getCurrentInstance().router?.params ?? &#123;&#125;</span><br><span class="line">        setMarkdown(<span class="built_in">decodeURIComponent</span>(md ?? <span class="string">''</span>))</span><br><span class="line">        Taro.setNavigationBarTitle(&#123;</span><br><span class="line">            title: <span class="built_in">decodeURIComponent</span>(title ?? <span class="string">'前端进阶技术栈'</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;, [])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;View className=<span class="string">'article'</span>&gt;</span><br><span class="line">            &lt;wemark md=&#123;markdown&#125; link=&#123;<span class="literal">true</span>&#125; highlight=&#123;<span class="literal">true</span>&#125; type=<span class="string">'wemark'</span> /&gt;</span><br><span class="line">        &lt;<span class="regexp">/View&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">export default Article</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">declare namespace <span class="variable constant_">JSX</span> &#123;</span><br><span class="line">    interface <span class="title class_">IntrinsicElements</span> &#123;</span><br><span class="line">        <span class="string">&#x27;wemark&#x27;</span>: any</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="封装Markdown文章详情"><a href="#封装Markdown文章详情" class="headerlink" title="封装Markdown文章详情"></a>封装Markdown文章详情</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="variable constant_">FC</span>, useEffect, useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">View</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@tarojs/components&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; getCurrentInstance &#125; <span class="keyword">from</span> <span class="string">&#x27;@tarojs/taro&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./index.scss&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Taro</span> <span class="keyword">from</span> <span class="string">&#x27;@tarojs/taro&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Article</span>: <span class="variable constant_">FC</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> [markdown, setMarkdown] = useState&lt;string&gt;(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; md, title &#125; = <span class="title function_">getCurrentInstance</span>().<span class="property">router</span>?.<span class="property">params</span> ?? &#123;&#125;</span><br><span class="line">        <span class="title function_">setMarkdown</span>(<span class="built_in">decodeURIComponent</span>(md ?? <span class="string">&#x27;&#x27;</span>))</span><br><span class="line">        <span class="title class_">Taro</span>.<span class="title function_">setNavigationBarTitle</span>(&#123;</span><br><span class="line">            <span class="attr">title</span>: <span class="built_in">decodeURIComponent</span>(title ?? <span class="string">&#x27;前端进阶技术栈&#x27;</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;, [])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">View</span> <span class="attr">className</span>=<span class="string">&#x27;article&#x27;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">wemark</span> <span class="attr">md</span>=<span class="string">&#123;markdown&#125;</span> <span class="attr">link</span>=<span class="string">&#123;true&#125;</span> <span class="attr">highlight</span>=<span class="string">&#123;true&#125;</span> <span class="attr">type</span>=<span class="string">&#x27;wemark&#x27;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">View</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Article</span></span><br></pre></td></tr></table></figure>
+
 <h5 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h5><p><img src="https://img-blog.csdnimg.cn/d27db4c35edc4c39a5d41dcac39a6b5c.png" alt="在这里插入图片描述"></p>
 <h4 id="11、调试打包上传"><a href="#11、调试打包上传" class="headerlink" title="11、调试打包上传"></a>11、调试打包上传</h4><blockquote>
 <p>web端调试</p>
+</blockquote>
 <ul>
 <li><code>yarn dev:h5</code> web端调试</li>
 </ul>
-</blockquote>
 <blockquote>
 <p>微信内置 API 需要小程序开发工具调试</p>
+</blockquote>
 <ul>
 <li><code>yarn build:weapp</code></li>
 <li>微信开发者工具 引入 <code>dist</code>文件夹即可</li>
 </ul>
-</blockquote>
 
       
 
@@ -401,15 +418,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Taro</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Typescript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Taro</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -562,7 +579,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -652,11 +669,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -664,7 +685,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -684,15 +713,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -708,11 +733,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -752,30 +781,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -788,7 +793,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -812,27 +837,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -848,11 +865,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -888,11 +917,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -905,14 +934,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -960,6 +981,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -968,7 +1001,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -1012,6 +1045,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -1037,26 +1074,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

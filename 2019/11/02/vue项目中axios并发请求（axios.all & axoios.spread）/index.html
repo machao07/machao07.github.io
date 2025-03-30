@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue项目中axios并发请求（axios.all &amp; axoios.spread） | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="场景需求： 一个接口的参数会需要使用另一个接口获取 两个接口同时请求完数据加载页面  解决方案：（axios处理并发请求的助手函数） axios.all(接口1， 接口2) axios.spread(callback1, callback2)  1、引入接口123import axios from &quot;axios&quot;import &amp;#123;getSellerDetail&amp;#125; from &apos;..">
+  <meta name="description" content="场景需求： 一个接口的参数会需要使用另一个接口获取 两个接口同时请求完数据加载页面  解决方案：（axios处理并发请求的助手函数） axios.all(接口1， 接口2) axios.spread(callback1, callback2)  1、引入接口123import axios from &amp;quot;axios&amp;quot;import &amp;#123;getSellerDetail&amp;#125">
 <meta name="keywords" content="vue,axios,spread">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue项目中axios并发请求（axios.all &amp; axoios.spread）">
 <meta property="og:url" content="http://yoursite.com/2019/11/02/vue项目中axios并发请求（axios.all & axoios.spread）/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
-<meta property="og:description" content="场景需求： 一个接口的参数会需要使用另一个接口获取 两个接口同时请求完数据加载页面  解决方案：（axios处理并发请求的助手函数） axios.all(接口1， 接口2) axios.spread(callback1, callback2)  1、引入接口123import axios from &quot;axios&quot;import &amp;#123;getSellerDetail&amp;#125; from &apos;..">
+<meta property="og:description" content="场景需求： 一个接口的参数会需要使用另一个接口获取 两个接口同时请求完数据加载页面  解决方案：（axios处理并发请求的助手函数） axios.all(接口1， 接口2) axios.spread(callback1, callback2)  1、引入接口123import axios from &amp;quot;axios&amp;quot;import &amp;#123;getSellerDetail&amp;#125">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com//machao07/image-store/blob/master/blog/2019123001.png?raw=true">
 <meta property="og:updated_time" content="2019-12-30T13:41:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue项目中axios并发请求（axios.all &amp; axoios.spread）">
-<meta name="twitter:description" content="场景需求： 一个接口的参数会需要使用另一个接口获取 两个接口同时请求完数据加载页面  解决方案：（axios处理并发请求的助手函数） axios.all(接口1， 接口2) axios.spread(callback1, callback2)  1、引入接口123import axios from &quot;axios&quot;import &amp;#123;getSellerDetail&amp;#125; from &apos;..">
+<meta name="twitter:description" content="场景需求： 一个接口的参数会需要使用另一个接口获取 两个接口同时请求完数据加载页面  解决方案：（axios处理并发请求的助手函数） axios.all(接口1， 接口2) axios.spread(callback1, callback2)  1、引入接口123import axios from &amp;quot;axios&amp;quot;import &amp;#123;getSellerDetail&amp;#125">
 <meta name="twitter:image" content="https://github.com//machao07/image-store/blob/master/blog/2019123001.png?raw=true">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
@@ -226,9 +226,10 @@
 <li><code>axios.all</code>(接口1， 接口2)</li>
 <li><code>axios.spread</code>(callback1, callback2)</li>
 </ol>
-<h3 id="1、引入接口"><a href="#1、引入接口" class="headerlink" title="1、引入接口"></a>1、引入接口</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">"axios"</span></span><br><span class="line"><span class="keyword">import</span> &#123;getSellerDetail&#125; <span class="keyword">from</span> <span class="string">'../../api/seller'</span></span><br><span class="line"><span class="keyword">import</span> &#123;getMemberCardInfo&#125; <span class="keyword">from</span> <span class="string">'../../api/pay_online/index'</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="2、处理数据"><a href="#2、处理数据" class="headerlink" title="2、处理数据"></a>2、处理数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">created()&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.$route.query.type)&#123;</span><br><span class="line">        <span class="keyword">this</span>.type = <span class="keyword">this</span>.$route.query.type;</span><br><span class="line">        <span class="keyword">this</span>.sellerId = <span class="keyword">this</span>.$route.query.targetId;</span><br><span class="line">        <span class="keyword">this</span>.initApi()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">    initApi()&#123;</span><br><span class="line">        axios.all([</span><br><span class="line">            getSellerDetail(<span class="keyword">this</span>.sellerId),</span><br><span class="line">            getMemberCardInfo(<span class="keyword">this</span>.sellerId, <span class="keyword">this</span>.payMoney)</span><br><span class="line">        ]).then(axios.spread(<span class="function">(<span class="params">sellerDetail, memberCardInfo</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.loading = <span class="literal">false</span>;</span><br><span class="line">            <span class="comment">// 商户信息</span></span><br><span class="line">            <span class="keyword">this</span>.detail = sellerDetail.data.detail;</span><br><span class="line">            <span class="keyword">this</span>.sellerPic = <span class="keyword">this</span>.detail.picture;</span><br><span class="line">            <span class="keyword">this</span>.sellerName = <span class="keyword">this</span>.detail.name;</span><br><span class="line">            <span class="keyword">this</span>.discount = <span class="keyword">this</span>.detail.discount;</span><br><span class="line">            <span class="comment">// 会员卡信息</span></span><br><span class="line">            <span class="keyword">this</span>.cardDetail = memberCardInfo.data;</span><br><span class="line">            <span class="keyword">this</span>.balance = <span class="keyword">this</span>.cardDetail.balance;  <span class="comment">//余额</span></span><br><span class="line">            <span class="keyword">this</span>.rechargeTip = <span class="keyword">this</span>.cardDetail.rechargeTip;  <span class="comment">// 付款金额提示充值</span></span><br><span class="line">        &#125;))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1、引入接口"><a href="#1、引入接口" class="headerlink" title="1、引入接口"></a>1、引入接口</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&quot;axios&quot;</span></span><br><span class="line"><span class="keyword">import</span> &#123;getSellerDetail&#125; <span class="keyword">from</span> <span class="string">&#x27;../../api/seller&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123;getMemberCardInfo&#125; <span class="keyword">from</span> <span class="string">&#x27;../../api/pay_online/index&#x27;</span>  </span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+<h3 id="2、处理数据"><a href="#2、处理数据" class="headerlink" title="2、处理数据"></a>2、处理数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">created</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">$route</span>.<span class="property">query</span>.<span class="property">type</span>)&#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">type</span> = <span class="variable language_">this</span>.<span class="property">$route</span>.<span class="property">query</span>.<span class="property">type</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">sellerId</span> = <span class="variable language_">this</span>.<span class="property">$route</span>.<span class="property">query</span>.<span class="property">targetId</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">initApi</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">methods</span>: &#123;</span><br><span class="line">    <span class="title function_">initApi</span>(<span class="params"></span>)&#123;</span><br><span class="line">        axios.<span class="title function_">all</span>([</span><br><span class="line">            <span class="title function_">getSellerDetail</span>(<span class="variable language_">this</span>.<span class="property">sellerId</span>),</span><br><span class="line">            <span class="title function_">getMemberCardInfo</span>(<span class="variable language_">this</span>.<span class="property">sellerId</span>, <span class="variable language_">this</span>.<span class="property">payMoney</span>)</span><br><span class="line">        ]).<span class="title function_">then</span>(axios.<span class="title function_">spread</span>(<span class="function">(<span class="params">sellerDetail, memberCardInfo</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">loading</span> = <span class="literal">false</span>;</span><br><span class="line">            <span class="comment">// 商户信息</span></span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">detail</span> = sellerDetail.<span class="property">data</span>.<span class="property">detail</span>;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">sellerPic</span> = <span class="variable language_">this</span>.<span class="property">detail</span>.<span class="property">picture</span>;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">sellerName</span> = <span class="variable language_">this</span>.<span class="property">detail</span>.<span class="property">name</span>;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">discount</span> = <span class="variable language_">this</span>.<span class="property">detail</span>.<span class="property">discount</span>;</span><br><span class="line">            <span class="comment">// 会员卡信息</span></span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">cardDetail</span> = memberCardInfo.<span class="property">data</span>;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">balance</span> = <span class="variable language_">this</span>.<span class="property">cardDetail</span>.<span class="property">balance</span>;  <span class="comment">//余额</span></span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">rechargeTip</span> = <span class="variable language_">this</span>.<span class="property">cardDetail</span>.<span class="property">rechargeTip</span>;  <span class="comment">// 付款金额提示充值</span></span><br><span class="line">        &#125;))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="3、接口返回："><a href="#3、接口返回：" class="headerlink" title="3、接口返回："></a>3、接口返回：</h3><p><strong><code>console.log(sellerDetail.data)</code></strong><br><strong><code>console.log(memberCardInfo.data)</code></strong><br><img src="https://github.com//machao07/image-store/blob/master/blog/2019123001.png?raw=true" alt="接口返回"></p>
 
       
@@ -423,7 +424,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -513,11 +514,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -525,7 +530,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -545,15 +558,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -569,11 +578,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -613,30 +626,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -649,7 +638,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -673,27 +682,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -709,11 +710,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -749,11 +762,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -766,14 +779,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -821,6 +826,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -829,7 +846,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -873,6 +890,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -898,26 +919,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

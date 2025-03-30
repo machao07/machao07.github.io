@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue项目中axios拦截器配置和使用 | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 引入axios、token12345import axios from &quot;axios&quot;import &amp;#123; Message, MessageBox &amp;#125; from &quot;element-ui&quot;import &amp;#123;getToken, removeToken&amp;#125; from &quot;./token&quot;; 2. 创建axios实例12345const service = axios.">
-<meta name="keywords" content="JavaScript,ES6,Vue,axios">
+  <meta name="description" content="1. 引入axios、token12345import axios from &amp;quot;axios&amp;quot;import &amp;#123; Message, MessageBox &amp;#125; from &amp;quot;element-ui&amp;quot;import &amp;#123;getToken, removeToken&amp;#125; from &amp;quot;./token&amp;quot;;   2. 创建ax">
+<meta name="keywords" content="ES6,JavaScript,Vue,axios">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue项目中axios拦截器配置和使用">
 <meta property="og:url" content="http://yoursite.com/2019/10/24/vue项目中axios拦截器配置/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
-<meta property="og:description" content="1. 引入axios、token12345import axios from &quot;axios&quot;import &amp;#123; Message, MessageBox &amp;#125; from &quot;element-ui&quot;import &amp;#123;getToken, removeToken&amp;#125; from &quot;./token&quot;; 2. 创建axios实例12345const service = axios.">
+<meta property="og:description" content="1. 引入axios、token12345import axios from &amp;quot;axios&amp;quot;import &amp;#123; Message, MessageBox &amp;#125; from &amp;quot;element-ui&amp;quot;import &amp;#123;getToken, removeToken&amp;#125; from &amp;quot;./token&amp;quot;;   2. 创建ax">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com//machao07/image-store/blob/master/blog/20190424.png?raw=true">
 <meta property="og:updated_time" content="2019-12-22T12:39:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue项目中axios拦截器配置和使用">
-<meta name="twitter:description" content="1. 引入axios、token12345import axios from &quot;axios&quot;import &amp;#123; Message, MessageBox &amp;#125; from &quot;element-ui&quot;import &amp;#123;getToken, removeToken&amp;#125; from &quot;./token&quot;; 2. 创建axios实例12345const service = axios.">
+<meta name="twitter:description" content="1. 引入axios、token12345import axios from &amp;quot;axios&amp;quot;import &amp;#123; Message, MessageBox &amp;#125; from &amp;quot;element-ui&amp;quot;import &amp;#123;getToken, removeToken&amp;#125; from &amp;quot;./token&amp;quot;;   2. 创建ax">
 <meta name="twitter:image" content="https://github.com//machao07/image-store/blob/master/blog/20190424.png?raw=true">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
@@ -218,12 +218,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-引入axios、token"><a href="#1-引入axios、token" class="headerlink" title="1. 引入axios、token"></a>1. 引入axios、token</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">"axios"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Message, MessageBox &#125; <span class="keyword">from</span> <span class="string">"element-ui"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;getToken, removeToken&#125; <span class="keyword">from</span> <span class="string">"./token"</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="2-创建axios实例"><a href="#2-创建axios实例" class="headerlink" title="2. 创建axios实例"></a>2. 创建axios实例</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> service = axios.create(&#123;</span><br><span class="line">    baseURL: process.env.VUE_APP_API_BASE, <span class="comment">// api的base_url</span></span><br><span class="line">    timeout: <span class="number">5000</span> <span class="comment">// 请求超时时间</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="3-request拦截器"><a href="#3-request拦截器" class="headerlink" title="3. request拦截器"></a>3. request拦截器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">service.interceptors.request.use(</span><br><span class="line">    config =&gt; &#123;</span><br><span class="line">        <span class="keyword">let</span> token = getToken();</span><br><span class="line">        <span class="keyword">if</span> (token &amp;&amp; token !== <span class="literal">undefined</span> &amp;&amp; token !== <span class="string">""</span> &amp;&amp; token !== <span class="string">"undefined"</span>) &#123;</span><br><span class="line">            config.headers[<span class="string">'Authorization'</span>] = <span class="string">"Bearer "</span> + token;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> config;</span><br><span class="line">    &#125;,</span><br><span class="line"> </span><br><span class="line">    error =&gt; &#123;</span><br><span class="line">        <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<h4 id="浏览器调试"><a href="#浏览器调试" class="headerlink" title="浏览器调试"></a>浏览器调试</h4><p><img src="https://github.com//machao07/image-store/blob/master/blog/20190424.png?raw=true"></p>
-<h3 id="4-respone拦截器"><a href="#4-respone拦截器" class="headerlink" title="4. respone拦截器"></a>4. respone拦截器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">service.interceptors.response.use(</span><br><span class="line">    response =&gt; &#123;</span><br><span class="line">        <span class="keyword">const</span> res = response.data;</span><br><span class="line">        <span class="keyword">if</span>(res.code === <span class="number">401</span>) &#123;</span><br><span class="line">            <span class="comment">//尚未登录</span></span><br><span class="line">            removeToken();</span><br><span class="line">            <span class="keyword">this</span>.$router.push(<span class="string">'/login'</span>);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> (res.code != <span class="string">"0"</span>) &#123;</span><br><span class="line">            Message(&#123;</span><br><span class="line">                message: res.message,</span><br><span class="line">                type: <span class="string">'error'</span>,</span><br><span class="line">                duration: <span class="number">5</span> * <span class="number">1000</span></span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(res);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"> </span><br><span class="line">    error =&gt; &#123;</span><br><span class="line">        Message(&#123;</span><br><span class="line">            message: error.message,</span><br><span class="line">            type: <span class="string">"error"</span>,</span><br><span class="line">            duration: <span class="number">5</span> * <span class="number">1000</span></span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> service;</span><br></pre></td></tr></table></figure>
+        <h3 id="1-引入axios、token"><a href="#1-引入axios、token" class="headerlink" title="1. 引入axios、token"></a>1. 引入axios、token</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&quot;axios&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Message</span>, <span class="title class_">MessageBox</span> &#125; <span class="keyword">from</span> <span class="string">&quot;element-ui&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;getToken, removeToken&#125; <span class="keyword">from</span> <span class="string">&quot;./token&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="2-创建axios实例"><a href="#2-创建axios实例" class="headerlink" title="2. 创建axios实例"></a>2. 创建axios实例</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> service = axios.<span class="title function_">create</span>(&#123;</span><br><span class="line">    <span class="attr">baseURL</span>: process.<span class="property">env</span>.<span class="property">VUE_APP_API_BASE</span>, <span class="comment">// api的base_url</span></span><br><span class="line">    <span class="attr">timeout</span>: <span class="number">5000</span> <span class="comment">// 请求超时时间</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h3 id="3-request拦截器"><a href="#3-request拦截器" class="headerlink" title="3. request拦截器"></a>3. request拦截器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">service.<span class="property">interceptors</span>.<span class="property">request</span>.<span class="title function_">use</span>(</span><br><span class="line">    <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> token = <span class="title function_">getToken</span>();</span><br><span class="line">        <span class="keyword">if</span> (token &amp;&amp; token !== <span class="literal">undefined</span> &amp;&amp; token !== <span class="string">&quot;&quot;</span> &amp;&amp; token !== <span class="string">&quot;undefined&quot;</span>) &#123;</span><br><span class="line">            config.<span class="property">headers</span>[<span class="string">&#x27;Authorization&#x27;</span>] = <span class="string">&quot;Bearer &quot;</span> + token;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> config;</span><br><span class="line">    &#125;,</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="title class_">Promise</span>.<span class="title function_">reject</span>(error);</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="浏览器调试"><a href="#浏览器调试" class="headerlink" title="浏览器调试"></a>浏览器调试</h4><img src="https://github.com//machao07/image-store/blob/master/blog/20190424.png?raw=true">
+
+<h3 id="4-respone拦截器"><a href="#4-respone拦截器" class="headerlink" title="4. respone拦截器"></a>4. respone拦截器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">service.<span class="property">interceptors</span>.<span class="property">response</span>.<span class="title function_">use</span>(</span><br><span class="line">    <span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> res = response.<span class="property">data</span>;</span><br><span class="line">        <span class="keyword">if</span>(res.<span class="property">code</span> === <span class="number">401</span>) &#123;</span><br><span class="line">            <span class="comment">//尚未登录</span></span><br><span class="line">            <span class="title function_">removeToken</span>();</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">$router</span>.<span class="title function_">push</span>(<span class="string">&#x27;/login&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> (res.<span class="property">code</span> != <span class="string">&quot;0&quot;</span>) &#123;</span><br><span class="line">            <span class="title class_">Message</span>(&#123;</span><br><span class="line">                <span class="attr">message</span>: res.<span class="property">message</span>,</span><br><span class="line">                <span class="attr">type</span>: <span class="string">&#x27;error&#x27;</span>,</span><br><span class="line">                <span class="attr">duration</span>: <span class="number">5</span> * <span class="number">1000</span></span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>(res);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="title class_">Message</span>(&#123;</span><br><span class="line">            <span class="attr">message</span>: error.<span class="property">message</span>,</span><br><span class="line">            <span class="attr">type</span>: <span class="string">&quot;error&quot;</span>,</span><br><span class="line">            <span class="attr">duration</span>: <span class="number">5</span> * <span class="number">1000</span></span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> <span class="title class_">Promise</span>.<span class="title function_">reject</span>(error);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> service;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -267,11 +273,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -420,7 +426,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -510,11 +516,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -522,7 +532,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -542,15 +560,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -566,11 +580,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -610,30 +628,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -646,7 +640,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -670,27 +684,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -706,11 +712,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -746,11 +764,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -763,14 +781,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -818,6 +828,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -826,7 +848,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -870,6 +892,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -895,26 +921,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

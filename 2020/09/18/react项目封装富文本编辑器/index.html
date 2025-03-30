@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>react项目封装富文本编辑器 | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、富文本组件封装1、安装依赖  yarn add react-quill 富文本依赖 yarn add quill-emoji 表情依赖   2、引入依赖1234567891011121314151617// react-quill 富文本依赖样式import ReactQuill, &amp;#123; Quill &amp;#125; from &apos;react-quill&apos;;import &apos;react-qui">
+  <meta name="description" content="一、富文本组件封装1、安装依赖  yarn add react-quill 富文本依赖 yarn add quill-emoji 表情依赖   2、引入依赖1234567891011121314151617// react-quill 富文本依赖样式import ReactQuill, &amp;#123; Quill &amp;#125; from &amp;#x27;react-quill&amp;#x27;;import">
 <meta name="keywords" content="React,Typescript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react项目封装富文本编辑器">
 <meta property="og:url" content="http://yoursite.com/2020/09/18/react项目封装富文本编辑器/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
-<meta property="og:description" content="一、富文本组件封装1、安装依赖  yarn add react-quill 富文本依赖 yarn add quill-emoji 表情依赖   2、引入依赖1234567891011121314151617// react-quill 富文本依赖样式import ReactQuill, &amp;#123; Quill &amp;#125; from &apos;react-quill&apos;;import &apos;react-qui">
+<meta property="og:description" content="一、富文本组件封装1、安装依赖  yarn add react-quill 富文本依赖 yarn add quill-emoji 表情依赖   2、引入依赖1234567891011121314151617// react-quill 富文本依赖样式import ReactQuill, &amp;#123; Quill &amp;#125; from &amp;#x27;react-quill&amp;#x27;;import">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/f8f940e1cac64d918ad736c771e2714a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oOF6Z2e5b6X5bey5bCP54y_54y_,size_20,color_FFFFFF,t_70,g_se,x_16">
-<meta property="og:updated_time" content="2021-12-24T07:48:19.633Z">
+<meta property="og:updated_time" content="2021-12-24T07:48:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react项目封装富文本编辑器">
-<meta name="twitter:description" content="一、富文本组件封装1、安装依赖  yarn add react-quill 富文本依赖 yarn add quill-emoji 表情依赖   2、引入依赖1234567891011121314151617// react-quill 富文本依赖样式import ReactQuill, &amp;#123; Quill &amp;#125; from &apos;react-quill&apos;;import &apos;react-qui">
+<meta name="twitter:description" content="一、富文本组件封装1、安装依赖  yarn add react-quill 富文本依赖 yarn add quill-emoji 表情依赖   2、引入依赖1234567891011121314151617// react-quill 富文本依赖样式import ReactQuill, &amp;#123; Quill &amp;#125; from &amp;#x27;react-quill&amp;#x27;;import">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/f8f940e1cac64d918ad736c771e2714a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oOF6Z2e5b6X5bey5bCP54y_54y_,size_20,color_FFFFFF,t_70,g_se,x_16">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
@@ -224,18 +224,24 @@
 <li><code>yarn add quill-emoji</code> 表情依赖</li>
 </ul>
 </blockquote>
-<h4 id="2、引入依赖"><a href="#2、引入依赖" class="headerlink" title="2、引入依赖"></a>2、引入依赖</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// react-quill 富文本依赖样式</span></span><br><span class="line"><span class="keyword">import</span> ReactQuill, &#123; Quill &#125; <span class="keyword">from</span> <span class="string">'react-quill'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'react-quill/dist/quill.snow.css'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// quill-emoji 表情依赖样式</span></span><br><span class="line"><span class="keyword">import</span> quillEmoji <span class="keyword">from</span> <span class="string">'quill-emoji'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">"quill-emoji/dist/quill-emoji.css"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; EmojiBlot, ShortNameEmoji, ToolbarEmoji, TextAreaEmoji &#125; = quillEmoji;</span><br><span class="line"></span><br><span class="line">Quill.register(&#123;</span><br><span class="line">    <span class="string">'formats/emoji'</span>: EmojiBlot,</span><br><span class="line">    <span class="string">'modules/emoji-shortname'</span>: ShortNameEmoji,</span><br><span class="line">    <span class="string">'modules/emoji-toolbar'</span>: ToolbarEmoji,</span><br><span class="line">    <span class="string">'modules/emoji-textarea'</span>: TextAreaEmoji,</span><br><span class="line">    <span class="comment">// 'modules/ImageExtend': ImageExtend, //拖拽图片扩展组件</span></span><br><span class="line">&#125;, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<h4 id="2、引入依赖"><a href="#2、引入依赖" class="headerlink" title="2、引入依赖"></a>2、引入依赖</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// react-quill 富文本依赖样式</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactQuill</span>, &#123; <span class="title class_">Quill</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react-quill&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;react-quill/dist/quill.snow.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// quill-emoji 表情依赖样式</span></span><br><span class="line"><span class="keyword">import</span> quillEmoji <span class="keyword">from</span> <span class="string">&#x27;quill-emoji&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;quill-emoji/dist/quill-emoji.css&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; <span class="title class_">EmojiBlot</span>, <span class="title class_">ShortNameEmoji</span>, <span class="title class_">ToolbarEmoji</span>, <span class="title class_">TextAreaEmoji</span> &#125; = quillEmoji;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Quill</span>.<span class="title function_">register</span>(&#123;</span><br><span class="line">    <span class="string">&#x27;formats/emoji&#x27;</span>: <span class="title class_">EmojiBlot</span>,</span><br><span class="line">    <span class="string">&#x27;modules/emoji-shortname&#x27;</span>: <span class="title class_">ShortNameEmoji</span>,</span><br><span class="line">    <span class="string">&#x27;modules/emoji-toolbar&#x27;</span>: <span class="title class_">ToolbarEmoji</span>,</span><br><span class="line">    <span class="string">&#x27;modules/emoji-textarea&#x27;</span>: <span class="title class_">TextAreaEmoji</span>,</span><br><span class="line">    <span class="comment">// &#x27;modules/ImageExtend&#x27;: ImageExtend, //拖拽图片扩展组件</span></span><br><span class="line">&#125;, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
 <h4 id="3、创建class组件"><a href="#3、创建class组件" class="headerlink" title="3、创建class组件"></a>3、创建class组件</h4><blockquote>
 <ul>
 <li><code>value</code> 富文本回显的内容</li>
 <li><code>onChange</code> 通过函数传给父组件的值</li>
 </ul>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父子组件通信参数</span></span><br><span class="line">interface Props &#123;</span><br><span class="line">    value: string  <span class="comment">// 回显的传入的value</span></span><br><span class="line">    onChange: <span class="function">(<span class="params">value: string</span>) =&gt;</span> <span class="keyword">void</span> <span class="comment">// 通过参数传给父组件的值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ReactQuillWrap</span> <span class="keyword">extends</span> <span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">any</span>&gt;</span>&#123;</span><br><span class="line">    reactQuillRef: any = <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">// 自定义工具栏</span></span><br><span class="line">    modules: any = &#123;</span><br><span class="line">        toolbar: &#123;</span><br><span class="line">            container: []</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(props: any) &#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">        <span class="keyword">this</span>.state = &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;ReactQuill</span><br><span class="line">                value=&#123;<span class="keyword">this</span>.props.value&#125;</span><br><span class="line">                modules=&#123;<span class="keyword">this</span>.modules&#125;</span><br><span class="line">                ref=&#123;(el) =&gt; &#123; <span class="keyword">this</span>.reactQuillRef = el &#125;&#125;</span><br><span class="line">                onChange=&#123;<span class="keyword">this</span>.props.onChange.bind(<span class="keyword">this</span>)&#125;</span><br><span class="line">            /&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> ReactQuillWrap;</span><br></pre></td></tr></table></figure>
-<h4 id="4、配置自定义的工具栏"><a href="#4、配置自定义的工具栏" class="headerlink" title="4、配置自定义的工具栏"></a>4、配置自定义的工具栏</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">modules: any = &#123;</span><br><span class="line">    toolbar: &#123;</span><br><span class="line">        container: [</span><br><span class="line">            [&#123; <span class="string">'size'</span>: [<span class="string">'small'</span>, <span class="literal">false</span>, <span class="string">'large'</span>, <span class="string">'huge'</span>] &#125;], <span class="comment">//字体设置</span></span><br><span class="line">            <span class="comment">// [&#123; 'header': [1, 2, 3, 4, 5, 6, false] &#125;], //标题字号，不能设置单个字大小</span></span><br><span class="line">            [<span class="string">'bold'</span>, <span class="string">'italic'</span>, <span class="string">'underline'</span>, <span class="string">'strike'</span>],</span><br><span class="line">            [&#123; <span class="string">'list'</span>: <span class="string">'ordered'</span> &#125;, &#123; <span class="string">'list'</span>: <span class="string">'bullet'</span> &#125;, &#123; <span class="string">'indent'</span>: <span class="string">'-1'</span> &#125;, &#123; <span class="string">'indent'</span>: <span class="string">'+1'</span> &#125;],</span><br><span class="line">            [<span class="string">'link'</span>, <span class="string">'image'</span>], <span class="comment">// a链接和图片的显示</span></span><br><span class="line">            [&#123; <span class="string">'align'</span>: [] &#125;],</span><br><span class="line">            [&#123;</span><br><span class="line">                <span class="string">'background'</span>: [<span class="string">'rgb(  0,   0,   0)'</span>, <span class="string">'rgb(230,   0,   0)'</span>, <span class="string">'rgb(255, 153,   0)'</span>,</span><br><span class="line">                    <span class="string">'rgb(255, 255,   0)'</span>, <span class="string">'rgb(  0, 138,   0)'</span>, <span class="string">'rgb(  0, 102, 204)'</span>,</span><br><span class="line">                    <span class="string">'rgb(153,  51, 255)'</span>, <span class="string">'rgb(255, 255, 255)'</span>, <span class="string">'rgb(250, 204, 204)'</span>,</span><br><span class="line">                    <span class="string">'rgb(255, 235, 204)'</span>, <span class="string">'rgb(255, 255, 204)'</span>, <span class="string">'rgb(204, 232, 204)'</span>,</span><br><span class="line">                    <span class="string">'rgb(204, 224, 245)'</span>, <span class="string">'rgb(235, 214, 255)'</span>, <span class="string">'rgb(187, 187, 187)'</span>,</span><br><span class="line">                    <span class="string">'rgb(240, 102, 102)'</span>, <span class="string">'rgb(255, 194, 102)'</span>, <span class="string">'rgb(255, 255, 102)'</span>,</span><br><span class="line">                    <span class="string">'rgb(102, 185, 102)'</span>, <span class="string">'rgb(102, 163, 224)'</span>, <span class="string">'rgb(194, 133, 255)'</span>,</span><br><span class="line">                    <span class="string">'rgb(136, 136, 136)'</span>, <span class="string">'rgb(161,   0,   0)'</span>, <span class="string">'rgb(178, 107,   0)'</span>,</span><br><span class="line">                    <span class="string">'rgb(178, 178,   0)'</span>, <span class="string">'rgb(  0,  97,   0)'</span>, <span class="string">'rgb(  0,  71, 178)'</span>,</span><br><span class="line">                    <span class="string">'rgb(107,  36, 178)'</span>, <span class="string">'rgb( 68,  68,  68)'</span>, <span class="string">'rgb( 92,   0,   0)'</span>,</span><br><span class="line">                    <span class="string">'rgb(102,  61,   0)'</span>, <span class="string">'rgb(102, 102,   0)'</span>, <span class="string">'rgb(  0,  55,   0)'</span>,</span><br><span class="line">                    <span class="string">'rgb(  0,  41, 102)'</span>, <span class="string">'rgb( 61,  20,  10)'</span>]</span><br><span class="line">            &#125;],</span><br><span class="line">            [&#123;</span><br><span class="line">                <span class="string">'color'</span>: [<span class="string">'rgb(  0,   0,   0)'</span>, <span class="string">'rgb(230,   0,   0)'</span>, <span class="string">'rgb(255, 153,   0)'</span>,</span><br><span class="line">                    <span class="string">'rgb(255, 255,   0)'</span>, <span class="string">'rgb(  0, 138,   0)'</span>, <span class="string">'rgb(  0, 102, 204)'</span>,</span><br><span class="line">                    <span class="string">'rgb(153,  51, 255)'</span>, <span class="string">'rgb(255, 255, 255)'</span>, <span class="string">'rgb(250, 204, 204)'</span>,</span><br><span class="line">                    <span class="string">'rgb(255, 235, 204)'</span>, <span class="string">'rgb(255, 255, 204)'</span>, <span class="string">'rgb(204, 232, 204)'</span>,</span><br><span class="line">                    <span class="string">'rgb(204, 224, 245)'</span>, <span class="string">'rgb(235, 214, 255)'</span>, <span class="string">'rgb(187, 187, 187)'</span>,</span><br><span class="line">                    <span class="string">'rgb(240, 102, 102)'</span>, <span class="string">'rgb(255, 194, 102)'</span>, <span class="string">'rgb(255, 255, 102)'</span>,</span><br><span class="line">                    <span class="string">'rgb(102, 185, 102)'</span>, <span class="string">'rgb(102, 163, 224)'</span>, <span class="string">'rgb(194, 133, 255)'</span>,</span><br><span class="line">                    <span class="string">'rgb(136, 136, 136)'</span>, <span class="string">'rgb(161,   0,   0)'</span>, <span class="string">'rgb(178, 107,   0)'</span>,</span><br><span class="line">                    <span class="string">'rgb(178, 178,   0)'</span>, <span class="string">'rgb(  0,  97,   0)'</span>, <span class="string">'rgb(  0,  71, 178)'</span>,</span><br><span class="line">                    <span class="string">'rgb(107,  36, 178)'</span>, <span class="string">'rgb( 68,  68,  68)'</span>, <span class="string">'rgb( 92,   0,   0)'</span>,</span><br><span class="line">                    <span class="string">'rgb(102,  61,   0)'</span>, <span class="string">'rgb(102, 102,   0)'</span>, <span class="string">'rgb(  0,  55,   0)'</span>,</span><br><span class="line">                    <span class="string">'rgb(  0,  41, 102)'</span>, <span class="string">'rgb( 61,  20,  10)'</span>]</span><br><span class="line">            &#125;],</span><br><span class="line">            [<span class="string">'clean'</span>], <span class="comment">//清空</span></span><br><span class="line">            [<span class="string">'emoji'</span>], <span class="comment">//emoji表情，设置了才能显示</span></span><br><span class="line">            [<span class="string">'video2'</span>], <span class="comment">//我自定义的视频图标，和插件提供的不一样，所以设置为video2</span></span><br><span class="line">        ],</span><br><span class="line">        handlers: &#123;</span><br><span class="line">            <span class="string">'image'</span>: <span class="keyword">this</span>.imageHandler.bind(<span class="keyword">this</span>), <span class="comment">//点击图片标志会调用的方法</span></span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// ImageDrop: true,</span></span><br><span class="line">    <span class="string">'emoji-toolbar'</span>: <span class="literal">true</span>,  <span class="comment">// 是否展示出来</span></span><br><span class="line">    <span class="string">"emoji-textarea"</span>: <span class="literal">false</span>, <span class="comment">// emoji是否展示在文本框</span></span><br><span class="line">    <span class="string">"emoji-shortname"</span>: <span class="literal">true</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="5、上传图片方法"><a href="#5、上传图片方法" class="headerlink" title="5、上传图片方法"></a>5、上传图片方法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">imageHandler() &#123;</span><br><span class="line">    <span class="keyword">const</span> input = <span class="built_in">document</span>.createElement(<span class="string">'input'</span>);</span><br><span class="line">    input.setAttribute(<span class="string">'type'</span>, <span class="string">'file'</span>);</span><br><span class="line">    input.setAttribute(<span class="string">'accept'</span>, <span class="string">'image/*'</span>);</span><br><span class="line">    input.click();</span><br><span class="line">    input.onchange = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> file = input.files ? input.files[<span class="number">0</span>] : <span class="string">''</span>;</span><br><span class="line">        <span class="keyword">const</span> fd = <span class="keyword">new</span> FormData();</span><br><span class="line">        fd.append(<span class="string">'file'</span>, file);</span><br><span class="line">        <span class="comment">// const hide = message.loading('上传中...', 0);</span></span><br><span class="line">        uploadSubmit(getSellerId(), fd).then(<span class="function">(<span class="params">res: any</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'res==='</span>, res)</span><br><span class="line">            <span class="keyword">if</span> (res?.code === <span class="string">'0'</span>) &#123;</span><br><span class="line">                <span class="keyword">let</span> quill = <span class="keyword">this</span>.reactQuillRef.getEditor(); <span class="comment">// 获取到编辑器本身</span></span><br><span class="line">                <span class="keyword">const</span> cursorPosition = quill.getSelection().index; <span class="comment">// 获取当前光标位置</span></span><br><span class="line">                quill.insertEmbed(cursorPosition, <span class="string">"image"</span>, res.url); <span class="comment">// 插入图片 </span></span><br><span class="line">                quill.setSelection(cursorPosition + <span class="number">1</span>); <span class="comment">// 光标位置加1</span></span><br><span class="line">                <span class="comment">// hide();</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="二、父组件使用"><a href="#二、父组件使用" class="headerlink" title="二、父组件使用"></a>二、父组件使用</h3><h4 id="1、引入封装的组件"><a href="#1、引入封装的组件" class="headerlink" title="1、引入封装的组件"></a>1、引入封装的组件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ReactQillWrap <span class="keyword">from</span> <span class="string">'components/reactQuill'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父子组件通信参数</span></span><br><span class="line">interface <span class="title class_">Props</span> &#123;</span><br><span class="line">    <span class="attr">value</span>: string  <span class="comment">// 回显的传入的value</span></span><br><span class="line">    <span class="attr">onChange</span>: <span class="function">(<span class="params">value: string</span>) =&gt;</span> <span class="keyword">void</span> <span class="comment">// 通过参数传给父组件的值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ReactQuillWrap</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span>&lt;<span class="title class_">Props</span>, any&gt;&#123;</span><br><span class="line">    <span class="attr">reactQuillRef</span>: any = <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">// 自定义工具栏</span></span><br><span class="line">    <span class="attr">modules</span>: any = &#123;</span><br><span class="line">        <span class="attr">toolbar</span>: &#123;</span><br><span class="line">            <span class="attr">container</span>: []</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">props: any</span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>(props);</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">state</span> = &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            <span class="language-xml"><span class="tag">&lt;<span class="name">ReactQuill</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">value</span>=<span class="string">&#123;this.props.value&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">modules</span>=<span class="string">&#123;this.modules&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">ref</span>=<span class="string">&#123;(el)</span> =&gt;</span> &#123; this.reactQuillRef = el &#125;&#125;</span></span><br><span class="line"><span class="language-xml">                onChange=&#123;this.props.onChange.bind(this)&#125;</span></span><br><span class="line"><span class="language-xml">            /&gt;</span></span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">ReactQuillWrap</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4、配置自定义的工具栏"><a href="#4、配置自定义的工具栏" class="headerlink" title="4、配置自定义的工具栏"></a>4、配置自定义的工具栏</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">modules</span>: any = &#123;</span><br><span class="line">    <span class="attr">toolbar</span>: &#123;</span><br><span class="line">        <span class="attr">container</span>: [</span><br><span class="line">            [&#123; <span class="string">&#x27;size&#x27;</span>: [<span class="string">&#x27;small&#x27;</span>, <span class="literal">false</span>, <span class="string">&#x27;large&#x27;</span>, <span class="string">&#x27;huge&#x27;</span>] &#125;], <span class="comment">//字体设置</span></span><br><span class="line">            <span class="comment">// [&#123; &#x27;header&#x27;: [1, 2, 3, 4, 5, 6, false] &#125;], //标题字号，不能设置单个字大小</span></span><br><span class="line">            [<span class="string">&#x27;bold&#x27;</span>, <span class="string">&#x27;italic&#x27;</span>, <span class="string">&#x27;underline&#x27;</span>, <span class="string">&#x27;strike&#x27;</span>],</span><br><span class="line">            [&#123; <span class="string">&#x27;list&#x27;</span>: <span class="string">&#x27;ordered&#x27;</span> &#125;, &#123; <span class="string">&#x27;list&#x27;</span>: <span class="string">&#x27;bullet&#x27;</span> &#125;, &#123; <span class="string">&#x27;indent&#x27;</span>: <span class="string">&#x27;-1&#x27;</span> &#125;, &#123; <span class="string">&#x27;indent&#x27;</span>: <span class="string">&#x27;+1&#x27;</span> &#125;],</span><br><span class="line">            [<span class="string">&#x27;link&#x27;</span>, <span class="string">&#x27;image&#x27;</span>], <span class="comment">// a链接和图片的显示</span></span><br><span class="line">            [&#123; <span class="string">&#x27;align&#x27;</span>: [] &#125;],</span><br><span class="line">            [&#123;</span><br><span class="line">                <span class="string">&#x27;background&#x27;</span>: [<span class="string">&#x27;rgb(  0,   0,   0)&#x27;</span>, <span class="string">&#x27;rgb(230,   0,   0)&#x27;</span>, <span class="string">&#x27;rgb(255, 153,   0)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(255, 255,   0)&#x27;</span>, <span class="string">&#x27;rgb(  0, 138,   0)&#x27;</span>, <span class="string">&#x27;rgb(  0, 102, 204)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(153,  51, 255)&#x27;</span>, <span class="string">&#x27;rgb(255, 255, 255)&#x27;</span>, <span class="string">&#x27;rgb(250, 204, 204)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(255, 235, 204)&#x27;</span>, <span class="string">&#x27;rgb(255, 255, 204)&#x27;</span>, <span class="string">&#x27;rgb(204, 232, 204)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(204, 224, 245)&#x27;</span>, <span class="string">&#x27;rgb(235, 214, 255)&#x27;</span>, <span class="string">&#x27;rgb(187, 187, 187)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(240, 102, 102)&#x27;</span>, <span class="string">&#x27;rgb(255, 194, 102)&#x27;</span>, <span class="string">&#x27;rgb(255, 255, 102)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(102, 185, 102)&#x27;</span>, <span class="string">&#x27;rgb(102, 163, 224)&#x27;</span>, <span class="string">&#x27;rgb(194, 133, 255)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(136, 136, 136)&#x27;</span>, <span class="string">&#x27;rgb(161,   0,   0)&#x27;</span>, <span class="string">&#x27;rgb(178, 107,   0)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(178, 178,   0)&#x27;</span>, <span class="string">&#x27;rgb(  0,  97,   0)&#x27;</span>, <span class="string">&#x27;rgb(  0,  71, 178)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(107,  36, 178)&#x27;</span>, <span class="string">&#x27;rgb( 68,  68,  68)&#x27;</span>, <span class="string">&#x27;rgb( 92,   0,   0)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(102,  61,   0)&#x27;</span>, <span class="string">&#x27;rgb(102, 102,   0)&#x27;</span>, <span class="string">&#x27;rgb(  0,  55,   0)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(  0,  41, 102)&#x27;</span>, <span class="string">&#x27;rgb( 61,  20,  10)&#x27;</span>]</span><br><span class="line">            &#125;],</span><br><span class="line">            [&#123;</span><br><span class="line">                <span class="string">&#x27;color&#x27;</span>: [<span class="string">&#x27;rgb(  0,   0,   0)&#x27;</span>, <span class="string">&#x27;rgb(230,   0,   0)&#x27;</span>, <span class="string">&#x27;rgb(255, 153,   0)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(255, 255,   0)&#x27;</span>, <span class="string">&#x27;rgb(  0, 138,   0)&#x27;</span>, <span class="string">&#x27;rgb(  0, 102, 204)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(153,  51, 255)&#x27;</span>, <span class="string">&#x27;rgb(255, 255, 255)&#x27;</span>, <span class="string">&#x27;rgb(250, 204, 204)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(255, 235, 204)&#x27;</span>, <span class="string">&#x27;rgb(255, 255, 204)&#x27;</span>, <span class="string">&#x27;rgb(204, 232, 204)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(204, 224, 245)&#x27;</span>, <span class="string">&#x27;rgb(235, 214, 255)&#x27;</span>, <span class="string">&#x27;rgb(187, 187, 187)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(240, 102, 102)&#x27;</span>, <span class="string">&#x27;rgb(255, 194, 102)&#x27;</span>, <span class="string">&#x27;rgb(255, 255, 102)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(102, 185, 102)&#x27;</span>, <span class="string">&#x27;rgb(102, 163, 224)&#x27;</span>, <span class="string">&#x27;rgb(194, 133, 255)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(136, 136, 136)&#x27;</span>, <span class="string">&#x27;rgb(161,   0,   0)&#x27;</span>, <span class="string">&#x27;rgb(178, 107,   0)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(178, 178,   0)&#x27;</span>, <span class="string">&#x27;rgb(  0,  97,   0)&#x27;</span>, <span class="string">&#x27;rgb(  0,  71, 178)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(107,  36, 178)&#x27;</span>, <span class="string">&#x27;rgb( 68,  68,  68)&#x27;</span>, <span class="string">&#x27;rgb( 92,   0,   0)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(102,  61,   0)&#x27;</span>, <span class="string">&#x27;rgb(102, 102,   0)&#x27;</span>, <span class="string">&#x27;rgb(  0,  55,   0)&#x27;</span>,</span><br><span class="line">                    <span class="string">&#x27;rgb(  0,  41, 102)&#x27;</span>, <span class="string">&#x27;rgb( 61,  20,  10)&#x27;</span>]</span><br><span class="line">            &#125;],</span><br><span class="line">            [<span class="string">&#x27;clean&#x27;</span>], <span class="comment">//清空</span></span><br><span class="line">            [<span class="string">&#x27;emoji&#x27;</span>], <span class="comment">//emoji表情，设置了才能显示</span></span><br><span class="line">            [<span class="string">&#x27;video2&#x27;</span>], <span class="comment">//我自定义的视频图标，和插件提供的不一样，所以设置为video2</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="attr">handlers</span>: &#123;</span><br><span class="line">            <span class="string">&#x27;image&#x27;</span>: <span class="variable language_">this</span>.<span class="property">imageHandler</span>.<span class="title function_">bind</span>(<span class="variable language_">this</span>), <span class="comment">//点击图片标志会调用的方法</span></span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// ImageDrop: true,</span></span><br><span class="line">    <span class="string">&#x27;emoji-toolbar&#x27;</span>: <span class="literal">true</span>,  <span class="comment">// 是否展示出来</span></span><br><span class="line">    <span class="string">&quot;emoji-textarea&quot;</span>: <span class="literal">false</span>, <span class="comment">// emoji是否展示在文本框</span></span><br><span class="line">    <span class="string">&quot;emoji-shortname&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5、上传图片方法"><a href="#5、上传图片方法" class="headerlink" title="5、上传图片方法"></a>5、上传图片方法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">imageHandler</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> input = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;input&#x27;</span>);</span><br><span class="line">    input.<span class="title function_">setAttribute</span>(<span class="string">&#x27;type&#x27;</span>, <span class="string">&#x27;file&#x27;</span>);</span><br><span class="line">    input.<span class="title function_">setAttribute</span>(<span class="string">&#x27;accept&#x27;</span>, <span class="string">&#x27;image/*&#x27;</span>);</span><br><span class="line">    input.<span class="title function_">click</span>();</span><br><span class="line">    input.<span class="property">onchange</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> file = input.<span class="property">files</span> ? input.<span class="property">files</span>[<span class="number">0</span>] : <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">        <span class="keyword">const</span> fd = <span class="keyword">new</span> <span class="title class_">FormData</span>();</span><br><span class="line">        fd.<span class="title function_">append</span>(<span class="string">&#x27;file&#x27;</span>, file);</span><br><span class="line">        <span class="comment">// const hide = message.loading(&#x27;上传中...&#x27;, 0);</span></span><br><span class="line">        <span class="title function_">uploadSubmit</span>(<span class="title function_">getSellerId</span>(), fd).<span class="title function_">then</span>(<span class="function">(<span class="params">res: any</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;res===&#x27;</span>, res)</span><br><span class="line">            <span class="keyword">if</span> (res?.<span class="property">code</span> === <span class="string">&#x27;0&#x27;</span>) &#123;</span><br><span class="line">                <span class="keyword">let</span> quill = <span class="variable language_">this</span>.<span class="property">reactQuillRef</span>.<span class="title function_">getEditor</span>(); <span class="comment">// 获取到编辑器本身</span></span><br><span class="line">                <span class="keyword">const</span> cursorPosition = quill.<span class="title function_">getSelection</span>().<span class="property">index</span>; <span class="comment">// 获取当前光标位置</span></span><br><span class="line">                quill.<span class="title function_">insertEmbed</span>(cursorPosition, <span class="string">&quot;image&quot;</span>, res.<span class="property">url</span>); <span class="comment">// 插入图片 </span></span><br><span class="line">                quill.<span class="title function_">setSelection</span>(cursorPosition + <span class="number">1</span>); <span class="comment">// 光标位置加1</span></span><br><span class="line">                <span class="comment">// hide();</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、父组件使用"><a href="#二、父组件使用" class="headerlink" title="二、父组件使用"></a>二、父组件使用</h3><h4 id="1、引入封装的组件"><a href="#1、引入封装的组件" class="headerlink" title="1、引入封装的组件"></a>1、引入封装的组件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">ReactQillWrap</span> <span class="keyword">from</span> <span class="string">&#x27;components/reactQuill&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
 <h4 id="2、render渲染"><a href="#2、render渲染" class="headerlink" title="2、render渲染"></a>2、render渲染</h4><blockquote>
 <ul>
 <li><code>content</code> 富文本内容回显值</li>
@@ -243,7 +249,8 @@
 <li><code>handleChange</code> 接收子组件的富文本内容</li>
 </ul>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数据回显</span></span><br><span class="line">componentDidMount() &#123;</span><br><span class="line">    <span class="keyword">const</span> currentItem = <span class="keyword">this</span>.props.current;</span><br><span class="line">    <span class="keyword">if</span> (currentItem) &#123;</span><br><span class="line">        <span class="keyword">this</span>.form.current?.setFieldsValue(&#123;</span><br><span class="line">            name: currentItem.name,</span><br><span class="line">            content: currentItem.content</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 接收子组件的值</span></span><br><span class="line">handleChange(value: string) &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123; <span class="attr">content</span>: value &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 表单嵌套</span></span><br><span class="line">&lt;Form.Item label=<span class="string">"公司内容"</span> name=<span class="string">"content"</span> initialValue=<span class="string">""</span> rules=&#123;[&#123; <span class="attr">required</span>: <span class="literal">true</span> &#125;]&#125;&gt;</span><br><span class="line">    &lt;ReactQillWrap value=&#123;<span class="keyword">this</span>.state.content&#125; onChange=&#123;<span class="keyword">this</span>.handleChange.bind(<span class="keyword">this</span>)&#125; /&gt;</span><br><span class="line">&lt;<span class="regexp">/Form.Item&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数据回显</span></span><br><span class="line"><span class="title function_">componentDidMount</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> currentItem = <span class="variable language_">this</span>.<span class="property">props</span>.<span class="property">current</span>;</span><br><span class="line">    <span class="keyword">if</span> (currentItem) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">form</span>.<span class="property">current</span>?.<span class="title function_">setFieldsValue</span>(&#123;</span><br><span class="line">            <span class="attr">name</span>: currentItem.<span class="property">name</span>,</span><br><span class="line">            <span class="attr">content</span>: currentItem.<span class="property">content</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 接收子组件的值</span></span><br><span class="line"><span class="title function_">handleChange</span>(<span class="params">value: string</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123; <span class="attr">content</span>: value &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 表单嵌套</span></span><br><span class="line">&lt;<span class="title class_">Form</span>.<span class="property">Item</span> label=<span class="string">&quot;公司内容&quot;</span> name=<span class="string">&quot;content&quot;</span> initialValue=<span class="string">&quot;&quot;</span> rules=&#123;[&#123; <span class="attr">required</span>: <span class="literal">true</span> &#125;]&#125;&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">ReactQillWrap</span> <span class="attr">value</span>=<span class="string">&#123;this.state.content&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;this.handleChange.bind(this)&#125;</span> /&gt;</span></span></span><br><span class="line">&lt;/<span class="title class_">Form</span>.<span class="property">Item</span>&gt;</span><br></pre></td></tr></table></figure>
+
 <h4 id="3、视图"><a href="#3、视图" class="headerlink" title="3、视图"></a>3、视图</h4><p><img src="https://img-blog.csdnimg.cn/f8f940e1cac64d918ad736c771e2714a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oOF6Z2e5b6X5bey5bCP54y_54y_,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
 
       
@@ -434,7 +441,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -524,11 +531,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -536,7 +547,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -556,15 +575,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -580,11 +595,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -624,30 +643,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -660,7 +655,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -684,27 +699,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -720,11 +727,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -760,11 +779,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -777,14 +796,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -832,6 +843,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -840,7 +863,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -884,6 +907,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -909,26 +936,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

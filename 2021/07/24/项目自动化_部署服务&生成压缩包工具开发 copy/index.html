@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue/react 项目中使用echarts | 马超的个人技术博客 | Blog</title>
+  <title>项目自动化 | 部署服务&amp;生成压缩包工具开发 | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="vue 项目 yarn add echartsyard add vue-echart  123import ECharts from &quot;vue-echarts&quot;;import &quot;echarts/lib/component/title&quot;;import &quot;echarts/lib/chart/line&quot;; 123components: &amp;#123;  &apos;v-chart&apos;: ECharts&amp;#125; 1">
-<meta name="keywords" content="vue,react,echarts">
+  <meta name="description" content="场景需求:  每次打包完 需要手动上传至服务器测试、准生产、生产环境 利用ftp、Xshell等连接服务器，找到本地文件再上传很繁琐   解决问题:  根据不同环境脚本命令执行  自动上传至服务器文件中  生成.zip压缩包   nodejs、yarn 相关知识">
+<meta name="keywords" content="yarn,js,node">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue&#x2F;react 项目中使用echarts">
-<meta property="og:url" content="http://yoursite.com/2020/03/26/vue | react 项目中使用echarts/index.html">
+<meta property="og:title" content="项目自动化 | 部署服务&amp;生成压缩包工具开发">
+<meta property="og:url" content="http://yoursite.com/2021/07/24/项目自动化_部署服务&生成压缩包工具开发 copy/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
-<meta property="og:description" content="vue 项目 yarn add echartsyard add vue-echart  123import ECharts from &quot;vue-echarts&quot;;import &quot;echarts/lib/component/title&quot;;import &quot;echarts/lib/chart/line&quot;; 123components: &amp;#123;  &apos;v-chart&apos;: ECharts&amp;#125; 1">
+<meta property="og:description" content="场景需求:  每次打包完 需要手动上传至服务器测试、准生产、生产环境 利用ftp、Xshell等连接服务器，找到本地文件再上传很繁琐   解决问题:  根据不同环境脚本命令执行  自动上传至服务器文件中  生成.zip压缩包   nodejs、yarn 相关知识">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/202101191439314.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2021-01-19T16:31:22.970Z">
+<meta property="og:updated_time" content="2022-02-24T13:57:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue&#x2F;react 项目中使用echarts">
-<meta name="twitter:description" content="vue 项目 yarn add echartsyard add vue-echart  123import ECharts from &quot;vue-echarts&quot;;import &quot;echarts/lib/component/title&quot;;import &quot;echarts/lib/chart/line&quot;; 123components: &amp;#123;  &apos;v-chart&apos;: ECharts&amp;#125; 1">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/202101191439314.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70">
+<meta name="twitter:title" content="项目自动化 | 部署服务&amp;生成压缩包工具开发">
+<meta name="twitter:description" content="场景需求:  每次打包完 需要手动上传至服务器测试、准生产、生产环境 利用ftp、Xshell等连接服务器，找到本地文件再上传很繁琐   解决问题:  根据不同环境脚本命令执行  自动上传至服务器文件中  生成.zip压缩包   nodejs、yarn 相关知识">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
   
@@ -198,42 +196,97 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue | react 项目中使用echarts" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-项目自动化_部署服务&amp;生成压缩包工具开发 copy" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue/react 项目中使用echarts
+      项目自动化 | 部署服务&amp;生成压缩包工具开发
     </h1>
   
 
         
-        <a href="/2020/03/26/vue | react 项目中使用echarts/" class="archive-article-date">
-  	<time datetime="2020-03-26T07:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
+        <a href="/2021/07/24/项目自动化_部署服务&生成压缩包工具开发 copy/" class="archive-article-date">
+  	<time datetime="2021-07-24T11:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="vue-项目"><a href="#vue-项目" class="headerlink" title="vue 项目"></a>vue 项目</h3><blockquote>
-<p>yarn add echarts<br>yard add vue-echart</p>
+        <h4 id="场景需求"><a href="#场景需求" class="headerlink" title="场景需求:"></a>场景需求:</h4><blockquote>
+<ul>
+<li>每次打包完 需要手动上传至服务器测试、准生产、生产环境</li>
+<li>利用ftp、Xshell等连接服务器，找到本地文件再上传很繁琐</li>
+</ul>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ECharts <span class="keyword">from</span> <span class="string">"vue-echarts"</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">"echarts/lib/component/title"</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">"echarts/lib/chart/line"</span>;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components: &#123;</span><br><span class="line">  <span class="string">'v-chart'</span>: ECharts</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">v-chart</span> <span class="attr">:auto-resize</span>=<span class="string">"true"</span> <span class="attr">:options</span>=<span class="string">"transaction_report"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="react-项目"><a href="#react-项目" class="headerlink" title="react 项目"></a>react 项目</h3><blockquote>
-<p>yarn add <a href="mailto:echarts@4.9.0" target="_blank" rel="noopener">echarts@4.9.0</a><br>yarn add echarts-for-react（不支持最新版的echarts）</p>
+<h4 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题:"></a>解决问题:</h4><blockquote>
+<ul>
+<li>根据不同环境脚本命令执行 <ul>
+<li>自动上传至服务器文件中 </li>
+<li>生成<code>.zip</code>压缩包</li>
+</ul>
+</li>
+<li><code>nodejs</code>、<code>yarn</code> 相关知识</li>
+</ul>
 </blockquote>
-<h4 id="1、引入依赖"><a href="#1、引入依赖" class="headerlink" title="1、引入依赖"></a>1、引入依赖</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ReactEcharts <span class="keyword">from</span> <span class="string">'echarts-for-react'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'echarts/lib/chart/line'</span>;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明 option</span></span><br><span class="line"><span class="keyword">this</span>.state = &#123;</span><br><span class="line">    option: &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2、调接口赋值更新option"><a href="#2、调接口赋值更新option" class="headerlink" title="2、调接口赋值更新option"></a>2、调接口赋值更新option</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// componentDidMount()&#123;&#125; </span></span><br><span class="line"><span class="keyword">const</span> option =  &#123;</span><br><span class="line">    title: &#123;</span><br><span class="line">        text: <span class="string">''</span></span><br><span class="line">    &#125;,</span><br><span class="line">    tooltip: &#123; <span class="comment">// 鼠标文字提示</span></span><br><span class="line">        trigger: <span class="string">'axis'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    legend: &#123; <span class="comment">// 头部注释</span></span><br><span class="line">        data: [<span class="string">'会员'</span>, <span class="string">'交易'</span>, <span class="string">'佣金'</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    grid: &#123;  <span class="comment">// 视图展示大小</span></span><br><span class="line">        left: <span class="string">'2%'</span>,</span><br><span class="line">        right: <span class="string">'4%'</span>,</span><br><span class="line">        bottom: <span class="string">'2%'</span>,</span><br><span class="line">        containLabel: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    xAxis: &#123;</span><br><span class="line">        type: <span class="string">'category'</span>,</span><br><span class="line">        boundaryGap: <span class="literal">false</span>, <span class="comment">// x轴从0开始</span></span><br><span class="line">        data: date</span><br><span class="line">    &#125;,</span><br><span class="line">    yAxis: &#123;</span><br><span class="line">        type: <span class="string">'value'</span></span><br><span class="line">        &#125;,</span><br><span class="line">    series: [ <span class="comment">// 多少项</span></span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">'会员'</span>,</span><br><span class="line">            type: <span class="string">'line'</span>,</span><br><span class="line">            data:  memberData</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">'交易'</span>,</span><br><span class="line">            type: <span class="string">'line'</span>,</span><br><span class="line">            data:  orderData</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">'佣金'</span>,</span><br><span class="line">            type: <span class="string">'line'</span>,</span><br><span class="line">            data:  feeData</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">this</span>.setState(&#123;</span><br><span class="line">    option: option</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="3、render-return"><a href="#3、render-return" class="headerlink" title="3、render(){return()}"></a>3、render(){return()}</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Card title=<span class="string">"数据统计"</span>&gt;</span><br><span class="line">  &lt;ReactEcharts option=&#123;<span class="keyword">this</span>.state.option&#125;/&gt;</span><br><span class="line">&lt;<span class="regexp">/Card&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="4、视图"><a href="#4、视图" class="headerlink" title="4、视图"></a>4、视图</h4><p><img src="https://img-blog.csdnimg.cn/202101191439314.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<span id="more"></span>
+<h3 id="1、新建工程项目"><a href="#1、新建工程项目" class="headerlink" title="1、新建工程项目"></a>1、新建工程项目</h3><blockquote>
+<ul>
+<li><code>cd ftp-dist-gen</code></li>
+<li><code>npm init -y</code></li>
+</ul>
+</blockquote>
+<h3 id="2、编码前期思路分析"><a href="#2、编码前期思路分析" class="headerlink" title="2、编码前期思路分析"></a>2、编码前期思路分析</h3><blockquote>
+<p><code>ftp上传</code>（测试、准生产环境）</p>
+</blockquote>
+<ul>
+<li>获取打包后的文件dist文件夹</li>
+<li>利用<code>ssh2-sftp-client</code>监听上传至服务器</li>
+</ul>
+<blockquote>
+<p><code>zip压缩</code>（生产环境）</p>
+</blockquote>
+<ul>
+<li>获取打包后的文件dist文件夹所有文件</li>
+<li>遍历获取的所有文件</li>
+<li>利用<code>adm-zip</code>压缩成zip</li>
+<li>提交至gitlub（获取安装此工具地址）</li>
+</ul>
+<h3 id="3、项目中使用此工具"><a href="#3、项目中使用此工具" class="headerlink" title="3、项目中使用此工具"></a>3、项目中使用此工具</h3><h5 id="1-、根目录新建local-index-js"><a href="#1-、根目录新建local-index-js" class="headerlink" title="1)、根目录新建local&#x2F;index.js"></a>1)、根目录新建local&#x2F;index.js</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">* @host 域名 </span></span><br><span class="line"><span class="comment">* @username 用户名 </span></span><br><span class="line"><span class="comment">* @password 密码 </span></span><br><span class="line"><span class="comment">* @port 端口号 </span></span><br><span class="line"><span class="comment">* @dst 文件绝对路径</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">test</span>: &#123;</span><br><span class="line">            <span class="attr">host</span>: <span class="string">&#x27;xxx&#x27;</span>,</span><br><span class="line">            <span class="attr">username</span>: <span class="string">&#x27;xxx&#x27;</span>,</span><br><span class="line">            <span class="attr">password</span>: <span class="string">&quot;xxx&quot;</span>,</span><br><span class="line">            <span class="attr">port</span>: <span class="string">&#x27;xxx&#x27;</span>,</span><br><span class="line">            <span class="attr">dst</span>: <span class="string">&quot;/Dev/h5/opc&quot;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">pre</span>: &#123;</span><br><span class="line">            <span class="attr">host</span>: <span class="string">&#x27;xxx&#x27;</span>,</span><br><span class="line">            <span class="attr">username</span>: <span class="string">&#x27;xxx&#x27;</span>,</span><br><span class="line">            <span class="attr">password</span>: <span class="string">&quot;xxx&quot;</span>,</span><br><span class="line">            <span class="attr">port</span>: <span class="string">&#x27;xxx&#x27;</span>,</span><br><span class="line">            <span class="attr">dst</span>: <span class="string">&quot;/PreProd/h5/opc&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h5 id="2-、根目录新建scripts-build-sh"><a href="#2-、根目录新建scripts-build-sh" class="headerlink" title="2)、根目录新建scripts&#x2F;build.sh"></a>2)、根目录新建scripts&#x2F;build.sh</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># !<span class="regexp">/bin/</span>bash</span><br><span class="line">set -e</span><br><span class="line"># rm -rf web-build</span><br><span class="line"><span class="variable constant_">MODE</span>=$1</span><br><span class="line">yarn umi build</span><br><span class="line">yarn cross-env <span class="title class_">AppEnv</span>=$MODE ftp-dist-gen</span><br></pre></td></tr></table></figure>
+
+<h5 id="3）、package-json添加"><a href="#3）、package-json添加" class="headerlink" title="3）、package.json添加"></a>3）、package.json添加</h5><blockquote>
+<ul>
+<li>配置不同环境的打包命令（<code>test、pre、release</code>）</li>
+<li>获取<code>ftp-dist-gen</code>工具地址，yarn安装依赖</li>
+</ul>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;dist:test&quot;</span>: <span class="string">&quot;./scripts/build.sh test&quot;</span>,</span><br><span class="line">    <span class="string">&quot;dist:pre&quot;</span>: <span class="string">&quot;./scripts/build.sh pre&quot;</span>,</span><br><span class="line">    <span class="string">&quot;dist:release&quot;</span>: <span class="string">&quot;./scripts/build.sh release&quot;</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">&quot;dependencies&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;ftp-dist-gen&quot;</span>: <span class="string">&quot;git+http://xxx/jst/h5/ftp-dist-gen.git#6e414ef22fd75ba213d71db54853dd2d30637ffb&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-、根目录新建ftpdist-config-js"><a href="#4-、根目录新建ftpdist-config-js" class="headerlink" title="4)、根目录新建ftpdist.config.js"></a>4)、根目录新建ftpdist.config.js</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">* @type 值：ftp\zip  区分：上传\压缩</span></span><br><span class="line"><span class="comment">* @src 项目打包后生成的文件夹路径  dist/build等</span></span><br><span class="line"><span class="comment">* @ftp 连接服务器需要的属性 &#123;host username password port dst&#125;</span></span><br><span class="line"><span class="comment">* @zip outFile 压缩的输出名</span></span><br><span class="line"><span class="comment">* @filter 过滤 .DS.Store 文件</span></span><br><span class="line"><span class="comment">* @successMsg 成功msg</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> appEnv = process.<span class="property">env</span>.<span class="property">AppEnv</span>;</span><br><span class="line">    <span class="keyword">const</span> ftpMap = <span class="built_in">require</span>(<span class="string">&quot;./local/index&quot;</span>)();</span><br><span class="line">    <span class="keyword">const</span> ftp = ftpMap[appEnv];</span><br><span class="line">    <span class="keyword">const</span> src = path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;dist&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> type = appEnv === <span class="string">&#x27;release&#x27;</span> ? <span class="string">&#x27;zip&#x27;</span> : <span class="string">&#x27;ftp&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">type</span>: type,</span><br><span class="line">        <span class="attr">src</span>: src,</span><br><span class="line">        <span class="attr">ftp</span>: ftp,</span><br><span class="line">        <span class="attr">zip</span>: &#123;</span><br><span class="line">            <span class="attr">outFile</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;op&#x27;</span> + <span class="string">&#x27;.zip&#x27;</span>)</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">filter</span>: <span class="function">(<span class="params">filePath</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="regexp">/^\.DS.Store$/</span>.<span class="title function_">test</span>(filePath))&#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;skip dist file:&quot;</span>, filePath)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">successMsg</span>: <span class="string">&#x27;🎉🎉🎉 &#x27;</span> + appEnv + <span class="string">&#x27; 成功啦!!!&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="5）、根据环境需要执行命令"><a href="#5）、根据环境需要执行命令" class="headerlink" title="5）、根据环境需要执行命令"></a>5）、根据环境需要执行命令</h5><blockquote>
+<ul>
+<li><code>yarn dist:test</code> 上传服务器</li>
+<li><code>yarn dist:pre</code> 上传服务器</li>
+<li><code>yarn dist:release</code> 生成<code>.zip</code>压缩包</li>
+</ul>
+</blockquote>
+<p>上传服务器成功后截图</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Listener: upload /Users/aip/Documents/work/allin/obm-pc/dist/umi.6294cb00.css</span><br><span class="line">Listener: upload /Users/aip/Documents/work/allin/obm-pc/dist/umi.79a7a967.js</span><br><span class="line">Listener: upload /Users/aip/Documents/work/allin/obm-pc/dist/user/index.html</span><br><span class="line">Listener: upload /Users/aip/Documents/work/allin/obm-pc/dist/user/login/index.html</span><br><span class="line">Listener: upload /Users/aip/Documents/work/allin/obm-pc/dist/user/register/index.html</span><br><span class="line">Listener: upload /Users/aip/Documents/work/allin/obm-pc/dist/user/register-result/index.html</span><br><span class="line">🎉🎉🎉 <span class="built_in">test</span> 成功啦!!!</span><br></pre></td></tr></table></figure>
+
+<h4 id="4、工程目录结构"><a href="#4、工程目录结构" class="headerlink" title="4、工程目录结构"></a>4、工程目录结构</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ftp-dist-gen</span><br><span class="line">├─node_modules</span><br><span class="line">├─.<span class="property">gitignore</span></span><br><span class="line">├─ftpdist.<span class="property">config</span>.<span class="property">js</span></span><br><span class="line">├─index.<span class="property">js</span></span><br><span class="line">├─package.<span class="property">json</span></span><br><span class="line">├─yarn.<span class="property">lock</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5、工程开发源码"><a href="#5、工程开发源码" class="headerlink" title="5、工程开发源码"></a>5、工程开发源码</h4><h5 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env node</span></span><br><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">SftpClient</span> = <span class="built_in">require</span>(<span class="string">&#x27;ssh2-sftp-client&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">AdmZip</span> = <span class="built_in">require</span>(<span class="string">&quot;adm-zip&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> runDir = process.<span class="property">env</span>.<span class="property">PWD</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">* @ftpConfig 配置的ftpdist.config.js文件中的ftp</span></span><br><span class="line"><span class="comment">* @dst ftp上传的服务器路径</span></span><br><span class="line"><span class="comment">* @src 项目打包后生成的文件夹路径 dist/build等</span></span><br><span class="line"><span class="comment">* uploadDir(上传目标文件夹，服务器文件夹路径)</span></span><br><span class="line"><span class="comment">* rslt 将打包的dist文件 upload 服务器文件目录</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">distFtp</span>(<span class="params">config</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> client = <span class="keyword">new</span> <span class="title class_">SftpClient</span>(<span class="string">&#x27;ftp-dist-client&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> ftpConfig = config.<span class="property">ftp</span>;</span><br><span class="line">    <span class="keyword">const</span> dst = ftpConfig.<span class="property">dst</span>;</span><br><span class="line">    <span class="keyword">const</span> src = config.<span class="property">src</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(!ftpConfig || !dst || !src)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;ftp dist upload cancled,task info is not usable&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">await</span> client.<span class="title function_">connect</span>(ftpConfig);</span><br><span class="line">        client.<span class="title function_">on</span>(<span class="string">&#x27;upload&#x27;</span>, <span class="function"><span class="params">info</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Listener: upload <span class="subst">$&#123;info.source&#125;</span>`</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">let</span> rslt = <span class="keyword">await</span> client.<span class="title function_">uploadDir</span>(src, dst);</span><br><span class="line">        <span class="keyword">return</span> rslt;</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        client.<span class="title function_">end</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">* @src 项目打包后生成的文件夹路径 dist/build等</span></span><br><span class="line"><span class="comment">* @zipElements 被压缩文件夹所有文件名 Array</span></span><br><span class="line"><span class="comment">* @filePath 被压缩文件夹当前文件路径</span></span><br><span class="line"><span class="comment">* @outFile 压缩输出文件名</span></span><br><span class="line"><span class="comment">* addLocalFolder(目标文件，所放目录) 压缩文件夹</span></span><br><span class="line"><span class="comment">* addLocalFile(目标文件，所放目录) 压缩文件</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">distZip</span>(<span class="params">config</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> zip = <span class="keyword">new</span> <span class="title class_">AdmZip</span>();</span><br><span class="line">    <span class="keyword">const</span> src = config.<span class="property">src</span>;  </span><br><span class="line">    <span class="keyword">const</span> zipElements = fs.<span class="title function_">readdirSync</span>(src);</span><br><span class="line">    <span class="keyword">const</span> outFile = config.<span class="property">zip</span>.<span class="property">outFile</span>;</span><br><span class="line">    <span class="keyword">const</span> filter = config.<span class="property">filter</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(!src || !outFile)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;dist zip cancled,task info is not usable&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> fileName <span class="keyword">of</span> zipElements) &#123;</span><br><span class="line">        <span class="keyword">const</span> filePath = path.<span class="title function_">resolve</span>(src, fileName);</span><br><span class="line">        <span class="keyword">if</span>(!<span class="title function_">filter</span>(filePath))&#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//  main error: EISDIR: illegal operation on a directory, read</span></span><br><span class="line">        <span class="keyword">if</span> (fs.<span class="title function_">statSync</span>(filePath).<span class="title function_">isDirectory</span>()) &#123;</span><br><span class="line">            zip.<span class="title function_">addLocalFolder</span>(filePath, fileName, <span class="function">(<span class="params">name</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="title function_">filter</span>(path.<span class="title function_">resolve</span>(filePath, name))</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            zip.<span class="title function_">addLocalFile</span>(filePath)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    zip.<span class="title function_">writeZip</span>(outFile);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">* @config 配置的ftpdist.config.js函数返回的对象 &#123;type, src, ftp, zip, filter, successMsg&#125;</span></span><br><span class="line"><span class="comment">* - type 值：ftp\zip  区分：上传\压缩</span></span><br><span class="line"><span class="comment">* - src 项目打包后生成的文件夹路径  dist/build等</span></span><br><span class="line"><span class="comment">* - ftp 连接服务器需要的属性 &#123;host username password port dst&#125;</span></span><br><span class="line"><span class="comment">* host域名 username用户名 password密码 port端口号 dst文件绝对路径</span></span><br><span class="line"><span class="comment">* - filter 过滤 .DS.Store 文件</span></span><br><span class="line"><span class="comment">* - successMsg 成功msg</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">main</span> (<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> config = <span class="built_in">require</span>(path.<span class="title function_">join</span>(runDir, <span class="string">&#x27;ftpdist.config.js&#x27;</span>))();</span><br><span class="line">    <span class="keyword">if</span>(config.<span class="property">type</span> === <span class="string">&#x27;ftp&#x27;</span>)&#123;</span><br><span class="line">        <span class="keyword">await</span> <span class="title function_">distFtp</span>(config)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">await</span> <span class="title function_">distZip</span>(config)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(config.<span class="property">successMsg</span> || <span class="string">&quot;&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">main</span>()</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">msg</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(msg);</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`main error: <span class="subst">$&#123;err.message&#125;</span>`</span>);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="packjson-js"><a href="#packjson-js" class="headerlink" title="packjson.js"></a>packjson.js</h4><blockquote>
+<p>相关修改添加的属性 <code>mian、files、bin</code></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;name&quot;</span>: <span class="string">&quot;ftp-dist-gen&quot;</span>,</span><br><span class="line">    <span class="string">&quot;version&quot;</span>: <span class="string">&quot;1.0.0&quot;</span>,</span><br><span class="line">    <span class="string">&quot;main&quot;</span>: <span class="string">&quot;index.js&quot;</span>,</span><br><span class="line">    <span class="string">&quot;files&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;index.js&quot;</span></span><br><span class="line">      ],</span><br><span class="line">    <span class="string">&quot;bin&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;ftp-dist-gen&quot;</span>: <span class="string">&quot;index.js&quot;</span></span><br><span class="line">      &#125;,</span><br><span class="line">    <span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;test&quot;</span>: <span class="string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&quot;keywords&quot;</span>: [],</span><br><span class="line">    <span class="string">&quot;author&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">    <span class="string">&quot;license&quot;</span>: <span class="string">&quot;ISC&quot;</span>,</span><br><span class="line">    <span class="string">&quot;dependencies&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;adm-zip&quot;</span>: <span class="string">&quot;^0.5.9&quot;</span>,</span><br><span class="line">      <span class="string">&quot;ssh2-sftp-client&quot;</span>: <span class="string">&quot;^7.2.1&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&quot;devDependencies&quot;</span>: &#123;&#125;,</span><br><span class="line">    <span class="string">&quot;description&quot;</span>: <span class="string">&quot;&quot;</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -277,15 +330,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">yarn</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">echarts</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
         		</li>
       		
 		</ul>
@@ -341,7 +394,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/26/vue | react 项目中使用echarts/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/07/24/项目自动化_部署服务&生成压缩包工具开发 copy/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -355,18 +408,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/01/vue+ts项目语法规范/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/01/25/Vue3 + Vite + Typescript + Element Plus创建项目/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          vue+ts项目语法规范
+          Vue3 + Vite + Typescript + Element Plus创建项目
         
       </div>
     </a>
   
   
-    <a href="/2020/03/24/vue+ts项目mockjs模拟数据/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vue+ts项目mockjs模拟数据</div>
+    <a href="/2021/06/14/项目静态图片生成索引自动化工具开发/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">RN项目静态图片生成索引自动化工具开发</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -405,7 +458,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2020/03/26/vue | react 项目中使用echarts/",
+  id: "http://yoursite.com/2021/07/24/项目自动化_部署服务&amp;生成压缩包工具开发 copy/",
   owner: 'machao07',
   repo: 'https://machao07.github.io/',
   oauth: {
@@ -426,7 +479,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -516,11 +569,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -528,7 +585,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -548,15 +613,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -572,11 +633,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -616,30 +681,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -652,7 +693,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -676,27 +737,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -712,11 +765,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -752,11 +817,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -769,14 +834,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -824,6 +881,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -832,7 +901,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -876,6 +945,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -901,26 +974,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

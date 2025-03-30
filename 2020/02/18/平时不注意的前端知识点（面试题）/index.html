@@ -17,7 +17,7 @@
 <meta property="og:description" content="1、变量默认值123456789// 第一种(function(a,b=1,c)&amp;#123;    console.log(b) // null&amp;#125;)(1, null, 3)// 第二种(function(a,b=1,c)&amp;#123;    console.log(b)  // 1&amp;#125;)(1, undefined, 3)   重新传参，打印null 变量默认为undefined，所">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200912094022725.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="og:updated_time" content="2020-11-16T01:52:11.336Z">
+<meta property="og:updated_time" content="2020-11-16T01:52:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="平时不注意的前端知识点（面试题）">
 <meta name="twitter:description" content="1、变量默认值123456789// 第一种(function(a,b=1,c)&amp;#123;    console.log(b) // null&amp;#125;)(1, null, 3)// 第二种(function(a,b=1,c)&amp;#123;    console.log(b)  // 1&amp;#125;)(1, undefined, 3)   重新传参，打印null 变量默认为undefined，所">
@@ -218,29 +218,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1、变量默认值"><a href="#1、变量默认值" class="headerlink" title="1、变量默认值"></a>1、变量默认值</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一种</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a,b=<span class="number">1</span>,c</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(b) <span class="comment">// null</span></span><br><span class="line">&#125;)(<span class="number">1</span>, <span class="literal">null</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二种</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a,b=<span class="number">1</span>,c</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(b)  <span class="comment">// 1</span></span><br><span class="line">&#125;)(<span class="number">1</span>, <span class="literal">undefined</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+        <h4 id="1、变量默认值"><a href="#1、变量默认值" class="headerlink" title="1、变量默认值"></a>1、变量默认值</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一种</span></span><br><span class="line">(<span class="keyword">function</span>(<span class="params">a,b=<span class="number">1</span>,c</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(b) <span class="comment">// null</span></span><br><span class="line">&#125;)(<span class="number">1</span>, <span class="literal">null</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二种</span></span><br><span class="line">(<span class="keyword">function</span>(<span class="params">a,b=<span class="number">1</span>,c</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(b)  <span class="comment">// 1</span></span><br><span class="line">&#125;)(<span class="number">1</span>, <span class="literal">undefined</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ul>
 <li>重新传参，打印null</li>
 <li>变量默认为undefined，所以打印的是1</li>
 </ul>
 </blockquote>
-<a id="more"></a>
-<h4 id="2、‘-’-与-new-String-的区别"><a href="#2、‘-’-与-new-String-的区别" class="headerlink" title="2、‘ ’ 与 new String()的区别"></a>2、‘ ’ 与 new String()的区别</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">'a'</span>,</span><br><span class="line">    str2 = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'a’);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">console.log(str1) // a</span></span><br><span class="line"><span class="string">console.log(str2) // String &#123;"a"&#125;</span></span><br><span class="line"><span class="string">console.log(str1 == str2) // true</span></span><br><span class="line"><span class="string">console.log(typeof str1) // string</span></span><br><span class="line"><span class="string">console.log(typeof str2) // object</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h4 id="2、‘-’-与-new-String-的区别"><a href="#2、‘-’-与-new-String-的区别" class="headerlink" title="2、‘ ’ 与 new String()的区别"></a>2、‘ ’ 与 new String()的区别</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">&#x27;a&#x27;</span>,</span><br><span class="line">    str2 = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&#x27;a’);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">console.log(str1) // a</span></span><br><span class="line"><span class="string">console.log(str2) // String &#123;&quot;a&quot;&#125;</span></span><br><span class="line"><span class="string">console.log(str1 == str2) // true</span></span><br><span class="line"><span class="string">console.log(typeof str1) // string</span></span><br><span class="line"><span class="string">console.log(typeof str2) // object</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <ul>
 <li>string存储<code>栈</code>中，Object存储<code>堆</code>中</li>
 <li>两种方法的值是相等的</li>
 </ul>
 </blockquote>
-<h4 id="3、this指针在不同函数下的指向"><a href="#3、this指针在不同函数下的指向" class="headerlink" title="3、this指针在不同函数下的指向"></a>3、this指针在不同函数下的指向</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  i: <span class="number">10</span>,</span><br><span class="line">  b: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="keyword">this</span>.i, <span class="keyword">this</span>),</span><br><span class="line">  c: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="keyword">this</span>.i, <span class="keyword">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.b();  <span class="comment">// undefined, Window&#123;...&#125;</span></span><br><span class="line">obj.c();  <span class="comment">// 10, Object &#123;...&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="3、this指针在不同函数下的指向"><a href="#3、this指针在不同函数下的指向" class="headerlink" title="3、this指针在不同函数下的指向"></a>3、this指针在不同函数下的指向</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  <span class="attr">i</span>: <span class="number">10</span>,</span><br><span class="line">  <span class="attr">b</span>: <span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">i</span>, <span class="variable language_">this</span>),</span><br><span class="line">  <span class="attr">c</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>( <span class="variable language_">this</span>.<span class="property">i</span>, <span class="variable language_">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.<span class="title function_">b</span>();  <span class="comment">// undefined, Window&#123;...&#125;</span></span><br><span class="line">obj.<span class="title function_">c</span>();  <span class="comment">// 10, Object &#123;...&#125;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <ul>
 <li><code>箭头函数</code>的this指向最近的函数，没有则指向<code>window</code></li>
 <li><code>普通函数</code>指向当前对象</li>
 </ul>
 </blockquote>
-<h4 id="4、typeof判断数据类型"><a href="#4、typeof判断数据类型" class="headerlink" title="4、typeof判断数据类型"></a>4、typeof判断数据类型</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> []) <span class="comment">// object</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">null</span>)  <span class="comment">// object</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">console</span>)  <span class="comment">// object</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">console</span>.log) <span class="comment">// function</span></span><br></pre></td></tr></table></figure>
+<h4 id="4、typeof判断数据类型"><a href="#4、typeof判断数据类型" class="headerlink" title="4、typeof判断数据类型"></a>4、typeof判断数据类型</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> []) <span class="comment">// object</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> <span class="literal">null</span>)  <span class="comment">// object</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> <span class="variable language_">console</span>)  <span class="comment">// object</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> <span class="variable language_">console</span>.<span class="property">log</span>) <span class="comment">// function</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <ul>
 <li><code>console</code>是一个对象，console.log是一个方法，同时还有其他function</li>
@@ -440,7 +441,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -530,11 +531,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -542,7 +547,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -562,15 +575,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -586,11 +595,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -630,30 +643,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -666,7 +655,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -690,27 +699,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -726,11 +727,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -766,11 +779,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -783,14 +796,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -838,6 +843,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -846,7 +863,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -890,6 +907,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -915,26 +936,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

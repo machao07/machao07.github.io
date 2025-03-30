@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>react项目封装省市区组件 | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、地址选择器组件封装1、引入antd的Select组件12345import React, &amp;#123; Component &amp;#125; from &quot;react&quot;;import &amp;#123; Select &amp;#125; from &quot;antd&quot;;import &amp;#123; api &amp;#125; from &apos;../api/modules/services/src/api&apos;;const &amp;#123;">
+  <meta name="description" content="一、地址选择器组件封装1、引入antd的Select组件12345import React, &amp;#123; Component &amp;#125; from &amp;quot;react&amp;quot;;import &amp;#123; Select &amp;#125; from &amp;quot;antd&amp;quot;;import &amp;#123; api &amp;#125; from &amp;#x27;../api/modules/servi">
 <meta name="keywords" content="React,Typescript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react项目封装省市区组件">
 <meta property="og:url" content="http://yoursite.com/2020/10/28/react项目封装省市区组件/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
-<meta property="og:description" content="一、地址选择器组件封装1、引入antd的Select组件12345import React, &amp;#123; Component &amp;#125; from &quot;react&quot;;import &amp;#123; Select &amp;#125; from &quot;antd&quot;;import &amp;#123; api &amp;#125; from &apos;../api/modules/services/src/api&apos;;const &amp;#123;">
+<meta property="og:description" content="一、地址选择器组件封装1、引入antd的Select组件12345import React, &amp;#123; Component &amp;#125; from &amp;quot;react&amp;quot;;import &amp;#123; Select &amp;#125; from &amp;quot;antd&amp;quot;;import &amp;#123; api &amp;#125; from &amp;#x27;../api/modules/servi">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/ca9ce4721b8f4eedb33f329fc3a240f9.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oOF6Z2e5b6X5bey5bCP54y_54y_,size_20,color_FFFFFF,t_70,g_se,x_16">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/d525531792544f00b63704646a89388c.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oOF6Z2e5b6X5bey5bCP54y_54y_,size_20,color_FFFFFF,t_70,g_se,x_16">
-<meta property="og:updated_time" content="2021-12-24T07:48:06.552Z">
+<meta property="og:updated_time" content="2021-12-24T07:48:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react项目封装省市区组件">
-<meta name="twitter:description" content="一、地址选择器组件封装1、引入antd的Select组件12345import React, &amp;#123; Component &amp;#125; from &quot;react&quot;;import &amp;#123; Select &amp;#125; from &quot;antd&quot;;import &amp;#123; api &amp;#125; from &apos;../api/modules/services/src/api&apos;;const &amp;#123;">
+<meta name="twitter:description" content="一、地址选择器组件封装1、引入antd的Select组件12345import React, &amp;#123; Component &amp;#125; from &amp;quot;react&amp;quot;;import &amp;#123; Select &amp;#125; from &amp;quot;antd&amp;quot;;import &amp;#123; api &amp;#125; from &amp;#x27;../api/modules/servi">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/ca9ce4721b8f4eedb33f329fc3a240f9.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5oOF6Z2e5b6X5bey5bCP54y_54y_,size_20,color_FFFFFF,t_70,g_se,x_16">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
@@ -219,8 +219,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、地址选择器组件封装"><a href="#一、地址选择器组件封装" class="headerlink" title="一、地址选择器组件封装"></a>一、地址选择器组件封装</h3><h4 id="1、引入antd的Select组件"><a href="#1、引入antd的Select组件" class="headerlink" title="1、引入antd的Select组件"></a>1、引入antd的Select组件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Select &#125; <span class="keyword">from</span> <span class="string">"antd"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; api &#125; <span class="keyword">from</span> <span class="string">'../api/modules/services/src/api'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; Option &#125; = Select;</span><br></pre></td></tr></table></figure>
-<h4 id="2、定义组件Props-amp-States"><a href="#2、定义组件Props-amp-States" class="headerlink" title="2、定义组件Props &amp; States"></a>2、定义组件Props &amp; States</h4><blockquote>
+        <h3 id="一、地址选择器组件封装"><a href="#一、地址选择器组件封装" class="headerlink" title="一、地址选择器组件封装"></a>一、地址选择器组件封装</h3><h4 id="1、引入antd的Select组件"><a href="#1、引入antd的Select组件" class="headerlink" title="1、引入antd的Select组件"></a>1、引入antd的Select组件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; <span class="title class_">Component</span> &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Select</span> &#125; <span class="keyword">from</span> <span class="string">&quot;antd&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; api &#125; <span class="keyword">from</span> <span class="string">&#x27;../api/modules/services/src/api&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; <span class="title class_">Option</span> &#125; = <span class="title class_">Select</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、定义组件Props-States"><a href="#2、定义组件Props-States" class="headerlink" title="2、定义组件Props &amp; States"></a>2、定义组件Props &amp; States</h4><blockquote>
 <ul>
 <li><code>onSelectData</code> 最后选中后的所有值</li>
 <li><code>provinceList</code> 省的数据</li>
@@ -228,8 +229,10 @@
 <li><code>areaList</code> 区的数据</li>
 </ul>
 </blockquote>
-<a id="more"></a>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">interface States &#123;</span><br><span class="line">    onSelectData: string</span><br><span class="line">    provinceList: any[]</span><br><span class="line">    cityList: any[]</span><br><span class="line">    areaList: any[]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface Props &#123;</span><br><span class="line">    range: <span class="string">'province'</span> | <span class="string">'city'</span> | <span class="string">'area'</span> <span class="comment">// 地址选择的范围（市/区）</span></span><br><span class="line">    onSelect: <span class="function">(<span class="params">value: any</span>) =&gt;</span> <span class="keyword">void</span> <span class="comment">//通过参数传给父组件选中地址值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">interface <span class="title class_">States</span> &#123;</span><br><span class="line">    <span class="attr">onSelectData</span>: string</span><br><span class="line">    <span class="attr">provinceList</span>: any[]</span><br><span class="line">    <span class="attr">cityList</span>: any[]</span><br><span class="line">    <span class="attr">areaList</span>: any[]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface <span class="title class_">Props</span> &#123;</span><br><span class="line">    <span class="attr">range</span>: <span class="string">&#x27;province&#x27;</span> | <span class="string">&#x27;city&#x27;</span> | <span class="string">&#x27;area&#x27;</span> <span class="comment">// 地址选择的范围（市/区）</span></span><br><span class="line">    <span class="attr">onSelect</span>: <span class="function">(<span class="params">value: any</span>) =&gt;</span> <span class="keyword">void</span> <span class="comment">//通过参数传给父组件选中地址值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="3、创建class组件"><a href="#3、创建class组件" class="headerlink" title="3、创建class组件"></a>3、创建class组件</h4><blockquote>
 <p>封装思路：</p>
 <ul>
@@ -238,8 +241,10 @@
 <li><code>onChange事件</code> 获取当前<strong>Select组件</strong>选中的地址<code>code</code>，获取相应的省市区数据，字符串拼接抛出给父组件</li>
 </ul>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AreaSelect</span> <span class="keyword">extends</span> <span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">States</span>&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props: Props) &#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">        <span class="keyword">this</span>.state = &#123;</span><br><span class="line">            onSelectData: <span class="string">''</span>,</span><br><span class="line">            provinceList: [],</span><br><span class="line">            cityList: [],</span><br><span class="line">            areaList: []</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        <span class="keyword">this</span>.getProvinceList()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/******* 省市区列表获取 start ****/</span></span><br><span class="line">    getProvinceList() &#123;</span><br><span class="line">        api.codeGetProvinceList().then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123; <span class="attr">provinceList</span>: res.data || [] &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getCityList(provinceCode: string) &#123;</span><br><span class="line">        api.codeGetCityList(provinceCode).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123; <span class="attr">cityList</span>: res.data || [] &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getAreaList(CityCode: string) &#123;</span><br><span class="line">        api.codeGetAreaList(CityCode).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123; <span class="attr">areaList</span>: res.data || [] &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/******* 省市区列表获取 end ****/</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*******  省市区选中值 start *****/</span></span><br><span class="line">    procinceChange(value: string) &#123;</span><br><span class="line">        <span class="keyword">this</span>.getCityList(value)</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123; <span class="attr">onSelectData</span>: value &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cityChange(value: string) &#123;</span><br><span class="line">        <span class="keyword">const</span> code = <span class="keyword">this</span>.state.onSelectData + <span class="string">','</span> + value;</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123; <span class="attr">onSelectData</span>: code &#125;)</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.props.range === <span class="string">'city'</span>) &#123;</span><br><span class="line">            <span class="keyword">this</span>.props.onSelect(code)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.props.range === <span class="string">'area'</span>)&#123;</span><br><span class="line">            <span class="keyword">this</span>.getAreaList(value)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    areaChange(value: string) &#123;</span><br><span class="line">        <span class="keyword">const</span> code = <span class="keyword">this</span>.state.onSelectData + <span class="string">','</span> + value;</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123; <span class="attr">onSelectData</span>: code &#125;)</span><br><span class="line">        <span class="keyword">this</span>.props.onSelect(code)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*******  省市区选中值 end *****/</span></span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; range &#125; = <span class="keyword">this</span>.props;</span><br><span class="line">        <span class="keyword">const</span> &#123; provinceList, cityList, areaList &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">        <span class="keyword">const</span> provinceOptions = provinceList.map(<span class="function">(<span class="params">v</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Option</span> <span class="attr">key</span>=<span class="string">&#123;v.provinceCode&#125;</span> <span class="attr">value</span>=<span class="string">&#123;v.provinceCode&#125;</span>&gt;</span>&#123;v.provinceName&#125;<span class="tag">&lt;/<span class="name">Option</span>&gt;</span></span></span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">const</span> cityOptions = cityList.map(<span class="function">(<span class="params">v</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Option</span> <span class="attr">key</span>=<span class="string">&#123;v.cityCode&#125;</span> <span class="attr">value</span>=<span class="string">&#123;v.cityCode&#125;</span>&gt;</span>&#123;v.cityName&#125;<span class="tag">&lt;/<span class="name">Option</span>&gt;</span></span></span><br><span class="line">        &#125;)        </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">const</span> areaOptions = areaList.map(<span class="function">(<span class="params">v</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Option</span> <span class="attr">key</span>=<span class="string">&#123;v.areaCode&#125;</span> <span class="attr">value</span>=<span class="string">&#123;v.areaCode&#125;</span>&gt;</span>&#123;v.areaName&#125;<span class="tag">&lt;/<span class="name">Option</span>&gt;</span></span></span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div style=&#123;&#123; <span class="attr">display</span>: <span class="string">'flex'</span>, <span class="attr">flexDirection</span>: <span class="string">'row'</span> &#125;&#125;&gt;</span><br><span class="line">                &lt;Select onChange=&#123;<span class="keyword">this</span>.procinceChange.bind(<span class="keyword">this</span>)&#125; placeholder=<span class="string">"请选择"</span>&gt;</span><br><span class="line">                    &#123;provinceOptions&#125;</span><br><span class="line">                &lt;<span class="regexp">/Select&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">                &#123;</span></span><br><span class="line"><span class="regexp">                    range === 'city' || range === 'area' ?</span></span><br><span class="line"><span class="regexp">                        &lt;Select onChange=&#123;this.cityChange.bind(this)&#125; style=&#123;&#123; marginLeft: 5 &#125;&#125; placeholder="请选择"&gt;</span></span><br><span class="line"><span class="regexp">                            &#123;cityOptions&#125;</span></span><br><span class="line"><span class="regexp">                        &lt;/</span>Select&gt; : <span class="literal">null</span></span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                &#123;</span><br><span class="line">                    range === <span class="string">'area'</span> ?</span><br><span class="line">                        &lt;Select onChange=&#123;<span class="keyword">this</span>.areaChange.bind(<span class="keyword">this</span>)&#125; style=&#123;&#123; <span class="attr">marginLeft</span>: <span class="number">5</span> &#125;&#125; placeholder=<span class="string">"请选择"</span>&gt;</span><br><span class="line">                            &#123;areaOptions&#125;</span><br><span class="line">                        &lt;<span class="regexp">/Select&gt; : null</span></span><br><span class="line"><span class="regexp">                &#125;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> AreaSelect;</span><br></pre></td></tr></table></figure>
-<h3 id="二、父组件使用"><a href="#二、父组件使用" class="headerlink" title="二、父组件使用"></a>二、父组件使用</h3><h4 id="1、引入封装的地址选择器组件"><a href="#1、引入封装的地址选择器组件" class="headerlink" title="1、引入封装的地址选择器组件"></a>1、引入封装的地址选择器组件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> AreaSelect <span class="keyword">from</span> <span class="string">'../../../components/AreaSelect'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">AreaSelect</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span>&lt;<span class="title class_">Props</span>, <span class="title class_">States</span>&gt;&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">props: Props</span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>(props);</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">            <span class="attr">onSelectData</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">            <span class="attr">provinceList</span>: [],</span><br><span class="line">            <span class="attr">cityList</span>: [],</span><br><span class="line">            <span class="attr">areaList</span>: []</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">componentDidMount</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">getProvinceList</span>()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/******* 省市区列表获取 start ****/</span></span><br><span class="line">    <span class="title function_">getProvinceList</span>(<span class="params"></span>) &#123;</span><br><span class="line">        api.<span class="title function_">codeGetProvinceList</span>().<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123; <span class="attr">provinceList</span>: res.<span class="property">data</span> || [] &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">getCityList</span>(<span class="params">provinceCode: string</span>) &#123;</span><br><span class="line">        api.<span class="title function_">codeGetCityList</span>(provinceCode).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123; <span class="attr">cityList</span>: res.<span class="property">data</span> || [] &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">getAreaList</span>(<span class="params">CityCode: string</span>) &#123;</span><br><span class="line">        api.<span class="title function_">codeGetAreaList</span>(<span class="title class_">CityCode</span>).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123; <span class="attr">areaList</span>: res.<span class="property">data</span> || [] &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/******* 省市区列表获取 end ****/</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*******  省市区选中值 start *****/</span></span><br><span class="line">    <span class="title function_">procinceChange</span>(<span class="params">value: string</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">getCityList</span>(value)</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123; <span class="attr">onSelectData</span>: value &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">cityChange</span>(<span class="params">value: string</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> code = <span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">onSelectData</span> + <span class="string">&#x27;,&#x27;</span> + value;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123; <span class="attr">onSelectData</span>: code &#125;)</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">props</span>.<span class="property">range</span> === <span class="string">&#x27;city&#x27;</span>) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">props</span>.<span class="title function_">onSelect</span>(code)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">props</span>.<span class="property">range</span> === <span class="string">&#x27;area&#x27;</span>)&#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="title function_">getAreaList</span>(value)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">areaChange</span>(<span class="params">value: string</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> code = <span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">onSelectData</span> + <span class="string">&#x27;,&#x27;</span> + value;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123; <span class="attr">onSelectData</span>: code &#125;)</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">props</span>.<span class="title function_">onSelect</span>(code)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*******  省市区选中值 end *****/</span></span><br><span class="line"></span><br><span class="line">    <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; range &#125; = <span class="variable language_">this</span>.<span class="property">props</span>;</span><br><span class="line">        <span class="keyword">const</span> &#123; provinceList, cityList, areaList &#125; = <span class="variable language_">this</span>.<span class="property">state</span>;</span><br><span class="line">        <span class="keyword">const</span> provinceOptions = provinceList.<span class="title function_">map</span>(<span class="function">(<span class="params">v</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Option</span> <span class="attr">key</span>=<span class="string">&#123;v.provinceCode&#125;</span> <span class="attr">value</span>=<span class="string">&#123;v.provinceCode&#125;</span>&gt;</span>&#123;v.provinceName&#125;<span class="tag">&lt;/<span class="name">Option</span>&gt;</span></span></span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">const</span> cityOptions = cityList.<span class="title function_">map</span>(<span class="function">(<span class="params">v</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Option</span> <span class="attr">key</span>=<span class="string">&#123;v.cityCode&#125;</span> <span class="attr">value</span>=<span class="string">&#123;v.cityCode&#125;</span>&gt;</span>&#123;v.cityName&#125;<span class="tag">&lt;/<span class="name">Option</span>&gt;</span></span></span><br><span class="line">        &#125;)        </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">const</span> areaOptions = areaList.<span class="title function_">map</span>(<span class="function">(<span class="params">v</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Option</span> <span class="attr">key</span>=<span class="string">&#123;v.areaCode&#125;</span> <span class="attr">value</span>=<span class="string">&#123;v.areaCode&#125;</span>&gt;</span>&#123;v.areaName&#125;<span class="tag">&lt;/<span class="name">Option</span>&gt;</span></span></span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">display:</span> &#x27;<span class="attr">flex</span>&#x27;, <span class="attr">flexDirection:</span> &#x27;<span class="attr">row</span>&#x27; &#125;&#125;&gt;</span></span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;<span class="name">Select</span> <span class="attr">onChange</span>=<span class="string">&#123;this.procinceChange.bind(this)&#125;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请选择&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                    &#123;provinceOptions&#125;</span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;/<span class="name">Select</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">                &#123;</span></span><br><span class="line"><span class="language-xml">                    range === &#x27;city&#x27; || range === &#x27;area&#x27; ?</span></span><br><span class="line"><span class="language-xml">                        <span class="tag">&lt;<span class="name">Select</span> <span class="attr">onChange</span>=<span class="string">&#123;this.cityChange.bind(this)&#125;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">marginLeft:</span> <span class="attr">5</span> &#125;&#125; <span class="attr">placeholder</span>=<span class="string">&quot;请选择&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                            &#123;cityOptions&#125;</span></span><br><span class="line"><span class="language-xml">                        <span class="tag">&lt;/<span class="name">Select</span>&gt;</span> : null</span></span><br><span class="line"><span class="language-xml">                &#125;</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">                &#123;</span></span><br><span class="line"><span class="language-xml">                    range === &#x27;area&#x27; ?</span></span><br><span class="line"><span class="language-xml">                        <span class="tag">&lt;<span class="name">Select</span> <span class="attr">onChange</span>=<span class="string">&#123;this.areaChange.bind(this)&#125;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">marginLeft:</span> <span class="attr">5</span> &#125;&#125; <span class="attr">placeholder</span>=<span class="string">&quot;请选择&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                            &#123;areaOptions&#125;</span></span><br><span class="line"><span class="language-xml">                        <span class="tag">&lt;/<span class="name">Select</span>&gt;</span> : null</span></span><br><span class="line"><span class="language-xml">                &#125;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">AreaSelect</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、父组件使用"><a href="#二、父组件使用" class="headerlink" title="二、父组件使用"></a>二、父组件使用</h3><h4 id="1、引入封装的地址选择器组件"><a href="#1、引入封装的地址选择器组件" class="headerlink" title="1、引入封装的地址选择器组件"></a>1、引入封装的地址选择器组件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">AreaSelect</span> <span class="keyword">from</span> <span class="string">&#x27;../../../components/AreaSelect&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
 <h4 id="2、表单渲染"><a href="#2、表单渲染" class="headerlink" title="2、表单渲染"></a>2、表单渲染</h4><blockquote>
 <ul>
 <li><code>onSelect</code> 获取子组件传入的参数</li>
@@ -248,9 +253,13 @@
 <li><code>city</code>: 省市  <code>area</code>: 省市区</li>
 </ul>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Form.Item name=<span class="string">"branchAddrCode"</span> label=<span class="string">"银行账户支行地址"</span> rules=&#123;[&#123; <span class="attr">required</span>: <span class="literal">true</span> &#125;]&#125;&gt;</span><br><span class="line">    &lt;AreaSelect onSelect=&#123;<span class="keyword">this</span>.onSelect.bind(<span class="keyword">this</span>)&#125; range=<span class="string">'city'</span> /&gt;</span><br><span class="line">&lt;<span class="regexp">/Form.Item&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Form.Item name=<span class="string">"corporationAddr"</span> label=<span class="string">"企业地址"</span> rules=&#123;[&#123; <span class="attr">required</span>: <span class="literal">true</span> &#125;]&#125;&gt;</span><br><span class="line">    &lt;AreaSelect onSelect=&#123;<span class="keyword">this</span>.onSelect.bind(<span class="keyword">this</span>)&#125; range=<span class="string">'area'</span> /&gt;</span><br><span class="line">&lt;<span class="regexp">/Form.Item&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="3、获取最后选择省市区的code"><a href="#3、获取最后选择省市区的code" class="headerlink" title="3、获取最后选择省市区的code"></a>3、获取最后选择省市区的code</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">onSelect(value: any) &#123;</span><br><span class="line">    <span class="keyword">this</span>.form.current.setFieldsValue(&#123;</span><br><span class="line">        branchAddrCode: value</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'valueAre==='</span>, value); </span><br><span class="line">    <span class="comment">// valueAre=== 32,320100,320115</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> formValues = <span class="keyword">this</span>.form.current.getFieldsValue();</span><br><span class="line"><span class="keyword">const</span> code = formValues.branchAddrCode.split(<span class="string">','</span>); </span><br><span class="line"><span class="comment">// code=== ['32', '320100', '320115']</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Form</span>.<span class="property">Item</span> name=<span class="string">&quot;branchAddrCode&quot;</span> label=<span class="string">&quot;银行账户支行地址&quot;</span> rules=&#123;[&#123; <span class="attr">required</span>: <span class="literal">true</span> &#125;]&#125;&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">AreaSelect</span> <span class="attr">onSelect</span>=<span class="string">&#123;this.onSelect.bind(this)&#125;</span> <span class="attr">range</span>=<span class="string">&#x27;city&#x27;</span> /&gt;</span></span></span><br><span class="line">&lt;/<span class="title class_">Form</span>.<span class="property">Item</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Form</span>.<span class="property">Item</span> name=<span class="string">&quot;corporationAddr&quot;</span> label=<span class="string">&quot;企业地址&quot;</span> rules=&#123;[&#123; <span class="attr">required</span>: <span class="literal">true</span> &#125;]&#125;&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">AreaSelect</span> <span class="attr">onSelect</span>=<span class="string">&#123;this.onSelect.bind(this)&#125;</span> <span class="attr">range</span>=<span class="string">&#x27;area&#x27;</span> /&gt;</span></span></span><br><span class="line">&lt;/<span class="title class_">Form</span>.<span class="property">Item</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、获取最后选择省市区的code"><a href="#3、获取最后选择省市区的code" class="headerlink" title="3、获取最后选择省市区的code"></a>3、获取最后选择省市区的code</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">onSelect</span>(<span class="params">value: any</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">form</span>.<span class="property">current</span>.<span class="title function_">setFieldsValue</span>(&#123;</span><br><span class="line">        <span class="attr">branchAddrCode</span>: value</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;valueAre===&#x27;</span>, value); </span><br><span class="line">    <span class="comment">// valueAre=== 32,320100,320115</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> formValues = <span class="variable language_">this</span>.<span class="property">form</span>.<span class="property">current</span>.<span class="title function_">getFieldsValue</span>();</span><br><span class="line"><span class="keyword">const</span> code = formValues.<span class="property">branchAddrCode</span>.<span class="title function_">split</span>(<span class="string">&#x27;,&#x27;</span>); </span><br><span class="line"><span class="comment">// code=== [&#x27;32&#x27;, &#x27;320100&#x27;, &#x27;320115&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+
 <h3 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h3><blockquote>
 <p>省市</p>
 </blockquote>
@@ -448,7 +457,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -538,11 +547,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -550,7 +563,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -570,15 +591,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -594,11 +611,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -638,30 +659,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -674,7 +671,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -698,27 +715,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -734,11 +743,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -774,11 +795,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -791,14 +812,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -846,6 +859,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -854,7 +879,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -898,6 +923,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -923,26 +952,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

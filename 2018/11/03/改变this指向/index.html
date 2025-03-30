@@ -218,35 +218,37 @@
       
         <ul>
 <li><p><strong>小案例 1  obj.a ( ) 输出this 与 f ( ) 输出this</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    a:fn <span class="comment">//函数的地址</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> f = obj.a;<span class="comment">//函数的地址赋值给f f保存的是函数的地址 和object没有关系了</span></span><br><span class="line">obj.a();<span class="comment">// 输出obj3 先找obj3的地址 再找a属性 再执行</span></span><br><span class="line">f()<span class="comment">// 输出window</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//一个是在obj下面 借东西 (还是依赖于obj 所有权还是obj得)  一个是在obj下面买东西(买掉所有权 和obj无关了)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    <span class="attr">a</span>:fn <span class="comment">//函数的地址</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> f = obj.<span class="property">a</span>;<span class="comment">//函数的地址赋值给f f保存的是函数的地址 和object没有关系了</span></span><br><span class="line">obj.<span class="title function_">a</span>();<span class="comment">// 输出obj3 先找obj3的地址 再找a属性 再执行</span></span><br><span class="line"><span class="title function_">f</span>()<span class="comment">// 输出window</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//一个是在obj下面 借东西 (还是依赖于obj 所有权还是obj得)  一个是在obj下面买东西(买掉所有权 和obj无关了)</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>小案例2 面试题 关于argument的指向</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    a:fn <span class="comment">//函数的地址</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    e()<span class="comment">//指向window 等同于e = obj3.a //类似于上面的f = obj</span></span><br><span class="line">    <span class="built_in">arguments</span>[<span class="number">0</span>]()<span class="comment">//指向arguments 只能使用[]  类似于arg = [0:fn地址]</span></span><br><span class="line"> &#125;</span><br><span class="line"> fn1(obj3.a) <span class="comment">// window  arguments</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    <span class="attr">a</span>:fn <span class="comment">//函数的地址</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn1</span>(<span class="params">e</span>)&#123;</span><br><span class="line">    <span class="title function_">e</span>()<span class="comment">//指向window 等同于e = obj3.a //类似于上面的f = obj</span></span><br><span class="line">    <span class="variable language_">arguments</span>[<span class="number">0</span>]()<span class="comment">//指向arguments 只能使用[]  类似于arg = [0:fn地址]</span></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="title function_">fn1</span>(obj3.<span class="property">a</span>) <span class="comment">// window  arguments</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
 <h3 id="改变this指向"><a href="#改变this指向" class="headerlink" title="改变this指向"></a>改变this指向</h3><ul>
-<li><p><strong>this指向调用函数地址的对象,并且,谁近指谁</strong> /也就是事件源</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.onclick = fn <span class="comment">//点击指向document</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">           name : <span class="string">"zhuque"</span>,</span><br><span class="line">           fn : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">           &#125;,</span><br><span class="line">           dudu : &#123;</span><br><span class="line">               name : <span class="string">"dd"</span>,</span><br><span class="line">               fn : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                   <span class="keyword">let</span> num = <span class="number">10</span>;</span><br><span class="line">                   <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;;</span><br><span class="line">       obj.fn(); <span class="comment">//this =&gt;obj这个对象</span></span><br><span class="line">       obj.dudu.fn(); <span class="comment">//this =&gt; dudu这个对象</span></span><br></pre></td></tr></table></figure>
-</li>
+<li><p><strong>this指向调用函数地址的对象,并且,谁近指谁</strong> &#x2F;也就是事件源</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">document</span>.<span class="property">onclick</span> = fn <span class="comment">//点击指向document</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">           name : <span class="string">&quot;zhuque&quot;</span>,</span><br><span class="line">           fn : <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">               <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">           &#125;,</span><br><span class="line">           dudu : &#123;</span><br><span class="line">               name : <span class="string">&quot;dd&quot;</span>,</span><br><span class="line">               fn : <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">                   <span class="keyword">let</span> num = <span class="number">10</span>;</span><br><span class="line">                   <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;;</span><br><span class="line">       obj.<span class="title function_">fn</span>(); <span class="comment">//this =&gt;obj这个对象</span></span><br><span class="line">       obj.<span class="property">dudu</span>.<span class="title function_">fn</span>(); <span class="comment">//this =&gt; dudu这个对象</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h4 id="改变-this-指向"><a href="#改变-this-指向" class="headerlink" title="改变 this 指向"></a><strong>改变 this 指向</strong></h4><ul>
 <li><p>三种方式 call apply bind  前两种会主动执行 后一种不会主动执行</p>
-<h5 id="call"><a href="#call" class="headerlink" title="call"></a><strong>call</strong></h5><pre><code>1.改变函数的this指向,还会马上执行函数
-</code></pre><p>​                2.第一个参数是你想改变的this指向的对象</p>
+<h5 id="call"><a href="#call" class="headerlink" title="call"></a><strong>call</strong></h5><pre><code>      1.改变函数的this指向,还会马上执行函数
+</code></pre>
+<p>​                2.第一个参数是你想改变的this指向的对象</p>
 <p>​                3.后面的其它参数就是该函数的实参</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    name: <span class="string">"queque"</span></span><br><span class="line">    fn : <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>, a, b)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">    name: <span class="string">"zhuzhu"</span></span><br><span class="line">&#125;</span><br><span class="line">obj.fn() <span class="comment">//this指向 obj undefined undefined</span></span><br><span class="line">obj.fn.call(obj1,<span class="number">1</span>,<span class="number">2</span>) <span class="comment">//指向obj1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;queque&quot;</span></span><br><span class="line">    fn : <span class="keyword">function</span>(<span class="params">a, b</span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>, a, b)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;zhuzhu&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">obj.<span class="title function_">fn</span>() <span class="comment">//this指向 obj undefined undefined</span></span><br><span class="line">obj.<span class="property">fn</span>.<span class="title function_">call</span>(obj1,<span class="number">1</span>,<span class="number">2</span>) <span class="comment">//指向obj1</span></span><br></pre></td></tr></table></figure>
 <h5 id="apply"><a href="#apply" class="headerlink" title="apply"></a><strong>apply</strong></h5><p>​     1.改变函数的this指向,还会马上执行函数</p>
 <p>​                2.第一个参数是你想改变的this指向的对象</p>
 <p>​                3.后面的其它参数就是该函数的实参 必须是<em>数组</em>  实参用数组包裹</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    name: <span class="string">"queque"</span></span><br><span class="line">    fn : <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>, a, b)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">    name: <span class="string">"zhuzhu"</span></span><br><span class="line">&#125;</span><br><span class="line">obj.fn.apply(obj1,[<span class="number">1</span>,<span class="number">2</span>]) <span class="comment">//指向obj1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;queque&quot;</span></span><br><span class="line">    fn : <span class="keyword">function</span>(<span class="params">a, b</span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>, a, b)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;zhuzhu&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">obj.<span class="property">fn</span>.<span class="title function_">apply</span>(obj1,[<span class="number">1</span>,<span class="number">2</span>]) <span class="comment">//指向obj1</span></span><br></pre></td></tr></table></figure>
+
 <h5 id="bind"><a href="#bind" class="headerlink" title="bind"></a><strong>bind</strong></h5><p>​     1.改变函数的this指向, <em>不会马上执行函数</em></p>
 <p>​     2.第一个参数是你想改变的this指向的对象</p>
 <p>​     3.后面的其它参数就是该函数的实参</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    name: <span class="string">"queque"</span></span><br><span class="line">    fn : <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>, a, b)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">    name: <span class="string">"zhuzhu"</span></span><br><span class="line">&#125;</span><br><span class="line">obj.fn.bind(obj1,<span class="number">1</span>,<span class="number">2</span>)() <span class="comment">//指向obj1   主动执行需要加括号</span></span><br><span class="line"><span class="comment">// 也可以 obj.fn.bind(obj1)(1,2) 实参写后面</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;queque&quot;</span></span><br><span class="line">    fn : <span class="keyword">function</span>(<span class="params">a, b</span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>, a, b)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;zhuzhu&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">obj.<span class="property">fn</span>.<span class="title function_">bind</span>(obj1,<span class="number">1</span>,<span class="number">2</span>)() <span class="comment">//指向obj1   主动执行需要加括号</span></span><br><span class="line"><span class="comment">// 也可以 obj.fn.bind(obj1)(1,2) 实参写后面</span></span><br></pre></td></tr></table></figure>
+
 <p>bind不兼容 ie8 及其以下</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*我们需要模拟的是bind</span></span><br><span class="line"><span class="comment">    bind可以加括号  那么他是一个方法</span></span><br><span class="line"><span class="comment">    我们模拟的流程是</span></span><br><span class="line"><span class="comment">    function fn()&#123;</span></span><br><span class="line"><span class="comment">        console(this,a,b)</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">    fn.bind(arr,1,2)</span></span><br><span class="line"><span class="comment">    我们可以使用 的内容是 apply 或者call  需要修改的this对象 以及参数</span></span><br><span class="line"><span class="comment">    bind方法的this指向是当前调用的fn本人</span></span><br><span class="line"><span class="comment">    以及fn的传入的参数</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    1,判断是否兼容 不兼容则使用兼容代码</span></span><br><span class="line"><span class="comment">    bind这些方法是属于function内建函数小仓库的方法 ,小仓库 为prototype 只需要查看 最顶层的function爸爸小仓库是否存在此方法就可以判断是否兼容</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">  <span class="keyword">if</span>(!<span class="built_in">Function</span>.prototype.bind)&#123;</span><br><span class="line">        <span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">            <span class="comment">//value 为bind后()第一个参数 为将要修改的this指向 可传入apply或者call方法中</span></span><br><span class="line">            <span class="comment">//后面的参数 可用不定参接受  因为是ie8 不考虑rest</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//由于bind加()不立即执行 在加一个括号才执行 所以有返回函数</span></span><br><span class="line">            <span class="keyword">var</span> nowFn = <span class="keyword">this</span> <span class="comment">//留下 fn</span></span><br><span class="line">            <span class="keyword">var</span> arg = [].slice.call(<span class="built_in">arguments</span>,<span class="number">1</span>)</span><br><span class="line">            <span class="comment">//slice实际上方法内部是切的这个方法的this 也就是[],只要改变slice方法里面的this 就可以达到切arguments 的目的. 而且会返回一个真正的数组,是slice干的活.由于arguments结构和数字一模一样,所以切出来也不会有问题</span></span><br><span class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">                nowFn.apply(value,arg)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>,a,b)</span><br><span class="line">    &#125;</span><br><span class="line">    fn.bind(arr,<span class="number">1</span>,<span class="number">2</span>)() <span class="comment">//arr 1,2</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*我们需要模拟的是bind</span></span><br><span class="line"><span class="comment">    bind可以加括号  那么他是一个方法</span></span><br><span class="line"><span class="comment">    我们模拟的流程是</span></span><br><span class="line"><span class="comment">    function fn()&#123;</span></span><br><span class="line"><span class="comment">        console(this,a,b)</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">    fn.bind(arr,1,2)</span></span><br><span class="line"><span class="comment">    我们可以使用 的内容是 apply 或者call  需要修改的this对象 以及参数</span></span><br><span class="line"><span class="comment">    bind方法的this指向是当前调用的fn本人</span></span><br><span class="line"><span class="comment">    以及fn的传入的参数</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    1,判断是否兼容 不兼容则使用兼容代码</span></span><br><span class="line"><span class="comment">    bind这些方法是属于function内建函数小仓库的方法 ,小仓库 为prototype 只需要查看 最顶层的function爸爸小仓库是否存在此方法就可以判断是否兼容</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">  <span class="keyword">if</span>(!<span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">bind</span>)&#123;</span><br><span class="line">        <span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">bind</span> = <span class="keyword">function</span>(<span class="params">value</span>)&#123;</span><br><span class="line">            <span class="comment">//value 为bind后()第一个参数 为将要修改的this指向 可传入apply或者call方法中</span></span><br><span class="line">            <span class="comment">//后面的参数 可用不定参接受  因为是ie8 不考虑rest</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//由于bind加()不立即执行 在加一个括号才执行 所以有返回函数</span></span><br><span class="line">            <span class="keyword">var</span> nowFn = <span class="variable language_">this</span> <span class="comment">//留下 fn</span></span><br><span class="line">            <span class="keyword">var</span> arg = [].<span class="property">slice</span>.<span class="title function_">call</span>(<span class="variable language_">arguments</span>,<span class="number">1</span>)</span><br><span class="line">            <span class="comment">//slice实际上方法内部是切的这个方法的this 也就是[],只要改变slice方法里面的this 就可以达到切arguments 的目的. 而且会返回一个真正的数组,是slice干的活.由于arguments结构和数字一模一样,所以切出来也不会有问题</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params"></span>)&#123;</span><br><span class="line">                nowFn.<span class="title function_">apply</span>(value,arg)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">    <span class="keyword">var</span> fn = <span class="keyword">function</span>(<span class="params">a,b</span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>,a,b)</span><br><span class="line">    &#125;</span><br><span class="line">    fn.<span class="title function_">bind</span>(arr,<span class="number">1</span>,<span class="number">2</span>)() <span class="comment">//arr 1,2</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -441,7 +443,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -531,11 +533,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -543,7 +549,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -563,15 +577,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -587,11 +597,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -631,30 +645,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -667,7 +657,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -691,27 +701,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -727,11 +729,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -767,11 +781,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -784,14 +798,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -839,6 +845,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -847,7 +865,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -891,6 +909,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -916,26 +938,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

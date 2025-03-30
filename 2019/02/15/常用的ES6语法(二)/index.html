@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>常用的ES6语法(二) | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="三、函数函数的默认参数在ES5中，我们给函数传参数，然后在函数体内设置默认值，如下面这种方式。 1234567891011function a(num, callback) &amp;#123;  num = num || 6  callback = callback || function (data) &amp;#123;console.log(&apos;ES5: &apos;, data)&amp;#125;  callback(n">
-<meta name="keywords" content="JavaScript,ES6,ECMAScript,ES5">
+  <meta name="description" content="三、函数函数的默认参数在ES5中，我们给函数传参数，然后在函数体内设置默认值，如下面这种方式。 1234567891011function a(num, callback) &amp;#123;  num = num || 6  callback = callback || function (data) &amp;#123;console.log(&amp;#x27;ES5: &amp;#x27;, data)&amp;#125;">
+<meta name="keywords" content="ES6,ECMAScript,JavaScript,ES5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用的ES6语法(二)">
 <meta property="og:url" content="http://yoursite.com/2019/02/15/常用的ES6语法(二)/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
-<meta property="og:description" content="三、函数函数的默认参数在ES5中，我们给函数传参数，然后在函数体内设置默认值，如下面这种方式。 1234567891011function a(num, callback) &amp;#123;  num = num || 6  callback = callback || function (data) &amp;#123;console.log(&apos;ES5: &apos;, data)&amp;#125;  callback(n">
+<meta property="og:description" content="三、函数函数的默认参数在ES5中，我们给函数传参数，然后在函数体内设置默认值，如下面这种方式。 1234567891011function a(num, callback) &amp;#123;  num = num || 6  callback = callback || function (data) &amp;#123;console.log(&amp;#x27;ES5: &amp;#x27;, data)&amp;#125;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-04-25T03:25:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用的ES6语法(二)">
-<meta name="twitter:description" content="三、函数函数的默认参数在ES5中，我们给函数传参数，然后在函数体内设置默认值，如下面这种方式。 1234567891011function a(num, callback) &amp;#123;  num = num || 6  callback = callback || function (data) &amp;#123;console.log(&apos;ES5: &apos;, data)&amp;#125;  callback(n">
+<meta name="twitter:description" content="三、函数函数的默认参数在ES5中，我们给函数传参数，然后在函数体内设置默认值，如下面这种方式。 1234567891011function a(num, callback) &amp;#123;  num = num || 6  callback = callback || function (data) &amp;#123;console.log(&amp;#x27;ES5: &amp;#x27;, data)&amp;#125;">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
   
@@ -217,36 +217,43 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="三、函数"><a href="#三、函数" class="headerlink" title="三、函数"></a><strong>三、函数</strong></h3><h4 id="函数的默认参数"><a href="#函数的默认参数" class="headerlink" title="函数的默认参数"></a>函数的默认参数</h4><p>在ES5中，我们给函数传参数，然后在函数体内设置默认值，如下面这种方式。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">num, callback</span>) </span>&#123;</span><br><span class="line">  num = num || <span class="number">6</span></span><br><span class="line">  callback = callback || <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;<span class="built_in">console</span>.log(<span class="string">'ES5: '</span>, data)&#125;</span><br><span class="line">  callback(num * num)</span><br><span class="line">&#125;</span><br><span class="line">a() <span class="comment">//ES5: 36，不传参输出默认值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//你还可以这样使用callback</span></span><br><span class="line">a(<span class="number">10</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data * <span class="number">10</span>) <span class="comment">// 1000， 传参输出新数值</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">a</span>(<span class="params">num, callback</span>) &#123;</span><br><span class="line">  num = num || <span class="number">6</span></span><br><span class="line">  callback = callback || <span class="keyword">function</span> (<span class="params">data</span>) &#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;ES5: &#x27;</span>, data)&#125;</span><br><span class="line">  <span class="title function_">callback</span>(num * num)</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">a</span>() <span class="comment">//ES5: 36，不传参输出默认值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//你还可以这样使用callback</span></span><br><span class="line"><span class="title function_">a</span>(<span class="number">10</span>, <span class="keyword">function</span>(<span class="params">data</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(data * <span class="number">10</span>) <span class="comment">// 1000， 传参输出新数值</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <p>在ES6中，我们使用新的默认值写法</p>
-<p>function a(num = 6, callback = function (data) {console.log(‘ES6: ‘, data)}) {<br>  callback(num * num)<br>}</p>
-<p>a() //ES6: 36， 不传参输出默认值</p>
-<p>a(10, function(data) {<br>  console.log(data * 10) // 1000，传参输出新数值<br>})</p>
-<h3 id="四、箭头函数（-gt-）"><a href="#四、箭头函数（-gt-）" class="headerlink" title="四、箭头函数（=&gt;）"></a><strong>四、箭头函数（=&gt;）</strong></h3><p>（箭头函数比较重要，现在简单提一下，迟一点有空专门写一篇箭头函数的文章。）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">5</span>, <span class="number">10</span>]</span><br><span class="line"><span class="keyword">const</span> s = arr.reduce(<span class="function">(<span class="params">sum, item</span>) =&gt;</span> sum + item)</span><br><span class="line"><span class="built_in">console</span>.log(s) <span class="comment">// 15</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<p>function a(num &#x3D; 6, callback &#x3D; function (data) {console.log(‘ES6: ‘, data)}) {<br>  callback(num * num)<br>}</p>
+<p>a() &#x2F;&#x2F;ES6: 36， 不传参输出默认值</p>
+<p>a(10, function(data) {<br>  console.log(data * 10) &#x2F;&#x2F; 1000，传参输出新数值<br>})</p>
+<h3 id="四、箭头函数（-）"><a href="#四、箭头函数（-）" class="headerlink" title="四、箭头函数（&#x3D;&gt;）"></a><strong>四、箭头函数（&#x3D;&gt;）</strong></h3><p>（箭头函数比较重要，现在简单提一下，迟一点有空专门写一篇箭头函数的文章。）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">5</span>, <span class="number">10</span>]</span><br><span class="line"><span class="keyword">const</span> s = arr.<span class="title function_">reduce</span>(<span class="function">(<span class="params">sum, item</span>) =&gt;</span> sum + item)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s) <span class="comment">// 15</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 <p>箭头函数中this的使用跟普通函数也不一样，在JavaScript的普通函数中，都会有一个自己的this值，主要分为：</p>
 <h4 id="普通函数："><a href="#普通函数：" class="headerlink" title="普通函数："></a>普通函数：</h4><p>1、函数作为全局函数被调用时，this指向全局对象<br>2、函数作为对象中的方法被调用时，this指向该对象<br>3、函数作为构造函数的时候，this指向构造函数new出来的新对象<br>4、还可以通过call，apply，bind改变this的指向</p>
 <h4 id="箭头函数："><a href="#箭头函数：" class="headerlink" title="箭头函数："></a>箭头函数：</h4><p>1、箭头函数没有this，函数内部的this来自于父级最近的非箭头函数，并且不能改变this的指向。<br>2、箭头函数没有super<br>3、箭头函数没有arguments<br>4、箭头函数没有new.target绑定。<br>5、不能使用new<br>6、没有原型<br>7、不支持重复的命名参数。</p>
 <h4 id="箭头函数的简单理解"><a href="#箭头函数的简单理解" class="headerlink" title="箭头函数的简单理解"></a>箭头函数的简单理解</h4><p>1、箭头函数的左边表示输入的参数，右边表示输出的结果。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> s = <span class="function"><span class="params">a</span> =&gt;</span> a</span><br><span class="line"><span class="built_in">console</span>.log(s(<span class="number">2</span>)) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">s</span> = a =&gt; a</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">s</span>(<span class="number">2</span>)) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
 <p>2、在箭头函数中，this属于词法作用域，直接由上下文确定，对于普通函数中指向不定的this，箭头函数中处理this无疑更加简单，如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES5普通函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Man</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.age=<span class="number">22</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.age+<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> cala=<span class="keyword">new</span> Man();</span><br><span class="line"><span class="built_in">console</span>.log(cala())<span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//ES6箭头函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Man</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.age=<span class="number">22</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.age+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> cala=<span class="keyword">new</span> Man();</span><br><span class="line"><span class="built_in">console</span>.log(cala())<span class="comment">//23</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES5普通函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Man</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">age</span>=<span class="number">22</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span>+<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> cala=<span class="keyword">new</span> <span class="title class_">Man</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">cala</span>())<span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//ES6箭头函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Man</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">age</span>=<span class="number">22</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function">() =&gt;</span> <span class="variable language_">this</span>.<span class="property">age</span>+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> cala=<span class="keyword">new</span> <span class="title class_">Man</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">cala</span>())<span class="comment">//23</span></span><br></pre></td></tr></table></figure>
+
 <p>3、箭头函数中没有arguments(我们可以用rest参数替代),也没有原型，也不能使用new 关键字，例如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//没有arguments</span></span><br><span class="line"><span class="keyword">var</span> foo=<span class="function">(<span class="params">a,b</span>)=&gt;</span>&#123;<span class="keyword">return</span> <span class="built_in">arguments</span>[<span class="number">0</span>]*<span class="built_in">arguments</span>[<span class="number">1</span>]&#125;</span><br><span class="line"><span class="built_in">console</span>.log(foo(<span class="number">3</span>,<span class="number">5</span>))</span><br><span class="line"><span class="comment">//arguments is not defined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//没有原型</span></span><br><span class="line"><span class="keyword">var</span> Obj = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(Obj.prototype);</span><br><span class="line"><span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//不能使用new 关键字</span></span><br><span class="line"><span class="keyword">var</span> Obj = <span class="function"><span class="params">()</span> =&gt;</span> &#123;<span class="string">"hello world"</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> Obj();</span><br><span class="line"><span class="comment">// TypeError: Obj is not a constructor</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//没有arguments</span></span><br><span class="line"><span class="keyword">var</span> <span class="title function_">foo</span>=(<span class="params">a,b</span>)=&gt;&#123;<span class="keyword">return</span> <span class="variable language_">arguments</span>[<span class="number">0</span>]*<span class="variable language_">arguments</span>[<span class="number">1</span>]&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">foo</span>(<span class="number">3</span>,<span class="number">5</span>))</span><br><span class="line"><span class="comment">//arguments is not defined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//没有原型</span></span><br><span class="line"><span class="keyword">var</span> <span class="title function_">Obj</span> = (<span class="params"></span>) =&gt; &#123;&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Obj</span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br><span class="line"><span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//不能使用new 关键字</span></span><br><span class="line"><span class="keyword">var</span> <span class="title function_">Obj</span> = (<span class="params"></span>) =&gt; &#123;<span class="string">&quot;hello world&quot;</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> <span class="title class_">Obj</span>();</span><br><span class="line"><span class="comment">// TypeError: Obj is not a constructor</span></span><br></pre></td></tr></table></figure>
+
 <p>4、箭头函数给数组排序</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">10</span>, <span class="number">50</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">20</span>]</span><br><span class="line"><span class="keyword">const</span> s = arr.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b)</span><br><span class="line"><span class="built_in">console</span>.log(s) <span class="comment">// [10,20,30,40,50]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">10</span>, <span class="number">50</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">20</span>]</span><br><span class="line"><span class="keyword">const</span> s = arr.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s) <span class="comment">// [10,20,30,40,50]</span></span><br></pre></td></tr></table></figure>
+
 <h5 id="尾调用优化"><a href="#尾调用优化" class="headerlink" title="尾调用优化"></a>尾调用优化</h5><p>尾调用是指在函数return的时候调用一个新的函数，由于尾调用的实现需要存储到内存中，在一个循环体中，如果存在函数的尾调用，你的内存可能爆满或溢出。<br>ES6中，引擎会帮你做好尾调用的优化工作，你不需要自己优化，但需要满足下面3个要求：</p>
 <p>1、函数不是闭包<br>2、尾调用是函数最后一条语句<br>3、尾调用结果作为函数返回</p>
 <p>尾调用实际用途——递归函数优化</p>
 <p>在ES5时代，我们不推荐使用递归，因为递归会影响性能。</p>
 <p>但是有了尾调用优化之后，递归函数的性能有了提升。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//新型尾优化写法</span></span><br><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">n, p = <span class="number">1</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> * p</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> s = n * p</span><br><span class="line">  <span class="keyword">return</span> a(n - <span class="number">1</span>, s)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//求 1 x 2 x 3的阶乘</span></span><br><span class="line"><span class="keyword">let</span> sum = a(<span class="number">3</span>)</span><br><span class="line"><span class="built_in">console</span>.log(sum) <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//新型尾优化写法</span></span><br><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">a</span>(<span class="params">n, p = <span class="number">1</span></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> * p</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> s = n * p</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">a</span>(n - <span class="number">1</span>, s)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//求 1 x 2 x 3的阶乘</span></span><br><span class="line"><span class="keyword">let</span> sum = <span class="title function_">a</span>(<span class="number">3</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(sum) <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="五、ES6对象新增方法"><a href="#五、ES6对象新增方法" class="headerlink" title="五、ES6对象新增方法"></a><strong>五、ES6对象新增方法</strong></h3><p>Object.assign()<br>Object.assign()方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。</p>
 <p>Object.assign 方法只会拷贝源对象自身的并且可枚举的属性到目标对象。该方法使用源对象的[[Get]]和目标对象的[[Set]]，所以它会调用相关 getter 和 setter。因此，它分配属性，而不仅仅是复制或定义新的属性。如果合并源包含getter，这可能使其不适合将新属性合并到原型中。为了将属性定义（包括其可枚举性）复制到原型，应使用Object.getOwnPropertyDescriptor()和Object.defineProperty() 。</p>
 <p>String类型和 Symbol 类型的属性都会被拷贝。</p>
-<h5 id="合并对象"><a href="#合并对象" class="headerlink" title="合并对象"></a>合并对象</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o1 = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> o2 = &#123; <span class="attr">b</span>: <span class="number">2</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> o3 = &#123; <span class="attr">c</span>: <span class="number">3</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>.assign(o1, o2, o3);</span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123; a: 1, b: 2, c: 3 &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(o1);  <span class="comment">// &#123; a: 1, b: 2, c: 3 &#125;, 注意目标对象自身也会改变。</span></span><br></pre></td></tr></table></figure>
-<h5 id="合并具有相同属性的对象"><a href="#合并具有相同属性的对象" class="headerlink" title="合并具有相同属性的对象"></a>合并具有相同属性的对象</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o1 = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">1</span>, <span class="attr">c</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> o2 = &#123; <span class="attr">b</span>: <span class="number">2</span>, <span class="attr">c</span>: <span class="number">2</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> o3 = &#123; <span class="attr">c</span>: <span class="number">3</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>.assign(&#123;&#125;, o1, o2, o3);</span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123; a: 1, b: 2, c: 3 &#125;</span></span><br></pre></td></tr></table></figure>
+<h5 id="合并对象"><a href="#合并对象" class="headerlink" title="合并对象"></a>合并对象</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o1 = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> o2 = &#123; <span class="attr">b</span>: <span class="number">2</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> o3 = &#123; <span class="attr">c</span>: <span class="number">3</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="title class_">Object</span>.<span class="title function_">assign</span>(o1, o2, o3);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj); <span class="comment">// &#123; a: 1, b: 2, c: 3 &#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(o1);  <span class="comment">// &#123; a: 1, b: 2, c: 3 &#125;, 注意目标对象自身也会改变。</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="合并具有相同属性的对象"><a href="#合并具有相同属性的对象" class="headerlink" title="合并具有相同属性的对象"></a>合并具有相同属性的对象</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o1 = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">1</span>, <span class="attr">c</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> o2 = &#123; <span class="attr">b</span>: <span class="number">2</span>, <span class="attr">c</span>: <span class="number">2</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> o3 = &#123; <span class="attr">c</span>: <span class="number">3</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;&#125;, o1, o2, o3);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj); <span class="comment">// &#123; a: 1, b: 2, c: 3 &#125;</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -290,15 +297,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ECMAScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -443,7 +450,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -533,11 +540,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -545,7 +556,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -565,15 +584,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -589,11 +604,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -633,30 +652,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -669,7 +664,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -693,27 +708,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -729,11 +736,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -769,11 +788,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -786,14 +805,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -841,6 +852,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -849,7 +872,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -893,6 +916,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -918,26 +945,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

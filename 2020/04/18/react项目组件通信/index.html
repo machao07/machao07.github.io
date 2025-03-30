@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>react项目组件通信 | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、父-子通信React 的数据流是单向的，父组件可以直接将 this.props 传入子组件 1、父组件场景需求：   添加成功后，更新接口 关闭模态框 modalStatus, bankId, currentData（对象）, onDataChange（function）, onOk(function)   解决方法：   onDataChange={() =&amp;gt; this.getData">
+  <meta name="description" content="一、父-子通信React 的数据流是单向的，父组件可以直接将 this.props 传入子组件 1、父组件场景需求：   添加成功后，更新接口 关闭模态框 modalStatus, bankId, currentData（对象）, onDataChange（function）, onOk(function)   解决方法：   onDataChange=&amp;#123;() =&amp;gt; this.ge">
 <meta name="keywords" content="React,Typescript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react项目组件通信">
 <meta property="og:url" content="http://yoursite.com/2020/04/18/react项目组件通信/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
-<meta property="og:description" content="一、父-子通信React 的数据流是单向的，父组件可以直接将 this.props 传入子组件 1、父组件场景需求：   添加成功后，更新接口 关闭模态框 modalStatus, bankId, currentData（对象）, onDataChange（function）, onOk(function)   解决方法：   onDataChange={() =&amp;gt; this.getData">
+<meta property="og:description" content="一、父-子通信React 的数据流是单向的，父组件可以直接将 this.props 传入子组件 1、父组件场景需求：   添加成功后，更新接口 关闭模态框 modalStatus, bankId, currentData（对象）, onDataChange（function）, onOk(function)   解决方法：   onDataChange=&amp;#123;() =&amp;gt; this.ge">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-10-15T15:35:20.918Z">
+<meta property="og:updated_time" content="2021-10-15T15:35:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react项目组件通信">
-<meta name="twitter:description" content="一、父-子通信React 的数据流是单向的，父组件可以直接将 this.props 传入子组件 1、父组件场景需求：   添加成功后，更新接口 关闭模态框 modalStatus, bankId, currentData（对象）, onDataChange（function）, onOk(function)   解决方法：   onDataChange={() =&amp;gt; this.getData">
+<meta name="twitter:description" content="一、父-子通信React 的数据流是单向的，父组件可以直接将 this.props 传入子组件 1、父组件场景需求：   添加成功后，更新接口 关闭模态框 modalStatus, bankId, currentData（对象）, onDataChange（function）, onOk(function)   解决方法：   onDataChange=&amp;#123;() =&amp;gt; this.ge">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
   
@@ -228,26 +228,34 @@
 <p>解决方法：</p>
 <blockquote>
 <ul>
-<li><code>onDataChange={() =&gt; this.getData()}</code></li>
-<li><code>onOk={() =&gt; cancel()}</code></li>
+<li><code>onDataChange=&#123;() =&gt; this.getData()&#125;</code></li>
+<li><code>onOk=&#123;() =&gt; cancel()&#125;</code></li>
 </ul>
 </blockquote>
-<a id="more"></a>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount()&#123;</span><br><span class="line">    <span class="keyword">this</span>.getData()</span><br><span class="line">&#125;</span><br><span class="line">getData()&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.state.currentId)&#123;</span><br><span class="line">        api.bankApproveQueryAllDetail(<span class="keyword">this</span>.state.currentId).then(<span class="function">(<span class="params">data: any</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                list: data.data || []</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>render(){}函数</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cancel = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">        isModalVisible: <span class="literal">false</span>  </span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h5 id="回显场景"><a href="#回显场景" class="headerlink" title="回显场景"></a>回显场景</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TabPane</span> <span class="attr">tab</span>=<span class="string">&#123;item.isDefault?</span>'默认模板'<span class="attr">:item.templateName</span>&#125; <span class="attr">key</span>=<span class="string">&#123;item.approveId&#125;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">AddTemplate</span> <span class="attr">modalStatus</span>=<span class="string">&#123;</span>'<span class="attr">update</span>'&#125; <span class="attr">bankId</span>=<span class="string">&#123;this.state.currentId&#125;</span> <span class="attr">currentData</span>=<span class="string">&#123;item&#125;</span> <span class="attr">onDataChange</span>=<span class="string">&#123;()</span> =&gt;</span> this.getData()&#125;&gt;<span class="tag">&lt;/<span class="name">AddTemplate</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">TabPane</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h5 id="添加场景"><a href="#添加场景" class="headerlink" title="添加场景"></a>添加场景</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Modal</span> <span class="attr">title</span>=<span class="string">"添加模板"</span> <span class="attr">width</span>=<span class="string">&#123;</span>'<span class="attr">830px</span>'&#125; <span class="attr">footer</span>=<span class="string">&#123;null&#125;</span> <span class="attr">visible</span>=<span class="string">&#123;isModalVisible&#125;</span> <span class="attr">onCancel</span>=<span class="string">&#123;cancel&#125;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">AddTemplate</span> <span class="attr">modalStatus</span>=<span class="string">&#123;</span>'<span class="attr">create</span>'&#125; <span class="attr">bankId</span>=<span class="string">&#123;this.state.currentId&#125;</span> <span class="attr">onDataChange</span>=<span class="string">&#123;()</span> =&gt;</span> this.getData()&#125; onOk=&#123;() =&gt; cancel()&#125;&gt;<span class="tag">&lt;/<span class="name">AddTemplate</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Modal</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">componentDidMount</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">getData</span>()</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">getData</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">currentId</span>)&#123;</span><br><span class="line">        api.<span class="title function_">bankApproveQueryAllDetail</span>(<span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">currentId</span>).<span class="title function_">then</span>(<span class="function">(<span class="params">data: any</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">                <span class="attr">list</span>: data.<span class="property">data</span> || []</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>render()&#123;&#125;函数</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">cancel</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">        <span class="attr">isModalVisible</span>: <span class="literal">false</span>  </span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="回显场景"><a href="#回显场景" class="headerlink" title="回显场景"></a>回显场景</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TabPane</span> <span class="attr">tab</span>=<span class="string">&#123;item.isDefault?</span>&#x27;<span class="attr">默认模板</span>&#x27;<span class="attr">:item.templateName</span>&#125; <span class="attr">key</span>=<span class="string">&#123;item.approveId&#125;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">AddTemplate</span> <span class="attr">modalStatus</span>=<span class="string">&#123;</span>&#x27;<span class="attr">update</span>&#x27;&#125; <span class="attr">bankId</span>=<span class="string">&#123;this.state.currentId&#125;</span> <span class="attr">currentData</span>=<span class="string">&#123;item&#125;</span> <span class="attr">onDataChange</span>=<span class="string">&#123;()</span> =&gt;</span> this.getData()&#125;&gt;<span class="tag">&lt;/<span class="name">AddTemplate</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">TabPane</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="添加场景"><a href="#添加场景" class="headerlink" title="添加场景"></a>添加场景</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Modal</span> <span class="attr">title</span>=<span class="string">&quot;添加模板&quot;</span> <span class="attr">width</span>=<span class="string">&#123;</span>&#x27;<span class="attr">830px</span>&#x27;&#125; <span class="attr">footer</span>=<span class="string">&#123;null&#125;</span> <span class="attr">visible</span>=<span class="string">&#123;isModalVisible&#125;</span> <span class="attr">onCancel</span>=<span class="string">&#123;cancel&#125;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">AddTemplate</span> <span class="attr">modalStatus</span>=<span class="string">&#123;</span>&#x27;<span class="attr">create</span>&#x27;&#125; <span class="attr">bankId</span>=<span class="string">&#123;this.state.currentId&#125;</span> <span class="attr">onDataChange</span>=<span class="string">&#123;()</span> =&gt;</span> this.getData()&#125; onOk=&#123;() =&gt; cancel()&#125;&gt;<span class="tag">&lt;/<span class="name">AddTemplate</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Modal</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="2、子组件"><a href="#2、子组件" class="headerlink" title="2、子组件"></a>2、子组件</h4><blockquote>
 <ul>
 <li>currentData 可选传参数 ?:</li>
-<li>onDataChange:() =&gt; void 更新接口函数</li>
-<li>onOk ?:() =&gt; void 改变模态框函数</li>
+<li>onDataChange:() &#x3D;&gt; void 更新接口函数</li>
+<li>onOk ?:() &#x3D;&gt; void 改变模态框函数</li>
 </ul>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">interface Props &#123;</span><br><span class="line">    currentData?: BankApproveDetailVo, </span><br><span class="line">    modalStatus: string, </span><br><span class="line">    bankId: number, </span><br><span class="line">    onDataChange: <span class="function"><span class="params">()</span>=&gt;</span><span class="keyword">void</span>, </span><br><span class="line">    onOk?: <span class="function"><span class="params">()</span>=&gt;</span><span class="keyword">void</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface States &#123;</span><br><span class="line">    fields: any[],</span><br><span class="line">    approveId: number,</span><br><span class="line">    bankId: number</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AddTemplate</span> <span class="keyword">extends</span> <span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">States</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props: any)&#123;</span><br><span class="line">        <span class="keyword">super</span>(props)</span><br><span class="line">        <span class="keyword">this</span>.state = &#123;</span><br><span class="line">            fields: [],</span><br><span class="line">            approveId: <span class="keyword">this</span>.props.currentData?.approveId || <span class="number">0</span>,</span><br><span class="line">            bankId: <span class="keyword">this</span>.props.bankId</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    handleDefault = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; approveId, bankId &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">        api.bankApproveIsDefault( approveId, bankId ).then(<span class="function">(<span class="params">data: any</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(data.code === <span class="number">200</span>)&#123;</span><br><span class="line">                message.success(<span class="string">'设置默认模板成功'</span>)</span><br><span class="line">                <span class="keyword">this</span>.props.onDataChange()</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                message.error(<span class="string">'设置默认模板失败'</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">interface <span class="title class_">Props</span> &#123;</span><br><span class="line">    currentData?: <span class="title class_">BankApproveDetailVo</span>, </span><br><span class="line">    <span class="attr">modalStatus</span>: string, </span><br><span class="line">    <span class="attr">bankId</span>: number, </span><br><span class="line">    <span class="attr">onDataChange</span>: <span class="function">()=&gt;</span><span class="keyword">void</span>, </span><br><span class="line">    onOk?: <span class="function">()=&gt;</span><span class="keyword">void</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface <span class="title class_">States</span> &#123;</span><br><span class="line">    <span class="attr">fields</span>: any[],</span><br><span class="line">    <span class="attr">approveId</span>: number,</span><br><span class="line">    <span class="attr">bankId</span>: number</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">AddTemplate</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span>&lt;<span class="title class_">Props</span>, <span class="title class_">States</span>&gt; &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">props: any</span>)&#123;</span><br><span class="line">        <span class="variable language_">super</span>(props)</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">            <span class="attr">fields</span>: [],</span><br><span class="line">            <span class="attr">approveId</span>: <span class="variable language_">this</span>.<span class="property">props</span>.<span class="property">currentData</span>?.<span class="property">approveId</span> || <span class="number">0</span>,</span><br><span class="line">            <span class="attr">bankId</span>: <span class="variable language_">this</span>.<span class="property">props</span>.<span class="property">bankId</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    handleDefault = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; approveId, bankId &#125; = <span class="variable language_">this</span>.<span class="property">state</span>;</span><br><span class="line">        api.<span class="title function_">bankApproveIsDefault</span>( approveId, bankId ).<span class="title function_">then</span>(<span class="function">(<span class="params">data: any</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(data.<span class="property">code</span> === <span class="number">200</span>)&#123;</span><br><span class="line">                message.<span class="title function_">success</span>(<span class="string">&#x27;设置默认模板成功&#x27;</span>)</span><br><span class="line">                <span class="variable language_">this</span>.<span class="property">props</span>.<span class="title function_">onDataChange</span>()</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                message.<span class="title function_">error</span>(<span class="string">&#x27;设置默认模板失败&#x27;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="二、子-父通信"><a href="#二、子-父通信" class="headerlink" title="二、子-父通信"></a>二、子-父通信</h3><p>子组件在调用该函数时，就可以将想要交给父组件的数据以函数入参的形式给出去</p>
-<h4 id="父组件"><a href="#父组件" class="headerlink" title="父组件"></a>父组件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 初始化父组件的 state</span></span><br><span class="line">  state = &#123;</span><br><span class="line">    text: <span class="string">"初始化的父组件的文本"</span></span><br><span class="line">  &#125;;</span><br><span class="line">  changeText = <span class="function">(<span class="params">newText</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      text: newText</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">// 渲染父组件</span></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div className=<span class="string">"father"</span>&gt;</span><br><span class="line">        &lt;p&gt;&#123;<span class="string">`父组件的文本内容是：[<span class="subst">$&#123;<span class="keyword">this</span>.state.text&#125;</span>]`</span>&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">        &lt;Child</span></span><br><span class="line"><span class="regexp">          changeFatherText=&#123;this.changeText&#125;</span></span><br><span class="line"><span class="regexp">        /</span>&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br></pre></td></tr></table></figure>
-<h4 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 初始化子组件的 state</span></span><br><span class="line">  state = &#123;</span><br><span class="line">    text: <span class="string">'子组件的文本'</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 子组件的按钮监听函数</span></span><br><span class="line">  changeText = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.props.changeFatherText(<span class="keyword">this</span>.state.text)</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div className=<span class="string">"child"</span>&gt;</span><br><span class="line">        &#123;<span class="comment">/* 注意这里把修改父组件文本的动作放在了 Child 里 */</span>&#125;</span><br><span class="line">        &lt;button onClick=&#123;<span class="keyword">this</span>.changeText&#125;&gt;</span><br><span class="line">          点击更新父组件的文本</span><br><span class="line">        &lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="父组件"><a href="#父组件" class="headerlink" title="父组件"></a>父组件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Father</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="comment">// 初始化父组件的 state</span></span><br><span class="line">  state = &#123;</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&quot;初始化的父组件的文本&quot;</span></span><br><span class="line">  &#125;;</span><br><span class="line">  changeText = <span class="function">(<span class="params">newText</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;</span><br><span class="line">      <span class="attr">text</span>: newText</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">// 渲染父组件</span></span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;father&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;`父组件的文本内容是：[$&#123;this.state.text&#125;]`&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Child</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">          <span class="attr">changeFatherText</span>=<span class="string">&#123;this.changeText&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Child</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="comment">// 初始化子组件的 state</span></span><br><span class="line">  state = &#123;</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&#x27;子组件的文本&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 子组件的按钮监听函数</span></span><br><span class="line">  changeText = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">props</span>.<span class="title function_">changeFatherText</span>(<span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">text</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;child&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;/* 注意这里把修改父组件文本的动作放在了 Child 里 */&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.changeText&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          点击更新父组件的文本</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -436,7 +444,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -526,11 +534,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -538,7 +550,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -558,15 +578,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -582,11 +598,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -626,30 +646,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -662,7 +658,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -686,27 +702,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -722,11 +730,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -762,11 +782,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -779,14 +799,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -834,6 +846,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -842,7 +866,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -886,6 +910,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -911,26 +939,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

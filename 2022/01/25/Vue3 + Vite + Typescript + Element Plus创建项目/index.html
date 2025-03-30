@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/0d54158880474b94b58442acad5761cd.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/dc190ff46c1e471cb515b37b66828b97.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/729d1d547a5e466b85bc28c660effcfe.png">
-<meta property="og:updated_time" content="2022-02-24T14:25:48.623Z">
+<meta property="og:updated_time" content="2022-02-24T14:25:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue3 + Vite + Typescript + Element Plus创建项目">
 <meta name="twitter:description" content="1、体验对比  vite 启动、打包体验都比vue-cli快 vite与vue-cli体验对比   1、启动  vue-cli：">
@@ -226,25 +226,29 @@
         <h3 id="1、体验对比"><a href="#1、体验对比" class="headerlink" title="1、体验对比"></a>1、体验对比</h3><blockquote>
 <ul>
 <li><code>vite</code> 启动、打包体验都比<code>vue-cli</code>快</li>
-<li><a href="https://github.com/machao07/vue3-admin/issues/2" target="_blank" rel="noopener">vite与vue-cli体验对比</a></li>
+<li><a href="https://github.com/machao07/vue3-admin/issues/2">vite与vue-cli体验对比</a></li>
 </ul>
 </blockquote>
 <p><code>1、启动</code></p>
 <ul>
-<li>vue-cli：<br><img width="600" alt="image" src="https://img-blog.csdnimg.cn/c2a2abdf0f294661845c41ae157d522e.png"></li>
+<li>vue-cli：<img width="600" alt="image" src="https://img-blog.csdnimg.cn/c2a2abdf0f294661845c41ae157d522e.png"></li>
 </ul>
 <!-- ![在这里插入图片描述](https://img-blog.csdnimg.cn/c2a2abdf0f294661845c41ae157d522e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5oOF6Z2e5b6X5bey5bCP54y_54y_,size_20,color_FFFFFF,t_70,g_se,x_16) -->
-<a id="more"></a>
+
+<span id="more"></span>
+
 <ul>
-<li>vite：<br><img width="600" alt="image" src="https://img-blog.csdnimg.cn/b5c788ba8b3e4f319b113b50f7a950f4.png"></li>
+<li>vite：<img width="600" alt="image" src="https://img-blog.csdnimg.cn/b5c788ba8b3e4f319b113b50f7a950f4.png"></li>
 </ul>
 <!-- ![在这里插入图片描述](https://img-blog.csdnimg.cn/b5c788ba8b3e4f319b113b50f7a950f4.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5oOF6Z2e5b6X5bey5bCP54y_54y_,size_20,color_FFFFFF,t_70,g_se,x_16) -->
+
 <p><code>2、打包</code></p>
 <ul>
-<li><p>vue-cli：<br><img width="600" alt="image" src="https://img-blog.csdnimg.cn/27df5fba5c88460b866cfe3de83ab102.png"></p>
+<li><p>vue-cli：</p>
+<img width="600" alt="image" src="https://img-blog.csdnimg.cn/27df5fba5c88460b866cfe3de83ab102.png">
 </li>
-<li><p>vite：<br><img width="600" alt="image" src="https://img-blog.csdnimg.cn/0d54158880474b94b58442acad5761cd.png"></p>
-</li>
+<li><p>vite：</p>
+<img width="600" alt="image" src="https://img-blog.csdnimg.cn/0d54158880474b94b58442acad5761cd.png"></li>
 </ul>
 <h3 id="2、vue-cli"><a href="#2、vue-cli" class="headerlink" title="2、vue-cli"></a>2、vue-cli</h3><blockquote>
 <p><code>vue create vue3-cli</code></p>
@@ -252,35 +256,41 @@
 <ul>
 <li>Default Vue 3</li>
 <li>or</li>
-<li>Manually select features<br><img width="600" alt="image" src="https://img-blog.csdnimg.cn/dc190ff46c1e471cb515b37b66828b97.png"></li>
+<li>Manually select features<img width="600" alt="image" src="https://img-blog.csdnimg.cn/dc190ff46c1e471cb515b37b66828b97.png"></li>
 </ul>
 <h3 id="3、vite"><a href="#3、vite" class="headerlink" title="3、vite"></a>3、vite</h3><blockquote>
 <p><code>npm i -g create-vite-app</code><br><code>yarn create @vitejs/app</code></p>
 </blockquote>
-<p><img width="600" alt="image" src="https://img-blog.csdnimg.cn/729d1d547a5e466b85bc28c660effcfe.png"></p>
+<img width="600" alt="image" src="https://img-blog.csdnimg.cn/729d1d547a5e466b85bc28c660effcfe.png">
+
 <blockquote>
 <p>yarn create vite hello-vue3 –template vue</p>
 </blockquote>
 <ul>
-<li><code>项目结构</code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">vue3-admin</span><br><span class="line">├─.eslintignore</span><br><span class="line">├─.eslintrc.js</span><br><span class="line">├─.gitignore</span><br><span class="line">├─.prettierrc.js</span><br><span class="line">├─README.md</span><br><span class="line">├─auto-imports.d.ts</span><br><span class="line">├─components.d.ts</span><br><span class="line">├─index.html</span><br><span class="line">├─package.json</span><br><span class="line">├─tsconfig.json</span><br><span class="line">├─vite.config.ts</span><br><span class="line">├─src</span><br><span class="line">|  ├─App.vue</span><br><span class="line">|  ├─env.d.ts</span><br><span class="line">|  ├─main.ts</span><br><span class="line">|  ├─views</span><br><span class="line">|  |   ├─login</span><br><span class="line">|  |   |   └index.vue</span><br><span class="line">|  ├─styles</span><br><span class="line">|  |   ├─main.css</span><br><span class="line">|  |   └reset.css</span><br><span class="line">|  ├─store</span><br><span class="line">|  |   └index.ts</span><br><span class="line">|  ├─router</span><br><span class="line">|  |   └index.ts</span><br><span class="line">|  ├─components</span><br><span class="line">|  |     └HelloWorld.vue</span><br><span class="line">|  ├─assets</span><br><span class="line">|  |   └logo.png</span><br><span class="line">├─public</span><br><span class="line">|   ├─favicon.ico</span><br></pre></td></tr></table></figure>
-</li>
+<li><code>项目结构</code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">vue3-admin</span><br><span class="line">├─.<span class="property">eslintignore</span></span><br><span class="line">├─.<span class="property">eslintrc</span>.<span class="property">js</span></span><br><span class="line">├─.<span class="property">gitignore</span></span><br><span class="line">├─.<span class="property">prettierrc</span>.<span class="property">js</span></span><br><span class="line">├─<span class="variable constant_">README</span>.<span class="property">md</span></span><br><span class="line">├─auto-imports.<span class="property">d</span>.<span class="property">ts</span></span><br><span class="line">├─components.<span class="property">d</span>.<span class="property">ts</span></span><br><span class="line">├─index.<span class="property">html</span></span><br><span class="line">├─package.<span class="property">json</span></span><br><span class="line">├─tsconfig.<span class="property">json</span></span><br><span class="line">├─vite.<span class="property">config</span>.<span class="property">ts</span></span><br><span class="line">├─src</span><br><span class="line">|  ├─<span class="title class_">App</span>.<span class="property">vue</span></span><br><span class="line">|  ├─env.<span class="property">d</span>.<span class="property">ts</span></span><br><span class="line">|  ├─main.<span class="property">ts</span></span><br><span class="line">|  ├─views</span><br><span class="line">|  |   ├─login</span><br><span class="line">|  |   |   └index.<span class="property">vue</span></span><br><span class="line">|  ├─styles</span><br><span class="line">|  |   ├─main.<span class="property">css</span></span><br><span class="line">|  |   └reset.<span class="property">css</span></span><br><span class="line">|  ├─store</span><br><span class="line">|  |   └index.<span class="property">ts</span></span><br><span class="line">|  ├─router</span><br><span class="line">|  |   └index.<span class="property">ts</span></span><br><span class="line">|  ├─components</span><br><span class="line">|  |     └<span class="title class_">HelloWorld</span>.<span class="property">vue</span></span><br><span class="line">|  ├─assets</span><br><span class="line">|  |   └logo.<span class="property">png</span></span><br><span class="line">├─public</span><br><span class="line">|   ├─favicon.<span class="property">ico</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="1、Eslint-amp-Prettier"><a href="#1、Eslint-amp-Prettier" class="headerlink" title="1、Eslint &amp; Prettier"></a>1、Eslint &amp; Prettier</h4><blockquote>
+<h4 id="1、Eslint-Prettier"><a href="#1、Eslint-Prettier" class="headerlink" title="1、Eslint &amp; Prettier"></a>1、Eslint &amp; Prettier</h4><blockquote>
 <p><code>yarn add eslint eslint-plugin-vue @typescript-eslint/parser @typescript-eslint/eslint-plugin -D</code></p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  parser: <span class="string">'vue-eslint-parser'</span>,</span><br><span class="line">  parserOptions: &#123;</span><br><span class="line">    parser: <span class="string">'@typescript-eslint/parser'</span>, </span><br><span class="line">    ecmaVersion: <span class="number">2020</span>, </span><br><span class="line">    sourceType: <span class="string">'module'</span>, </span><br><span class="line">    ecmaFeatures: &#123;</span><br><span class="line">      jsx: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  extends: [</span><br><span class="line">    <span class="string">'plugin:vue/vue3-recommended'</span>,</span><br><span class="line">    <span class="string">'plugin:@typescript-eslint/recommended'</span>, </span><br><span class="line">    <span class="string">'plugin:prettier/recommended'</span></span><br><span class="line">  ],</span><br><span class="line">  rules: &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">parser</span>: <span class="string">&#x27;vue-eslint-parser&#x27;</span>,</span><br><span class="line">  <span class="attr">parserOptions</span>: &#123;</span><br><span class="line">    <span class="attr">parser</span>: <span class="string">&#x27;@typescript-eslint/parser&#x27;</span>, </span><br><span class="line">    <span class="attr">ecmaVersion</span>: <span class="number">2020</span>, </span><br><span class="line">    <span class="attr">sourceType</span>: <span class="string">&#x27;module&#x27;</span>, </span><br><span class="line">    <span class="attr">ecmaFeatures</span>: &#123;</span><br><span class="line">      <span class="attr">jsx</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">extends</span>: [</span><br><span class="line">    <span class="string">&#x27;plugin:vue/vue3-recommended&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;plugin:@typescript-eslint/recommended&#x27;</span>, </span><br><span class="line">    <span class="string">&#x27;plugin:prettier/recommended&#x27;</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">rules</span>: &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><code>yarn add prettier eslint-config-prettier eslint-plugin-prettier -D</code></p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 具体配置可以参考 https://prettier.io/docs/en/options.html</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  printWidth: <span class="number">100</span>,</span><br><span class="line">  tabWidth: <span class="number">4</span>,</span><br><span class="line">  semi: <span class="literal">false</span>, <span class="comment">// 未尾逗号</span></span><br><span class="line">  singleQuote: <span class="literal">true</span>, <span class="comment">// 单引号</span></span><br><span class="line">  bracketSpacing: <span class="literal">true</span>,</span><br><span class="line">  trailingComma: <span class="string">'none'</span>, <span class="comment">// 未尾分号</span></span><br><span class="line">  proseWrap: <span class="string">'never'</span>,</span><br><span class="line">  htmlWhitespaceSensitivity: <span class="string">'strict'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 具体配置可以参考 https://prettier.io/docs/en/options.html</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">printWidth</span>: <span class="number">100</span>,</span><br><span class="line">  <span class="attr">tabWidth</span>: <span class="number">4</span>,</span><br><span class="line">  <span class="attr">semi</span>: <span class="literal">false</span>, <span class="comment">// 未尾逗号</span></span><br><span class="line">  <span class="attr">singleQuote</span>: <span class="literal">true</span>, <span class="comment">// 单引号</span></span><br><span class="line">  <span class="attr">bracketSpacing</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">trailingComma</span>: <span class="string">&#x27;none&#x27;</span>, <span class="comment">// 未尾分号</span></span><br><span class="line">  <span class="attr">proseWrap</span>: <span class="string">&#x27;never&#x27;</span>,</span><br><span class="line">  <span class="attr">htmlWhitespaceSensitivity</span>: <span class="string">&#x27;strict&#x27;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <h4 id="2、添加eslint相关命令"><a href="#2、添加eslint相关命令" class="headerlink" title="2、添加eslint相关命令"></a>2、添加eslint相关命令</h4><blockquote>
 <p><code>skipLibCheck</code> 增加skipLibCheck可以跳过引入库的ts检查</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"build"</span>: <span class="string">"vue-tsc --noEmit --skipLibCheck &amp;&amp; vite build"</span>,</span><br><span class="line">    <span class="string">"lint"</span>: <span class="string">"eslint src"</span>,</span><br><span class="line">    <span class="string">"lint:fix"</span>: <span class="string">"eslint src --fix --ext .ts,.tsx"</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;build&quot;</span>: <span class="string">&quot;vue-tsc --noEmit --skipLibCheck &amp;&amp; vite build&quot;</span>,</span><br><span class="line">    <span class="string">&quot;lint&quot;</span>: <span class="string">&quot;eslint src&quot;</span>,</span><br><span class="line">    <span class="string">&quot;lint:fix&quot;</span>: <span class="string">&quot;eslint src --fix --ext .ts,.tsx&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="3、配置路径别名"><a href="#3、配置路径别名" class="headerlink" title="3、配置路径别名"></a>3、配置路径别名</h4><p><code>vite.config.ts</code>文件</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; defineConfig &#125; <span class="keyword">from</span> <span class="string">'vite'</span></span><br><span class="line"><span class="keyword">import</span> vue <span class="keyword">from</span> <span class="string">'@vitejs/plugin-vue'</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// https://vitejs.dev/config/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> defineConfig(&#123;</span><br><span class="line">    plugins: [vue()],</span><br><span class="line">    resolve: &#123;</span><br><span class="line">        alias: &#123;</span><br><span class="line">            <span class="string">"@"</span>: path.resolve(__dirname, <span class="string">"/src"</span>),</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p><code>tsconfig.json</code>文件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="string">"baseUrl"</span>: <span class="string">"src"</span>,</span><br><span class="line">    <span class="string">"paths"</span>: &#123;</span><br><span class="line">      <span class="string">"@/*"</span>: [<span class="string">"*"</span>],</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="4、less-scss-配置"><a href="#4、less-scss-配置" class="headerlink" title="4、less / scss 配置"></a>4、less / scss 配置</h4><blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; defineConfig &#125; <span class="keyword">from</span> <span class="string">&#x27;vite&#x27;</span></span><br><span class="line"><span class="keyword">import</span> vue <span class="keyword">from</span> <span class="string">&#x27;@vitejs/plugin-vue&#x27;</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// https://vitejs.dev/config/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">    <span class="attr">plugins</span>: [<span class="title function_">vue</span>()],</span><br><span class="line">    <span class="attr">resolve</span>: &#123;</span><br><span class="line">        <span class="attr">alias</span>: &#123;</span><br><span class="line">            <span class="string">&quot;@&quot;</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&quot;/src&quot;</span>),</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><code>tsconfig.json</code>文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;compilerOptions&quot;</span>: &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="string">&quot;baseUrl&quot;</span>: <span class="string">&quot;src&quot;</span>,</span><br><span class="line">    <span class="string">&quot;paths&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;@/*&quot;</span>: [<span class="string">&quot;*&quot;</span>],</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4、less-scss-配置"><a href="#4、less-scss-配置" class="headerlink" title="4、less &#x2F; scss 配置"></a>4、less &#x2F; scss 配置</h4><blockquote>
 <p><code>yarn add less less-loader -D</code><br><code>yarn add sass sass-loader node-sass -D</code></p>
 </blockquote>
 <h4 id="5、router配置"><a href="#5、router配置" class="headerlink" title="5、router配置"></a>5、router配置</h4><p>安装最新的版本</p>
@@ -288,8 +298,7 @@
 <p><code>yarn add vue-router@4.0.12</code></p>
 </blockquote>
 <ul>
-<li>创建router/index.ts<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createRouter, createWebHashHistory, RouteRecordRaw &#125; <span class="keyword">from</span> <span class="string">'vue-router'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routes: RouteRecordRaw[] = [</span><br><span class="line">    &#123;</span><br><span class="line">        path: <span class="string">'/'</span>,</span><br><span class="line">        redirect: <span class="string">'/login'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        path: <span class="string">'/home'</span>,</span><br><span class="line">        name: <span class="string">'home'</span>,</span><br><span class="line">        meta: &#123;</span><br><span class="line">            <span class="keyword">type</span>: <span class="string">'home'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'@/views/home.vue'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        path: <span class="string">'/login'</span>,</span><br><span class="line">        name: <span class="string">'login'</span>,</span><br><span class="line">        meta: &#123;</span><br><span class="line">            <span class="keyword">type</span>: <span class="string">'login'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'@/views/login/index.vue'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        path: <span class="string">'/:pathMatch(.*)*'</span>,</span><br><span class="line">        name: <span class="string">'404'</span>,</span><br><span class="line">        component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'@/views/404.vue'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = createRouter(&#123;</span><br><span class="line">    history: createWebHashHistory(), </span><br><span class="line">    routes</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router</span><br></pre></td></tr></table></figure>
-</li>
+<li>创建router&#x2F;index.ts<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createRouter, createWebHashHistory, <span class="title class_">RouteRecordRaw</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">routes</span>: <span class="title class_">RouteRecordRaw</span>[] = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">        <span class="attr">redirect</span>: <span class="string">&#x27;/login&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;/home&#x27;</span>,</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;home&#x27;</span>,</span><br><span class="line">        <span class="attr">meta</span>: &#123;</span><br><span class="line">            <span class="attr">type</span>: <span class="string">&#x27;home&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;@/views/home.vue&#x27;</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;/login&#x27;</span>,</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;login&#x27;</span>,</span><br><span class="line">        <span class="attr">meta</span>: &#123;</span><br><span class="line">            <span class="attr">type</span>: <span class="string">&#x27;login&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;@/views/login/index.vue&#x27;</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;/:pathMatch(.*)*&#x27;</span>,</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;404&#x27;</span>,</span><br><span class="line">        <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;@/views/404.vue&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = <span class="title function_">createRouter</span>(&#123;</span><br><span class="line">    <span class="attr">history</span>: <span class="title function_">createWebHashHistory</span>(), </span><br><span class="line">    routes</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h4 id="6、element-plus-组件库"><a href="#6、element-plus-组件库" class="headerlink" title="6、element-plus 组件库"></a>6、element-plus 组件库</h4><blockquote>
 <p><code>yarn add element-plus</code></p>
@@ -298,16 +307,16 @@
 <p><code>yarn add unplugin-vue-components unplugin-auto-import -D</code></p>
 </blockquote>
 <ul>
-<li><code>vite.config.ts</code>文件<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> AutoImport <span class="keyword">from</span> <span class="string">'unplugin-auto-import/vite'</span></span><br><span class="line"><span class="keyword">import</span> Components <span class="keyword">from</span> <span class="string">'unplugin-vue-components/vite'</span></span><br><span class="line"><span class="keyword">import</span> &#123; ElementPlusResolver &#125; <span class="keyword">from</span> <span class="string">'unplugin-vue-components/resolvers'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    plugins: [</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">        AutoImport(&#123;</span><br><span class="line">            resolvers: [ElementPlusResolver()],</span><br><span class="line">        &#125;),</span><br><span class="line">        Components(&#123;</span><br><span class="line">            resolvers: [ElementPlusResolver()],</span><br><span class="line">        &#125;),</span><br><span class="line">    ],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li><code>vite.config.ts</code>文件<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">AutoImport</span> <span class="keyword">from</span> <span class="string">&#x27;unplugin-auto-import/vite&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Components</span> <span class="keyword">from</span> <span class="string">&#x27;unplugin-vue-components/vite&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">ElementPlusResolver</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;unplugin-vue-components/resolvers&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="attr">plugins</span>: [</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">        <span class="title class_">AutoImport</span>(&#123;</span><br><span class="line">            <span class="attr">resolvers</span>: [<span class="title class_">ElementPlusResolver</span>()],</span><br><span class="line">        &#125;),</span><br><span class="line">        <span class="title class_">Components</span>(&#123;</span><br><span class="line">            <span class="attr">resolvers</span>: [<span class="title class_">ElementPlusResolver</span>()],</span><br><span class="line">        &#125;),</span><br><span class="line">    ],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h4 id="7、写法示例"><a href="#7、写法示例" class="headerlink" title="7、写法示例"></a>7、写法示例</h4><blockquote>
 <p>login.vue</p>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    // ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> &#123; reactive, ref &#125; <span class="keyword">from</span> <span class="string">'vue'</span></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> type &#123; ElForm &#125; <span class="keyword">from</span> <span class="string">'element-plus'</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">const</span> ruleFormRef = ref&lt;InstanceType&lt;<span class="keyword">typeof</span> ElForm&gt;&gt;()</span></span><br><span class="line"><span class="undefined">interface FormData &#123;</span></span><br><span class="line"><span class="undefined">    account: string</span></span><br><span class="line"><span class="undefined">    password: string</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="javascript"><span class="keyword">const</span> ruleForm = reactive&lt;FormData&gt;(&#123;</span></span><br><span class="line"><span class="javascript">    account: <span class="string">''</span>,</span></span><br><span class="line"><span class="javascript">    password: <span class="string">''</span></span></span><br><span class="line"><span class="undefined">&#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">const</span> loginRules = reactive(&#123;</span></span><br><span class="line"><span class="undefined">    account: [</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="javascript">            required: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">            message: <span class="string">'企业账号不能为空'</span>,</span></span><br><span class="line"><span class="javascript">            trigger: <span class="string">'blur'</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    ],</span></span><br><span class="line"><span class="undefined">    password: [</span></span><br><span class="line"><span class="undefined">        &#123;</span></span><br><span class="line"><span class="javascript">            required: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">            message: <span class="string">'密码不能为空'</span>,</span></span><br><span class="line"><span class="javascript">            trigger: <span class="string">'blur'</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    ]</span></span><br><span class="line"><span class="undefined">&#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">interface StatsBase &#123;</span></span><br><span class="line"><span class="undefined">    loading: boolean</span></span><br><span class="line"><span class="undefined">    isSecure: boolean</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="javascript"><span class="keyword">const</span> state = reactive&lt;StatsBase&gt;(&#123;</span></span><br><span class="line"><span class="javascript">    loading: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">    isSecure: <span class="literal">true</span></span></span><br><span class="line"><span class="undefined">&#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">const</span> setSecure = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="undefined">    state.isSecure = !state.isSecure</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(state.isSecure)</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">const</span> submitForm = <span class="keyword">async</span> (ruleFormRef: any) =&gt; &#123;</span></span><br><span class="line"><span class="javascript">    ruleFormRef.value.validate(<span class="function">(<span class="params">valid: boolean</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (valid) &#123;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;)</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">lang</span>=<span class="string">"scss"</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    // ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">setup</span> <span class="attr">lang</span>=<span class="string">&quot;ts&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; reactive, ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> type &#123; <span class="title class_">ElForm</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;element-plus&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> ruleFormRef = ref&lt;<span class="title class_">InstanceType</span>&lt;<span class="keyword">typeof</span> <span class="title class_">ElForm</span>&gt;&gt;()</span></span><br><span class="line"><span class="language-javascript">interface <span class="title class_">FormData</span> &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">account</span>: string</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">password</span>: string</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> ruleForm = reactive&lt;<span class="title class_">FormData</span>&gt;(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">account</span>: <span class="string">&#x27;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">password</span>: <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> loginRules = <span class="title function_">reactive</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">account</span>: [</span></span><br><span class="line"><span class="language-javascript">        &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">required</span>: <span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">message</span>: <span class="string">&#x27;企业账号不能为空&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    ],</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">password</span>: [</span></span><br><span class="line"><span class="language-javascript">        &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">required</span>: <span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">message</span>: <span class="string">&#x27;密码不能为空&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    ]</span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">interface <span class="title class_">StatsBase</span> &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">loading</span>: boolean</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">isSecure</span>: boolean</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> state = reactive&lt;<span class="title class_">StatsBase</span>&gt;(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">loading</span>: <span class="literal">false</span>,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">isSecure</span>: <span class="literal">true</span></span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> <span class="title function_">setSecure</span> = (<span class="params"></span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">    state.<span class="property">isSecure</span> = !state.<span class="property">isSecure</span></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">console</span>.<span class="title function_">log</span>(state.<span class="property">isSecure</span>)</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> <span class="title function_">submitForm</span> = <span class="keyword">async</span> (<span class="params">ruleFormRef: any</span>) =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">    ruleFormRef.<span class="property">value</span>.<span class="title function_">validate</span>(<span class="function">(<span class="params">valid: boolean</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (valid) &#123;</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">lang</span>=<span class="string">&quot;scss&quot;</span> <span class="attr">scoped</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="8、更多"><a href="#8、更多" class="headerlink" title="8、更多"></a>8、更多</h4><ul>
-<li><a href="https://github.com/machao07/vue3-admin/issues/1" target="_blank" rel="noopener">vue3.x与vue2.x生命周期区别 </a></li>
-<li><a href="https://github.com/machao07/vue3-admin" target="_blank" rel="noopener">项目源码仓库地址</a></li>
+<li><a href="https://github.com/machao07/vue3-admin/issues/1">vue3.x与vue2.x生命周期区别 </a></li>
+<li><a href="https://github.com/machao07/vue3-admin">项目源码仓库地址</a></li>
 </ul>
 
       
@@ -445,7 +454,7 @@
     </a>
   
   
-    <a href="/2021/07/24/项目自动化|部署服务&生成压缩包工具开发 copy/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/07/24/项目自动化_部署服务&生成压缩包工具开发 copy/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">项目自动化 | 部署服务&amp;生成压缩包工具开发</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -506,7 +515,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -596,11 +605,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -608,7 +621,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -628,15 +649,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -652,11 +669,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -696,30 +717,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -732,7 +729,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -756,27 +773,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -792,11 +801,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -832,11 +853,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -849,14 +870,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -904,6 +917,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -912,7 +937,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -956,6 +981,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -981,26 +1010,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

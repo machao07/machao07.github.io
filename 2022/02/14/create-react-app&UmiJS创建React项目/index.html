@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>create-react-app / UmiJS创建React项目 | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、create-react 创建项目 create-react-app 是基于 webpack 的打包层方案，包含 build、dev、lint 等，他在打包层把体验做到了极致，但是不包含路由，不是框架，也不支持配置。  1、全局安装crate-react-app npm i create-react-app -g  2、创建项目 创建普通项目  create-react-app myreact">
+  <meta name="description" content="一、create-react 创建项目 create-react-app 是基于 webpack 的打包层方案，包含 build、dev、lint 等，他在打包层把体验做到了极致，但是不包含路由，不是框架，也不支持配置。  1、全局安装crate-react-app npm i create-react-app -g  2、创建项目 创建普通项目   create-react-app myreac">
 <meta name="keywords" content="React,Typescript,Ant-Design,Umi,create-react-app">
 <meta property="og:type" content="article">
 <meta property="og:title" content="create-react-app &#x2F; UmiJS创建React项目">
 <meta property="og:url" content="http://yoursite.com/2022/02/14/create-react-app&UmiJS创建React项目/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
-<meta property="og:description" content="一、create-react 创建项目 create-react-app 是基于 webpack 的打包层方案，包含 build、dev、lint 等，他在打包层把体验做到了极致，但是不包含路由，不是框架，也不支持配置。  1、全局安装crate-react-app npm i create-react-app -g  2、创建项目 创建普通项目  create-react-app myreact">
+<meta property="og:description" content="一、create-react 创建项目 create-react-app 是基于 webpack 的打包层方案，包含 build、dev、lint 等，他在打包层把体验做到了极致，但是不包含路由，不是框架，也不支持配置。  1、全局安装crate-react-app npm i create-react-app -g  2、创建项目 创建普通项目   create-react-app myreac">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/ee4239a5855a4e5c9e537a08a2ba77cf.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/bf52b556dfc34404b8e1ee3a4a4142b9.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/ee0117f4e3344b2c801befb5dde9a5a4.png">
-<meta property="og:updated_time" content="2022-08-04T15:04:00.683Z">
+<meta property="og:updated_time" content="2022-08-04T15:04:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="create-react-app &#x2F; UmiJS创建React项目">
-<meta name="twitter:description" content="一、create-react 创建项目 create-react-app 是基于 webpack 的打包层方案，包含 build、dev、lint 等，他在打包层把体验做到了极致，但是不包含路由，不是框架，也不支持配置。  1、全局安装crate-react-app npm i create-react-app -g  2、创建项目 创建普通项目  create-react-app myreact">
+<meta name="twitter:description" content="一、create-react 创建项目 create-react-app 是基于 webpack 的打包层方案，包含 build、dev、lint 等，他在打包层把体验做到了极致，但是不包含路由，不是框架，也不支持配置。  1、全局安装crate-react-app npm i create-react-app -g  2、创建项目 创建普通项目   create-react-app myreac">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/ee4239a5855a4e5c9e537a08a2ba77cf.png">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
@@ -228,32 +228,37 @@
 </ul>
 <h4 id="2、创建项目"><a href="#2、创建项目" class="headerlink" title="2、创建项目"></a>2、创建项目</h4><blockquote>
 <p>创建普通项目</p>
+</blockquote>
 <ul>
 <li><code>create-react-app myreact</code></li>
 </ul>
-</blockquote>
 <blockquote>
 <p>创建 <code>ts</code>项目</p>
+</blockquote>
 <ul>
 <li><code>yarn create react-app myreact --template typescript</code></li>
 <li>默认安装 <code>react 18.x</code>，出现UI组件引用ts报错</li>
 </ul>
-</blockquote>
-<a id="more"></a>
+<span id="more"></span>
+
 <blockquote>
-<p><strong>回退到 <code>react 17.0.0</code></strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"@types/react"</span>: <span class="string">"^17.0.0"</span>,</span><br><span class="line"><span class="string">"@types/react-dom"</span>: <span class="string">"^17.0.0"</span>,</span><br></pre></td></tr></table></figure></p>
+<p><strong>回退到 <code>react 17.0.0</code></strong></p>
 </blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;@types/react&quot;</span>: <span class="string">&quot;^17.0.0&quot;</span>,</span><br><span class="line"><span class="string">&quot;@types/react-dom&quot;</span>: <span class="string">&quot;^17.0.0&quot;</span>,</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p><strong>入口文件 index.tsx</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'./index.css'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br><span class="line"><span class="keyword">import</span> reportWebVitals <span class="keyword">from</span> <span class="string">'./reportWebVitals'</span>;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;React.StrictMode&gt;</span><br><span class="line">        &lt;App /&gt;</span><br><span class="line">    &lt;<span class="regexp">/React.StrictMode&gt;,</span></span><br><span class="line"><span class="regexp">    document.getElementById('root')</span></span><br><span class="line"><span class="regexp">);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">reportWebVitals();</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>入口文件 index.tsx</strong></p>
 </blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ReactDOM</span> <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./index.css&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> reportWebVitals <span class="keyword">from</span> <span class="string">&#x27;./reportWebVitals&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">React.StrictMode</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">App</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">React.StrictMode</span>&gt;</span></span>,</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="title function_">reportWebVitals</span>();</span><br></pre></td></tr></table></figure>
+
 <h4 id="3、cd进去、启动"><a href="#3、cd进去、启动" class="headerlink" title="3、cd进去、启动"></a>3、cd进去、启动</h4><ul>
 <li>yarn start</li>
 </ul>
 <h4 id="4、react-router-v6的路由写法不一样"><a href="#4、react-router-v6的路由写法不一样" class="headerlink" title="4、react-router (v6的路由写法不一样)"></a>4、react-router (v6的路由写法不一样)</h4><blockquote>
 <ul>
 <li>npm i react-router-dom -S</li>
-<li>yarn add <a href="mailto:react-router-dom@5.3.0" target="_blank" rel="noopener">react-router-dom@5.3.0</a></li>
-<li>yarn add @<a href="mailto:types/react-router-dom@5.3.3" target="_blank" rel="noopener">types/react-router-dom@5.3.3</a> -D</li>
+<li>yarn add <a href="mailto:&#114;&#x65;&#97;&#99;&#116;&#x2d;&#x72;&#x6f;&#117;&#116;&#101;&#114;&#x2d;&#x64;&#111;&#x6d;&#x40;&#x35;&#x2e;&#x33;&#46;&#48;">&#114;&#x65;&#97;&#99;&#116;&#x2d;&#x72;&#x6f;&#117;&#116;&#101;&#114;&#x2d;&#x64;&#111;&#x6d;&#x40;&#x35;&#x2e;&#x33;&#46;&#48;</a></li>
+<li>yarn add @types&#x2F;<a href="mailto:&#114;&#101;&#x61;&#99;&#116;&#45;&#114;&#111;&#x75;&#x74;&#101;&#x72;&#45;&#x64;&#x6f;&#109;&#64;&#x35;&#x2e;&#x33;&#46;&#x33;">&#114;&#101;&#x61;&#99;&#116;&#45;&#114;&#111;&#x75;&#x74;&#101;&#x72;&#45;&#x64;&#x6f;&#109;&#64;&#x35;&#x2e;&#x33;&#46;&#x33;</a> -D</li>
 </ul>
 </blockquote>
 <h4 id="5、集成sass"><a href="#5、集成sass" class="headerlink" title="5、集成sass"></a>5、集成sass</h4><p><strong><code>安装sass</code></strong></p>
@@ -267,25 +272,33 @@
 <p><strong>注：</strong></p>
 <ul>
 <li><code>/mock/</code> 后面的 <code>/</code> 可去除</li>
-<li><a href="http://xxx/mock/mockGoods/list" target="_blank" rel="noopener">http://xxx/mock/mockGoods/list</a></li>
+<li><a href="http://xxx/mock/mockGoods/list">http://xxx/mock/mockGoods/list</a></li>
 </ul>
 <blockquote>
-<p><strong>创建 src/setupProxy.js</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 配置代理 - 用于联调</span></span><br><span class="line"><span class="keyword">const</span> &#123; createProxyMiddleware &#125; = <span class="built_in">require</span>(<span class="string">'http-proxy-middleware'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params">app</span>) </span>&#123;</span><br><span class="line">    app.use(</span><br><span class="line">        createProxyMiddleware(<span class="string">'/mock/'</span>, &#123;</span><br><span class="line">            target: <span class="string">'http://ebill.allinpalm.cn/'</span>,</span><br><span class="line">            changeOrigin: <span class="literal">true</span></span><br><span class="line">        &#125;)</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>创建 src&#x2F;setupProxy.js</strong></p>
 </blockquote>
-<p><a href="https://www.html.cn/create-react-app/docs/proxying-api-requests-in-development/" target="_blank" rel="noopener">官方文档</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 配置代理 - 用于联调</span></span><br><span class="line"><span class="keyword">const</span> &#123; createProxyMiddleware &#125; = <span class="built_in">require</span>(<span class="string">&#x27;http-proxy-middleware&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="keyword">function</span> (<span class="params">app</span>) &#123;</span><br><span class="line">    app.<span class="title function_">use</span>(</span><br><span class="line">        <span class="title function_">createProxyMiddleware</span>(<span class="string">&#x27;/mock/&#x27;</span>, &#123;</span><br><span class="line">            <span class="attr">target</span>: <span class="string">&#x27;http://ebill.allinpalm.cn/&#x27;</span>,</span><br><span class="line">            <span class="attr">changeOrigin</span>: <span class="literal">true</span></span><br><span class="line">        &#125;)</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.html.cn/create-react-app/docs/proxying-api-requests-in-development/">官方文档</a></p>
 <h4 id="7、添加别名"><a href="#7、添加别名" class="headerlink" title="7、添加别名"></a>7、添加别名</h4><p>安装依赖</p>
 <ul>
 <li><code>yarn add react-app-rewired</code></li>
 </ul>
 <blockquote>
-<p><strong>创建 config-overrides.js</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; override, addWebpackAlias &#125; = <span class="built_in">require</span>(<span class="string">'customize-cra'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = override (</span><br><span class="line">    addWebpackAlias(&#123;</span><br><span class="line">        <span class="string">'@'</span>: path.resolve(__dirname, <span class="string">'src'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p><strong>创建 config-overrides.js</strong></p>
 </blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; override, addWebpackAlias &#125; = <span class="built_in">require</span>(<span class="string">&#x27;customize-cra&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">override</span> (</span><br><span class="line">    <span class="title function_">addWebpackAlias</span>(&#123;</span><br><span class="line">        <span class="string">&#x27;@&#x27;</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;src&#x27;</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p><strong>创建paths.json</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"compilerOptions"</span>: &#123;</span><br><span class="line">        <span class="string">"baseUrl"</span>: <span class="string">"."</span>,</span><br><span class="line">        <span class="string">"paths"</span>: &#123;</span><br><span class="line">            <span class="string">"@/*"</span>: [<span class="string">"src/*"</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>创建paths.json</strong></p>
 </blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;compilerOptions&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;baseUrl&quot;</span>: <span class="string">&quot;.&quot;</span>,</span><br><span class="line">        <span class="string">&quot;paths&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;@/*&quot;</span>: [<span class="string">&quot;src/*&quot;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p><strong>tsconfig.json添加</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    ...,</span><br><span class="line">    <span class="string">"extends"</span>: <span class="string">"./paths.json"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>tsconfig.json添加</strong></p>
 </blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    ...,</span><br><span class="line">    <span class="string">&quot;extends&quot;</span>: <span class="string">&quot;./paths.json&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="二、umi创建react项目"><a href="#二、umi创建react项目" class="headerlink" title="二、umi创建react项目"></a>二、umi创建react项目</h2><p><strong>新建项目</strong></p>
 <ul>
 <li><code>mkdir umi-app &amp;&amp; cd umi-app</code></li>
@@ -298,8 +311,10 @@
 <p><img src="https://img-blog.csdnimg.cn/ee4239a5855a4e5c9e537a08a2ba77cf.png" alt="在这里插入图片描述"></p>
 <p><strong><code>simple</code></strong><br><img src="https://img-blog.csdnimg.cn/bf52b556dfc34404b8e1ee3a4a4142b9.png" alt="在这里插入图片描述"></p>
 <p><strong><code>complete</code></strong><br><img src="https://img-blog.csdnimg.cn/ee0117f4e3344b2c801befb5dde9a5a4.png" alt="在这里插入图片描述"></p>
-<h4 id="1、目录结构"><a href="#1、目录结构" class="headerlink" title="1、目录结构"></a>1、目录结构</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">├── config  # umi 配置，包含路由，构建等配置</span><br><span class="line">│  ├── config  # 配置包含路由等</span><br><span class="line">│  ├── ... # 其他</span><br><span class="line">├── mock  # 本地模拟数据</span><br><span class="line">├── public</span><br><span class="line">│  └── favicon.png # Favicon</span><br><span class="line">├── src</span><br><span class="line">│  ├── assets  # 本地静态资源</span><br><span class="line">│  ├── components  # 业务通用组件</span><br><span class="line">│  ├── e2e # 集成测试用例</span><br><span class="line">│  ├── layouts # 通用布局</span><br><span class="line">│  ├── models  # 全局 dva model</span><br><span class="line">│  ├── pages # 业务页面入口和常用模板</span><br><span class="line">│  ├── services  # 后台接口服务</span><br><span class="line">│  ├── utils # 工具库</span><br><span class="line">│  ├── locales # 国际化资源</span><br><span class="line">│  ├── global.less # 全局样式</span><br><span class="line">│  └── global.ts # 全局 JS</span><br><span class="line">├── tests # 测试工具</span><br><span class="line">├── README.md</span><br><span class="line">├── package.json</span><br><span class="line">└── ... # 其他</span><br></pre></td></tr></table></figure>
-<h4 id="2、config目录"><a href="#2、config目录" class="headerlink" title="2、config目录"></a>2、config目录</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">├── config  # umi 配置，包含路由，构建等配置</span><br><span class="line">│  ├── config  # 配置文件：包含路由、样式、proxy等</span><br><span class="line">│  ├── defaultSettings # 默认设置：包括标题title、navTheme等</span><br><span class="line">│  ├── plugin.config # webpack的Plugin配置</span><br><span class="line">│  ├── themePluginConfig # 风格主题的配置</span><br></pre></td></tr></table></figure>
+<h4 id="1、目录结构"><a href="#1、目录结构" class="headerlink" title="1、目录结构"></a>1、目录结构</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">├── config  # umi 配置，包含路由，构建等配置</span><br><span class="line">│  ├── config  # 配置包含路由等</span><br><span class="line">│  ├── ... # 其他</span><br><span class="line">├── mock  # 本地模拟数据</span><br><span class="line">├── public</span><br><span class="line">│  └── favicon.<span class="property">png</span> # <span class="title class_">Favicon</span></span><br><span class="line">├── src</span><br><span class="line">│  ├── assets  # 本地静态资源</span><br><span class="line">│  ├── components  # 业务通用组件</span><br><span class="line">│  ├── e2e # 集成测试用例</span><br><span class="line">│  ├── layouts # 通用布局</span><br><span class="line">│  ├── models  # 全局 dva model</span><br><span class="line">│  ├── pages # 业务页面入口和常用模板</span><br><span class="line">│  ├── services  # 后台接口服务</span><br><span class="line">│  ├── utils # 工具库</span><br><span class="line">│  ├── locales # 国际化资源</span><br><span class="line">│  ├── <span class="variable language_">global</span>.<span class="property">less</span> # 全局样式</span><br><span class="line">│  └── <span class="variable language_">global</span>.<span class="property">ts</span> # 全局 <span class="variable constant_">JS</span></span><br><span class="line">├── tests # 测试工具</span><br><span class="line">├── <span class="variable constant_">README</span>.<span class="property">md</span></span><br><span class="line">├── package.<span class="property">json</span></span><br><span class="line">└── ... # 其他</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、config目录"><a href="#2、config目录" class="headerlink" title="2、config目录"></a>2、config目录</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">├── config  # umi 配置，包含路由，构建等配置</span><br><span class="line">│  ├── config  # 配置文件：包含路由、样式、proxy等</span><br><span class="line">│  ├── defaultSettings # 默认设置：包括标题title、navTheme等</span><br><span class="line">│  ├── plugin.<span class="property">config</span> # webpack的<span class="title class_">Plugin</span>配置</span><br><span class="line">│  ├── themePluginConfig # 风格主题的配置</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -501,7 +516,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -591,11 +606,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -603,7 +622,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -623,15 +650,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -647,11 +670,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -691,30 +718,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -727,7 +730,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -751,27 +774,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -787,11 +802,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -827,11 +854,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -844,14 +871,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -899,6 +918,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -907,7 +938,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -951,6 +982,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -976,26 +1011,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

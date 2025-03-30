@@ -17,7 +17,7 @@
 <meta property="og:description" content="1、操作步骤 阿里矢量图标网站 加入购物车 添加至项目 Symbol方式引入，复制代码">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210227172106739.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2021-02-28T09:51:22.393Z">
+<meta property="og:updated_time" content="2021-02-28T09:51:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react的Menu、iconfont引用">
 <meta name="twitter:description" content="1、操作步骤 阿里矢量图标网站 加入购物车 添加至项目 Symbol方式引入，复制代码">
@@ -219,25 +219,30 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="1、操作步骤"><a href="#1、操作步骤" class="headerlink" title="1、操作步骤"></a>1、操作步骤</h4><ul>
-<li><a href="https://www.iconfont.cn/" target="_blank" rel="noopener">阿里矢量图标网站</a></li>
+<li><a href="https://www.iconfont.cn/">阿里矢量图标网站</a></li>
 <li>加入购物车</li>
 <li>添加至项目</li>
 <li><code>Symbol</code>方式引入，复制代码</li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
 <p><img src="https://img-blog.csdnimg.cn/20210227172106739.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzkyNDIyOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h4 id="2、react-引用-iconFont"><a href="#2、react-引用-iconFont" class="headerlink" title="2、react 引用 iconFont"></a>2、react 引用 iconFont</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createFromIconfontCN &#125; <span class="keyword">from</span> <span class="string">'@ant-design/icons'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> IconFont = createFromIconfontCN(&#123;</span><br><span class="line">  scriptUrl: [</span><br><span class="line"> <span class="string">'//at.alicdn.com/t/font_2196242_dq7mz11miut.js'</span>, <span class="comment">// icon-home  icon-gouwucheman</span></span><br><span class="line">  ],</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;IconFont type=<span class="string">"icon-home"</span> /&gt;</span><br><span class="line">&lt;IconFont type=&#123;item.icon&#125; /&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="3、引用-Menu"><a href="#3、引用-Menu" class="headerlink" title="3、引用 Menu"></a>3、引用 Menu</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Menu &#125; <span class="keyword">from</span> <span class="string">'antd'</span>;</span><br><span class="line"><span class="keyword">import</span> menuList <span class="keyword">from</span> <span class="string">'./menu'</span></span><br><span class="line"><span class="keyword">const</span> &#123; SubMenu &#125; = Menu;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Slider</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;HashRouter&gt;</span><br><span class="line">        &lt;Menu theme=<span class="string">"dark"</span> defaultOpenKeys=&#123;[<span class="string">'home'</span>]&#125; defaultSelectedKeys=&#123;[<span class="string">'home'</span>]&#125; mode=<span class="string">"inline"</span>&gt;</span><br><span class="line">          &#123;</span><br><span class="line">            menuList.map(<span class="function">(<span class="params">item</span>)=&gt;</span>&#123;</span><br><span class="line">              <span class="keyword">if</span>(item.subs)&#123;</span><br><span class="line">                <span class="keyword">return</span> (</span><br><span class="line">                  &lt;SubMenu key=&#123;item.index&#125; title=&#123;item.name&#125; icon=&#123;&lt;IconFont type=&#123;item.icon&#125; /&gt;&#125;&gt;</span><br><span class="line">                    &#123;</span><br><span class="line">                      item.subs.map(<span class="function">(<span class="params">subItem</span>) =&gt;</span> &#123;</span><br><span class="line">                        <span class="keyword">return</span> (</span><br><span class="line">                          &lt;Menu.Item key=&#123;subItem.index&#125;&gt;</span><br><span class="line">                            &lt;Link to=&#123;subItem.path&#125;&gt;&#123;subItem.name&#125;&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">                          &lt;/</span>Menu.Item&gt;</span><br><span class="line">                        )</span><br><span class="line">                      &#125;)</span><br><span class="line">                    &#125;</span><br><span class="line">                  &lt;<span class="regexp">/SubMenu&gt;</span></span><br><span class="line"><span class="regexp">                )</span></span><br><span class="line"><span class="regexp">              &#125;else&#123;</span></span><br><span class="line"><span class="regexp">                return (</span></span><br><span class="line"><span class="regexp">                  &lt;Menu.Item key=&#123;item.index&#125; icon=&#123;&lt;IconFont type=&#123;item.icon&#125; /</span>&gt;&#125;&gt;</span><br><span class="line">                    &lt;Link to=&#123;item.path&#125;&gt;&#123;item.name&#125;&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">                  &lt;/</span>Menu.Item&gt;</span><br><span class="line">                )</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">          &#125;</span><br><span class="line">        &lt;<span class="regexp">/Menu&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>HashRouter&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Slider;</span><br></pre></td></tr></table></figure>
+<h4 id="2、react-引用-iconFont"><a href="#2、react-引用-iconFont" class="headerlink" title="2、react 引用 iconFont"></a>2、react 引用 iconFont</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createFromIconfontCN &#125; <span class="keyword">from</span> <span class="string">&#x27;@ant-design/icons&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">IconFont</span> = <span class="title function_">createFromIconfontCN</span>(&#123;</span><br><span class="line">  <span class="attr">scriptUrl</span>: [</span><br><span class="line"> <span class="string">&#x27;//at.alicdn.com/t/font_2196242_dq7mz11miut.js&#x27;</span>, <span class="comment">// icon-home  icon-gouwucheman</span></span><br><span class="line">  ],</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">IconFont</span> type=<span class="string">&quot;icon-home&quot;</span> /&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">IconFont</span> <span class="attr">type</span>=<span class="string">&#123;item.icon&#125;</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3、引用-Menu"><a href="#3、引用-Menu" class="headerlink" title="3、引用 Menu"></a>3、引用 Menu</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Menu</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;antd&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> menuList <span class="keyword">from</span> <span class="string">&#x27;./menu&#x27;</span></span><br><span class="line"><span class="keyword">const</span> &#123; <span class="title class_">SubMenu</span> &#125; = <span class="title class_">Menu</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Slider</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">HashRouter</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Menu</span> <span class="attr">theme</span>=<span class="string">&quot;dark&quot;</span> <span class="attr">defaultOpenKeys</span>=<span class="string">&#123;[</span>&#x27;<span class="attr">home</span>&#x27;]&#125; <span class="attr">defaultSelectedKeys</span>=<span class="string">&#123;[</span>&#x27;<span class="attr">home</span>&#x27;]&#125; <span class="attr">mode</span>=<span class="string">&quot;inline&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          &#123;</span></span><br><span class="line"><span class="language-xml">            menuList.map((item)=&gt;&#123;</span></span><br><span class="line"><span class="language-xml">              if(item.subs)&#123;</span></span><br><span class="line"><span class="language-xml">                return (</span></span><br><span class="line"><span class="language-xml">                  <span class="tag">&lt;<span class="name">SubMenu</span> <span class="attr">key</span>=<span class="string">&#123;item.index&#125;</span> <span class="attr">title</span>=<span class="string">&#123;item.name&#125;</span> <span class="attr">icon</span>=<span class="string">&#123;</span>&lt;<span class="attr">IconFont</span> <span class="attr">type</span>=<span class="string">&#123;item.icon&#125;</span> /&gt;</span>&#125;&gt;</span></span><br><span class="line"><span class="language-xml">                    &#123;</span></span><br><span class="line"><span class="language-xml">                      item.subs.map((subItem) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">                        return (</span></span><br><span class="line"><span class="language-xml">                          <span class="tag">&lt;<span class="name">Menu.Item</span> <span class="attr">key</span>=<span class="string">&#123;subItem.index&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                            <span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&#123;subItem.path&#125;</span>&gt;</span>&#123;subItem.name&#125;<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                          <span class="tag">&lt;/<span class="name">Menu.Item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                        )</span></span><br><span class="line"><span class="language-xml">                      &#125;)</span></span><br><span class="line"><span class="language-xml">                    &#125;</span></span><br><span class="line"><span class="language-xml">                  <span class="tag">&lt;/<span class="name">SubMenu</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                )</span></span><br><span class="line"><span class="language-xml">              &#125;else&#123;</span></span><br><span class="line"><span class="language-xml">                return (</span></span><br><span class="line"><span class="language-xml">                  <span class="tag">&lt;<span class="name">Menu.Item</span> <span class="attr">key</span>=<span class="string">&#123;item.index&#125;</span> <span class="attr">icon</span>=<span class="string">&#123;</span>&lt;<span class="attr">IconFont</span> <span class="attr">type</span>=<span class="string">&#123;item.icon&#125;</span> /&gt;</span>&#125;&gt;</span></span><br><span class="line"><span class="language-xml">                    <span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&#123;item.path&#125;</span>&gt;</span>&#123;item.name&#125;<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                  <span class="tag">&lt;/<span class="name">Menu.Item</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                )</span></span><br><span class="line"><span class="language-xml">              &#125;</span></span><br><span class="line"><span class="language-xml">            &#125;)</span></span><br><span class="line"><span class="language-xml">          &#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">Menu</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">HashRouter</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Slider</span>;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><code>menu.js文件</code></p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> menuList =  [</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">'/home'</span>,</span><br><span class="line">    name: <span class="string">'首页'</span>,</span><br><span class="line">    index: <span class="string">'home'</span>,</span><br><span class="line">    icon: <span class="string">'icon-home'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">'/order_mag'</span>,</span><br><span class="line">    name: <span class="string">'订单管理'</span>,</span><br><span class="line">    index: <span class="string">'order_mag'</span>,</span><br><span class="line">    icon: <span class="string">'icon-gouwucheman'</span>,</span><br><span class="line">    subs: [</span><br><span class="line">      &#123;</span><br><span class="line">        path: <span class="string">'/promotion'</span>,</span><br><span class="line">        name: <span class="string">'股东活动订单'</span>,</span><br><span class="line">        index: <span class="string">'promotion'</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        path: <span class="string">'/couponOrder'</span>,</span><br><span class="line">        name: <span class="string">'优惠券订单'</span>,</span><br><span class="line">        index: <span class="string">'couponOrder'</span>,</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> menuList;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> menuList =  [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&#x27;/home&#x27;</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;首页&#x27;</span>,</span><br><span class="line">    <span class="attr">index</span>: <span class="string">&#x27;home&#x27;</span>,</span><br><span class="line">    <span class="attr">icon</span>: <span class="string">&#x27;icon-home&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&#x27;/order_mag&#x27;</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;订单管理&#x27;</span>,</span><br><span class="line">    <span class="attr">index</span>: <span class="string">&#x27;order_mag&#x27;</span>,</span><br><span class="line">    <span class="attr">icon</span>: <span class="string">&#x27;icon-gouwucheman&#x27;</span>,</span><br><span class="line">    <span class="attr">subs</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;/promotion&#x27;</span>,</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;股东活动订单&#x27;</span>,</span><br><span class="line">        <span class="attr">index</span>: <span class="string">&#x27;promotion&#x27;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;/couponOrder&#x27;</span>,</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;优惠券订单&#x27;</span>,</span><br><span class="line">        <span class="attr">index</span>: <span class="string">&#x27;couponOrder&#x27;</span>,</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> menuList;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><code>router/index.js</code></p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123;Switch, Route, HashRouter&#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'../App'</span></span><br><span class="line"><span class="keyword">import</span> Login <span class="keyword">from</span> <span class="string">'../views/login'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MRoute</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render ()&#123;</span><br><span class="line">    <span class="keyword">return</span>(</span><br><span class="line">      &lt;HashRouter&gt;</span><br><span class="line">        &lt;Switch&gt;</span><br><span class="line">          &lt;Route path=<span class="string">"/login"</span> component=&#123; Login &#125; /&gt;</span><br><span class="line">          &lt;App /&gt;</span><br><span class="line">        &lt;<span class="regexp">/Switch&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>HashRouter&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> MRoute;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123;<span class="title class_">Switch</span>, <span class="title class_">Route</span>, <span class="title class_">HashRouter</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;react-router-dom&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;../App&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Login</span> <span class="keyword">from</span> <span class="string">&#x27;../views/login&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MRoute</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  <span class="title function_">render</span> ()&#123;</span><br><span class="line">    <span class="keyword">return</span>(</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">HashRouter</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Switch</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;/login&quot;</span> <span class="attr">component</span>=<span class="string">&#123;</span> <span class="attr">Login</span> &#125; /&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">App</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">Switch</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">HashRouter</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">MRoute</span>;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -430,7 +435,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -520,11 +525,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -532,7 +541,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -552,15 +569,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -576,11 +589,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -620,30 +637,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -656,7 +649,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -680,27 +693,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -716,11 +721,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -756,11 +773,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -773,14 +790,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -828,6 +837,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -836,7 +857,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -880,6 +901,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -905,26 +930,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

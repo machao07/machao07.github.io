@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue中父组件向子组件传值（props）组件通信以及Watch运用 | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、views层 父组件：123&amp;lt;el-dialog title=&quot;编辑活动&quot; :visible.sync=&quot;dialogCreateVisible&quot; :close-on-click-modal=&quot;false&quot; width=&quot;70%&quot; :append-to-body=&quot;true&quot; @dialogClose=&quot;dialogClose&quot;&amp;gt;    &amp;lt;activies-create :f">
+  <meta name="description" content="1、views层 父组件：  123&amp;lt;el-dialog title=&amp;quot;编辑活动&amp;quot; :visible.sync=&amp;quot;dialogCreateVisible&amp;quot; :close-on-click-modal=&amp;quot;false&amp;quot; width=&amp;quot;70%&amp;quot; :append-to-body=&amp;quot;true&amp;quot; @dia">
 <meta name="keywords" content="Vue,props,watch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue中父组件向子组件传值（props）组件通信以及Watch运用">
 <meta property="og:url" content="http://yoursite.com/2019/05/03/vue中父组件向子组件传值（props）组件通信以及Watch运用/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
-<meta property="og:description" content="1、views层 父组件：123&amp;lt;el-dialog title=&quot;编辑活动&quot; :visible.sync=&quot;dialogCreateVisible&quot; :close-on-click-modal=&quot;false&quot; width=&quot;70%&quot; :append-to-body=&quot;true&quot; @dialogClose=&quot;dialogClose&quot;&amp;gt;    &amp;lt;activies-create :f">
+<meta property="og:description" content="1、views层 父组件：  123&amp;lt;el-dialog title=&amp;quot;编辑活动&amp;quot; :visible.sync=&amp;quot;dialogCreateVisible&amp;quot; :close-on-click-modal=&amp;quot;false&amp;quot; width=&amp;quot;70%&amp;quot; :append-to-body=&amp;quot;true&amp;quot; @dia">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-30T13:42:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue中父组件向子组件传值（props）组件通信以及Watch运用">
-<meta name="twitter:description" content="1、views层 父组件：123&amp;lt;el-dialog title=&quot;编辑活动&quot; :visible.sync=&quot;dialogCreateVisible&quot; :close-on-click-modal=&quot;false&quot; width=&quot;70%&quot; :append-to-body=&quot;true&quot; @dialogClose=&quot;dialogClose&quot;&amp;gt;    &amp;lt;activies-create :f">
+<meta name="twitter:description" content="1、views层 父组件：  123&amp;lt;el-dialog title=&amp;quot;编辑活动&amp;quot; :visible.sync=&amp;quot;dialogCreateVisible&amp;quot; :close-on-click-modal=&amp;quot;false&amp;quot; width=&amp;quot;70%&amp;quot; :append-to-body=&amp;quot;true&amp;quot; @dia">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
   
@@ -217,25 +217,27 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="1、views层"><a href="#1、views层" class="headerlink" title="1、views层"></a>1、views层</h3><blockquote>
-<p><strong><code>父组件：</code></strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-dialog</span> <span class="attr">title</span>=<span class="string">"编辑活动"</span> <span class="attr">:visible.sync</span>=<span class="string">"dialogCreateVisible"</span> <span class="attr">:close-on-click-modal</span>=<span class="string">"false"</span> <span class="attr">width</span>=<span class="string">"70%"</span> <span class="attr">:append-to-body</span>=<span class="string">"true"</span> @<span class="attr">dialogClose</span>=<span class="string">"dialogClose"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">activies-create</span> <span class="attr">:formData.sync</span>=<span class="string">"createForm"</span> @<span class="attr">cancelCreate</span>=<span class="string">"cancel"</span> @<span class="attr">okCreate</span>=<span class="string">"ok"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-dialog</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong><code>父组件：</code></strong></p>
 </blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-dialog</span> <span class="attr">title</span>=<span class="string">&quot;编辑活动&quot;</span> <span class="attr">:visible.sync</span>=<span class="string">&quot;dialogCreateVisible&quot;</span> <span class="attr">:close-on-click-modal</span>=<span class="string">&quot;false&quot;</span> <span class="attr">width</span>=<span class="string">&quot;70%&quot;</span> <span class="attr">:append-to-body</span>=<span class="string">&quot;true&quot;</span> @<span class="attr">dialogClose</span>=<span class="string">&quot;dialogClose&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">activies-create</span> <span class="attr">:formData.sync</span>=<span class="string">&quot;createForm&quot;</span> @<span class="attr">cancelCreate</span>=<span class="string">&quot;cancel&quot;</span> @<span class="attr">okCreate</span>=<span class="string">&quot;ok&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-dialog</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="2、methods（数据处理）"><a href="#2、methods（数据处理）" class="headerlink" title="2、methods（数据处理）"></a>2、methods（数据处理）</h3><blockquote>
-<p><strong><code>父组件：（初始声明）</code></strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Object(对象--多个参数)</span></span><br><span class="line">createForm:&#123;</span><br><span class="line">    sellerId: <span class="number">0</span>,</span><br><span class="line">    activityid: <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//String（一个参数）</span></span><br><span class="line">currentSellerId: <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
+<p><strong><code>父组件：（初始声明）</code></strong></p>
 </blockquote>
-<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Object(对象--多个参数)</span></span><br><span class="line"><span class="attr">createForm</span>:&#123;</span><br><span class="line">    <span class="attr">sellerId</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">activityid</span>: <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//String（一个参数）</span></span><br><span class="line"><span class="attr">currentSellerId</span>: <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
 <blockquote>
 <p><strong><code>子组件</code></strong></p>
 </blockquote>
 <ul>
 <li><code>props</code>接受参数</li>
-<li><code>watch</code>监听<code>formData</code>中值的变化<ol>
+<li><code>watch</code>监听<code>formData</code>中值的变化</li>
+</ul>
+<ol>
 <li><code>immediate：</code>true 将立即以表达式的当前值触发回调</li>
 <li><code>handle：</code>watch中需要具体执行的方法</li>
-<li><code>deep：</code>需要监听的数据的深度，一般用来监听对象中某个属性的变化<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">props:&#123;</span><br><span class="line">    formData: <span class="built_in">Object</span></span><br><span class="line">&#125;,</span><br><span class="line">watch: &#123;</span><br><span class="line">    formData: &#123;</span><br><span class="line">        immediate: <span class="literal">true</span>,</span><br><span class="line">        handler (val) &#123;</span><br><span class="line">            <span class="keyword">this</span>.sellerId = val.sellerId;</span><br><span class="line">            <span class="keyword">this</span>.activityid = val.activityid;</span><br><span class="line">            <span class="keyword">this</span>.getList();</span><br><span class="line">        &#125;,</span><br><span class="line">        deep: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li><code>deep：</code>需要监听的数据的深度，一般用来监听对象中某个属性的变化<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">props</span>:&#123;</span><br><span class="line">    <span class="attr">formData</span>: <span class="title class_">Object</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">watch</span>: &#123;</span><br><span class="line">    <span class="attr">formData</span>: &#123;</span><br><span class="line">        <span class="attr">immediate</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="title function_">handler</span> (val) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">sellerId</span> = val.<span class="property">sellerId</span>;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">activityid</span> = val.<span class="property">activityid</span>;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="title function_">getList</span>();</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">deep</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
-</li>
-</ul>
 
       
 
@@ -429,7 +431,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -519,11 +521,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -531,7 +537,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -551,15 +565,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -575,11 +585,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -619,30 +633,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -655,7 +645,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -679,27 +689,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -715,11 +717,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -755,11 +769,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -772,14 +786,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -827,6 +833,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -835,7 +853,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -879,6 +897,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -904,26 +926,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

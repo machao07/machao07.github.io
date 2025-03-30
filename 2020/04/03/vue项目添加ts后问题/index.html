@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue项目添加ts后问题 | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、js-cookie引入的 Cookie 找不到 module 问题  yarn add @type/js-cookieyarn add js-cookie  2、使用Ele-UI库的方法ts 类型报错 any12this.$refs.form.resetFields()this.$refs.form.validate()">
+  <meta name="description" content="1、js-cookie引入的 Cookie 找不到 module 问题  yarn add @type&amp;#x2F;js-cookieyarn add js-cookie  2、使用Ele-UI库的方法ts 类型报错 any 12this.$refs.form.resetFields()this.$refs.form.validate()">
 <meta name="keywords" content="vue,typescript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue项目添加ts后问题">
 <meta property="og:url" content="http://yoursite.com/2020/04/03/vue项目添加ts后问题/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
-<meta property="og:description" content="1、js-cookie引入的 Cookie 找不到 module 问题  yarn add @type/js-cookieyarn add js-cookie  2、使用Ele-UI库的方法ts 类型报错 any12this.$refs.form.resetFields()this.$refs.form.validate()">
+<meta property="og:description" content="1、js-cookie引入的 Cookie 找不到 module 问题  yarn add @type&amp;#x2F;js-cookieyarn add js-cookie  2、使用Ele-UI库的方法ts 类型报错 any 12this.$refs.form.resetFields()this.$refs.form.validate()">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-02-07T15:06:00.185Z">
+<meta property="og:updated_time" content="2021-02-07T15:06:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue项目添加ts后问题">
-<meta name="twitter:description" content="1、js-cookie引入的 Cookie 找不到 module 问题  yarn add @type/js-cookieyarn add js-cookie  2、使用Ele-UI库的方法ts 类型报错 any12this.$refs.form.resetFields()this.$refs.form.validate()">
+<meta name="twitter:description" content="1、js-cookie引入的 Cookie 找不到 module 问题  yarn add @type&amp;#x2F;js-cookieyarn add js-cookie  2、使用Ele-UI库的方法ts 类型报错 any 12this.$refs.form.resetFields()this.$refs.form.validate()">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
   
@@ -218,12 +218,17 @@
       
         <h4 id="1、js-cookie"><a href="#1、js-cookie" class="headerlink" title="1、js-cookie"></a>1、js-cookie</h4><p>引入的 <code>Cookie</code> 找不到 <code>module</code> 问题</p>
 <blockquote>
-<p>yarn add @type/js-cookie<br>yarn add js-cookie</p>
+<p>yarn add @type&#x2F;js-cookie<br>yarn add js-cookie</p>
 </blockquote>
-<h4 id="2、使用Ele-UI库的方法"><a href="#2、使用Ele-UI库的方法" class="headerlink" title="2、使用Ele-UI库的方法"></a>2、使用Ele-UI库的方法</h4><p>ts 类型报错 any<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$refs.form.resetFields()</span><br><span class="line"><span class="keyword">this</span>.$refs.form.validate()</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>解决方法:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ref: any = <span class="keyword">this</span>.$refs.form;</span><br><span class="line"></span><br><span class="line">ref.resetFields() <span class="comment">// 清空表单</span></span><br><span class="line">ref.validate()  <span class="comment">// 表单验证</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="3、form表单等对象的声明"><a href="#3、form表单等对象的声明" class="headerlink" title="3、form表单等对象的声明"></a>3、form表单等对象的声明</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">private form: any = &#123;</span><br><span class="line">    name: <span class="string">''</span>,</span><br><span class="line">    code: <span class="string">''</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2、使用Ele-UI库的方法"><a href="#2、使用Ele-UI库的方法" class="headerlink" title="2、使用Ele-UI库的方法"></a>2、使用Ele-UI库的方法</h4><p>ts 类型报错 any</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">$refs</span>.<span class="property">form</span>.<span class="title function_">resetFields</span>()</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$refs</span>.<span class="property">form</span>.<span class="title function_">validate</span>()</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>解决方法:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="attr">ref</span>: any = <span class="variable language_">this</span>.<span class="property">$refs</span>.<span class="property">form</span>;</span><br><span class="line"></span><br><span class="line">ref.<span class="title function_">resetFields</span>() <span class="comment">// 清空表单</span></span><br><span class="line">ref.<span class="title function_">validate</span>()  <span class="comment">// 表单验证</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3、form表单等对象的声明"><a href="#3、form表单等对象的声明" class="headerlink" title="3、form表单等对象的声明"></a>3、form表单等对象的声明</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">private <span class="attr">form</span>: any = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">code</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><code>this.form.name</code> ts报错 获取不到</p>
 </blockquote>
@@ -231,8 +236,8 @@
 <blockquote>
 <p>定义<code>interface</code>接口参数<br>须写在<code>@Component</code>前</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">interface formDTO &#123;</span><br><span class="line">    name: string,</span><br><span class="line">    creditCode: string,</span><br><span class="line">    radio: number,</span><br><span class="line">    notifyUrl: string,</span><br><span class="line">    publicKey: string</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">private form: formDTO = &#123;</span><br><span class="line">    name: <span class="string">''</span>,</span><br><span class="line">    creditCode: <span class="string">''</span>,</span><br><span class="line">    radio: <span class="number">1</span>,</span><br><span class="line">    notifyUrl: <span class="string">''</span>,</span><br><span class="line">    publicKey: <span class="string">''</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">interface formDTO &#123;</span><br><span class="line">    <span class="attr">name</span>: string,</span><br><span class="line">    <span class="attr">creditCode</span>: string,</span><br><span class="line">    <span class="attr">radio</span>: number,</span><br><span class="line">    <span class="attr">notifyUrl</span>: string,</span><br><span class="line">    <span class="attr">publicKey</span>: string</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">private <span class="attr">form</span>: formDTO = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">creditCode</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">radio</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">notifyUrl</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    <span class="attr">publicKey</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -421,7 +426,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -511,11 +516,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -523,7 +532,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -543,15 +560,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -567,11 +580,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -611,30 +628,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -647,7 +640,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -671,27 +684,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -707,11 +712,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -747,11 +764,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -764,14 +781,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -819,6 +828,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -827,7 +848,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -871,6 +892,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -896,26 +921,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

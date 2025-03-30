@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>RESTful风格接口和特性 | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、RESTful的特性资源： 可以用一个URI（统一资源定位符）指向它，每种资源对应一个特性的URI。 表现层： 把资源具体呈现出来的形式。  比如，文本可以用txt格式表现，也可以用HTML格式、XML格式、JSON格式表现，甚至可以采用二进制格式。  状态转换： 每发出一个请求，就代表了客户端和服务器的一次交互过程，是服务器端发生“状态转换”。  HTTP协议里面，四个表示操作方式的动词：G">
+  <meta name="description" content="1、RESTful的特性资源： 可以用一个URI（统一资源定位符）指向它，每种资源对应一个特性的URI。 表现层： 把资源具体呈现出来的形式。  比如，文本可以用txt格式表现，也可以用HTML格式、XML格式、JSON格式表现，甚至可以采用二进制格式。  状态转换： 每发出一个请求，就代表了客户端和服务器的一次交互过程，是服务器端发生“状态转换”。  HTTP协议里面，四个表示操作方式的动词：*">
 <meta name="keywords" content="restful,api,接口设计">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RESTful风格接口和特性">
 <meta property="og:url" content="http://yoursite.com/2019/05/11/RESTful风格接口和特性/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
-<meta property="og:description" content="1、RESTful的特性资源： 可以用一个URI（统一资源定位符）指向它，每种资源对应一个特性的URI。 表现层： 把资源具体呈现出来的形式。  比如，文本可以用txt格式表现，也可以用HTML格式、XML格式、JSON格式表现，甚至可以采用二进制格式。  状态转换： 每发出一个请求，就代表了客户端和服务器的一次交互过程，是服务器端发生“状态转换”。  HTTP协议里面，四个表示操作方式的动词：G">
+<meta property="og:description" content="1、RESTful的特性资源： 可以用一个URI（统一资源定位符）指向它，每种资源对应一个特性的URI。 表现层： 把资源具体呈现出来的形式。  比如，文本可以用txt格式表现，也可以用HTML格式、XML格式、JSON格式表现，甚至可以采用二进制格式。  状态转换： 每发出一个请求，就代表了客户端和服务器的一次交互过程，是服务器端发生“状态转换”。  HTTP协议里面，四个表示操作方式的动词：*">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-07-04T03:28:24.403Z">
+<meta property="og:updated_time" content="2020-07-04T03:28:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RESTful风格接口和特性">
-<meta name="twitter:description" content="1、RESTful的特性资源： 可以用一个URI（统一资源定位符）指向它，每种资源对应一个特性的URI。 表现层： 把资源具体呈现出来的形式。  比如，文本可以用txt格式表现，也可以用HTML格式、XML格式、JSON格式表现，甚至可以采用二进制格式。  状态转换： 每发出一个请求，就代表了客户端和服务器的一次交互过程，是服务器端发生“状态转换”。  HTTP协议里面，四个表示操作方式的动词：G">
+<meta name="twitter:description" content="1、RESTful的特性资源： 可以用一个URI（统一资源定位符）指向它，每种资源对应一个特性的URI。 表现层： 把资源具体呈现出来的形式。  比如，文本可以用txt格式表现，也可以用HTML格式、XML格式、JSON格式表现，甚至可以采用二进制格式。  状态转换： 每发出一个请求，就代表了客户端和服务器的一次交互过程，是服务器端发生“状态转换”。  HTTP协议里面，四个表示操作方式的动词：*">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
   
@@ -223,19 +223,14 @@
 </blockquote>
 <p><strong><code>状态转换：</code></strong> 每发出一个请求，就代表了客户端和服务器的一次交互过程，是服务器端发生“状态转换”。</p>
 <blockquote>
-<p>HTTP协议里面，四个表示操作方式的动词：<strong><code>GET（获取资源）</code></strong>、<strong><code>POST（新建资源）</code></strong>、<strong><code>PUT（更新资源）</code></strong>、<strong><code>DELETE（删除资源）</code></strong>。</p>
+<p>HTTP协议里面，四个表示操作方式的动词：**<code>GET（获取资源）</code><strong>、</strong><code>POST（新建资源）</code><strong>、</strong><code>PUT（更新资源）</code><strong>、</strong><code>DELETE（删除资源）</code>**。</p>
 </blockquote>
-<a id="more"></a>
+<span id="more"></span>
+
 <h3 id="2、资源的URL设计"><a href="#2、资源的URL设计" class="headerlink" title="2、资源的URL设计"></a>2、资源的URL设计</h3><ul>
-<li><p><strong><code>通过URL来表示资源</code></strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">主资源：/api/coupon/&#123;id&#125;</span><br><span class="line">子资源：/api/coupon/&#123;id&#125;/pictures（图片集合）</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong><code>单数 &amp; 复数</code></strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/api/users/1</span><br><span class="line">/api/user/1</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong><code>相对路径 &amp; 请求参数</code></strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 参数放在路径中</span><br><span class="line">/api/coupon/searchCouponDetail/1745486430339072 </span><br><span class="line"></span><br><span class="line">// 拼接的方式</span><br><span class="line">/api/coupon/searchCouponDetail?couponId=1745486430339072&amp;type=product</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong><code>通过URL来表示资源</code></strong><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">主资源：<span class="operator">/</span>api<span class="operator">/</span>coupon<span class="operator">/</span>&#123;id&#125;</span><br><span class="line">子资源：<span class="operator">/</span>api<span class="operator">/</span>coupon<span class="operator">/</span>&#123;id&#125;<span class="operator">/</span>pictures（图片集合）</span><br></pre></td></tr></table></figure></li>
+<li><strong><code>单数 &amp; 复数</code></strong><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">/</span>api<span class="operator">/</span>users<span class="operator">/</span><span class="number">1</span></span><br><span class="line"><span class="operator">/</span>api<span class="operator">/</span><span class="keyword">user</span><span class="operator">/</span><span class="number">1</span></span><br></pre></td></tr></table></figure></li>
+<li><strong><code>相对路径 &amp; 请求参数</code></strong><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span> 参数放在路径中</span><br><span class="line"><span class="operator">/</span>api<span class="operator">/</span>coupon<span class="operator">/</span>searchCouponDetail<span class="operator">/</span><span class="number">1745486430339072</span> </span><br><span class="line"></span><br><span class="line"><span class="operator">/</span><span class="operator">/</span> 拼接的方式</span><br><span class="line"><span class="operator">/</span>api<span class="operator">/</span>coupon<span class="operator">/</span>searchCouponDetail?couponId<span class="operator">=</span><span class="number">1745486430339072</span><span class="operator">&amp;</span>type<span class="operator">=</span>product </span><br></pre></td></tr></table></figure></li>
 </ul>
 <blockquote>
 <p><strong>？后拼接参数的方式：这种方式一般作为过滤资源</strong></p>
@@ -433,7 +428,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -523,11 +518,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -535,7 +534,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -555,15 +562,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -579,11 +582,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -623,30 +630,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -659,7 +642,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -683,27 +686,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -719,11 +714,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -759,11 +766,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -776,14 +783,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -831,6 +830,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -839,7 +850,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -883,6 +894,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -908,26 +923,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

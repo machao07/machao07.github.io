@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Cookie | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="cookie123456789101112131415161718192021222324/*	商城保存记录密码的时候，可以使用cookie来存；	cookie:        必须安装环境；        localhost或127.0.0 开头。     演示：     	控制台 -&amp;gt; 应用池 -&amp;gt; cookie -&amp;gt;      		如果点击登陆的时候，页面当中就会保存一些c">
+  <meta name="description" content="cookie1234567891011121314151617181920212223242526/*	商城保存记录密码的时候，可以使用cookie来存；	cookie:        必须安装环境；        localhost或127.0.0 开头。     演示：     	控制台 -&amp;gt; 应用池 -&amp;gt; cookie -&amp;gt;      		如果点击登陆的时候，页面当中就会保">
 <meta name="keywords" content="JavaScript,cookie">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cookie">
 <meta property="og:url" content="http://yoursite.com/2019/03/04/cookie/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
-<meta property="og:description" content="cookie123456789101112131415161718192021222324/*	商城保存记录密码的时候，可以使用cookie来存；	cookie:        必须安装环境；        localhost或127.0.0 开头。     演示：     	控制台 -&amp;gt; 应用池 -&amp;gt; cookie -&amp;gt;      		如果点击登陆的时候，页面当中就会保存一些c">
+<meta property="og:description" content="cookie1234567891011121314151617181920212223242526/*	商城保存记录密码的时候，可以使用cookie来存；	cookie:        必须安装环境；        localhost或127.0.0 开头。     演示：     	控制台 -&amp;gt; 应用池 -&amp;gt; cookie -&amp;gt;      		如果点击登陆的时候，页面当中就会保">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-31T11:07:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cookie">
-<meta name="twitter:description" content="cookie123456789101112131415161718192021222324/*	商城保存记录密码的时候，可以使用cookie来存；	cookie:        必须安装环境；        localhost或127.0.0 开头。     演示：     	控制台 -&amp;gt; 应用池 -&amp;gt; cookie -&amp;gt;      		如果点击登陆的时候，页面当中就会保存一些c">
+<meta name="twitter:description" content="cookie1234567891011121314151617181920212223242526/*	商城保存记录密码的时候，可以使用cookie来存；	cookie:        必须安装环境；        localhost或127.0.0 开头。     演示：     	控制台 -&amp;gt; 应用池 -&amp;gt; cookie -&amp;gt;      		如果点击登陆的时候，页面当中就会保">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
   
@@ -216,20 +216,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	商城保存记录密码的时候，可以使用cookie来存；</span></span><br><span class="line"><span class="comment">	cookie:</span></span><br><span class="line"><span class="comment">        必须安装环境；</span></span><br><span class="line"><span class="comment">        localhost或127.0.0 开头。</span></span><br><span class="line"><span class="comment">     演示：</span></span><br><span class="line"><span class="comment">     	控制台 -&gt; 应用池 -&gt; cookie -&gt; </span></span><br><span class="line"><span class="comment">     		如果点击登陆的时候，页面当中就会保存一些cookie。</span></span><br><span class="line"><span class="comment">     		cookie是可以被劫持的。</span></span><br><span class="line"><span class="comment">     	设置 -&gt; 高级 -&gt; 内容设置 -&gt; cookie -&gt; </span></span><br><span class="line"><span class="comment">        	有保存对应的数据。</span></span><br><span class="line"><span class="comment">     </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//每个浏览器储存的位置都不一样。</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="built_in">document</span>.cookie ) <span class="comment">// 当前浏览器所储存的cookie；</span></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">'name = abc'</span>;</span><br><span class="line"><span class="built_in">console</span>.log( <span class="built_in">document</span>.cookie ); </span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	在设置一个名称叫做name,值为abc;储在哪个域名下的:127.0.0；Path:路径； expires（过期时间）：如果没有设置时间的话，就是当前会话（打开一个窗口，就是打开一个会话。）</span></span><br><span class="line"><span class="comment">	默认储存时间：</span></span><br><span class="line"><span class="comment">		默认就是当前会话，存储在运行内存里。</span></span><br><span class="line"><span class="comment">		当时会话没有结束的时候，可以继续 访问别的页面。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="设置cookie时间"><a href="#设置cookie时间" class="headerlink" title="设置cookie时间:"></a>设置cookie时间:</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	设置cookie时间:</span></span><br><span class="line"><span class="comment">		date.toMGTString() 用一个世界时间进行保存；</span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> date( <span class="keyword">new</span> <span class="built_in">Date</span>().getTime() + <span class="number">30</span>*<span class="number">60</span>*<span class="number">1000</span> );<span class="comment">//30分钟过期后的时间</span></span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">'name = abc'</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="删除cookie时间"><a href="#删除cookie时间" class="headerlink" title="删除cookie时间:"></a>删除cookie时间:</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.cookie = <span class="string">'name=;expires='</span>+<span class="keyword">new</span> <span class="built_in">Date</span>( <span class="keyword">new</span> <span class="built_in">Date</span>().getTime() - <span class="number">1</span> ).toGMTString();</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">document</span>.cookie)</span><br></pre></td></tr></table></figure>
-<h3 id="封装设置cookie"><a href="#封装设置cookie" class="headerlink" title="封装设置cookie"></a>封装设置cookie</h3><p><strong>设置一个 : </strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	1.封装cookie;</span></span><br><span class="line"><span class="comment">    	name:'';//名字</span></span><br><span class="line"><span class="comment">    	value:'';//值</span></span><br><span class="line"><span class="comment">    	expores:;//以分钟计时的cookie;</span></span><br><span class="line"><span class="comment">	2.功能实现：</span></span><br><span class="line"><span class="comment">		1.定义一个时间等于设置的时间；</span></span><br><span class="line"><span class="comment">		2.document.cookie 进行赋值；</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<p><strong>设置多个值 : </strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	1.用一个数组保存起来，之后里面可以设置多个值：</span></span><br><span class="line"><span class="comment">		每一组：</span></span><br><span class="line"><span class="comment">			名字属性(name)：test1</span></span><br><span class="line"><span class="comment">			属性值(value)：'30天'</span></span><br><span class="line"><span class="comment">			时间值(time):30*24*60</span></span><br><span class="line"><span class="comment">	2.封装区分对象为json对象还是数组对象。</span></span><br><span class="line"><span class="comment">    	function is_array( arr )&#123;  &#125;</span></span><br><span class="line"><span class="comment">			数组[]与json对象之间的区别在于：前者有长度而后者没有长度。</span></span><br><span class="line"><span class="comment">	3.判断内容：</span></span><br><span class="line"><span class="comment">		为假的时候为Json对象：</span></span><br><span class="line"><span class="comment">			直接传入已经封装好的值；</span></span><br><span class="line"><span class="comment">		为真的时候为数组【】对象：</span></span><br><span class="line"><span class="comment">			定义一个变量等于0，长度为数组的长度；</span></span><br><span class="line"><span class="comment">             递归：</span></span><br><span class="line"><span class="comment">             	setCookie(data[i])</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h3 id="删除一个cookie"><a href="#删除一个cookie" class="headerlink" title="删除一个cookie"></a>删除一个cookie</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	在原先的基础上去封装一个删除cookie；</span></span><br><span class="line"><span class="comment">		1.delCookie( _name )</span></span><br><span class="line"><span class="comment">			单独把设置方法抽象出来，设定一个过期的时间。</span></span><br><span class="line"><span class="comment">				name:_name;对象的名字</span></span><br><span class="line"><span class="comment">				value:'';对象属性值设置为空</span></span><br><span class="line"><span class="comment">				time:-1;</span></span><br><span class="line"><span class="comment">		2.进行加密与解密；</span></span><br><span class="line"><span class="comment">         3.用正则去进行匹配：</span></span><br><span class="line"><span class="comment">         	</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<h3 id="Jsonp-模糊词"><a href="#Jsonp-模糊词" class="headerlink" title="Jsonp 模糊词"></a>Jsonp 模糊词</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> oText = <span class="built_in">document</span>.getElementById(<span class="string">"text"</span>);</span><br><span class="line"><span class="keyword">let</span> oOpt = <span class="built_in">document</span>.getElementById(<span class="string">"option"</span>);   </span><br><span class="line">oText.oninput = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> val = oText.value</span><br><span class="line">        <span class="keyword">if</span> (!val) <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">let</span> oS = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>)</span><br><span class="line">        oS.src = <span class="string">`https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=<span class="subst">$&#123;val&#125;</span>&amp;cb=callback`</span></span><br><span class="line">        <span class="built_in">document</span>.body.appendChild(oS)</span><br><span class="line">        oS.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">document</span>.body.removeChild(oS)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> arr = data.s</span><br><span class="line">        <span class="keyword">let</span> len = arr.length</span><br><span class="line">        <span class="keyword">let</span> str1 = <span class="string">""</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            str1 += <span class="string">`&lt;li&gt;&lt;a href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=0&amp;rsv_idx=1&amp;tn=baidu&amp;wd=<span class="subst">$&#123;arr[i]&#125;</span>"&gt;<span class="subst">$&#123;arr[i]&#125;</span>&lt;/a&gt;&lt;/li&gt;`</span></span><br><span class="line">        &#125;</span><br><span class="line">        oOpt.innerHTML = str1</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h3><h5 id="focus-获得焦点-方法"><a href="#focus-获得焦点-方法" class="headerlink" title="focus() 获得焦点 方法"></a>focus() 获得焦点 方法</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> id=<span class="string">"wrap"</span>/&gt;</span><br><span class="line">wrap.focus() <span class="comment">//刷新 input就会获取焦点</span></span><br></pre></td></tr></table></figure>
-<h5 id="blur-失去焦点-方法"><a href="#blur-失去焦点-方法" class="headerlink" title="blur() 失去焦点 方法"></a>blur() 失去焦点 方法</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.onkeydown = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(e.keyCode === <span class="number">13</span>)&#123;</span><br><span class="line">    wrap.focus()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="onfocus-获得焦点事件"><a href="#onfocus-获得焦点事件" class="headerlink" title="onfocus 获得焦点事件"></a>onfocus 获得焦点事件</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wrap.onfocus = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="onblur-失去焦点事件"><a href="#onblur-失去焦点事件" class="headerlink" title="onblur 失去焦点事件"></a>onblur 失去焦点事件</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wrap.onblur = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	商城保存记录密码的时候，可以使用cookie来存；</span></span><br><span class="line"><span class="comment">	cookie:</span></span><br><span class="line"><span class="comment">        必须安装环境；</span></span><br><span class="line"><span class="comment">        localhost或127.0.0 开头。</span></span><br><span class="line"><span class="comment">     演示：</span></span><br><span class="line"><span class="comment">     	控制台 -&gt; 应用池 -&gt; cookie -&gt; </span></span><br><span class="line"><span class="comment">     		如果点击登陆的时候，页面当中就会保存一些cookie。</span></span><br><span class="line"><span class="comment">     		cookie是可以被劫持的。</span></span><br><span class="line"><span class="comment">     	设置 -&gt; 高级 -&gt; 内容设置 -&gt; cookie -&gt; </span></span><br><span class="line"><span class="comment">        	有保存对应的数据。</span></span><br><span class="line"><span class="comment">     </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//每个浏览器储存的位置都不一样。</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>( <span class="variable language_">document</span>.<span class="property">cookie</span> ) <span class="comment">// 当前浏览器所储存的cookie；</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="property">cookie</span> = <span class="string">&#x27;name = abc&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>( <span class="variable language_">document</span>.<span class="property">cookie</span> ); </span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	在设置一个名称叫做name,值为abc;储在哪个域名下的:127.0.0；Path:路径； expires（过期时间）：如果没有设置时间的话，就是当前会话（打开一个窗口，就是打开一个会话。）</span></span><br><span class="line"><span class="comment">	默认储存时间：</span></span><br><span class="line"><span class="comment">		默认就是当前会话，存储在运行内存里。</span></span><br><span class="line"><span class="comment">		当时会话没有结束的时候，可以继续 访问别的页面。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+<h3 id="设置cookie时间"><a href="#设置cookie时间" class="headerlink" title="设置cookie时间:"></a>设置cookie时间:</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	设置cookie时间:</span></span><br><span class="line"><span class="comment">		date.toMGTString() 用一个世界时间进行保存；</span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="title function_">date</span>( <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">getTime</span>() + <span class="number">30</span>*<span class="number">60</span>*<span class="number">1000</span> );<span class="comment">//30分钟过期后的时间</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="property">cookie</span> = <span class="string">&#x27;name = abc&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除cookie时间"><a href="#删除cookie时间" class="headerlink" title="删除cookie时间:"></a>删除cookie时间:</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="property">cookie</span> = <span class="string">&#x27;name=;expires=&#x27;</span>+<span class="keyword">new</span> <span class="title class_">Date</span>( <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">getTime</span>() - <span class="number">1</span> ).<span class="title function_">toGMTString</span>();</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">document</span>.<span class="property">cookie</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="封装设置cookie"><a href="#封装设置cookie" class="headerlink" title="封装设置cookie"></a>封装设置cookie</h3><p>**设置一个 : **</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	1.封装cookie;</span></span><br><span class="line"><span class="comment">    	name:&#x27;&#x27;;//名字</span></span><br><span class="line"><span class="comment">    	value:&#x27;&#x27;;//值</span></span><br><span class="line"><span class="comment">    	expores:;//以分钟计时的cookie;</span></span><br><span class="line"><span class="comment">	2.功能实现：</span></span><br><span class="line"><span class="comment">		1.定义一个时间等于设置的时间；</span></span><br><span class="line"><span class="comment">		2.document.cookie 进行赋值；</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>**设置多个值 : **</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	1.用一个数组保存起来，之后里面可以设置多个值：</span></span><br><span class="line"><span class="comment">		每一组：</span></span><br><span class="line"><span class="comment">			名字属性(name)：test1</span></span><br><span class="line"><span class="comment">			属性值(value)：&#x27;30天&#x27;</span></span><br><span class="line"><span class="comment">			时间值(time):30*24*60</span></span><br><span class="line"><span class="comment">	2.封装区分对象为json对象还是数组对象。</span></span><br><span class="line"><span class="comment">    	function is_array( arr )&#123;  &#125;</span></span><br><span class="line"><span class="comment">			数组[]与json对象之间的区别在于：前者有长度而后者没有长度。</span></span><br><span class="line"><span class="comment">	3.判断内容：</span></span><br><span class="line"><span class="comment">		为假的时候为Json对象：</span></span><br><span class="line"><span class="comment">			直接传入已经封装好的值；</span></span><br><span class="line"><span class="comment">		为真的时候为数组【】对象：</span></span><br><span class="line"><span class="comment">			定义一个变量等于0，长度为数组的长度；</span></span><br><span class="line"><span class="comment">             递归：</span></span><br><span class="line"><span class="comment">             	setCookie(data[i])</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="删除一个cookie"><a href="#删除一个cookie" class="headerlink" title="删除一个cookie"></a>删除一个cookie</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	在原先的基础上去封装一个删除cookie；</span></span><br><span class="line"><span class="comment">		1.delCookie( _name )</span></span><br><span class="line"><span class="comment">			单独把设置方法抽象出来，设定一个过期的时间。</span></span><br><span class="line"><span class="comment">				name:_name;对象的名字</span></span><br><span class="line"><span class="comment">				value:&#x27;&#x27;;对象属性值设置为空</span></span><br><span class="line"><span class="comment">				time:-1;</span></span><br><span class="line"><span class="comment">		2.进行加密与解密；</span></span><br><span class="line"><span class="comment">         3.用正则去进行匹配：</span></span><br><span class="line"><span class="comment">         	</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Jsonp-模糊词"><a href="#Jsonp-模糊词" class="headerlink" title="Jsonp 模糊词"></a>Jsonp 模糊词</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> oText = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;text&quot;</span>);</span><br><span class="line"><span class="keyword">let</span> oOpt = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;option&quot;</span>);   </span><br><span class="line">oText.<span class="property">oninput</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> val = oText.<span class="property">value</span></span><br><span class="line">        <span class="keyword">if</span> (!val) <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">let</span> oS = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;script&quot;</span>)</span><br><span class="line">        oS.<span class="property">src</span> = <span class="string">`https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=<span class="subst">$&#123;val&#125;</span>&amp;cb=callback`</span></span><br><span class="line">        <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(oS)</span><br><span class="line">        oS.<span class="property">onload</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">removeChild</span>(oS)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">callback</span>(<span class="params">data</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> arr = data.<span class="property">s</span></span><br><span class="line">        <span class="keyword">let</span> len = arr.<span class="property">length</span></span><br><span class="line">        <span class="keyword">let</span> str1 = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            str1 += <span class="string">`&lt;li&gt;&lt;a href=&quot;https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=0&amp;rsv_idx=1&amp;tn=baidu&amp;wd=<span class="subst">$&#123;arr[i]&#125;</span>&quot;&gt;<span class="subst">$&#123;arr[i]&#125;</span>&lt;/a&gt;&lt;/li&gt;`</span></span><br><span class="line">        &#125;</span><br><span class="line">        oOpt.<span class="property">innerHTML</span> = str1</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h3><h5 id="focus-获得焦点-方法"><a href="#focus-获得焦点-方法" class="headerlink" title="focus() 获得焦点 方法"></a>focus() 获得焦点 方法</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">&quot;text&quot;</span> id=<span class="string">&quot;wrap&quot;</span>/&gt;</span><br><span class="line">wrap.<span class="title function_">focus</span>() <span class="comment">//刷新 input就会获取焦点</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="blur-失去焦点-方法"><a href="#blur-失去焦点-方法" class="headerlink" title="blur() 失去焦点 方法"></a>blur() 失去焦点 方法</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="property">onkeydown</span> = <span class="keyword">function</span>(<span class="params">e</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(e.<span class="property">keyCode</span> === <span class="number">13</span>)&#123;</span><br><span class="line">    wrap.<span class="title function_">focus</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="onfocus-获得焦点事件"><a href="#onfocus-获得焦点事件" class="headerlink" title="onfocus 获得焦点事件"></a>onfocus 获得焦点事件</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wrap.<span class="property">onfocus</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="onblur-失去焦点事件"><a href="#onblur-失去焦点事件" class="headerlink" title="onblur 失去焦点事件"></a>onblur 失去焦点事件</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wrap.<span class="property">onblur</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h5 id="onchange-内容发生改变失去焦点-或者回车提交-才触发"><a href="#onchange-内容发生改变失去焦点-或者回车提交-才触发" class="headerlink" title="onchange 内容发生改变失去焦点(或者回车提交)才触发"></a>onchange 内容发生改变失去焦点(或者回车提交)才触发</h5><h5 id="oninput-内容发生改变就会触发"><a href="#oninput-内容发生改变就会触发" class="headerlink" title="oninput 内容发生改变就会触发"></a>oninput 内容发生改变就会触发</h5>
       
 
@@ -419,7 +435,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -509,11 +525,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -521,7 +541,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -541,15 +569,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -565,11 +589,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -609,30 +637,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -645,7 +649,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -669,27 +693,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -705,11 +721,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -745,11 +773,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -762,14 +790,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -817,6 +837,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -825,7 +857,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -869,6 +901,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -894,26 +930,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

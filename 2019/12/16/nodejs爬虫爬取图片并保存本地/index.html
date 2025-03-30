@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>nodejs爬虫爬取图片并保存本地 | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关键点： 分析请求网址的精简（request / http） 分析图片地址——正则匹配 fs模块createWriteStream  1、请求网址精简1https://image.baidu.com/search/index?tn=baiduimage&amp;amp;word=网址 2、分析图片地址1234http://img5.imgtn.bdimg.com/it/u=2577576757,38412">
+  <meta name="description" content="关键点： 分析请求网址的精简（request &amp;#x2F; http） 分析图片地址——正则匹配 fs模块createWriteStream  1、请求网址精简1https://image.baidu.com/search/index?tn=baiduimage&amp;amp;word=网址  2、分析图片地址1234http://img5.imgtn.bdimg.com/it/u=2577576757">
 <meta name="keywords" content="node,爬虫">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nodejs爬虫爬取图片并保存本地">
 <meta property="og:url" content="http://yoursite.com/2019/12/16/nodejs爬虫爬取图片并保存本地/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
-<meta property="og:description" content="关键点： 分析请求网址的精简（request / http） 分析图片地址——正则匹配 fs模块createWriteStream  1、请求网址精简1https://image.baidu.com/search/index?tn=baiduimage&amp;amp;word=网址 2、分析图片地址1234http://img5.imgtn.bdimg.com/it/u=2577576757,38412">
+<meta property="og:description" content="关键点： 分析请求网址的精简（request &amp;#x2F; http） 分析图片地址——正则匹配 fs模块createWriteStream  1、请求网址精简1https://image.baidu.com/search/index?tn=baiduimage&amp;amp;word=网址  2、分析图片地址1234http://img5.imgtn.bdimg.com/it/u=2577576757">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-09-19T03:38:47.811Z">
+<meta property="og:updated_time" content="2020-09-19T03:38:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nodejs爬虫爬取图片并保存本地">
-<meta name="twitter:description" content="关键点： 分析请求网址的精简（request / http） 分析图片地址——正则匹配 fs模块createWriteStream  1、请求网址精简1https://image.baidu.com/search/index?tn=baiduimage&amp;amp;word=网址 2、分析图片地址1234http://img5.imgtn.bdimg.com/it/u=2577576757,38412">
+<meta name="twitter:description" content="关键点： 分析请求网址的精简（request &amp;#x2F; http） 分析图片地址——正则匹配 fs模块createWriteStream  1、请求网址精简1https://image.baidu.com/search/index?tn=baiduimage&amp;amp;word=网址  2、分析图片地址1234http://img5.imgtn.bdimg.com/it/u=2577576757">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
   
@@ -217,18 +217,22 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="关键点："><a href="#关键点：" class="headerlink" title="关键点："></a>关键点：</h4><ol>
-<li>分析请求网址的精简（request / http）</li>
+<li>分析请求网址的精简（request &#x2F; http）</li>
 <li>分析图片地址——正则匹配</li>
 <li>fs模块<code>createWriteStream</code></li>
 </ol>
-<h3 id="1、请求网址精简"><a href="#1、请求网址精简" class="headerlink" title="1、请求网址精简"></a>1、请求网址精简</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//image.baidu.com/search/index?tn=baiduimage&amp;word=网址</span></span><br></pre></td></tr></table></figure>
-<h3 id="2、分析图片地址"><a href="#2、分析图片地址" class="headerlink" title="2、分析图片地址"></a>2、分析图片地址</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//img5.imgtn.bdimg.com/it/u=2577576757,3841266884&amp;fm=26&amp;gp=0.jpg</span></span><br><span class="line">http:<span class="comment">//img3.imgtn.bdimg.com/it/u=3004133359,1252464200&amp;fm=26&amp;gp=0.jpg</span></span><br><span class="line">http:<span class="comment">//img4.imgtn.bdimg.com/it/u=3385138246,1740869554&amp;fm=26&amp;gp=0.jpg</span></span><br><span class="line">http:<span class="comment">//img0.imgtn.bdimg.com/it/u=2479299018,195912564&amp;fm=26&amp;gp=0.jpg</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
+<h3 id="1、请求网址精简"><a href="#1、请求网址精简" class="headerlink" title="1、请求网址精简"></a>1、请求网址精简</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">https</span>:<span class="comment">//image.baidu.com/search/index?tn=baiduimage&amp;word=网址</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2、分析图片地址"><a href="#2、分析图片地址" class="headerlink" title="2、分析图片地址"></a>2、分析图片地址</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">http</span>:<span class="comment">//img5.imgtn.bdimg.com/it/u=2577576757,3841266884&amp;fm=26&amp;gp=0.jpg</span></span><br><span class="line"><span class="attr">http</span>:<span class="comment">//img3.imgtn.bdimg.com/it/u=3004133359,1252464200&amp;fm=26&amp;gp=0.jpg</span></span><br><span class="line"><span class="attr">http</span>:<span class="comment">//img4.imgtn.bdimg.com/it/u=3385138246,1740869554&amp;fm=26&amp;gp=0.jpg</span></span><br><span class="line"><span class="attr">http</span>:<span class="comment">//img0.imgtn.bdimg.com/it/u=2479299018,195912564&amp;fm=26&amp;gp=0.jpg</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// http://img数字.imgtn.bdimg.com/it/u= 数字 ，&amp; .jpg</span></span><br><span class="line"><span class="keyword">let</span> reg = <span class="regexp">/https:\/\/img\d+\.imgtn\.bdimg\.com[\/0-9a-z_=,&amp;]+\.(jpg|png|gif)/ig</span>;</span><br></pre></td></tr></table></figure>
+
 <h3 id="3、保存图片至本地"><a href="#3、保存图片至本地" class="headerlink" title="3、保存图片至本地"></a>3、保存图片至本地</h3><blockquote>
 <p><strong>如果request只传入options参数（或者直接传入url）</strong><br><strong>它返回的是可回流，直接通过<code>pipe API</code>写入到可写流</strong><br><strong><code>fs.createWriteStream</code>写入至本地文件夹</strong></p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> request = <span class="built_in">require</span>(<span class="string">'request'</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 中文编码</span></span><br><span class="line"><span class="keyword">let</span> word = <span class="built_in">encodeURI</span>(<span class="string">'新垣结衣'</span>)</span><br><span class="line"></span><br><span class="line">request(&#123;</span><br><span class="line">    method: <span class="string">'get'</span>,</span><br><span class="line">    url: <span class="string">'https://image.baidu.com/search/index?tn=baiduimage&amp;word='</span> + word,</span><br><span class="line">    headers: &#123;</span><br><span class="line">        <span class="string">"user-agent"</span>: <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;, (err,res, data) =&gt; &#123;</span><br><span class="line">    <span class="comment">// console.log(data)</span></span><br><span class="line">    <span class="keyword">let</span> reg = <span class="regexp">/https:\/\/img\d+\.imgtn\.bdimg\.com[\/0-9a-z_=,&amp;]+\.(jpg|png|gif)/ig</span>;</span><br><span class="line">    <span class="keyword">let</span> infoArray = data.match(reg);</span><br><span class="line">    <span class="comment">// console.log(infoArray)</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 保存图片</span></span><br><span class="line">    infoArray.forEach(<span class="function">(<span class="params">v, i</span>) =&gt;</span> &#123;</span><br><span class="line">        request(v).pipe(fs.createWriteStream(path.join(__dirname, <span class="string">'./baiduimg/'</span> + i + <span class="string">'.jpg'</span>)));</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> request = <span class="built_in">require</span>(<span class="string">&#x27;request&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 中文编码</span></span><br><span class="line"><span class="keyword">let</span> word = <span class="built_in">encodeURI</span>(<span class="string">&#x27;新垣结衣&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="title function_">request</span>(&#123;</span><br><span class="line">    <span class="attr">method</span>: <span class="string">&#x27;get&#x27;</span>,</span><br><span class="line">    <span class="attr">url</span>: <span class="string">&#x27;https://image.baidu.com/search/index?tn=baiduimage&amp;word=&#x27;</span> + word,</span><br><span class="line">    <span class="attr">headers</span>: &#123;</span><br><span class="line">        <span class="string">&quot;user-agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;, <span class="function">(<span class="params">err,res, data</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// console.log(data)</span></span><br><span class="line">    <span class="keyword">let</span> reg = <span class="regexp">/https:\/\/img\d+\.imgtn\.bdimg\.com[\/0-9a-z_=,&amp;]+\.(jpg|png|gif)/ig</span>;</span><br><span class="line">    <span class="keyword">let</span> infoArray = data.<span class="title function_">match</span>(reg);</span><br><span class="line">    <span class="comment">// console.log(infoArray)</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 保存图片</span></span><br><span class="line">    infoArray.<span class="title function_">forEach</span>(<span class="function">(<span class="params">v, i</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">request</span>(v).<span class="title function_">pipe</span>(fs.<span class="title function_">createWriteStream</span>(path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;./baiduimg/&#x27;</span> + i + <span class="string">&#x27;.jpg&#x27;</span>)));</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
       
 
       
@@ -417,7 +421,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -507,11 +511,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -519,7 +527,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -539,15 +555,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -563,11 +575,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -607,30 +623,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -643,7 +635,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -667,27 +679,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -703,11 +707,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -743,11 +759,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -760,14 +776,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -815,6 +823,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -823,7 +843,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -867,6 +887,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -892,26 +916,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

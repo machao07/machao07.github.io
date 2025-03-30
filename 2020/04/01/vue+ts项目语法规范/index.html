@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue+ts项目语法规范 | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、声明函数 private、public、protected  1private formStatus: string = &apos;create&apos;; 2、@ 装饰器（替换钩子函数）  从vue-property-decorator引入相应的装饰器（Component, Prop, Watch…） !: 表示强制解析, 告诉ts编辑器一定有值 相关装饰器的用法">
+  <meta name="description" content="1、声明函数 private、public、protected  1private formStatus: string = &amp;#x27;create&amp;#x27;;  2、@ 装饰器（替换钩子函数）  从vue-property-decorator引入相应的装饰器（Component, Prop, Watch…） !: 表示强制解析, 告诉ts编辑器一定有值 相关装饰器的用法">
 <meta name="keywords" content="vue,typescript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue+ts项目语法规范">
 <meta property="og:url" content="http://yoursite.com/2020/04/01/vue+ts项目语法规范/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
-<meta property="og:description" content="1、声明函数 private、public、protected  1private formStatus: string = &apos;create&apos;; 2、@ 装饰器（替换钩子函数）  从vue-property-decorator引入相应的装饰器（Component, Prop, Watch…） !: 表示强制解析, 告诉ts编辑器一定有值 相关装饰器的用法">
+<meta property="og:description" content="1、声明函数 private、public、protected  1private formStatus: string = &amp;#x27;create&amp;#x27;;  2、@ 装饰器（替换钩子函数）  从vue-property-decorator引入相应的装饰器（Component, Prop, Watch…） !: 表示强制解析, 告诉ts编辑器一定有值 相关装饰器的用法">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-02-07T15:03:49.500Z">
+<meta property="og:updated_time" content="2021-02-07T15:03:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue+ts项目语法规范">
-<meta name="twitter:description" content="1、声明函数 private、public、protected  1private formStatus: string = &apos;create&apos;; 2、@ 装饰器（替换钩子函数）  从vue-property-decorator引入相应的装饰器（Component, Prop, Watch…） !: 表示强制解析, 告诉ts编辑器一定有值 相关装饰器的用法">
+<meta name="twitter:description" content="1、声明函数 private、public、protected  1private formStatus: string = &amp;#x27;create&amp;#x27;;  2、@ 装饰器（替换钩子函数）  从vue-property-decorator引入相应的装饰器（Component, Prop, Watch…） !: 表示强制解析, 告诉ts编辑器一定有值 相关装饰器的用法">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
   
@@ -219,16 +219,18 @@
         <h4 id="1、声明函数"><a href="#1、声明函数" class="headerlink" title="1、声明函数"></a>1、声明函数</h4><blockquote>
 <p>private、public、protected</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private formStatus: string = <span class="string">'create'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private <span class="attr">formStatus</span>: string = <span class="string">&#x27;create&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
 <h4 id="2、-装饰器（替换钩子函数）"><a href="#2、-装饰器（替换钩子函数）" class="headerlink" title="2、@ 装饰器（替换钩子函数）"></a>2、@ 装饰器（替换钩子函数）</h4><blockquote>
 <ul>
 <li>从vue-property-decorator引入相应的装饰器（Component, Prop, Watch…）</li>
 <li><code>!:</code> 表示强制解析, 告诉ts编辑器一定有值</li>
-<li><a href="https://github.com/kaorun343/vue-property-decorator" target="_blank" rel="noopener">相关装饰器的用法</a></li>
+<li><a href="https://github.com/kaorun343/vue-property-decorator">相关装饰器的用法</a></li>
 </ul>
 </blockquote>
-<a id="more"></a>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"ts"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> &#123; Component, Prop, Watch, Vue &#125; <span class="keyword">from</span> <span class="string">"vue-property-decorator"</span>;</span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> vHead <span class="keyword">from</span> <span class="string">'./header.vue'</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">@Component(&#123;</span></span><br><span class="line"><span class="undefined">    components: &#123;</span></span><br><span class="line"><span class="undefined">        vHead,</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">&#125;)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">extends</span> <span class="title">Vue</span> </span>&#123;</span></span><br><span class="line"><span class="undefined">    @Prop(&#123;</span></span><br><span class="line"><span class="javascript">        type: <span class="built_in">Object</span>,</span></span><br><span class="line"><span class="javascript">        required: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">        <span class="keyword">default</span>: &#123;&#125;</span></span><br><span class="line"><span class="undefined">    &#125;) formData !: object</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    @Watch(<span class="string">'formData'</span>, &#123; <span class="attr">immediate</span>: <span class="literal">true</span>, <span class="attr">deep</span>: <span class="literal">true</span> &#125;)</span></span><br><span class="line"><span class="undefined">    private onFormDatachanged(val: any)&#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">// console.log(val)</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.currentId = val.id;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.formStatus = val.dialogStatus;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="javascript">    private formStatus: string = <span class="string">'create'</span>;</span></span><br><span class="line"><span class="undefined">&#125;;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">&quot;ts&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> &#123; <span class="title class_">Component</span>, <span class="title class_">Prop</span>, <span class="title class_">Watch</span>, <span class="title class_">Vue</span> &#125; <span class="keyword">from</span> <span class="string">&quot;vue-property-decorator&quot;</span>;</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> vHead <span class="keyword">from</span> <span class="string">&#x27;./header.vue&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">@<span class="title class_">Component</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">components</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">        vHead,</span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">&#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> <span class="title class_">Test</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Vue</span> &#123;</span></span><br><span class="line"><span class="language-javascript">    @<span class="title class_">Prop</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">type</span>: <span class="title class_">Object</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">required</span>: <span class="literal">false</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">default</span>: &#123;&#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;) formData !: object</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    @<span class="title class_">Watch</span>(<span class="string">&#x27;formData&#x27;</span>, &#123; <span class="attr">immediate</span>: <span class="literal">true</span>, <span class="attr">deep</span>: <span class="literal">true</span> &#125;)</span></span><br><span class="line"><span class="language-javascript">    private <span class="title function_">onFormDatachanged</span>(<span class="params">val: any</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// console.log(val)</span></span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">currentId</span> = val.<span class="property">id</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">formStatus</span> = val.<span class="property">dialogStatus</span>;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    </span></span><br><span class="line"><span class="language-javascript">    private <span class="attr">formStatus</span>: string = <span class="string">&#x27;create&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">&#125;;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -356,7 +358,7 @@
     </a>
   
   
-    <a href="/2020/03/26/vue | react 项目中使用echarts/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/03/26/vue _ react 项目中使用echarts/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">vue/react 项目中使用echarts</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -417,7 +419,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -507,11 +509,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -519,7 +525,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -539,15 +553,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -563,11 +573,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -607,30 +621,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -643,7 +633,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -667,27 +677,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -703,11 +705,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -743,11 +757,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -760,14 +774,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -815,6 +821,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -823,7 +841,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -867,6 +885,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -892,26 +914,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

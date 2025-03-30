@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue项目H5微信支付(js-sdk)和支付宝支付 | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 获取内置浏览器标识12345678微信：export function isWeixin() &amp;#123;    var ua = window.navigator.userAgent.toLowerCase();    if(ua.match(/MicroMessenger/i) == &apos;micromessenger&apos;)&amp;#123;        return true;    &amp;#125">
-<meta name="keywords" content="JavaScript,ES6,Vue,WeChatPay,AliPay,公众号">
+  <meta name="description" content="1. 获取内置浏览器标识12345678微信：export function isWeixin() &amp;#123;    var ua = window.navigator.userAgent.toLowerCase();    if(ua.match(/MicroMessenger/i) == &amp;#x27;micromessenger&amp;#x27;)&amp;#123;        return true">
+<meta name="keywords" content="ES6,JavaScript,Vue,WeChatPay,AliPay,公众号">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue项目H5微信支付(js-sdk)和支付宝支付">
 <meta property="og:url" content="http://yoursite.com/2019/10/12/vue项目H5微信支付(js-sdk)和支付宝支付/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
-<meta property="og:description" content="1. 获取内置浏览器标识12345678微信：export function isWeixin() &amp;#123;    var ua = window.navigator.userAgent.toLowerCase();    if(ua.match(/MicroMessenger/i) == &apos;micromessenger&apos;)&amp;#123;        return true;    &amp;#125">
+<meta property="og:description" content="1. 获取内置浏览器标识12345678微信：export function isWeixin() &amp;#123;    var ua = window.navigator.userAgent.toLowerCase();    if(ua.match(/MicroMessenger/i) == &amp;#x27;micromessenger&amp;#x27;)&amp;#123;        return true">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com//machao07/image-store/blob/master/blog/20190412.png?raw=true">
 <meta property="og:updated_time" content="2019-12-22T13:38:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue项目H5微信支付(js-sdk)和支付宝支付">
-<meta name="twitter:description" content="1. 获取内置浏览器标识12345678微信：export function isWeixin() &amp;#123;    var ua = window.navigator.userAgent.toLowerCase();    if(ua.match(/MicroMessenger/i) == &apos;micromessenger&apos;)&amp;#123;        return true;    &amp;#125">
+<meta name="twitter:description" content="1. 获取内置浏览器标识12345678微信：export function isWeixin() &amp;#123;    var ua = window.navigator.userAgent.toLowerCase();    if(ua.match(/MicroMessenger/i) == &amp;#x27;micromessenger&amp;#x27;)&amp;#123;        return true">
 <meta name="twitter:image" content="https://github.com//machao07/image-store/blob/master/blog/20190412.png?raw=true">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
@@ -218,15 +218,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-获取内置浏览器标识"><a href="#1-获取内置浏览器标识" class="headerlink" title="1. 获取内置浏览器标识"></a>1. 获取内置浏览器标识</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">微信：</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">isWeixin</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ua = <span class="built_in">window</span>.navigator.userAgent.toLowerCase();</span><br><span class="line">    <span class="keyword">if</span>(ua.match(<span class="regexp">/MicroMessenger/i</span>) == <span class="string">'micromessenger'</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">支付宝：</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">isAlipay</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ua = <span class="built_in">window</span>.navigator.userAgent.toLowerCase();</span><br><span class="line">    <span class="keyword">if</span>(ua.match(<span class="regexp">/Alipay/i</span>) == <span class="string">"alipay"</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h3><p>– WeixinJSBridge.invoke    微信支付<br>– AlipayJSBridge.call      支付宝支付</p>
-<p>参考文档：<a href="http://myjsapi.alipay.com/jsapi/native/trade-pay.html" title="支付宝H5开发文档" target="_blank" rel="noopener">支付宝H5支付Api文档</a></p>
-<a id="more"></a>
-<p><code>order自己的支付接口</code>(返回微信必传参数)<br> – appId timeStamp package signType paySign</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(isWeixin()) &#123;</span><br><span class="line">    <span class="keyword">let</span> postData = &#123;</span><br><span class="line">        sellerId: <span class="keyword">this</span>.sellerId,</span><br><span class="line">        payType: <span class="keyword">this</span>.payType,</span><br><span class="line">        payTool: <span class="number">2</span>,</span><br><span class="line">        os: <span class="number">2</span>,</span><br><span class="line">        payMoney: <span class="keyword">this</span>.payMoney</span><br><span class="line">    &#125;;</span><br><span class="line">    order(postData).then(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> response = res.data;</span><br><span class="line">        <span class="keyword">let</span> code = response.code;</span><br><span class="line"></span><br><span class="line">        WeixinJSBridge.invoke(</span><br><span class="line">            <span class="string">'getBrandWCPayRequest'</span>, &#123;</span><br><span class="line">                <span class="string">'appId'</span>: response.appId,</span><br><span class="line">                <span class="string">'timeStamp'</span>:response.timeStamp,</span><br><span class="line">                <span class="string">'nonceStr'</span>: response.nonceStr,</span><br><span class="line">                <span class="string">'package'</span>: response.package,</span><br><span class="line">                <span class="string">'signType'</span>: response.signType,</span><br><span class="line">                <span class="string">'paySign'</span>: response.paySign</span><br><span class="line">            &#125;,</span><br><span class="line">            (res2)=&gt;&#123;</span><br><span class="line">                <span class="keyword">if</span> (res2.err_msg === <span class="string">'get_brand_wcpay_request:ok'</span>) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.toSuccess(code, sellerName, payMoney, <span class="number">0</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (res2.err_msg === <span class="string">'get_brand_wcpay_request:cancel'</span>) &#123;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (res2.err_msg === <span class="string">'get_brand_wcpay_request:fail'</span>) &#123;</span><br><span class="line">                    MessageBox(<span class="string">'错误提示'</span>, <span class="string">"支付失败"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        );</span><br><span class="line">    &#125;).catch(<span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">        MessageBox(<span class="string">'错误提示'</span>, <span class="string">"支付失败"</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125; <span class="keyword">else</span> (isAlipay()) &#123;</span><br><span class="line">    <span class="keyword">let</span> postData = &#123;</span><br><span class="line">        sellerId: <span class="keyword">this</span>.sellerId,</span><br><span class="line">        payType: <span class="keyword">this</span>.payType,</span><br><span class="line">        payTool: <span class="number">3</span>,</span><br><span class="line">        os: <span class="number">2</span>,</span><br><span class="line">        payMoney: <span class="keyword">this</span>.payMoney,</span><br><span class="line">        openId: getAlipayToken()</span><br><span class="line">    &#125;;</span><br><span class="line">    alipay_order(postData).then(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> response = res.data;</span><br><span class="line">        <span class="keyword">let</span> code = response.code;</span><br><span class="line"></span><br><span class="line">        AlipayJSBridge.call(<span class="string">"tradePay"</span>, &#123;</span><br><span class="line">            orderStr: response.ali</span><br><span class="line">        &#125;, (result)=&gt;&#123;</span><br><span class="line">            <span class="keyword">let</span> resultCode = result.resultCode;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(resultCode == <span class="string">"9000"</span> || resultCode == <span class="string">"8000"</span> || resultCode == <span class="string">"6004"</span>)&#123;</span><br><span class="line">                <span class="keyword">let</span> post = &#123;</span><br><span class="line">                    orderCode: code,</span><br><span class="line">                    payTool: <span class="number">3</span>,</span><br><span class="line">                    os: <span class="number">2</span>,</span><br><span class="line">                &#125;</span><br><span class="line">                myAlipay(post).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">let</span> payStatus = res.data.payStatus</span><br><span class="line">                    <span class="keyword">if</span>(payStatus == <span class="string">"1"</span>) &#123;</span><br><span class="line">                        <span class="comment">//付款成功</span></span><br><span class="line">                        <span class="keyword">this</span>.toSuccess(code, sellerName, payMoney, <span class="number">1</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;).catch(<span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">        MessageBox(<span class="string">'错误提示'</span>, <span class="string">"支付失败"</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="Order接口返回"><a href="#Order接口返回" class="headerlink" title="Order接口返回"></a>Order接口返回</h4><p><img src="https://github.com//machao07/image-store/blob/master/blog/20190412.png?raw=true"></p>
+        <h3 id="1-获取内置浏览器标识"><a href="#1-获取内置浏览器标识" class="headerlink" title="1. 获取内置浏览器标识"></a>1. 获取内置浏览器标识</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">微信：</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">isWeixin</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> ua = <span class="variable language_">window</span>.<span class="property">navigator</span>.<span class="property">userAgent</span>.<span class="title function_">toLowerCase</span>();</span><br><span class="line">    <span class="keyword">if</span>(ua.<span class="title function_">match</span>(<span class="regexp">/MicroMessenger/i</span>) == <span class="string">&#x27;micromessenger&#x27;</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">支付宝：</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">isAlipay</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> ua = <span class="variable language_">window</span>.<span class="property">navigator</span>.<span class="property">userAgent</span>.<span class="title function_">toLowerCase</span>();</span><br><span class="line">    <span class="keyword">if</span>(ua.<span class="title function_">match</span>(<span class="regexp">/Alipay/i</span>) == <span class="string">&quot;alipay&quot;</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h3><p>– WeixinJSBridge.invoke    微信支付<br>– AlipayJSBridge.call      支付宝支付</p>
+<p>参考文档：<a href="http://myjsapi.alipay.com/jsapi/native/trade-pay.html" title="支付宝H5开发文档">支付宝H5支付Api文档</a></p>
+<span id="more"></span>
+
+<p><code>order自己的支付接口</code>(返回微信必传参数)<br> – appId timeStamp package signType paySign</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="title function_">isWeixin</span>()) &#123;</span><br><span class="line">    <span class="keyword">let</span> postData = &#123;</span><br><span class="line">        <span class="attr">sellerId</span>: <span class="variable language_">this</span>.<span class="property">sellerId</span>,</span><br><span class="line">        <span class="attr">payType</span>: <span class="variable language_">this</span>.<span class="property">payType</span>,</span><br><span class="line">        <span class="attr">payTool</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="attr">os</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="attr">payMoney</span>: <span class="variable language_">this</span>.<span class="property">payMoney</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">order</span>(postData).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> response = res.<span class="property">data</span>;</span><br><span class="line">        <span class="keyword">let</span> code = response.<span class="property">code</span>;</span><br><span class="line"></span><br><span class="line">        <span class="title class_">WeixinJSBridge</span>.<span class="title function_">invoke</span>(</span><br><span class="line">            <span class="string">&#x27;getBrandWCPayRequest&#x27;</span>, &#123;</span><br><span class="line">                <span class="string">&#x27;appId&#x27;</span>: response.<span class="property">appId</span>,</span><br><span class="line">                <span class="string">&#x27;timeStamp&#x27;</span>:response.<span class="property">timeStamp</span>,</span><br><span class="line">                <span class="string">&#x27;nonceStr&#x27;</span>: response.<span class="property">nonceStr</span>,</span><br><span class="line">                <span class="string">&#x27;package&#x27;</span>: response.<span class="property">package</span>,</span><br><span class="line">                <span class="string">&#x27;signType&#x27;</span>: response.<span class="property">signType</span>,</span><br><span class="line">                <span class="string">&#x27;paySign&#x27;</span>: response.<span class="property">paySign</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="function">(<span class="params">res2</span>)=&gt;</span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (res2.<span class="property">err_msg</span> === <span class="string">&#x27;get_brand_wcpay_request:ok&#x27;</span>) &#123;</span><br><span class="line">                    <span class="variable language_">this</span>.<span class="title function_">toSuccess</span>(code, sellerName, payMoney, <span class="number">0</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (res2.<span class="property">err_msg</span> === <span class="string">&#x27;get_brand_wcpay_request:cancel&#x27;</span>) &#123;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (res2.<span class="property">err_msg</span> === <span class="string">&#x27;get_brand_wcpay_request:fail&#x27;</span>) &#123;</span><br><span class="line">                    <span class="title class_">MessageBox</span>(<span class="string">&#x27;错误提示&#x27;</span>, <span class="string">&quot;支付失败&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        );</span><br><span class="line">    &#125;).<span class="title function_">catch</span>(<span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="title class_">MessageBox</span>(<span class="string">&#x27;错误提示&#x27;</span>, <span class="string">&quot;支付失败&quot;</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125; <span class="title function_">else</span> (<span class="title function_">isAlipay</span>()) &#123;</span><br><span class="line">    <span class="keyword">let</span> postData = &#123;</span><br><span class="line">        <span class="attr">sellerId</span>: <span class="variable language_">this</span>.<span class="property">sellerId</span>,</span><br><span class="line">        <span class="attr">payType</span>: <span class="variable language_">this</span>.<span class="property">payType</span>,</span><br><span class="line">        <span class="attr">payTool</span>: <span class="number">3</span>,</span><br><span class="line">        <span class="attr">os</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="attr">payMoney</span>: <span class="variable language_">this</span>.<span class="property">payMoney</span>,</span><br><span class="line">        <span class="attr">openId</span>: <span class="title function_">getAlipayToken</span>()</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">alipay_order</span>(postData).<span class="title function_">then</span>(<span class="function">(<span class="params">res</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> response = res.<span class="property">data</span>;</span><br><span class="line">        <span class="keyword">let</span> code = response.<span class="property">code</span>;</span><br><span class="line"></span><br><span class="line">        <span class="title class_">AlipayJSBridge</span>.<span class="title function_">call</span>(<span class="string">&quot;tradePay&quot;</span>, &#123;</span><br><span class="line">            <span class="attr">orderStr</span>: response.<span class="property">ali</span></span><br><span class="line">        &#125;, <span class="function">(<span class="params">result</span>)=&gt;</span>&#123;</span><br><span class="line">            <span class="keyword">let</span> resultCode = result.<span class="property">resultCode</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(resultCode == <span class="string">&quot;9000&quot;</span> || resultCode == <span class="string">&quot;8000&quot;</span> || resultCode == <span class="string">&quot;6004&quot;</span>)&#123;</span><br><span class="line">                <span class="keyword">let</span> post = &#123;</span><br><span class="line">                    <span class="attr">orderCode</span>: code,</span><br><span class="line">                    <span class="attr">payTool</span>: <span class="number">3</span>,</span><br><span class="line">                    <span class="attr">os</span>: <span class="number">2</span>,</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="title function_">myAlipay</span>(post).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">let</span> payStatus = res.<span class="property">data</span>.<span class="property">payStatus</span></span><br><span class="line">                    <span class="keyword">if</span>(payStatus == <span class="string">&quot;1&quot;</span>) &#123;</span><br><span class="line">                        <span class="comment">//付款成功</span></span><br><span class="line">                        <span class="variable language_">this</span>.<span class="title function_">toSuccess</span>(code, sellerName, payMoney, <span class="number">1</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;).<span class="title function_">catch</span>(<span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="title class_">MessageBox</span>(<span class="string">&#x27;错误提示&#x27;</span>, <span class="string">&quot;支付失败&quot;</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="Order接口返回"><a href="#Order接口返回" class="headerlink" title="Order接口返回"></a>Order接口返回</h4><img src="https://github.com//machao07/image-store/blob/master/blog/20190412.png?raw=true">
       
 
       
@@ -270,11 +273,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -431,7 +434,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -521,11 +524,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -533,7 +540,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -553,15 +568,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -577,11 +588,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -621,30 +636,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -657,7 +648,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -681,27 +692,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -717,11 +720,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -757,11 +772,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -774,14 +789,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -829,6 +836,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -837,7 +856,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -881,6 +900,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -906,26 +929,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

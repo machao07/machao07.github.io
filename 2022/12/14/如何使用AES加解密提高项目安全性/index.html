@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>如何使用AES加解密提高项目安全性 | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装依赖并引入 yarn add crypto-es jsencryptCryptoES.mode： ECB、CBC（需要多加一个偏移量iv）  12import CryptoES from &apos;crypto-es&apos;;import JSEncrypt from &apos;jsencrypt&apos;;  注： 引入后报错 Can&amp;#39;t resolve &amp;#39;./JSEncrypt&amp;#39;   解决方法：">
+  <meta name="description" content="安装依赖并引入 yarn add crypto-es jsencryptCryptoES.mode： ECB、CBC（需要多加一个偏移量iv）  12import CryptoES from &amp;#x27;crypto-es&amp;#x27;;import JSEncrypt from &amp;#x27;jsencrypt&amp;#x27;;   注： 引入后报错 Can&amp;#39;t resolve &amp;#39;./J">
 <meta name="keywords" content="AES,ECB,CBC,非对称加密,公钥加密,对称加密">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何使用AES加解密提高项目安全性">
 <meta property="og:url" content="http://yoursite.com/2022/12/14/如何使用AES加解密提高项目安全性/index.html">
 <meta property="og:site_name" content="马超的个人技术博客 | Blog">
-<meta property="og:description" content="安装依赖并引入 yarn add crypto-es jsencryptCryptoES.mode： ECB、CBC（需要多加一个偏移量iv）  12import CryptoES from &apos;crypto-es&apos;;import JSEncrypt from &apos;jsencrypt&apos;;  注： 引入后报错 Can&amp;#39;t resolve &amp;#39;./JSEncrypt&amp;#39;   解决方法：">
+<meta property="og:description" content="安装依赖并引入 yarn add crypto-es jsencryptCryptoES.mode： ECB、CBC（需要多加一个偏移量iv）  12import CryptoES from &amp;#x27;crypto-es&amp;#x27;;import JSEncrypt from &amp;#x27;jsencrypt&amp;#x27;;   注： 引入后报错 Can&amp;#39;t resolve &amp;#39;./J">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/8de470aa0aaf4716b05d9f7d01288f53.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/f88408f4998643eb86cf927bacee52b1.png">
-<meta property="og:updated_time" content="2023-02-25T19:45:35.022Z">
+<meta property="og:updated_time" content="2023-02-25T19:45:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何使用AES加解密提高项目安全性">
-<meta name="twitter:description" content="安装依赖并引入 yarn add crypto-es jsencryptCryptoES.mode： ECB、CBC（需要多加一个偏移量iv）  12import CryptoES from &apos;crypto-es&apos;;import JSEncrypt from &apos;jsencrypt&apos;;  注： 引入后报错 Can&amp;#39;t resolve &amp;#39;./JSEncrypt&amp;#39;   解决方法：">
+<meta name="twitter:description" content="安装依赖并引入 yarn add crypto-es jsencryptCryptoES.mode： ECB、CBC（需要多加一个偏移量iv）  12import CryptoES from &amp;#x27;crypto-es&amp;#x27;;import JSEncrypt from &amp;#x27;jsencrypt&amp;#x27;;   注： 引入后报错 Can&amp;#39;t resolve &amp;#39;./J">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/8de470aa0aaf4716b05d9f7d01288f53.png">
   
     <link rel="alternative" href="/atom.xml" title="马超的个人技术博客 | Blog" type="application/atom+xml">
@@ -222,7 +222,8 @@
         <h3 id="安装依赖并引入"><a href="#安装依赖并引入" class="headerlink" title="安装依赖并引入"></a>安装依赖并引入</h3><blockquote>
 <p><code>yarn add crypto-es jsencrypt</code><br>CryptoES.mode： <code>ECB</code>、<code>CBC</code>（需要多加一个偏移量iv）</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> CryptoES <span class="keyword">from</span> <span class="string">'crypto-es'</span>;</span><br><span class="line"><span class="keyword">import</span> JSEncrypt <span class="keyword">from</span> <span class="string">'jsencrypt'</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">CryptoES</span> <span class="keyword">from</span> <span class="string">&#x27;crypto-es&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">JSEncrypt</span> <span class="keyword">from</span> <span class="string">&#x27;jsencrypt&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>注： 引入后报错 <code>Can&#39;t resolve &#39;./JSEncrypt&#39;</code></p>
 </blockquote>
@@ -230,33 +231,36 @@
 <p>解决方法：</p>
 </blockquote>
 <ul>
-<li>原始webpack配置修改<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack配置 module.rules添加</span></span><br><span class="line">&#123;</span><br><span class="line">    test: <span class="regexp">/\.m?js/</span>,</span><br><span class="line">    resolve: &#123;</span><br><span class="line">        fullySpecified: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>原始webpack配置修改</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack配置 module.rules添加</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">test</span>: <span class="regexp">/\.m?js/</span>,</span><br><span class="line">    <span class="attr">resolve</span>: &#123;</span><br><span class="line">        <span class="attr">fullySpecified</span>: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 </li>
-</ul>
-<a id="more"></a>
-<ul>
-<li>使用 <code>config-overrides.js</code>修改webpack配置<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; override, addWebpackModuleRule &#125; = <span class="built_in">require</span>(<span class="string">'customize-cra'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = override(</span><br><span class="line">    addWebpackModuleRule(</span><br><span class="line">        &#123;</span><br><span class="line">            test: <span class="regexp">/\.m?js/</span>,</span><br><span class="line">            resolve: &#123;</span><br><span class="line">                fullySpecified: <span class="literal">false</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    ),</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-</li>
+<li><p>使用 <code>config-overrides.js</code>修改webpack配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; override, addWebpackModuleRule &#125; = <span class="built_in">require</span>(<span class="string">&#x27;customize-cra&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">override</span>(</span><br><span class="line">    <span class="title function_">addWebpackModuleRule</span>(</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">test</span>: <span class="regexp">/\.m?js/</span>,</span><br><span class="line">            <span class="attr">resolve</span>: &#123;</span><br><span class="line">                <span class="attr">fullySpecified</span>: <span class="literal">false</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    ),</span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="一、非对称加解密"><a href="#一、非对称加解密" class="headerlink" title="一、非对称加解密"></a>一、非对称加解密</h3><p>前后端用<code>公钥加密</code>，AES 解密</p>
 <blockquote>
 <p>加密</p>
+</blockquote>
 <ul>
 <li><code>REACT_APP_SSOPUBLICKEY</code> 公钥 </li>
 <li>存储在环境变量中（.env）</li>
 </ul>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 与后端约定共同使用公钥加密</span></span><br><span class="line"><span class="keyword">const</span> encryptor = <span class="keyword">new</span> JSEncrypt();</span><br><span class="line">encryptor.setPublicKey(process.env.REACT_APP_SSOPUBLICKEY ?? <span class="string">''</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 随机数的方法</span></span><br><span class="line"><span class="keyword">const</span> aesKey = CryptoES.lib.WordArray.random(<span class="number">128</span> / <span class="number">8</span>).toString()</span><br><span class="line"><span class="keyword">const</span> aesIv = CryptoES.lib.WordArray.random(<span class="number">64</span> / <span class="number">8</span>).toString()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 与后端约定前16位作为iv偏移量</span></span><br><span class="line"><span class="keyword">const</span> aesKeyVaue = encryptor.encrypt(aesIv + aesKey) || <span class="string">''</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 与后端约定共同使用公钥加密</span></span><br><span class="line"><span class="keyword">const</span> encryptor = <span class="keyword">new</span> <span class="title class_">JSEncrypt</span>();</span><br><span class="line">encryptor.<span class="title function_">setPublicKey</span>(process.<span class="property">env</span>.<span class="property">REACT_APP_SSOPUBLICKEY</span> ?? <span class="string">&#x27;&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 随机数的方法</span></span><br><span class="line"><span class="keyword">const</span> aesKey = <span class="title class_">CryptoES</span>.<span class="property">lib</span>.<span class="property">WordArray</span>.<span class="title function_">random</span>(<span class="number">128</span> / <span class="number">8</span>).<span class="title function_">toString</span>()</span><br><span class="line"><span class="keyword">const</span> aesIv = <span class="title class_">CryptoES</span>.<span class="property">lib</span>.<span class="property">WordArray</span>.<span class="title function_">random</span>(<span class="number">64</span> / <span class="number">8</span>).<span class="title function_">toString</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 与后端约定前16位作为iv偏移量</span></span><br><span class="line"><span class="keyword">const</span> aesKeyVaue = encryptor.<span class="title function_">encrypt</span>(aesIv + aesKey) || <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>.env文件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REACT_APP_SSOPUBLICKEY=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC4ZPpIWdiMDcj8ELgtvPlxaEpKw7iHrqDhHrx92QMil1ZO/XvCJK1R1G4Tp5YV8hX9mp0qac8I+LNJ82zZMBpTdXEUlmlqtCuRMq9u1UcYN+hAlf6UL1LhKRXlEx5+EXBc4sgjUJUg8uYSqwIA8AfmbVU7bwODfwsxwFM2JVHbuwIDAQAB</span><br></pre></td></tr></table></figure></p>
+<p>.env文件</p>
 </blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">REACT_APP_SSOPUBLICKEY</span>=<span class="title class_">MIGfMA</span>0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC4ZPpIWdiMDcj8ELgtvPlxaEpKw7iHrqDhHrx92QMil1ZO/<span class="title class_">XvCJK1R1G4Tp5YV8</span>hX9mp0qac8I+<span class="title class_">LNJ82</span>zZMBpTdXEUlmlqtCuRMq9u1UcYN+hAlf6UL1LhKRXlEx5+<span class="title class_">EXBc4</span>sgjUJUg8uYSqwIA8AfmbVU7bwODfwsxwFM2JVHbuwIDAQAB</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>解密</p>
+</blockquote>
 <ul>
 <li>CryptoES.AES.decrypt 两个参数（需要解密的对象、解密的key）</li>
 </ul>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">api.loginGetAccessInfo(&#123;</span><br><span class="line">    key: aesKeyVaue,</span><br><span class="line">    token: encryptor.encrypt(token ?? <span class="string">''</span>) || <span class="string">''</span></span><br><span class="line">&#125;).then(<span class="function">(<span class="params">res: Respobject, &#123; isOk &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (isOk) &#123;</span><br><span class="line">        <span class="keyword">const</span> decrypt = CryptoES.AES.decrypt(res.data, CryptoES.enc.Utf8.parse(aesKey),</span><br><span class="line">            &#123;</span><br><span class="line">                iv: CryptoES.enc.Utf8.parse(aesIv),</span><br><span class="line">                mode: CryptoES.mode.CBC,</span><br><span class="line">                padding: CryptoES.pad.Pkcs7</span><br><span class="line">            &#125;);</span><br><span class="line">        <span class="comment">// 获取解密后的data对象</span></span><br><span class="line">        <span class="keyword">const</span> data = <span class="built_in">JSON</span>.parse(CryptoES.enc.Utf8.stringify(decrypt).toString());</span><br><span class="line">        <span class="keyword">this</span>.onUserInfoLoaded(data)</span><br><span class="line">        <span class="comment">// 存储 key iv</span></span><br><span class="line">        localStorage.setItem(<span class="string">'jst-aesKey'</span>, aesKey)</span><br><span class="line">        localStorage.setItem(<span class="string">'jst-aesIv'</span>, aesIv)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        localStorage.clear()</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123; <span class="attr">oauthSuccess</span>: <span class="literal">false</span> &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    localStorage.clear()</span><br><span class="line">    <span class="keyword">this</span>.initUserInfo()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">api.<span class="title function_">loginGetAccessInfo</span>(&#123;</span><br><span class="line">    <span class="attr">key</span>: aesKeyVaue,</span><br><span class="line">    <span class="attr">token</span>: encryptor.<span class="title function_">encrypt</span>(token ?? <span class="string">&#x27;&#x27;</span>) || <span class="string">&#x27;&#x27;</span></span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">res: Respobject, &#123; isOk &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (isOk) &#123;</span><br><span class="line">        <span class="keyword">const</span> decrypt = <span class="title class_">CryptoES</span>.<span class="property">AES</span>.<span class="title function_">decrypt</span>(res.<span class="property">data</span>, <span class="title class_">CryptoES</span>.<span class="property">enc</span>.<span class="property">Utf8</span>.<span class="title function_">parse</span>(aesKey),</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">iv</span>: <span class="title class_">CryptoES</span>.<span class="property">enc</span>.<span class="property">Utf8</span>.<span class="title function_">parse</span>(aesIv),</span><br><span class="line">                <span class="attr">mode</span>: <span class="title class_">CryptoES</span>.<span class="property">mode</span>.<span class="property">CBC</span>,</span><br><span class="line">                <span class="attr">padding</span>: <span class="title class_">CryptoES</span>.<span class="property">pad</span>.<span class="property">Pkcs7</span></span><br><span class="line">            &#125;);</span><br><span class="line">        <span class="comment">// 获取解密后的data对象</span></span><br><span class="line">        <span class="keyword">const</span> data = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="title class_">CryptoES</span>.<span class="property">enc</span>.<span class="property">Utf8</span>.<span class="title function_">stringify</span>(decrypt).<span class="title function_">toString</span>());</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">onUserInfoLoaded</span>(data)</span><br><span class="line">        <span class="comment">// 存储 key iv</span></span><br><span class="line">        <span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;jst-aesKey&#x27;</span>, aesKey)</span><br><span class="line">        <span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&#x27;jst-aesIv&#x27;</span>, aesIv)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">localStorage</span>.<span class="title function_">clear</span>()</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123; <span class="attr">oauthSuccess</span>: <span class="literal">false</span> &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).<span class="title function_">catch</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">localStorage</span>.<span class="title function_">clear</span>()</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">initUserInfo</span>()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>请求接口<br><img src="https://img-blog.csdnimg.cn/8de470aa0aaf4716b05d9f7d01288f53.png" alt="在这里插入图片描述"></p>
 </blockquote>
@@ -269,21 +273,24 @@
 </ul>
 <blockquote>
 <p>拦截器中统一加解密</p>
+</blockquote>
 <ul>
 <li>对请求的接口参数body加密 排除登录的公钥加密</li>
 <li>正常接口返回responseData，报错直接返回code msg信息</li>
 </ul>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.axiosInstance</span><br><span class="line">.request(&#123;</span><br><span class="line">    url: path,</span><br><span class="line">    method: req.method <span class="keyword">as</span> any,</span><br><span class="line">    data: <span class="keyword">this</span>.handleRequest(path, req),</span><br><span class="line">    headers: jstToken ? &#123; ...headers, <span class="attr">token</span>: jstToken &#125; : headers,</span><br><span class="line">    responseType: <span class="string">'json'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">handleRequest = <span class="function">(<span class="params">path: string, req: SwaRequest&lt;RequestOptions&gt;</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (path.indexOf(<span class="string">'/login/getAccessInfo'</span>) !== <span class="number">-1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> req.body || &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'req=='</span>, req)</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'enReq=='</span>, encrypt(req.body))</span><br><span class="line">    <span class="keyword">return</span> encrypt(req.body)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">axiosInstance</span></span><br><span class="line">.<span class="title function_">request</span>(&#123;</span><br><span class="line">    <span class="attr">url</span>: path,</span><br><span class="line">    <span class="attr">method</span>: req.<span class="property">method</span> <span class="keyword">as</span> any,</span><br><span class="line">    <span class="attr">data</span>: <span class="variable language_">this</span>.<span class="title function_">handleRequest</span>(path, req),</span><br><span class="line">    <span class="attr">headers</span>: jstToken ? &#123; ...headers, <span class="attr">token</span>: jstToken &#125; : headers,</span><br><span class="line">    <span class="attr">responseType</span>: <span class="string">&#x27;json&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">handleRequest = <span class="function">(<span class="params">path: string, req: SwaRequest&lt;RequestOptions&gt;</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (path.<span class="title function_">indexOf</span>(<span class="string">&#x27;/login/getAccessInfo&#x27;</span>) !== -<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> req.<span class="property">body</span> || &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;req==&#x27;</span>, req)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;enReq==&#x27;</span>, <span class="title function_">encrypt</span>(req.<span class="property">body</span>))</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">encrypt</span>(req.<span class="property">body</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><code>用存储的key iv加密加密</code></p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">encrypt</span>(<span class="params">params: any</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> aesKey = localStorage.getItem(<span class="string">'jst-aesKey'</span>) ?? <span class="string">''</span></span><br><span class="line">    <span class="keyword">const</span> aesIv = localStorage.getItem(<span class="string">'jst-aesIv'</span>) ?? <span class="string">''</span></span><br><span class="line">    <span class="keyword">const</span> requestData = CryptoES.AES.encrypt(</span><br><span class="line">        <span class="built_in">JSON</span>.stringify(params),</span><br><span class="line">        CryptoES.enc.Utf8.parse(aesKey),</span><br><span class="line">        &#123;</span><br><span class="line">            iv: CryptoES.enc.Utf8.parse(aesIv),</span><br><span class="line">            mode: CryptoES.mode.CBC,</span><br><span class="line">            padding: CryptoES.pad.Pkcs7,</span><br><span class="line">        &#125;</span><br><span class="line">    ).toString();</span><br><span class="line">    <span class="keyword">return</span> &#123; requestData &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">encrypt</span>(<span class="params">params: any</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> aesKey = <span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;jst-aesKey&#x27;</span>) ?? <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">const</span> aesIv = <span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;jst-aesIv&#x27;</span>) ?? <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">const</span> requestData = <span class="title class_">CryptoES</span>.<span class="property">AES</span>.<span class="title function_">encrypt</span>(</span><br><span class="line">        <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(params),</span><br><span class="line">        <span class="title class_">CryptoES</span>.<span class="property">enc</span>.<span class="property">Utf8</span>.<span class="title function_">parse</span>(aesKey),</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">iv</span>: <span class="title class_">CryptoES</span>.<span class="property">enc</span>.<span class="property">Utf8</span>.<span class="title function_">parse</span>(aesIv),</span><br><span class="line">            <span class="attr">mode</span>: <span class="title class_">CryptoES</span>.<span class="property">mode</span>.<span class="property">CBC</span>,</span><br><span class="line">            <span class="attr">padding</span>: <span class="title class_">CryptoES</span>.<span class="property">pad</span>.<span class="property">Pkcs7</span>,</span><br><span class="line">        &#125;</span><br><span class="line">    ).<span class="title function_">toString</span>();</span><br><span class="line">    <span class="keyword">return</span> &#123; requestData &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><code>用存储的key iv加密解密</code></p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">decrypt</span>(<span class="params">response: string</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'加密res=='</span>, response)</span><br><span class="line">    <span class="keyword">const</span> aesKey = localStorage.getItem(<span class="string">'jst-aesKey'</span>) ?? <span class="string">''</span></span><br><span class="line">    <span class="keyword">const</span> aesIv = localStorage.getItem(<span class="string">'jst-aesIv'</span>) ?? <span class="string">''</span></span><br><span class="line">    <span class="keyword">let</span> data: string = <span class="string">''</span></span><br><span class="line">    <span class="keyword">const</span> result = CryptoES.AES.decrypt(</span><br><span class="line">        response,</span><br><span class="line">        CryptoES.enc.Utf8.parse(aesKey),</span><br><span class="line">        &#123;</span><br><span class="line">            iv: CryptoES.enc.Utf8.parse(aesIv),</span><br><span class="line">            mode: CryptoES.mode.CBC,</span><br><span class="line">            padding: CryptoES.pad.Pkcs7,</span><br><span class="line">        &#125;</span><br><span class="line">    ).toString(CryptoES.enc.Utf8);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; result.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (result.charCodeAt(i) !== <span class="number">0</span>) &#123;</span><br><span class="line">            data += <span class="string">`<span class="subst">$&#123;result[i]&#125;</span>`</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'解密res=='</span>, <span class="built_in">JSON</span>.parse(data))</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">JSON</span>.parse(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">decrypt</span>(<span class="params">response: string</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;加密res==&#x27;</span>, response)</span><br><span class="line">    <span class="keyword">const</span> aesKey = <span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;jst-aesKey&#x27;</span>) ?? <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">const</span> aesIv = <span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;jst-aesIv&#x27;</span>) ?? <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">let</span> <span class="attr">data</span>: string = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">const</span> result = <span class="title class_">CryptoES</span>.<span class="property">AES</span>.<span class="title function_">decrypt</span>(</span><br><span class="line">        response,</span><br><span class="line">        <span class="title class_">CryptoES</span>.<span class="property">enc</span>.<span class="property">Utf8</span>.<span class="title function_">parse</span>(aesKey),</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">iv</span>: <span class="title class_">CryptoES</span>.<span class="property">enc</span>.<span class="property">Utf8</span>.<span class="title function_">parse</span>(aesIv),</span><br><span class="line">            <span class="attr">mode</span>: <span class="title class_">CryptoES</span>.<span class="property">mode</span>.<span class="property">CBC</span>,</span><br><span class="line">            <span class="attr">padding</span>: <span class="title class_">CryptoES</span>.<span class="property">pad</span>.<span class="property">Pkcs7</span>,</span><br><span class="line">        &#125;</span><br><span class="line">    ).<span class="title function_">toString</span>(<span class="title class_">CryptoES</span>.<span class="property">enc</span>.<span class="property">Utf8</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; result.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (result.<span class="title function_">charCodeAt</span>(i) !== <span class="number">0</span>) &#123;</span><br><span class="line">            data += <span class="string">`<span class="subst">$&#123;result[i]&#125;</span>`</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;解密res==&#x27;</span>, <span class="title class_">JSON</span>.<span class="title function_">parse</span>(data))</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">JSON</span>.<span class="title function_">parse</span>(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -488,7 +495,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -578,11 +585,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -590,7 +601,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -610,15 +629,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -634,11 +649,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -678,30 +697,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -714,7 +709,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -738,27 +753,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -774,11 +781,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -814,11 +833,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -831,14 +850,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -886,6 +897,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -894,7 +917,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -938,6 +961,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -963,26 +990,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>

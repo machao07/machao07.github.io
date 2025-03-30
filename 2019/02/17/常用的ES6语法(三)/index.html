@@ -9,7 +9,7 @@
   <title>常用的ES6语法(三) | 马超的个人技术博客 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="六、Map和SetMap和Set都叫做集合，但是他们也有所不同。Set常被用来检查对象中是否存在某个键名，Map集合常被用来获取已存的信息。 Set是有序列表，含有相互独立的非重复值。 Array和Set对比都是一个存储多值的容器，两者可以互相转换，但是在使用场景上有区别。如下:Array的indexOf方法比Set的has方法效率低下Set不含有重复值（可以利用这个特性实现对一个数组的去重）Se">
-<meta name="keywords" content="JavaScript,ES6,ECMAScript,ES5">
+<meta name="keywords" content="ES6,ECMAScript,JavaScript,ES5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用的ES6语法(三)">
 <meta property="og:url" content="http://yoursite.com/2019/02/17/常用的ES6语法(三)/index.html">
@@ -219,22 +219,36 @@
         <h3 id="六、Map和Set"><a href="#六、Map和Set" class="headerlink" title="六、Map和Set"></a><strong>六、Map和Set</strong></h3><p>Map和Set都叫做集合，但是他们也有所不同。Set常被用来检查对象中是否存在某个键名，Map集合常被用来获取已存的信息。</p>
 <p>Set是有序列表，含有相互独立的非重复值。</p>
 <h5 id="Array和Set对比"><a href="#Array和Set对比" class="headerlink" title="Array和Set对比"></a>Array和Set对比</h5><p>都是一个存储多值的容器，两者可以互相转换，但是在使用场景上有区别。如下:<br>Array的indexOf方法比Set的has方法效率低下<br>Set不含有重复值（可以利用这个特性实现对一个数组的去重）<br>Set通过delete方法删除某个值，而Array只能通过splice。两者的使用方便程度前者更优<br>Array的很多新方法map、filter、some、every等是Set没有的（但是通过两者可以互相转换来使用）</p>
-<h5 id="Object和Map对比"><a href="#Object和Map对比" class="headerlink" title="Object和Map对比"></a>Object和Map对比</h5><p>Object是字符串-值，Map是值-值<br>Object键为string类型,Map的键是任意类型<br>手动计算Object尺寸,Map.size可以获取尺寸<br>Map的排序是插入顺序<br>Object有原型，所以映射中有一些缺省的键。可以理解为Map=Object.create(null)</p>
-<a id="more"></a>
-<h4 id="Set操作集合"><a href="#Set操作集合" class="headerlink" title="Set操作集合"></a>Set操作集合</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="keyword">set</span> = new Set()</span><br><span class="line">// Set转化为数组</span><br><span class="line">let arr = Array.from(<span class="keyword">set</span>)</span><br><span class="line">let arr = [...<span class="keyword">set</span>]</span><br><span class="line">// 实例属性（继承自Set）</span><br><span class="line"><span class="keyword">set</span>.<span class="keyword">constructor</span> === Set</span><br><span class="line"><span class="keyword">set</span>.size</span><br><span class="line">// 操作方法</span><br><span class="line"><span class="keyword">set</span>.add(1) // 添加一个值</span><br><span class="line"><span class="keyword">set</span>.delete(1) //删除一个值</span><br><span class="line"><span class="keyword">set</span>.has(1) //判断是否有这个值（Array中的indexOf）</span><br><span class="line"><span class="keyword">set</span>.clear() //清除所有值</span><br><span class="line">// 获取用于遍历的成员方法(Set的遍历顺序就是插入顺序)</span><br><span class="line"><span class="keyword">set</span>.keys() // 返回键名的遍历器</span><br><span class="line"><span class="keyword">set</span>.values() // 返回键值得遍历器</span><br><span class="line"><span class="keyword">set</span>.entries() // 返回键值对的遍历器</span><br><span class="line"><span class="keyword">set</span>.forEach() // 循环遍历每个值(和Array的方法一致)</span><br><span class="line">for (let key of <span class="keyword">set</span>.keys())&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> val <span class="keyword">of</span> <span class="keyword">set</span>.values())&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> entry <span class="keyword">of</span> <span class="keyword">set</span>.entries())&#123;&#125;</span><br><span class="line"><span class="comment">// 使用数组方法来处理set值</span></span><br><span class="line"><span class="keyword">set</span> = new Set(arr)</span><br><span class="line"><span class="keyword">set</span> = new Set([...<span class="keyword">set</span>].map((x) =&gt; x = x * 2))</span><br><span class="line"><span class="keyword">set</span> = new Set([...<span class="keyword">set</span>].filter((x) =&gt; x &gt; 2))</span><br></pre></td></tr></table></figure>
-<h4 id="Map的方法集合"><a href="#Map的方法集合" class="headerlink" title="Map的方法集合"></a>Map的方法集合</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>()</span><br><span class="line"><span class="comment">// 实例属性(继承自Map)</span></span><br><span class="line">map.constructor === <span class="built_in">Map</span></span><br><span class="line">map.size</span><br><span class="line"><span class="comment">// 操作方法</span></span><br><span class="line">map.set(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">map.get(<span class="number">1</span>)</span><br><span class="line">map.delete(<span class="number">1</span>)</span><br><span class="line">map.has(<span class="number">1</span>)</span><br><span class="line">map.clear()</span><br><span class="line"><span class="comment">// 遍历方法</span></span><br><span class="line">map.keys()</span><br><span class="line">map.values()</span><br><span class="line">map.entries()</span><br><span class="line">map.forEach()</span><br><span class="line"><span class="comment">// Map和数组的转换</span></span><br><span class="line">map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">'key'</span>,<span class="string">'val'</span>],[<span class="number">2</span>,<span class="number">1</span>]]) <span class="comment">// 要求双成员数组</span></span><br><span class="line"><span class="keyword">let</span> arr = [...map]</span><br><span class="line"><span class="comment">// 值得注意的是Map的键是跟内存绑定的</span></span><br><span class="line">map.set([<span class="number">1</span>], <span class="string">'s'</span>)</span><br><span class="line">map.get([<span class="number">1</span>])</span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>]</span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>]</span><br><span class="line">map.set(arr, <span class="string">'s'</span>)</span><br><span class="line">map.get(arr)</span><br><span class="line">map.set(arr1, <span class="string">'s'</span>)</span><br><span class="line">map.get(arr1)</span><br></pre></td></tr></table></figure>
-<h3 id="七、迭代器（Iterator）"><a href="#七、迭代器（Iterator）" class="headerlink" title="七、迭代器（Iterator）"></a><strong>七、迭代器（Iterator）</strong></h3><p>1、entries() 返回迭代器：返回键值对<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.entries()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// [0, 'a'] [1, 'b'] [2, 'c']</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Set</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.entries()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ['a', 'a'] ['b', 'b'] ['c', 'c']</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Map</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">arr.set(<span class="string">'a'</span>, <span class="string">'a'</span>);</span><br><span class="line">arr.set(<span class="string">'b'</span>, <span class="string">'b'</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.entries()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ['a', 'a'] ['b', 'b']</span></span><br></pre></td></tr></table></figure></p>
-<p>2、values() 返回迭代器：返回键值对的value<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.values()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//'a' 'b' 'c'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Set</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.values()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 'a' 'b' 'c'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Map</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">arr.set(<span class="string">'a'</span>, <span class="string">'a'</span>);</span><br><span class="line">arr.set(<span class="string">'b'</span>, <span class="string">'b'</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.values()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 'a' 'b'</span></span><br></pre></td></tr></table></figure></p>
-<p>3、keys() 返回迭代器：返回键值对的key<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.keys()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 0 1 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Set</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.keys()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 'a' 'b' 'c'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Map</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">arr.set(<span class="string">'a'</span>, <span class="string">'a'</span>);</span><br><span class="line">arr.set(<span class="string">'b'</span>, <span class="string">'b'</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.keys()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 'a' 'b'</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="Object和Map对比"><a href="#Object和Map对比" class="headerlink" title="Object和Map对比"></a>Object和Map对比</h5><p>Object是字符串-值，Map是值-值<br>Object键为string类型,Map的键是任意类型<br>手动计算Object尺寸,Map.size可以获取尺寸<br>Map的排序是插入顺序<br>Object有原型，所以映射中有一些缺省的键。可以理解为Map&#x3D;Object.create(null)</p>
+<span id="more"></span>
+<h4 id="Set操作集合"><a href="#Set操作集合" class="headerlink" title="Set操作集合"></a>Set操作集合</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="title class_">Set</span>()</span><br><span class="line"><span class="comment">// Set转化为数组</span></span><br><span class="line"><span class="keyword">let</span> arr = <span class="title class_">Array</span>.<span class="title function_">from</span>(set)</span><br><span class="line"><span class="keyword">let</span> arr = [...set]</span><br><span class="line"><span class="comment">// 实例属性（继承自Set）</span></span><br><span class="line">set.<span class="property">constructor</span> === <span class="title class_">Set</span></span><br><span class="line">set.<span class="property">size</span></span><br><span class="line"><span class="comment">// 操作方法</span></span><br><span class="line">set.<span class="title function_">add</span>(<span class="number">1</span>) <span class="comment">// 添加一个值</span></span><br><span class="line">set.<span class="title function_">delete</span>(<span class="number">1</span>) <span class="comment">//删除一个值</span></span><br><span class="line">set.<span class="title function_">has</span>(<span class="number">1</span>) <span class="comment">//判断是否有这个值（Array中的indexOf）</span></span><br><span class="line">set.<span class="title function_">clear</span>() <span class="comment">//清除所有值</span></span><br><span class="line"><span class="comment">// 获取用于遍历的成员方法(Set的遍历顺序就是插入顺序)</span></span><br><span class="line">set.<span class="title function_">keys</span>() <span class="comment">// 返回键名的遍历器</span></span><br><span class="line">set.<span class="title function_">values</span>() <span class="comment">// 返回键值得遍历器</span></span><br><span class="line">set.<span class="title function_">entries</span>() <span class="comment">// 返回键值对的遍历器</span></span><br><span class="line">set.<span class="title function_">forEach</span>() <span class="comment">// 循环遍历每个值(和Array的方法一致)</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">of</span> set.<span class="title function_">keys</span>())&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> val <span class="keyword">of</span> set.<span class="title function_">values</span>())&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> entry <span class="keyword">of</span> set.<span class="title function_">entries</span>())&#123;&#125;</span><br><span class="line"><span class="comment">// 使用数组方法来处理set值</span></span><br><span class="line">set = <span class="keyword">new</span> <span class="title class_">Set</span>(arr)</span><br><span class="line">set = <span class="keyword">new</span> <span class="title class_">Set</span>([...set].<span class="title function_">map</span>(<span class="function">(<span class="params">x</span>) =&gt;</span> x = x * <span class="number">2</span>))</span><br><span class="line">set = <span class="keyword">new</span> <span class="title class_">Set</span>([...set].<span class="title function_">filter</span>(<span class="function">(<span class="params">x</span>) =&gt;</span> x &gt; <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+
+<h4 id="Map的方法集合"><a href="#Map的方法集合" class="headerlink" title="Map的方法集合"></a>Map的方法集合</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line"><span class="comment">// 实例属性(继承自Map)</span></span><br><span class="line">map.<span class="property">constructor</span> === <span class="title class_">Map</span></span><br><span class="line">map.<span class="property">size</span></span><br><span class="line"><span class="comment">// 操作方法</span></span><br><span class="line">map.<span class="title function_">set</span>(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">map.<span class="title function_">get</span>(<span class="number">1</span>)</span><br><span class="line">map.<span class="title function_">delete</span>(<span class="number">1</span>)</span><br><span class="line">map.<span class="title function_">has</span>(<span class="number">1</span>)</span><br><span class="line">map.<span class="title function_">clear</span>()</span><br><span class="line"><span class="comment">// 遍历方法</span></span><br><span class="line">map.<span class="title function_">keys</span>()</span><br><span class="line">map.<span class="title function_">values</span>()</span><br><span class="line">map.<span class="title function_">entries</span>()</span><br><span class="line">map.<span class="title function_">forEach</span>()</span><br><span class="line"><span class="comment">// Map和数组的转换</span></span><br><span class="line">map = <span class="keyword">new</span> <span class="title class_">Map</span>([[<span class="string">&#x27;key&#x27;</span>,<span class="string">&#x27;val&#x27;</span>],[<span class="number">2</span>,<span class="number">1</span>]]) <span class="comment">// 要求双成员数组</span></span><br><span class="line"><span class="keyword">let</span> arr = [...map]</span><br><span class="line"><span class="comment">// 值得注意的是Map的键是跟内存绑定的</span></span><br><span class="line">map.<span class="title function_">set</span>([<span class="number">1</span>], <span class="string">&#x27;s&#x27;</span>)</span><br><span class="line">map.<span class="title function_">get</span>([<span class="number">1</span>])</span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>]</span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>]</span><br><span class="line">map.<span class="title function_">set</span>(arr, <span class="string">&#x27;s&#x27;</span>)</span><br><span class="line">map.<span class="title function_">get</span>(arr)</span><br><span class="line">map.<span class="title function_">set</span>(arr1, <span class="string">&#x27;s&#x27;</span>)</span><br><span class="line">map.<span class="title function_">get</span>(arr1)</span><br></pre></td></tr></table></figure>
+
+<h3 id="七、迭代器（Iterator）"><a href="#七、迭代器（Iterator）" class="headerlink" title="七、迭代器（Iterator）"></a><strong>七、迭代器（Iterator）</strong></h3><p>1、entries() 返回迭代器：返回键值对</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.<span class="title function_">entries</span>()) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// [0, &#x27;a&#x27;] [1, &#x27;b&#x27;] [2, &#x27;c&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Set</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="title class_">Set</span>([<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.<span class="title function_">entries</span>()) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// [&#x27;a&#x27;, &#x27;a&#x27;] [&#x27;b&#x27;, &#x27;b&#x27;] [&#x27;c&#x27;, &#x27;c&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Map</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="title class_">Map</span>();</span><br><span class="line">arr.<span class="title function_">set</span>(<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">arr.<span class="title function_">set</span>(<span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;b&#x27;</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.<span class="title function_">entries</span>()) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// [&#x27;a&#x27;, &#x27;a&#x27;] [&#x27;b&#x27;, &#x27;b&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<p>2、values() 返回迭代器：返回键值对的value</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.<span class="title function_">values</span>()) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//&#x27;a&#x27; &#x27;b&#x27; &#x27;c&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Set</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="title class_">Set</span>([<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.<span class="title function_">values</span>()) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// &#x27;a&#x27; &#x27;b&#x27; &#x27;c&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Map</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="title class_">Map</span>();</span><br><span class="line">arr.<span class="title function_">set</span>(<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">arr.<span class="title function_">set</span>(<span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;b&#x27;</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.<span class="title function_">values</span>()) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// &#x27;a&#x27; &#x27;b&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>3、keys() 返回迭代器：返回键值对的key</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.<span class="title function_">keys</span>()) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 0 1 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Set</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="title class_">Set</span>([<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.<span class="title function_">keys</span>()) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// &#x27;a&#x27; &#x27;b&#x27; &#x27;c&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Map</span></span><br><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="title class_">Map</span>();</span><br><span class="line">arr.<span class="title function_">set</span>(<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">arr.<span class="title function_">set</span>(<span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;b&#x27;</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> arr.<span class="title function_">keys</span>()) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// &#x27;a&#x27; &#x27;b&#x27;</span></span><br></pre></td></tr></table></figure>
+
 <p>虽然上面列举了3种内建的迭代器方法，但是不同集合的类型还有自己默认的迭代器，在for of中，数组和Set的默认迭代器是values()，Map的默认迭代器是entries()。<br>for of循环解构</p>
-<p>对象本身不支持迭代，但是我们可以自己添加一个生成器，返回一个key，value的迭代器，然后使用for of循环解构key和value。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  b: <span class="number">2</span>,</span><br><span class="line">  *[<span class="built_in">Symbol</span>.iterator]() &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> obj) &#123;</span><br><span class="line">      <span class="keyword">yield</span> [i, obj[i]]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> [key, value] <span class="keyword">of</span> obj) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key, value)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 'a' 1, 'b' 2</span></span><br><span class="line"></span><br><span class="line">字符串迭代器</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">'abc'</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> str) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 'a' 'b' 'c'</span></span><br></pre></td></tr></table></figure></p>
+<p>对象本身不支持迭代，但是我们可以自己添加一个生成器，返回一个key，value的迭代器，然后使用for of循环解构key和value。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">a</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">b</span>: <span class="number">2</span>,</span><br><span class="line">  *[<span class="title class_">Symbol</span>.<span class="property">iterator</span>]() &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> obj) &#123;</span><br><span class="line">      <span class="keyword">yield</span> [i, obj[i]]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> [key, value] <span class="keyword">of</span> obj) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(key, value)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// &#x27;a&#x27; 1, &#x27;b&#x27; 2</span></span><br><span class="line"></span><br><span class="line">字符串迭代器</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;abc&#x27;</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> str) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(v)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// &#x27;a&#x27; &#x27;b&#x27; &#x27;c&#x27;</span></span><br></pre></td></tr></table></figure>
+
 <p>ES6给数组添加了几个新方法：find()、findIndex()、fill()、copyWithin()</p>
-<p>1、find()：传入一个回调函数，找到数组中符合当前搜索规则的第一个元素，返回它，并且终止搜索。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="string">"2"</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="string">"2"</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr.find(<span class="function"><span class="params">n</span> =&gt;</span> <span class="keyword">typeof</span> n === <span class="string">"number"</span>)) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
-<p>2、findIndex()：传入一个回调函数，找到数组中符合当前搜索规则的第一个元素，返回它的下标，终止搜索。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="string">"2"</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="string">"2"</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr.findIndex(<span class="function"><span class="params">n</span> =&gt;</span> <span class="keyword">typeof</span> n === <span class="string">"number"</span>)) <span class="comment">// 0</span></span><br></pre></td></tr></table></figure></p>
+<p>1、find()：传入一个回调函数，找到数组中符合当前搜索规则的第一个元素，返回它，并且终止搜索。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="string">&quot;2&quot;</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="string">&quot;2&quot;</span>]</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr.<span class="title function_">find</span>(<span class="function"><span class="params">n</span> =&gt;</span> <span class="keyword">typeof</span> n === <span class="string">&quot;number&quot;</span>)) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<p>2、findIndex()：传入一个回调函数，找到数组中符合当前搜索规则的第一个元素，返回它的下标，终止搜索。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="string">&quot;2&quot;</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="string">&quot;2&quot;</span>]</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr.<span class="title function_">findIndex</span>(<span class="function"><span class="params">n</span> =&gt;</span> <span class="keyword">typeof</span> n === <span class="string">&quot;number&quot;</span>)) <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+
 <p>3、fill()：用新元素替换掉数组内的元素，可以指定替换下标范围。</p>
 <p>arr.fill(value, start, end)</p>
-<p>4、copyWithin()：选择数组的某个下标，从该位置开始复制数组元素，默认从0开始复制。也可以指定要复制的元素范围。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">arr.copyWithin(target, start, end)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr.copyWithin(<span class="number">3</span>)) <span class="comment">// [1,2,3,1,2] 从下标为3的元素开始，复制数组，所以4, 5被替换成1, 2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr1.copyWithin(<span class="number">3</span>, <span class="number">1</span>)) <span class="comment">// [1,2,3,2,3] 从下标为3的元素开始，复制数组，指定复制的第一个元素下标为1，所以4, 5被替换成2, 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="built_in">console</span>.log(arr2.copyWithin(<span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>)) <span class="comment">// [1,2,3,2,5] 从下标为3的元素开始，复制数组，指定复制的第一个元素下标为1，结束位置为2，所以4被替换成2</span></span><br></pre></td></tr></table></figure></p>
-
+<p>4、copyWithin()：选择数组的某个下标，从该位置开始复制数组元素，默认从0开始复制。也可以指定要复制的元素范围。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="title function_">copyWithin</span>(target, start, end)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr.<span class="title function_">copyWithin</span>(<span class="number">3</span>)) <span class="comment">// [1,2,3,1,2] 从下标为3的元素开始，复制数组，所以4, 5被替换成1, 2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr1.<span class="title function_">copyWithin</span>(<span class="number">3</span>, <span class="number">1</span>)) <span class="comment">// [1,2,3,2,3] 从下标为3的元素开始，复制数组，指定复制的第一个元素下标为1，所以4, 5被替换成2, 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr2 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr2.<span class="title function_">copyWithin</span>(<span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>)) <span class="comment">// [1,2,3,2,5] 从下标为3的元素开始，复制数组，指定复制的第一个元素下标为1，结束位置为2，所以4被替换成2</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -278,15 +292,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ECMAScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -431,7 +445,7 @@ gitment.render('gitment-ctn')
         <div id="footer-info">
             <div class="footer-left">
                 &copy;
-                2024
+                2025
                     Ma Chao
             </div>
             <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
@@ -521,11 +535,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -533,7 +551,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -553,15 +579,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Taro</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -577,11 +599,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AntDesign</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES5</a>
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -621,30 +647,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
               </li>
             
@@ -657,7 +659,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ECMAscript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -681,27 +703,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vue3</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ant-Design</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Vite</a>
+                <a href="javascript:void(0)" class="js-tag color4">Umi</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Element Plus</a>
+                <a href="javascript:void(0)" class="js-tag color2">create-react-app</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" class="js-tag color4">iconfont</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -717,11 +731,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mockjs</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -757,11 +783,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color1">props</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">echarts</a>
+                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -774,14 +800,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">clipboard</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">props</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">watch</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -829,6 +847,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">冒泡</a>
               </li>
             
@@ -837,7 +867,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">typescript</a>
+                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -881,6 +911,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
             
@@ -906,26 +940,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">前端设计模式</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">热更新</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WDS</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HMR</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">技术栈</a>
-              </li>
-            
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">双向数据绑定</a>
               </li>
             
             <div class="clearfix"></div>
